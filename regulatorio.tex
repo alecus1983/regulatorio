@@ -1,7 +1,7 @@
 
 \documentclass[a5paper]{book}% Tipo libro
 % medidas del papel
-%\usepackage[paperwidth=9cm, paperheight=12cm]{geometry}
+\usepackage[paperwidth=15cm, paperheight=20cm]{geometry}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[spanish, es-tabla]{babel}
@@ -16,17 +16,23 @@
 \usepackage{easyReview} % revisar documentacion
 \usepackage{tgbonum}
 \usepackage{csquotes}
+\usepackage{imakeidx}
+\makeindex[columns=3, title=Alphabetical Index, intoc]
 \usepackage[backend=biber, style=verbose, hyperref=true]{biblatex}
 \usepackage{longtable}
 \usepackage[table,dvipsnames]{xcolor}
 \renewcommand{\labelenumi}{$\blacktriangleright$}
+\usepackage{titling}
+\usepackage{needspace}
 
 \addbibresource{bibliografia.bib}
+
+\definecolor{enlace}{rgb}{0.6, 0.3, 0.6} % Un verde oscuro
 
 \usepackage{hyperref}
 \hypersetup{
     colorlinks=true,
-    linkcolor=blue,
+    linkcolor=enlace,
     filecolor=magenta,      
     urlcolor=red,
     citecolor=blue,
@@ -34,7 +40,7 @@
 
 \usepackage{tcolorbox, empheq} %
 \tcbuselibrary{skins,breakable,listings,theorems}
-%\usepackage[none]{hyphenat}% elimina la separacion de palabras
+% \usepackage[none]{hyphenat}% elimina la separacion de palabras
 
 \usepackage{titlesec}   % customizing section titles
 \usepackage{wasysym} % conjunto de simbolos
@@ -42,32 +48,73 @@
 % formato del titulo
 \titleformat{\chapter}[frame]
 {\filright\bfseries}
-{ \enspace  \fbox{CAPÍTULO \thechapter} \enspace}
-{1.1em}{\Large\bfseries\filcenter}
+{ \enspace  \fbox{CAPÍTULO \color{titlegreen}\thechapter} \enspace}
+{1.1em}{\Large\bfseries\filcenter\color{titleblue}}
 
-% formato de la seccion
+\usepackage{titlesec}
+\usepackage{xcolor} % Para definir colores, opcional pero recomendado
+
+% --- Definir un color para los títulos (opcional) ---
+\definecolor{titleblue}{rgb}{0.0, 0.2, 0.4} % Un azul oscuro
+\definecolor{titlegreen}{rgb}{0.0, 0.4, 0.4} % Un verde oscuro
+
+% --- Formato de la SECCIÓN ---
+% [block] -> El título ocupa su propio párrafo
+% \Large\bfseries -> Letra grande y en negrita
+% \thesection -> El número de la sección
+% \titlerule[0.8pt] -> Una línea horizontal debajo del título
 \titleformat{\section}[block]
-{\normalfont\bfseries\filcenter}
-{\fbox{\itshape\thesection}}{1em}{}
+  {\Large\bfseries\color{titleblue}}
+  {\thesection.}
+  {1em}
+  {}
 
-% formato de la sub sub sesion
-\titleformat{\subsection}[runin]
-{\normalfont\scshape}
-{}{0pt}{}
+% --- Formato de la SUBSECCIÓN ---
+% [hang] -> Formato estándar, el título puede ocupar varias líneas
+% \large\bfseries -> Ligeramente más pequeño que la sección, en negrita
+\titleformat{\subsection}
+  {\large\bfseries\color{titlegreen}}
+  {\thesubsection.}
+  {1em}
+  {}
+  
+% --- Formato de la SUB-SUBSECCIÓN ---
+% \normalsize\itshape -> Tamaño normal, pero en cursiva para diferenciarlo
+\titleformat{\subsubsection}[frame]
+  {\normalsize\bfseries\color{titlegreen}}
+  {\thesubsubsection.}
+  {1em}
+  {}
 
-% formato de la sub sub sesion
-\titleformat{\subsubsection}[runin]
-{\normalfont\scshape}
-{}{0pt}{}
-
+% --- Ajuste del espaciado ANTES y DESPUÉS de los títulos ---
+% \titlespacing*{comando}{espacio-izq}{espacio-antes}{espacio-después}
+% El asterisco (*) evita que se añada espaciado al inicio de una página.
+\titlespacing*{\section}{0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+%\titlespacing*{\subsection}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+%\titlespacing*{\subsubsection}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+\titlespacing{\subsection}{12pc}{1.5ex plus .1ex minus .2ex}{1pc}
+\titlespacing{\subsubsection}{12pc}{1.5ex plus .1ex minus .2ex}{1pc}
 
 % estilo de cajas
 \tcbset{width=0.6\linewidth,colback=gray!5!white,colframe=gray!75!black}
 
+
+\fancyhf{} % Limpia todos los campos de encabezado y pie de página
+
+
 % estilo de pagina
 \pagestyle{fancy}
-\fancyhead[LO, RE]{\tiny \thechapter}
-\fancyfoot{\thesection}            % clear page footer
+
+% Redefine \chaptermark para que no convierta a mayúsculas
+% \markboth{texto para páginas izquierdas}{texto para páginas derechas}
+% El segundo argumento vacío es para que no afecte a \rightmark (secciones)
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter. #1}{}}
+
+% Asigna el contenido al encabe
+\fancyhead[LO]{\small \leftmark}
+\fancyhead[RE]{\small Capitulo \thesection}
+\fancyhead[LE,RO]{\small página \bfseries\thepage   }
+\fancyfoot[R]{\textit{\hyperref[sec:tabladecontendos]{tabla de contenido}}}            % clear page footer
 
 
 \title{ANÁLISIS REGULATORIO}
@@ -75,9 +122,9 @@
 % quita la indentacion de la primera línea  del parrafo.
 \setlength{\parindent}{0cm}
 % estilo de pagina
-\pagestyle{headings}
+%\pagestyle{headings}
 
-\renewcommand{\figurename}{\small\it       figura.}
+\renewcommand{\figurename}{\small\it  figura.}
 % personalización de los caption
 \usepackage[font=small,labelfont=bf,
 labelsep=endash]{caption}
@@ -116,65 +163,43 @@ labelsep=endash]{caption}
 \end{minipage}
 \end{center}
 
+
 \tableofcontents
+\label{sec:tabladecontendos}
+\clearpage
 
 \printbibliography
 
-\chapter{ESTRUCTURA DE LA CONVOCATORIA}
+\chapter*{ESTRUCTURA DE LA CONVOCATORIA}
 
 \textit{Coordinar y controlar la operación y mantenimiento de la red de energía de acuerdo con las normas
  técnicas establecidas por la empresa, con el fin de garantizar su funcionamiento permanente.
 }
+
+
  \section{Funciones del cargo}
 
  Las funciones del cargo Ingeniero de Operación y Mantenimiento  son las siguientes:
  
  \begin{itemize}
- \item  Analizar el funcionamiento del Sistema de Distribución tocal con el fin de programar y coordinar
- las actividades relacionadas con la operación y/o Mantenimiento requeridas para garantizar la calidad del servicio y de la potencia.
-\item  Coordinar y supervisar la ejecución de las diferentes actividades de operación y mantenimiento predictivo,
- preventivo y correctivo de la red de
-servicios.
-\item  Administrar adecuadamente los equipos, materiales Y herramientas requeridas para
- las actividades a realizar por el personal a su cargo.
+ \item  Analizar el funcionamiento del Sistema de Distribución local con el fin de programar y coordinar  las actividades relacionadas con la operación y/o Mantenimiento requeridas para garantizar la calidad del servicio y de la potencia.
+\item  Coordinar y supervisar la ejecución de las diferentes actividades de operación y mantenimiento predictivo,  preventivo y correctivo de la red de servicios.
+\item  Administrar adecuadamente los equipos, materiales Y herramientas requeridas para las actividades a realizar por el personal a su cargo.
 \item  Propender por el cumplimiento de los indicadores de gestión establecidos para el área.
-\item  Formular iniciativas tendientes a la optimizacion de los procesos y procedimientos de operación
- y mantenimiento de la red de servicios.
-\item  Coordinar los diferentes grupos de trabajo para efectuar las actividades programadas en
- el Sistema de Distribución Local de Energía.
-\item  Elaborar informes de las actividades desarrolladas con la oportunidad y periodicidad
- requeridas.
-\item  Realizar la supervisión, coordinación y control de las subestaciones, redes eléctricas
- y sus equipos asociados utilizando las herramientas y
-medios de comunicación disponibles. 9. Participar en la supervision, coordinación,
- programación y configuración de los equipos de comunicación
-y/o operación de subestaciones.
-\item  Coordinar oportunamente con el área de comercialización la prestación técnica del
- servicio de acuerdo con los respectivos contratos de compra
+\item  Formular iniciativas tendientes a la optimizacion de los procesos y procedimientos de operación y mantenimiento de la red de servicios.
+\item  Coordinar los diferentes grupos de trabajo para efectuar las actividades programadas en  el Sistema de Distribución Local de Energía.
+\item  Elaborar informes de las actividades desarrolladas con la oportunidad y periodicidad requeridas.
+\item  Realizar la supervisión, coordinación y control de las subestaciones, redes eléctricas y sus equipos asociados utilizando las herramientas y
+medios de comunicación disponibles. 9. Participar en la supervision, coordinación, programación y configuración de los equipos de comunicación y/o operación de subestaciones.
+\item  Coordinar oportunamente con el área de comercialización la prestación técnica del servicio de acuerdo con los respectivos contratos de compra
 y venta de energía.
-\item  Supervisar, revisar, verificar y controlar el uso de la infraestructura eléctrica por parte de los prestadores
- del servicio de Alumbrado Público y
-operadoras de televisión por cable y telecomunicaciones, incluyendo la expansión y cobertura
- del servicio,
-\item  Participar en la supervisión, coordinación y ajuste de las protecciones eléctricas instaladas
- en la conexión, la trensformación y el transporte del
+\item  Supervisar, revisar, verificar y controlar el uso de la infraestructura eléctrica por parte de los prestadores del servicio de Alumbrado Público y
+operadoras de televisión por cable y telecomunicaciones, incluyendo la expansión y cobertura del servicio,
+\item  Participar en la supervisión, coordinación y ajuste de las protecciones eléctricas instaladas en la conexión, la trensformación y el transporte del
 Sistema de Distribución Local.
-\item  Participar en la pianeacién, supervisión, coordinación, ejecución y control de las actividades
- propias de la medición de las fronteras comerciales
-de energía, tento a distancia como en el sitio.
-\item  Presentar informes y estadísticas  periódicas de comportamiento del Sistema de
- Distribución Local con base en mediciones y parámetros
-iestablec¡dos en las normas y la reglamentación vigente.
-\item  Mantener actualizado los manuales operativos del Sistema de Distribución
- Local,
-\item  Transportar o movilizar en el vehículo asignado personas y/o elementos cuando se
- requiera, para el desarrollo de actividades o
-]responsabilidades del área, de acuerdo con los permisos y/o autorizaciones otorgadas
- por la empresa, en cumplimiento de la normativa vigente.
-\item  Acatar las funciones contenidas en el Artículo 22 de la presente resolución.
-\item  Las demás funciones que le sean asignadas por autoridad competente, de acuerdo
- con el área de desempeño y la naturaleza del cargo.
-
+\item  Participar en la pianeacién, supervisión, coordinación, ejecución y control de las actividades propias de la medición de las fronteras comerciales de energía, tento a distancia como en el sitio.
+\item  Presentar informes y estadísticas  periódicas de comportamiento del Sistema de Distribución Local con base en mediciones y parámetros establecidos en las normas y la reglamentación vigente.
+\item  Mantener actualizado los manuales operativos del Sistema de Distribución Local.
 \end{itemize}
 
 \section{Conocimientos}
@@ -304,7 +329,7 @@ Las siguientes son referencias a la regulación con relación a la calidad del s
 \hline \rowcolor{white}\multicolumn{3}{|r|}{{\color{ForestGreen} \scriptsize \textit{\tablename\ \thetable{}\ ... Continua el la siguiente página}}} \\ \hline
 \endfoot
 \hline
-\rowcolor{orange}\multicolumn{3}{|r|}{{ {\scriptsize\textit  fin de tabla}}} \\\hline
+\rowcolor{titleblue}\multicolumn{3}{|r|}{{ {\color{white}\scriptsize\textit fin de tabla}}} \\\hline
   \endlastfoot
 
 
@@ -350,7 +375,7 @@ Los siguientes son la regulación con relación con relación al reporte de even
 \hline \rowcolor{white}\multicolumn{3}{|r|}{{\color{ForestGreen} \scriptsize \textit{\tablename\ \thetable{}\ ... Continua el la siguiente página}}} \\ \hline
 \endfoot
 \hline
-\rowcolor{orange}\multicolumn{3}{|r|}{{ {\scriptsize\textit  fin de tabla}}} \\\hline
+\rowcolor{titleblue}\multicolumn{3}{|r|}{{ {\color{white}\scriptsize\textit fin de tabla}}}\\\hline
   \endlastfoot
 
 
@@ -619,9 +644,9 @@ Son los encargados de la compra de energía eléctrica en el mercado mayorista y
 %La entidad encargada de realizar la planeación del \textbf{STN} es la \ac{UPME}.\\\\
 La planeación de la operación se basa en tres ejes de acuerdo a la ley 143 \cite{LEY143} en el articulo 33, que son \textbf{confiable}, \textbf{segura} y con \textbf{calidad del servicio}.\\
 
-\chapter{OPERACIÓN DEL STN Y STR}
+\chapter{OPERACIÓN DEL SIN}
 
-La operación comprende las siguientes componentes:
+La operación del \ac{SIN}, comprende las siguientes componentes y esta a cargo del \ac{CND}:
 
 \begin{enumerate}
 \item Planeamiento Operativo
@@ -644,6 +669,12 @@ como muestra la figura \ref{fig:planeamineto-operativo}\\\\
   \includegraphics[width=1\linewidth]{planeamineto-operativo}
 \end{figure}
 
+\subsection{PLANEAMIENTO ENERGÉTICO}
+
+Consiste en la planeación de la operación de los recurso energéticos,
+hidráulicas y térmicos para la producción de energía eléctrica
+\cite{CREG0251995}.
+
 \section{DESPACHO ECONÓMICO}
 Proceso mediante el cual se obtiene para un período de 24 horas, el programa horario de generación de los recursos del SIN despachados centralmente. Este despacho se efectúa con el criterio de minimizar el costo de atender la demanda.
 
@@ -653,26 +684,8 @@ En el numeral 1.3 del Código de Operación que hace parte del Código de Redes,
 
  Son todas las plantas de generación con capacidad efectiva mayor que 20 MW y todas aquellas menores o iguales a 20 MW que quieran participar en el Despacho Económico. 
 
-\section{CONTIGENCIAS}
 
-Cuando se presentan retardos en la entrada  en operación de líneas , transformadores u otros activos pertenecientes al \ac{STN} o \ac{STR},  de acuerdo al análisis eléctrico  realizado por el \ac{CND},  este ordenará la desconexión preventiva de la demanda de un \ac{OR} cuando se presentan los siguientes casos: \cite{CREG2242016} \\\\
-
-\begin{itemize}
-\item Se desconectará el 20\% de la carga cuando un evento no programado o contingencia sencilla  \footnote[1]{Cada uno de los eventos no programados que causan la no operatividad de una línea, un transformador o un banco de transformadores del STN o del STR.}  sobre un activo (linea , transformador u otro ) pueda 
-  \end{itemize}
-
-
-
-
-Cantidad de carga en MW que se desconectaría de las redes del SIN ante la ocurrencia de una contingencia resultante de la operación de los equipos de protección del sistema, actuación de esquemas suplementarios, apertura de elementos por superación de límites operativos de equipos declarados por los agentes o por las instrucciones operativas del CND derivadas de la ocurrencia de una contingencia. La desconexión correctiva de demanda es estimada por el CND, con base en la mejor información disponible para los análisis eléctricos.
-
-\section{PLANEAMIENTO ENERGÉTICO}
-
-Consiste en la planeación de la operación de los recurso energéticos,
-hidráulicas y térmicos para la producción de energía eléctrica
-\cite{CREG0251995}.
-
-\section{CONTROL DE TENSIÓN}
+\chapter{CONTROL DE TENSIÓN}
 
 En estado estacionario las tensiones en las barras de 115 kV,
   110 kV y 220 kV, 230 kV no deben ser inferiores al 90\% ni
@@ -701,7 +714,7 @@ Para reducir la tensión se procederá con los siguientes procesos:
   
 
 
-\section{CONTROL DE FRECUENCIA}
+\chapter{CONTROL DE FRECUENCIA}
 
 De acuerdo al la resolución CREG 061 de 1996 se establece el esquema de desconexión automática de carga debe cumplir los siguientes criterios \cite{CREG0611996}:\\\\
 
@@ -729,8 +742,6 @@ las figuras \ref{fig:edac}, \ref{fig:edac1} y \ref{fig:edac2}.
   \includegraphics[width=0.8\linewidth]{esquema_edac}
 \end{figure}
 
-
-
 \begin{figure}[H]
   \centering
   \caption{Representación gráfica del esquema EDAC}
@@ -746,23 +757,9 @@ las figuras \ref{fig:edac}, \ref{fig:edac1} y \ref{fig:edac2}.
 \end{figure}
 
 
-\section{REPORTE DE EVENTOS Y ENERGÍA NO SUMINISTRADA}
-Cuando ocurre un evento programado o no programado se causa una
-indisponibilidad total o parcial  sobre un activo \cite{CREG0942012}. Cuando esta
-insisponibilidad causa un apagón en parte de la red se debe reportar la
- \ac{ENS} \cite{CREG0152018}, cuyo diagrama se muestra en la figura \ref{fig:ens}.
+\
 
-\begin{figure}[H]
-  \centering
-  \caption{Metodología del calculo del pronostico de la energía no
-    suministrada}
-  \label{fig:ens}
-  \includegraphics[width=\linewidth]{calculo_ens.png}
-  \end{figure}
-La energía con la que se calcula la \ac{ENS} es la reportada por los
-distintos comercializadores del mercado de comercialización.
-
-\section{PRONOSTICO DE LA DEMANDA}
+\chapter{PRONOSTICO DE LA DEMANDA}
 
 Es un valor \textit{estimado} de la energía demandada en un mercado de
 comercialización y su desagregación por centro de consumo. Este
@@ -778,7 +775,7 @@ ecuación en un mercado de comencialización :\\\\
 
 
 
-\section{ESTABILIDAD}
+\chapter{ESTABILIDAD}
  En el análisis de estado estacionario se consideran solo
   contingencias sencillas en las líneas de transmisión y en los bancos
   de transformadores 230/115 kV o 220/110 kV.\\\\
@@ -798,6 +795,185 @@ ecuación en un mercado de comencialización :\\\\
   transferencias por el sistema de transmisión.\\\\
 
 
+  \chapter{EVENTOS}
+
+\section{REPORTE DE EVENTOS Y ENERGÍA NO SUMINISTRADA}
+
+Cuando ocurre un evento programado o no programado se causa una
+indisponibilidad total o parcial  sobre un activo \cite{CREG0942012}. Cuando esta
+insisponibilidad causa un apagón en parte de la red se debe reportar la
+ \ac{ENS} \cite{CREG0152018}, cuyo diagrama se muestra en la figura \ref{fig:ens}.
+
+\begin{figure}[H]
+  \centering
+  \caption{Metodología del calculo del pronostico de la energía no
+    suministrada}
+  \label{fig:ens}
+  \includegraphics[width=\linewidth]{calculo_ens.png}
+\end{figure}
+
+
+La energía con la que se calcula la \ac{ENS} es la reportada por los
+distintos comercializadores del mercado de comercialización.
+
+  \section{ANÁLISIS DE EVENTOS}
+
+El Acuerdo CNO 1617 actualiza el procedimiento para la elaboración de informes de análisis de eventos en el \ac{SIN}. El objetivo principal es identificar la causa raíz de los eventos no programados y determinar medidas para reducir o evitar su ocurrencia.\\\\
+
+\begin{center}
+\begin{tcolorbox}
+La Ley 143 de 1994, en sus Artículos 34 y 38, establece las responsabilidades del Centro Nacional de Despacho (CND) en la coordinación, supervisión, control y análisis de la operación de los recursos del SIN, así como la obligación de las empresas generadoras, distribuidoras y operadoras de redes de suministro de información oportuna y fiel al CND y los CRD's.
+\end{tcolorbox}
+\end{center}
+
+La \textbf{Resolución CREG 080 de 1999} define las responsabilidades del CND y los agentes del SIN en la realización de estudios sobre fallas y emergencias. La \textbf{Resolución CREG 083 de 1999} detalla la información obligatoria que los agentes deben adquirir y suministrar al CND, incluyendo registros cronológicos de eventos con alta resolución temporal y libre acceso a esta información. Las Resoluciones CREG 093 y 094 de 2012 requieren informes detallados para eventos no programados que superen un cierto umbral de PENS.\\\\
+
+El Acuerdo 1617 introduce actualizaciones basadas en las Resoluciones \textbf{CREG 015 de 2018}, \textbf{036 de 2019} y \textbf{101023 de 2022}, incluyendo la responsabilidad de reporte de información por parte de los Operadores de Red (OR), los plazos para reportar el valor de la Energía No Suministrada (ENS) al LAC, y la inclusión de eventos no programados en los Sistemas de Almacenamiento de Energía Eléctrica con Baterías (SAEB). Los Anexos 1 y 2 detallan el procedimiento y los formatos específicos para la elaboración de estos informes.
+
+\subsubsection{Responsables de los análisis y elaboración de informes}
+
+\begin{itemize}
+  
+\item CND: Eventos en Activos de Uso del STN, Activos de Conexión al STN, Interconexiones Internacionales de nivel IV o superior, y otros que ameriten análisis.
+    
+  \item Transportadores de energía eléctrica en el \ac{STN} y/o Servicio de Conexión al \ac{STN}: Eventos en sus activos del \ac{STN}, incluyendo Interconexiones Internacionales con tensión igual o superior a 220 kV y Activos de Conexión al \ac{STN}.
+  
+  \item Operadores de Red (OR's): Eventos en los activos bajo su supervisión.
+    
+  \item Generadores: Deben suministrar información de plantas de generación si el \ac{CND} la requiere para sus análisis.
+
+\end{itemize}
+
+
+
+\subsection{Eventos a los que aplica el procedimiento de análisis}
+
+\begin{itemize}
+\item\textit{ Eventos no programados} que requieran análisis según Resoluciones CREG 093/2012, 094/2012 (Capítulo 3) y 015/2018.
+\item Eventos en conexión internacional que originen \textit{separación de ambos sistemas eléctricos}.
+    
+\item Eventos que ocasionen la desconexión de \textit{2 o más} activos del STN (STN > N - 1).
+    
+\item Eventos en nivel de tensión IV o superior que generen la \textit{desconexión de todos los elementos} asociados a una barra o sección de barra.
+    
+\item Eventos que apliquen para análisis por \ac{SAEB}, cuando se cumplan los requerimientos regulatorios (\textbf{Resolución CREG 101023 de 2022}).
+    
+\item Eventos en el SIN que el CND considere que requieren análisis.
+    
+\item Eventos para los cuales los agentes soliciten análisis, previo acuerdo con el CND.
+
+\end{itemize}
+    
+\subsection{Información a reportar por parte de los agentes}
+
+ Identificación del activo, fecha y hora del evento, \ac{SOE} en formato editable, registros de falla originales (COMTRADE), ajustes de protecciones involucradas (si no están actualizados en la base de datos del CND), y cualquier información adicional pertinente.\\\\
+Un informe detallado y completo del evento, siguiendo la estructura establecida en el Anexo 1.
+
+\subsection{Estructura de los informes}
+
+    Informe de Agentes: Resumen general, antecedentes (cuando aplique), análisis, causa (incluyendo activo causante y causas de desconexiones adicionales), operación de sistemas de protección, conclusiones (descripción del evento, operación de protecciones, DNA, ausencia de tensión, actuación EDAC/ESP/ESPS, otros hallazgos), acciones (ejecutadas y por ejecutar), recomendaciones, anexos.\\\\
+    Informe del CND: Integra la información de los agentes, e incluye además: excursión de frecuencia en el resumen, recurrencia de inconvenientes en antecedentes, variación de frecuencia y cumplimiento de reglamentación en conclusiones, acciones y recomendaciones adicionales, referencias, y anexos opcionales (topología, secuencia del evento, condiciones operativas, otra información).\\\\
+    Informes de Casos Especiales (Anexo 2): Aplicable a eventos específicos (retraso en consignación, disparo de generador, omisión de cierre, apertura manual no programada, SAEB, evento N-1 con PENS > 2\%). Tienen una estructura simplificada y no requieren revisión de agentes a menos que el CND identifique modificaciones necesarias.
+
+\subsection{Plazos definidos para cada etapa del proceso (días hábiles a partir del día cero)}
+
+Los plazos para la presentación del informe pueden agilizarse o prolongarse de acuerdo al los acuerdos con los agentes.
+
+\begin{figure}[H]
+  \caption{Plazo acuerdo CNO 1617 de 2022}
+  \label{fig:plazo1617}
+  \includegraphics[width=\linewidth]{plazo16172022}
+ \end{figure}
+
+Suministro de SOE en el mínimo tiempo posible, RDF en 48-72 horas.\\\\
+Reuniones para redefinir plazos, acuerdo con el CND para plazos adicionales de suministro de información con justificación escrita. El CND informará al CNO sobre estas prolongaciones.
+
+\subsection{Seguimiento de Acciones}
+
+    Responsabilidad de los agentes informar al CND la fecha de ejecución de acciones, número de consignación nacional y soportes técnicos.\\\\
+    El CND mantendrá disponible el estado de las acciones, enviará trimestralmente un seguimiento al subcomité de protecciones y lo presentará en comités del CNO.\\\\
+    Las acciones solo se podrán reprogramar con un plan de acción, fechas específicas y justificación.
+
+\section{Preguntas de Quiz (10 preguntas de respuesta corta)}
+
+\begin{enumerate}
+\item ¿Cuál es la fecha de expedición y de entrada en vigencia del Acuerdo CNO 1617, y a qué acuerdo sustituye?
+\item Según el Artículo 34 de la Ley 143 de 1994, ¿cuál es una función clave del CND?
+\item ¿Qué tipo de información específica es obligatoria para los agentes del SIN según la Resolución CREG 083 de 1999 para el análisis de eventos?
+\item ¿Qué umbral de PENS hace necesario un informe final detallado según las resoluciones CREG 093 y 094 de 2012, y quién es el responsable de publicarlo?
+\item ¿Quiénes son los responsables de la recolección y el reporte de la información de eventos y de la calidad del servicio según la Resolución CREG 036 de 2019?
+\item ¿Cuál es el objetivo principal del procedimiento establecido en el Anexo 1 del Acuerdo 1617?
+    Mencione tres tipos de eventos a los que aplica el procedimiento de análisis de eventos del Acuerdo CNO 1617.
+  \item Además de la identificación del activo y la fecha/hora, ¿qué otros dos tipos de información técnica mínima deben suministrar los agentes al CND para el análisis consolidado de eventos?
+  \item ¿Cuál es la diferencia en el "día cero" para eventos relacionados con ENS/PENS y para otros eventos no programados según los plazos definidos?
+  \item ¿Qué deben hacer los agentes si identifican que la información inicialmente reportada sobre el activo causante de un evento difiere del análisis detallado?
+  \end{enumerate}
+  
+  \subsection{Clave de Respuestas del Quiz}
+
+  \begin{itemize}
+
+  \item El Acuerdo CNO 1617 fue expedido el 06 de Octubre de 2022 y entró en vigencia el 06 de Noviembre de 2022. Sustituye al Acuerdo 03/09/2015, Acuerdo 787.
+  \item Según el literal b. del Artículo 34 de la Ley 143 de 1994, es función del CND "ejercer la coordinación, supervisión, control y análisis de la operación de los recursos de generación, interconexión y transmisión incluyendo las interconexiones internacionales".
+  \item La Resolución CREG 083 de 1999 establece como obligatoria la remisión de: a) Registro sobre la secuencia cronológica de eventos (SOE) y b) Por cada evento, fecha y hora con resolución de un (1) ms, identificación del elemento que cambió de estado y el estado final del dispositivo.
+  \item Un informe final detallado es necesario cuando el PENS supere el 2\%. El CND es el responsable de elaborar y publicar este informe sobre ENS.
+  \item Los Operadores de Red (OR) son los responsables de la recolección y el reporte de la información de eventos y la requerida para la aplicación de las disposiciones de calidad del servicio. En todo caso, el responsable de la calidad y oportunidad de la información es el agente a quien se le remuneran los activos.
+  \item El objetivo principal es establecer un procedimiento para la elaboración de los informes de análisis de eventos en el Sistema Interconectado Nacional (SIN) por parte del CND y los agentes del SIN.
+  \item Tres tipos de eventos a los que aplica son: a) Eventos no programados que requieran análisis según Resoluciones CREG 093/2012, 094/2012 (Capítulo 3) y 015/2018; b) Eventos en conexión internacional que originen separación de ambos sistemas eléctricos; c) Eventos que ocasionen la desconexión de 2 o más activos del STN (STN > N - 1); d) Eventos en nivel de tensión IV o superior, que generen la desconexión de todos los elementos asociados a una barra o sección de barra; e) Eventos que apliquen para análisis por SAEB. (Cualquiera de estas tres son válidas).
+  \item Los agentes deben suministrar el SOE (Sequence Of Events) en formato editable y los registros de falla originales (sin editar), en formato COMTRADE o estándar sustituto.
+    Para eventos que deban ser analizados según ENS/PENS (numeral 'a'), el día cero (0) es la fecha en la cual el CND publica el cálculo de Energía No Suministrada (ENS). Para los demás criterios (numerales 'c', 'd', 'f', 'g'), el día cero es el día de ocurrencia del evento.
+  \item Si el activo que dio origen al evento difiere de la información inicialmente reportada, los agentes son responsables de solicitar al CND las modificaciones de la información correspondiente en dicho reporte de eventos, en caso de que aplique.
+    \end{itemize}
+
+\subsection{Preguntas de Formato Ensayo}
+\begin{itemize}
+\item Compare y contraste las responsabilidades del CND y de los Agentes del SIN en la elaboración y suministro de información para los informes de análisis de eventos, detallando cómo se complementan sus roles según el Acuerdo 1617.
+   
+\item  Analice la importancia de los plazos establecidos en el Acuerdo 1617 para la eficiencia y la efectividad del proceso de análisis de eventos. Discuta las "Consideraciones para agilizar los plazos" y "Consideraciones para prolongar los plazos", y cómo estas buscan equilibrar la celeridad con la profundidad del análisis.
+    
+\item Describa la evolución de la regulación del sector eléctrico que ha llevado a la expedición del Acuerdo 1617, haciendo referencia a al menos cuatro resoluciones CREG mencionadas y explicando cómo cada una contribuye al marco regulatorio actual del análisis de eventos.
+\item Explique en detalle la estructura requerida para un informe de análisis de eventos elaborado por los agentes del SIN, tal como se describe en el numeral 3.2 del Anexo 1. Incluya los componentes obligatorios y su propósito en la identificación de la causa raíz y las acciones correctivas.
+\item Discuta el rol de los "Casos Especiales" en el procedimiento de análisis de eventos, tal como se definen en el numeral 3.4 y el Anexo 2. Explique por qué ciertos eventos se clasifican como especiales y cómo su tratamiento difiere del procedimiento estándar para eventos más complejos.
+\end{itemize}
+\subsection{Glosario de Términos Clave}
+
+\texttt{\begin{itemize}
+  \item Acuerdo CNO 1617: Documento que actualiza el procedimiento para la elaboración de informes de análisis de eventos en el Sistema Interconectado Nacional (SIN).
+  \item Activo: Se refiere a cualquier elemento o componente del Sistema Interconectado Nacional, según las definiciones de las Resoluciones CREG 011 de 2009 y CREG 015 de 2018.
+  \item Agente Generador: Empresa encargada de la producción de energía eléctrica dentro del SIN.
+  \item Agentes del SIN: Las empresas generadoras de electricidad, las distribuidoras y las que operan redes de interconexión y transmisión dentro del Sistema Interconectado Nacional.
+  \item CND (Centro Nacional de Despacho): Entidad central en el SIN responsable de la coordinación, supervisión, control y análisis de la operación del sistema, incluyendo la gestión de información de eventos.
+  \item CNO (Consejo Nacional de Operación): Órgano que aprueba acuerdos y procedimientos relacionados con la operación del SIN.
+  \item COMTRADE: Estándar para el intercambio de datos de registros de falla, utilizado para los registros oscilográficos en el análisis de eventos.
+  \item Consignación Nacional: Proceso formal de autorización para retirar activos del SIN de operación por mantenimiento u otras razones programadas.
+  \item CRD’s (Centros Regionales de Despacho): Entidades regionales que apoyan al CND en la coordinación y operación del SIN.
+  \item CREG (Comisión de Regulación de Energía y Gas): Organismo regulador que emite resoluciones y normativas para el sector eléctrico en Colombia.
+  \item Demanda No Atendida (DNA): Cantidad de energía que la demanda requirió pero no pudo ser suministrada debido a una interrupción o limitación del sistema.
+  \item Día Cero (0): El punto de inicio para el conteo de plazos en el procedimiento de análisis de eventos, cuya definición varía según la clasificación del evento.
+  \item Disturbio: Evento no planeado que produce una condición anormal en el SIN, como una perturbación o un cambio inesperado en el Error de Control de Área (ACE).
+  \item EDAC (Esquema de Desconexión Automática de Carga): Mecanismo de control automático que desconecta bloques de carga para preservar la estabilidad del SIN ante perturbaciones significativas.
+  \item ENS (Energía No Suministrada): Energía que no pudo ser entregada a los usuarios finales debido a interrupciones o fallas en el sistema, medida en unidades de energía (e.g., MWh).
+  \item Evento: Condición anormal o perturbación en el SIN que requiere análisis, según las Resoluciones CREG 093 de 2012 y CREG 015 de 2018.
+  \item ESP/ESPS (Esquemas de Protección / Esquemas de Protección Especiales): Conjuntos de protecciones diseñados para operar ante condiciones específicas del sistema, más allá de la protección básica de los equipos.
+  \item Falla: Un evento en el SIN que implica un cortocircuito, una interrupción o una condición de operación anormal de un activo.
+  \item Interconexiones Internacionales: Conexiones eléctricas que permiten el intercambio de energía entre el SIN de Colombia y sistemas eléctricos de países vecinos.
+  \item Interruptor: Dispositivo de conmutación capaz de interrumpir y establecer corrientes en condiciones normales y anormales del circuito.
+  \item LAC (Liquidación y Administración de Cuentas): Se refiere al proceso o entidad encargada de la compensación por energía no suministrada o por otros aspectos económicos del mercado eléctrico.
+  \item Ley 143 de 1994: Ley Marco Eléctrica de Colombia que establece los principios generales y las regulaciones del sector energético.
+  \item Operador de Red (OR): Empresas encargadas de la operación y el mantenimiento de las redes de transmisión regional (STR) y distribución local (SDL).
+  \item PENS (Potencia Equivalente No Suministrada): Una medida de la potencia no entregada a los usuarios, utilizada para clasificar la severidad de los eventos y determinar la necesidad de informes detallados.
+  \item Protecciones: Conjunto de dispositivos y sistemas diseñados para detectar fallas o condiciones anormales en el sistema eléctrico y operar equipos (como interruptores) para aislar la falla y proteger la integridad del sistema y los activos.
+  \item Registros Oscilográficos: Grabaciones de alta velocidad de las magnitudes eléctricas (corrientes, tensiones) durante un evento, cruciales para el análisis de fallas.
+  \item SAEB (Sistemas de Almacenamiento de Energía Eléctrica con Baterías): Tecnologías de almacenamiento de energía que utilizan baterías para gestionar el suministro y la demanda en el SIN.
+  \item Seccionador: Dispositivo de conmutación utilizado para aislar eléctricamente una parte del circuito para mantenimiento o seguridad, no diseñado para interrumpir corrientes de falla.
+  \item SEP (Sistema Eléctrico de Potencia): Conjunto de elementos interconectados (generación, transmisión, distribución y consumo) que conforman el sistema eléctrico.
+  \item SIN (Sistema Interconectado Nacional): La red eléctrica principal de Colombia que conecta las diferentes regiones y fuentes de generación con los centros de consumo.
+  \item SOE (Sequence Of Events): Un registro cronológico y detallado de la operación de equipos y protecciones durante un evento, crucial para reconstruir la secuencia de los hechos.
+  \item SSPD (Superintendencia de Servicios Públicos Domiciliarios): Organismo que supervisa y controla la prestación de los servicios públicos, incluyendo la energía eléctrica.
+  \item STN (Sistema de Transmisión Nacional): La parte de la red de transmisión de energía eléctrica que opera a las tensiones más altas (iguales o superiores a 220 kV), gestionada por los transportadores.
+  \item STR (Sistema de Transmisión Regional): La parte de la red de transmisión de energía eléctrica que opera a tensiones intermedias (menores de 220 kV y no parte del SDL), gestionada por los Operadores de Red (OR).
+  \item Subcomité de Protecciones: Un comité técnico dentro del CNO que se encarga de analizar y dar concepto favorable a las actualizaciones relacionadas con los sistemas de protección.
+\end{itemize}}
   \section{DEMANDA NO ATENDIDA}
 
   Es un valor \textit{estimado} de la energía no entregada a la carga
@@ -826,10 +1002,8 @@ ecuación en un mercado de comencialización :\\\\
   aplicativo HEROPE. Es resposabilidad del OR reportar esta
   información\\\\
   
-\chapter{OPERACIÓN DEL SDL}
-
-\section{CARGABILIDAD}
-\subsection{CARGABILIDAD DE CIRCUITOS}
+\chapter{CARGABILIDAD}
+\section{CARGABILIDAD DE CIRCUITOS}
  La \textit{máxima transferencia por las líneas} se considera
   como el mínimo valor entre el límite térmico de los conductores,
   máxima capacidad de los transformadores de corriente, el límite de
@@ -864,7 +1038,7 @@ muestra la capacidad de los conductores empleados en EMCALI.
 \end{figure}
 
 
-\subsection{CARGABILIDAD DE LOS TRANSFORMADORES}
+\section{CARGABILIDAD DE LOS TRANSFORMADORES}
 
 Para los transformadores de potencia, en ningún caso se debe superar
 el 100\% de la capacidad nominal de cada uno. La capacidad real
@@ -872,7 +1046,7 @@ operativa de cada transformador estará determinada por las condiciones
 de funcionamiento de los sistemas de refrigeración \cite{MANOPEMCALI}.
 
 
-\subsection{CONTINGENCIAS}
+\chapter{CONTINGENCIAS}
 
 Una contingencia se refiere a una situación de emergencia donde se puede llegar a perder parte del sistema de potencia. El sistema de distribución debe estar en capacidad de seguir suministrando carga en caso de una de las siguientes contingencias \cite{EMCALI2007}:
 
@@ -906,167 +1080,23 @@ subestaciones
 
 \subsubsection{Pérdida del Tramo Subterráneo}
 
+\section{DESCONEXIONES PREVENTIVAS}
 
-\section{ANÁLISIS DE EVENTOS}
-
-I. Resumen del Acuerdo CNO 1617 y sus Anexos
-
-El Acuerdo CNO 1617, emitido el 6 de octubre de 2022 y con entrada en vigencia el 6 de noviembre de 2022, actualiza el procedimiento para la elaboración de informes de análisis de eventos en el Sistema Interconectado Nacional (SIN). Este acuerdo reemplaza al Acuerdo 787 de 2015. El objetivo principal es identificar la causa raíz de los eventos no programados y determinar medidas para reducir o evitar su ocurrencia.
-
-La Ley 143 de 1994, en sus Artículos 34 y 38, establece las responsabilidades del Centro Nacional de Despacho (CND) en la coordinación, supervisión, control y análisis de la operación de los recursos del SIN, así como la obligación de las empresas generadoras, distribuidoras y operadoras de redes de suministro de información oportuna y fiel al CND y los CRD's.
-
-La Resolución CREG 080 de 1999 define las responsabilidades del CND y los agentes del SIN en la realización de estudios sobre fallas y emergencias. La Resolución CREG 083 de 1999 detalla la información obligatoria que los agentes deben adquirir y suministrar al CND, incluyendo registros cronológicos de eventos con alta resolución temporal y libre acceso a esta información. Las Resoluciones CREG 093 y 094 de 2012 requieren informes detallados para eventos no programados que superen un cierto umbral de PENS.
-
-El Acuerdo 1617 introduce actualizaciones basadas en las Resoluciones CREG 015 de 2018, 036 de 2019 y 101023 de 2022, incluyendo la responsabilidad de reporte de información por parte de los Operadores de Red (OR), los plazos para reportar el valor de la Energía No Suministrada (ENS) al LAC, y la inclusión de eventos no programados en los Sistemas de Almacenamiento de Energía Eléctrica con Baterías (SAEB). Los Anexos 1 y 2 detallan el procedimiento y los formatos específicos para la elaboración de estos informes.
-
-
-
-\subsection{Eventos a los que aplica el procedimiento de análisis}
+Cuando se presentan retardos en la entrada  en operación de líneas , transformadores u otros activos pertenecientes al \ac{STN} o \ac{STR},  de acuerdo al análisis eléctrico  realizado por el \ac{CND},  este ordenará la desconexión preventiva de la demanda de un \ac{OR} cuando se presentan los siguientes casos: \cite{CREG2242016} \\\\
 
 \begin{itemize}
-\item Eventos no programados que requieran análisis según Resoluciones CREG 093/2012, 094/2012 (Capítulo 3) y 015/2018.
-\item Eventos en conexión internacional que originen separación de ambos sistemas eléctricos.
-    
-\item Eventos que ocasionen la desconexión de 2 o más activos del STN (STN > N - 1).
-    
-\item Eventos en nivel de tensión IV o superior que generen la desconexión de todos los elementos asociados a una barra o sección de barra.
-    
-\item Eventos que apliquen para análisis por SAEB, cuando se cumplan los requerimientos regulatorios (Resolución CREG 101023 de 2022).
-    
-\item Eventos en el SIN que el CND considere que requieren análisis.
-    
-\item Eventos para los cuales los agentes soliciten análisis, previo acuerdo con el CND.
+\item Se desconectará el 20\% de la carga cuando un evento no programado o contingencia sencilla  \footnote[1]{Cada uno de los eventos no programados que causan la no operatividad de una línea, un transformador o un banco de transformadores del STN o del STR.}  sobre un activo (linea , transformador u otro ) pueda 
+  \end{itemize}
 
-  
-\end{itemize}
-    
-\subsection{Información a reportar por parte de los agentes}
+Cantidad de carga en MW que se desconectaría de las redes del SIN ante la ocurrencia de una contingencia resultante de la operación de los equipos de protección del sistema, actuación de esquemas suplementarios, apertura de elementos por superación de límites operativos de equipos declarados por los agentes o por las instrucciones operativas del CND derivadas de la ocurrencia de una contingencia. La desconexión correctiva de demanda es estimada por el CND, con base en la mejor información disponible para los análisis eléctricos.
 
-    Información técnica: Identificación del activo, fecha y hora del evento, SOE en formato editable, registros de falla originales (COMTRADE), ajustes de protecciones involucradas (si no están actualizados en la base de datos del CND), y cualquier información adicional pertinente.
-    Informe del Evento: Un informe detallado y completo del evento, siguiendo la estructura establecida en el Anexo 1.
 
-\subsection{Estructura de los informes}
 
-Informe de Agentes: Resumen general, antecedentes (cuando aplique), análisis, causa (incluyendo activo causante y causas de desconexiones adicionales), operación de sistemas de protección, conclusiones (descripción del evento, operación de protecciones, DNA, ausencia de tensión, actuación EDAC/ESP/ESPS, otros hallazgos), acciones (ejecutadas y por ejecutar), recomendaciones, anexos.\\\\
 
-Informe del CND: Integra la información de los agentes, e incluye además: excursión de frecuencia en el resumen, recurrencia de inconvenientes en antecedentes, variación de frecuencia y cumplimiento de reglamentación en conclusiones, acciones y recomendaciones adicionales, referencias, y anexos opcionales (topología, secuencia del evento, condiciones operativas, otra información).\\\\
-
-    Informes de Casos Especiales (Anexo 2): Aplicable a eventos específicos (retraso en consignación, disparo de generador, omisión de cierre, apertura manual no programada, SAEB, evento N-1 con PENS > 2\%). Tienen una estructura simplificada y no requieren revisión de agentes a menos que el CND identifique modificaciones necesarias.
-
-\subsection{Plazos definidos para cada etapa del proceso (días hábiles a partir del día cero)}
-
-    Día cero (0):Para eventos relacionados con ENS/PENS: Fecha de publicación del cálculo de ENS por el CND.
-    Para eventos SAEB: Fecha en que el CND lo informe.
-    Para otros eventos: Día de ocurrencia del evento.
-    Para eventos solicitados por CND/agentes: Fecha de solicitud de información por parte del CND.
-    (2a) Suministro del SOE: A más tardar al tercer día hábil. Inmediato si tecnológicamente posible.
-    (2b) Suministro de otra información técnica (RDF): Cinco (5) días hábiles.
-    (3) Suministro del Informe del evento por parte de los agentes: Diez (10) días hábiles.
-    (4) Entrega del informe del evento por parte del CND para revisión: Diecisiete (17) días hábiles.
-    (5) Comentarios al informe por parte de los agentes: Veintiún (21) días hábiles.
-    (6) Consolidación del informe del evento por parte del CND: Veinticuatro (24) días hábiles.
-    (7) Publicación del informe del evento: Veinticinco (25) días hábiles.
-
-\subsection{Consideraciones para agilizar/prolongar plazos}
-
-    Eventos de interés sectorial: Acelerar todas las etapas, suministro de SOE en el mínimo tiempo posible, RDF en 48-72 horas.
-    Prolongación de plazos: Reuniones para redefinir plazos, acuerdo con el CND para plazos adicionales de suministro de información con justificación escrita. El CND informará al CNO sobre estas prolongaciones.
-
-\subsection{Seguimiento de Acciones}
-
-    Responsabilidad de los agentes informar al CND la fecha de ejecución de acciones, número de consignación nacional y soportes técnicos.
-    El CND mantendrá disponible el estado de las acciones, enviará trimestralmente un seguimiento al subcomité de protecciones y lo presentará en comités del CNO.
-    Las acciones solo se podrán reprogramar con un plan de acción, fechas específicas y justificación.
-
-    \subsection{Preguntas de Quiz (10 preguntas de respuesta corta con relación a eventos)}
-
-    \begin{enumerate}
-  \item 
-
-    ¿Cuál es la fecha de expedición y de entrada en vigencia del Acuerdo CNO 1617, y a qué acuerdo sustituye?
-  \item 
-    Según el Artículo 34 de la Ley 143 de 1994, ¿cuál es una función clave del CND
-  \item 
-    ¿Qué tipo de información específica es obligatoria para los agentes del SIN según la Resolución CREG 083 de 1999 para el análisis de eventos?
-  \item 
-    ¿Qué umbral de PENS hace necesario un informe final detallado según las resoluciones CREG 093 y 094 de 2012, y quién es el responsable de publicarlo?
-  \item 
-¿Quiénes son los responsables de la recolección y el reporte de la información de eventos y de la calidad del servicio según la Resolución CREG 036 de 2019?
-  \item 
-    ¿Cuál es el objetivo principal del procedimiento establecido en el Anexo 1 del Acuerdo 1617?
-  \item 
-    Mencione tres tipos de eventos a los que aplica el procedimiento de análisis de eventos del Acuerdo CNO 1617.
-    Además de la identificación del activo y la fecha/hora, ¿qué otros dos tipos de información técnica mínima deben suministrar los agentes al CND para el análisis consolidado de eventos?
-  \item 
-    ¿Cuál es la diferencia en el "día cero" para eventos relacionados con ENS/PENS y para otros eventos no programados según los plazos definidos?
-  \item 
-    ¿Qué deben hacer los agentes si identifican que la información inicialmente reportada sobre el activo causante de un evento difiere del análisis detallado?
-  \end{enumerate}
-
-\subsection{Clave de Respuestas del Quiz}
-
-    El Acuerdo CNO 1617 fue expedido el 06 de Octubre de 2022 y entró en vigencia el 06 de Noviembre de 2022. Sustituye al Acuerdo 03/09/2015, Acuerdo 787.
-    Según el literal b. del Artículo 34 de la Ley 143 de 1994, es función del CND "ejercer la coordinación, supervisión, control y análisis de la operación de los recursos de generación, interconexión y transmisión incluyendo las interconexiones internacionales".
-    La Resolución CREG 083 de 1999 establece como obligatoria la remisión de: a) Registro sobre la secuencia cronológica de eventos (SOE) y b) Por cada evento, fecha y hora con resolución de un (1) ms, identificación del elemento que cambió de estado y el estado final del dispositivo.
-    Un informe final detallado es necesario cuando el PENS supere el 2%. El CND es el responsable de elaborar y publicar este informe sobre ENS.
-    Los Operadores de Red (OR) son los responsables de la recolección y el reporte de la información de eventos y la requerida para la aplicación de las disposiciones de calidad del servicio. En todo caso, el responsable de la calidad y oportunidad de la información es el agente a quien se le remuneran los activos.
-    El objetivo principal es establecer un procedimiento para la elaboración de los informes de análisis de eventos en el Sistema Interconectado Nacional (SIN) por parte del CND y los agentes del SIN.
-    Tres tipos de eventos a los que aplica son: a) Eventos no programados que requieran análisis según Resoluciones CREG 093/2012, 094/2012 (Capítulo 3) y 015/2018; b) Eventos en conexión internacional que originen separación de ambos sistemas eléctricos; c) Eventos que ocasionen la desconexión de 2 o más activos del STN (STN > N - 1); d) Eventos en nivel de tensión IV o superior, que generen la desconexión de todos los elementos asociados a una barra o sección de barra; e) Eventos que apliquen para análisis por SAEB. (Cualquiera de estas tres son válidas).
-    Los agentes deben suministrar el SOE (Sequence Of Events) en formato editable y los registros de falla originales (sin editar), en formato COMTRADE o estándar sustituto.
-    Para eventos que deban ser analizados según ENS/PENS (numeral 'a'), el día cero (0) es la fecha en la cual el CND publica el cálculo de Energía No Suministrada (ENS). Para los demás criterios (numerales 'c', 'd', 'f', 'g'), el día cero es el día de ocurrencia del evento.
-    Si el activo que dio origen al evento difiere de la información inicialmente reportada, los agentes son responsables de solicitar al CND las modificaciones de la información correspondiente en dicho reporte de eventos, en caso de que aplique.
-
-\subsection{Preguntas de Formato Ensayo}
-
-    Compare y contraste las responsabilidades del CND y de los Agentes del SIN en la elaboración y suministro de información para los informes de análisis de eventos, detallando cómo se complementan sus roles según el Acuerdo 1617.
-    Analice la importancia de los plazos establecidos en el Acuerdo 1617 para la eficiencia y la efectividad del proceso de análisis de eventos. Discuta las "Consideraciones para agilizar los plazos" y "Consideraciones para prolongar los plazos", y cómo estas buscan equilibrar la celeridad con la profundidad del análisis.
-    Describa la evolución de la regulación del sector eléctrico que ha llevado a la expedición del Acuerdo 1617, haciendo referencia a al menos cuatro resoluciones CREG mencionadas y explicando cómo cada una contribuye al marco regulatorio actual del análisis de eventos.
-    Explique en detalle la estructura requerida para un informe de análisis de eventos elaborado por los agentes del SIN, tal como se describe en el numeral 3.2 del Anexo 1. Incluya los componentes obligatorios y su propósito en la identificación de la causa raíz y las acciones correctivas.
-    Discuta el rol de los "Casos Especiales" en el procedimiento de análisis de eventos, tal como se definen en el numeral 3.4 y el Anexo 2. Explique por qué ciertos eventos se clasifican como especiales y cómo su tratamiento difiere del procedimiento estándar para eventos más complejos.
-
-\subsection{Glosario de Términos Clave}
-
-    Acuerdo CNO 1617: Documento que actualiza el procedimiento para la elaboración de informes de análisis de eventos en el Sistema Interconectado Nacional (SIN).
-    Activo: Se refiere a cualquier elemento o componente del Sistema Interconectado Nacional, según las definiciones de las Resoluciones CREG 011 de 2009 y CREG 015 de 2018.
-    Agente Generador: Empresa encargada de la producción de energía eléctrica dentro del SIN.
-    Agentes del SIN: Las empresas generadoras de electricidad, las distribuidoras y las que operan redes de interconexión y transmisión dentro del Sistema Interconectado Nacional.
-    CND (Centro Nacional de Despacho): Entidad central en el SIN responsable de la coordinación, supervisión, control y análisis de la operación del sistema, incluyendo la gestión de información de eventos.
-    CNO (Consejo Nacional de Operación): Órgano que aprueba acuerdos y procedimientos relacionados con la operación del SIN.
-    COMTRADE: Estándar para el intercambio de datos de registros de falla, utilizado para los registros oscilográficos en el análisis de eventos.
-    Consignación Nacional: Proceso formal de autorización para retirar activos del SIN de operación por mantenimiento u otras razones programadas.
-    CRD’s (Centros Regionales de Despacho): Entidades regionales que apoyan al CND en la coordinación y operación del SIN.
-    CREG (Comisión de Regulación de Energía y Gas): Organismo regulador que emite resoluciones y normativas para el sector eléctrico en Colombia.
-    Demanda No Atendida (DNA): Cantidad de energía que la demanda requirió pero no pudo ser suministrada debido a una interrupción o limitación del sistema.
-    Día Cero (0): El punto de inicio para el conteo de plazos en el procedimiento de análisis de eventos, cuya definición varía según la clasificación del evento.
-    Disturbio: Evento no planeado que produce una condición anormal en el SIN, como una perturbación o un cambio inesperado en el Error de Control de Área (ACE).
-    EDAC (Esquema de Desconexión Automática de Carga): Mecanismo de control automático que desconecta bloques de carga para preservar la estabilidad del SIN ante perturbaciones significativas.
-    ENS (Energía No Suministrada): Energía que no pudo ser entregada a los usuarios finales debido a interrupciones o fallas en el sistema, medida en unidades de energía (e.g., MWh).
-    Evento: Condición anormal o perturbación en el SIN que requiere análisis, según las Resoluciones CREG 093 de 2012 y CREG 015 de 2018.
-    ESP/ESPS (Esquemas de Protección / Esquemas de Protección Especiales): Conjuntos de protecciones diseñados para operar ante condiciones específicas del sistema, más allá de la protección básica de los equipos.
-    Falla: Un evento en el SIN que implica un cortocircuito, una interrupción o una condición de operación anormal de un activo.
-    Interconexiones Internacionales: Conexiones eléctricas que permiten el intercambio de energía entre el SIN de Colombia y sistemas eléctricos de países vecinos.
-    Interruptor: Dispositivo de conmutación capaz de interrumpir y establecer corrientes en condiciones normales y anormales del circuito.
-    LAC (Liquidación y Administración de Cuentas): Se refiere al proceso o entidad encargada de la compensación por energía no suministrada o por otros aspectos económicos del mercado eléctrico.
-    Ley 143 de 1994: Ley Marco Eléctrica de Colombia que establece los principios generales y las regulaciones del sector energético.
-    Operador de Red (OR): Empresas encargadas de la operación y el mantenimiento de las redes de transmisión regional (STR) y distribución local (SDL).
-    PENS (Potencia Equivalente No Suministrada): Una medida de la potencia no entregada a los usuarios, utilizada para clasificar la severidad de los eventos y determinar la necesidad de informes detallados.
-    Protecciones: Conjunto de dispositivos y sistemas diseñados para detectar fallas o condiciones anormales en el sistema eléctrico y operar equipos (como interruptores) para aislar la falla y proteger la integridad del sistema y los activos.
-    Registros Oscilográficos: Grabaciones de alta velocidad de las magnitudes eléctricas (corrientes, tensiones) durante un evento, cruciales para el análisis de fallas.
-    SAEB (Sistemas de Almacenamiento de Energía Eléctrica con Baterías): Tecnologías de almacenamiento de energía que utilizan baterías para gestionar el suministro y la demanda en el SIN.
-    Seccionador: Dispositivo de conmutación utilizado para aislar eléctricamente una parte del circuito para mantenimiento o seguridad, no diseñado para interrumpir corrientes de falla.
-    SEP (Sistema Eléctrico de Potencia): Conjunto de elementos interconectados (generación, transmisión, distribución y consumo) que conforman el sistema eléctrico.
-    SIN (Sistema Interconectado Nacional): La red eléctrica principal de Colombia que conecta las diferentes regiones y fuentes de generación con los centros de consumo.
-    SOE (Sequence Of Events): Un registro cronológico y detallado de la operación de equipos y protecciones durante un evento, crucial para reconstruir la secuencia de los hechos.
-    SSPD (Superintendencia de Servicios Públicos Domiciliarios): Organismo que supervisa y controla la prestación de los servicios públicos, incluyendo la energía eléctrica.
-    STN (Sistema de Transmisión Nacional): La parte de la red de transmisión de energía eléctrica que opera a las tensiones más altas (iguales o superiores a 220 kV), gestionada por los transportadores.
-    STR (Sistema de Transmisión Regional): La parte de la red de transmisión de energía eléctrica que opera a tensiones intermedias (menores de 220 kV y no parte del SDL), gestionada por los Operadores de Red (OR).
-    Subcomité de Protecciones: Un comité técnico dentro del CNO que se encarga de analizar y dar concepto favorable a las actualizaciones relacionadas con los sistemas de protección.
-
-    
 
 \chapter{CALIDAD DEL SERVICIO}
 
-La calidad del servicio esta afectada por los eventos que ocurren en
+La calidad del servicio  es una variable que representa las características técnicas del servicio que el usuario persive. Esta afectada por los eventos que ocurren en
 el \ac{SIN}, los cuales pueden o no dejar demanda no atendida.
 
 \begin{figure}[H]
@@ -1076,7 +1106,18 @@ el \ac{SIN}, los cuales pueden o no dejar demanda no atendida.
   \includegraphics[width=0.6\linewidth]{evento_gran_magnitud}
 \end{figure}
 
+Es preciso indicar que las compensaciones por calidad se sustentan en fundamentos regulatorios
+de acuerdo con el sistema o nivel de tensión, como se muestra en la
+
+\begin{tabular}{llp{0.25\linewidth}p{0.25\linewidth}}
+  \hline
+Resolución CREG& Sistema & Nivel de tensión & Aplicación \\\hline
+  097 de 2008 & STR & & Actual  \\\hline
+  \end{tabular}
+
 \section{CALIDAD DEL SERVICIO EN EL STR}
+
+
 
 
 
@@ -2007,7 +2048,7 @@ La Mejorabilidad en su extensión más amplia incluye las siguientes variables:
 
 \end{document}
 
-%%% Local Variables:
+%% Local Variables:
 %%% mode: latex
 %%% TeX-master: t
 %%% End:
