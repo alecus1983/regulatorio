@@ -1,0 +1,127 @@
+@Manual{CREG0701998,
+  title = 	 {Reglamento de distribución de energía eléctrica},
+author = 	 {CREG},
+year = 	 {1998},
+}
+
+@InProceedings{XM-2018-1,
+  author = {XM expertos en mercados},
+  title = 	 {Primera capacitación para agentes del mercado 23 de Abril del 2018},
+  year = {2018}
+}
+
+@Manual{LEY143,
+  title = 	 {régimen de las actividades de generación, interconexión, transmisión, distribución y comercialización de electricidad},
+author = {CONGRESO},
+  year = 	 {1994},
+}
+
+@manual{CREG1332013,
+title = {Por la cual se modifica la Resolución CREG 058 de 2008},
+author = {CREG},
+year = 2013
+}
+
+
+@article{EMCALI2007,
+	author = {EMCALI},
+	title = {NORMAS TECNICAS DE DISEÑO - CONDUCTORES},
+	date = {2007},
+	year=2007
+}
+
+@manual{NTC20502020,
+	ALTauthor = {ICONTEC},
+	ALTeditor = {Carvajal},
+	title = {CODIGO ELÉCTICO COLOMBIANO},
+	date = {2020},
+}
+
+@manual{CREG0251995,
+	author = {CREG},
+	title = {Por la cual se establece el Código de Redes, 	como parte del Reglamento de Operación del 	Sistema Interconectado Nacional.},
+	year = {1995},
+}
+
+
+@manual{CREG0152018,
+	author = {CREG-015-2018},
+	title = {Por la cual se establece la metodología para la remuneración de la actividad de distribución de energía eléctrica en el Sistema Interconectado Nacional},
+	year = 2018,
+}
+
+@manual{NEC2005,
+	author = {NEC},
+	title = {National Electrical Code Handbook},
+	year = {2005},
+}
+
+@manual{DIGSILENT15,
+	author = {DIgSILENT},
+	title = {User Manual DIgSILENT PowerFactory 15},
+	date = {2014},
+	
+}
+
+@book{POWERSADAS2012,
+	author = {J. C. DAS},
+	title = {POWER SYSTEM ANALYSIS, short circuit, load flow and armonics},
+	date = {2012},
+}
+
+@book{CARLOSF,
+	author = {Carlos Felipe Ramirez},
+	title = {Subestaciones de Alta y Extra alta tensión},
+	date = {1991},
+}
+
+
+@manual{RETIE2013,
+	author = {Ministerio de Minas y Energía , Colombia},
+	title = {Reglamento Técnico de las Instalaciones Eléctricas},
+	date = {2015},
+}
+
+@manual{CREG0942012,
+author={CREG},
+title={Por la cual se establecen el reglamento para el reporte de Eventos y el procedimiento para el cálculo de la Energía No Suministrada, y se precisan otras disposiciones relacionadas con la calidad del servicio en los Sistemas de Transmisión Regional},
+date=2012
+
+}
+
+@article{CREG0652000,
+	autor={CREG},
+	title={Resolución CREG 065 del 2000 Por la cual se modifican las disposiciones contenidas en el codigo de redes relacionadas con los mantenimiento de equipos del Sistema Interconectado Nacional (SIN}
+}
+
+@manual{CREG2242016,
+author= {CREG},
+title={CREG 224 del 2016. Por la cual se establecen los criterios de confiabilidad de la operación aplicables para contingencias sencillas, como parte del Código de Operación},
+year = 2016
+}
+
+
+@manual{MANOPEMCALI,
+author = {EMCALI},
+year = 2008,
+title = {MANUAL DE OPERACIÓN EMCALI}
+}
+
+@book{trashorras2015subestaciones,
+  title={Subestaciones el{\'e}ctricas},
+  author={TRASHORRAS MONTECELOS, JES{\'U}S},
+  year={2015},
+  publisher={Ediciones Paraninfo, SA}
+}
+
+@manual{CREG0611996,
+author={CREG},
+title= {Desconexión Automático de Carga por Baja Frecuencia},
+year={1996}
+}
+
+@manual{CREG-060-2019,
+author={CREG},
+title= {Conexión y operación de plantas solares fotovoltáicas  y eólicas en el SIN},
+year={2019}
+}

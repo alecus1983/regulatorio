@@ -1,0 +1,16 @@
+ERROR: LaTeX Error: Missing \begin{document}.
+
+--- TeX said ---
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.15 \usebox{tcolorbox}
+                       %cajas de color
+--- HELP ---
+LaTeX produced printed output before encountering a \begin{document}
+command. Either you forgot the \begin{document} command or there is
+something wrong in the preamble. The problem may be a stray character
+or an error in a declaration---for example, omitting the braces around
+an argument or forgetting the \ in a command name.
