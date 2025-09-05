@@ -4,18 +4,19 @@
    (TeX-add-to-alist 'LaTeX-provided-class-options
                      '(("book" "a5paper")))
    (TeX-add-to-alist 'LaTeX-provided-package-options
-                     '(("inputenc" "utf8") ("fontenc" "T1") ("babel" "spanish" "es-tabla") ("biblatex" "backend=biber" "style=verbose" "hyperref=true") ("xcolor" "table" "dvipsnames") ("caption" "font=small" "labelfont=bf" "labelsep=endash")))
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "path")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
+                     '(("geometry" "paperwidth=15cm" "paperheight=20cm") ("inputenc" "utf8") ("fontenc" "T1") ("babel" "spanish" "es-tabla") ("biblatex" "backend=biber" "style=verbose" "hyperref=true") ("xcolor" "table" "dvipsnames") ("caption" "font=small" "labelfont=bf" "labelsep=endash")))
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "href")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "path")
    (add-to-list 'LaTeX-verbatim-macros-with-delims-local "path")
    (TeX-run-style-hooks
     "latex2e"
     "book"
     "bk10"
+    "geometry"
     "inputenc"
     "fontenc"
     "babel"
@@ -31,16 +32,21 @@
     "easyReview"
     "tgbonum"
     "csquotes"
+    "imakeidx"
     "biblatex"
     "longtable"
     "xcolor"
+    "titling"
     "hyperref"
     "tcolorbox"
     "empheq"
     "titlesec"
     "wasysym"
     "caption")
+   (TeX-add-symbols
+    '("chaptermark" 1))
    (LaTeX-add-labels
+    "sec:tabladecontendos"
     "fig:planeamineto-operativo"
     "fig:aumentotension"
     "fig:reducciontension"
@@ -110,6 +116,10 @@
     "STR"
     "SOE"
     "UPME")
+   (LaTeX-add-xcolor-definecolors
+    "enlace"
+    "titleblue"
+    "titlegreen")
    (LaTeX-add-tcolorbox-tcbuselibraries
     "skins,breakable,listings,theorems"))
  :latex)
