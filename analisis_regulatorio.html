@@ -1,0 +1,3526 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html xml:lang="es" > 
+<head><title>ANÃ&#260;LISIS REGULATORIO</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (https://tug.org/tex4ht/)"> 
+<meta name="originator" content="TeX4ht (https://tug.org/tex4ht/)"> 
+<!-- html --> 
+<meta name="src" content="analisis_regulatorio.tex"> 
+<link rel="stylesheet" type="text/css" href="analisis_regulatorio.css"> 
+</head><body 
+>
+   <div class="maketitle">
+                                           
+                                           
+                                           
+                                           
+                                           
+                                           
+
+<h2 class="titleHead">ANÁLISIS REGULATORIO</h2>
+ <div class="author" ><span 
+class="pplr8t-x-x-120">Alejandro Palacios</span></div><br />
+<div class="date" ><span 
+class="pplr8t-x-x-120">8</span><span 
+class="pplr8t-x-x-120">&#x00A0;de marzo</span><span 
+class="pplr8t-x-x-120">&#x00A0;de</span><span 
+class="pplr8t-x-x-120">&#x00A0;2022</span></div>
+                                           
+                                           
+   </div>
+                                           
+                                           
+   <h2 class="likechapterHead"><a 
+ id="x1-1000"></a>Índice general</h2>
+   <div class="tableofcontents">
+   <span class="chapterToc" >1 <a 
+href="#x1-20001" id="QQ2-1-2">ELEMENTOS DE LA SUBESTACIÓN</a></span>
+<br />   &#x00A0;<span class="sectionToc" >1.1 <a 
+href="#x1-30001" id="QQ2-1-6">Transformadores</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsectionToc" >1.1.1 <a 
+href="#x1-50001" id="QQ2-1-10">Operación en paralelo de transformadores</a></span>
+<br />   &#x00A0;<span class="sectionToc" >1.2 <a 
+href="#x1-70002" id="QQ2-1-13">Seccionadores</a></span>
+<br />   &#x00A0;<span class="sectionToc" >1.3 <a 
+href="#x1-80003" id="QQ2-1-15">Seccionadores de tierra</a></span>
+<br />   &#x00A0;<span class="sectionToc" >1.4 <a 
+href="#x1-90004" id="QQ2-1-17">Seccionadores Monopolares</a></span>
+<br />   <span class="chapterToc" >2 <a 
+href="#x1-100002" id="QQ2-1-19">RED DE TRANSMISIÓN Y DISTRIBUCIÓN</a></span>
+<br />   &#x00A0;<span class="sectionToc" >2.1 <a 
+href="#x1-110001" id="QQ2-1-20">Nivele de tensión</a></span>
+<br />   &#x00A0;<span class="sectionToc" >2.2 <a 
+href="#x1-120002" id="QQ2-1-22">Sistema interconectado nacional</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsectionToc" >2.2.1 <a 
+href="#x1-130001" id="QQ2-1-23">STN</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsectionToc" >2.2.2 <a 
+href="#x1-140002" id="QQ2-1-25">STR</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsectionToc" >2.2.3 <a 
+href="#x1-150003" id="QQ2-1-27">Sistema de distribución local (SDL)</a></span>
+<br />   &#x00A0;<span class="sectionToc" >2.3 <a 
+href="#x1-160003" id="QQ2-1-28">Limites de tensión</a></span>
+<br />   &#x00A0;<span class="sectionToc" >2.4 <a 
+href="#x1-170004" id="QQ2-1-29">PUESTA A TIERRA</a></span>
+<br />   &#x00A0;<span class="sectionToc" >2.5 <a 
+href="#x1-180005" id="QQ2-1-31">Distancias de seguridad</a></span>
+                                           
+                                           
+<br />   <span class="chapterToc" >3 <a 
+href="#x1-190003" id="QQ2-1-34">PLANEACIÓN DE LA OPERACIÓN</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsectionToc" >3.0.1 <a 
+href="#x1-200001" id="QQ2-1-35">FUNCIONES</a></span>
+<br />   &#x00A0;<span class="sectionToc" >3.1 <a 
+href="#x1-220001" id="QQ2-1-37">Cargabilidad de las líneas</a></span>
+<br />   &#x00A0;<span class="sectionToc" >3.2 <a 
+href="#x1-230002" id="QQ2-1-38">Cargabilidad de los transformadores</a></span>
+<br />   &#x00A0;<span class="sectionToc" >3.3 <a 
+href="#x1-240003" id="QQ2-1-39">CONTINGENCIAS</a></span>
+<br />   <span class="chapterToc" >4 <a 
+href="#x1-320004" id="QQ2-1-57">PROTECCIONES</a></span>
+<br />   &#x00A0;<span class="sectionToc" >4.1 <a 
+href="#x1-330001" id="QQ2-1-58">Sobre corriente</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsectionToc" >4.1.1 <a 
+href="#x1-350001" id="QQ2-1-63">FUSIBLES</a></span>
+<br />   &#x00A0;<span class="sectionToc" >4.2 <a 
+href="#x1-360002" id="QQ2-1-65">Transformador</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsectionToc" >4.2.1 <a 
+href="#x1-370001" id="QQ2-1-66">Proteccion de sobre intensidad de tierra (50N/51N)</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsectionToc" >4.2.2 <a 
+href="#x1-380002" id="QQ2-1-67">Proteccion de tierra restringida (64REF)</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsectionToc" >4.2.3 <a 
+href="#x1-390003" id="QQ2-1-69">Relé Buchholz (63B)</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsectionToc" >4.2.4 <a 
+href="#x1-400004" id="QQ2-1-71">Dispositivo de imagen térmica (49)</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsectionToc" >4.2.5 <a 
+href="#x1-410005" id="QQ2-1-73">Protección de la cuba (64)</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsectionToc" >4.2.6 <a 
+href="#x1-420006" id="QQ2-1-75">Protección sobre intensidad Neutro - Estrella (51G)</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsectionToc" >4.2.7 <a 
+href="#x1-430007" id="QQ2-1-77">Protección diferencial (87)</a></span>
+<br />   &#x00A0;<span class="sectionToc" >4.3 <a 
+href="#x1-440003" id="QQ2-1-82">Frecuencia</a></span>
+<br />   <span class="chapterToc" >5 <a 
+href="#x1-450005" id="QQ2-1-85">TAREAS DE MANTENIMIENTO</a></span>
+<br />   &#x00A0;<span class="sectionToc" >5.1 <a 
+href="#x1-460001" id="QQ2-1-86">Trabajos con tensión</a></span>
+<br />   <span class="chapterToc" >6 <a 
+href="#x1-470006" id="QQ2-1-87">RED SUBTERRÁNEA</a></span>
+<br />   &#x00A0;<span class="sectionToc" >6.1 <a 
+href="#x1-480001" id="QQ2-1-88">Conductores de redes subterráneas </a></span>
+                                           
+                                           
+   </div> <div class="minipage">Lista de acrónimos
+          <dl class="description"><dt class="description">
+          <!--l. 84--><p class="noindent" >
+<a 
+ id="CREG"></a><a 
+href="#x1-110001"><span 
+class="pplb8t-x-x-90">CREG</span></a>  </dt><dd 
+class="description">
+           <!--l. 84--><p class="noindent" ><a 
+href="#x1-110001"><span 
+class="pplr8t-x-x-90">Comisi</span><span 
+class="pplr8t-x-x-90">ón de Reguladora de Energ</span><span 
+class="pplr8t-x-x-90">ía y Gas</span></a>
+           </dd><dt class="description">
+           <!--l. 85--><p class="noindent" >
+<a 
+ id="SIN"></a><a 
+href="#x1-110001"><span 
+class="pplb8t-x-x-90">SIN</span></a>  </dt><dd 
+class="description">
+           <!--l. 85--><p class="noindent" ><a 
+href="#x1-110001"><span 
+class="pplr8t-x-x-90">Sistema Interconectado Nacional</span></a>
+           </dd><dt class="description">
+           <!--l. 86--><p class="noindent" >
+<a 
+ id="STN"></a><a 
+href="#x1-110001"><span 
+class="pplb8t-x-x-90">STN</span></a>  </dt><dd 
+class="description">
+           <!--l. 86--><p class="noindent" ><a 
+href="#x1-110001"><span 
+class="pplr8t-x-x-90">Sistema de Transmisi</span><span 
+class="pplr8t-x-x-90">ón Nacional</span></a>
+           </dd><dt class="description">
+           <!--l. 87--><p class="noindent" >
+<a 
+ id="SDL"></a><a 
+href="#x1-140002"><span 
+class="pplb8t-x-x-90">SDL</span></a>  </dt><dd 
+class="description">
+           <!--l. 87--><p class="noindent" ><a 
+href="#x1-140002"><span 
+class="pplr8t-x-x-90">Sistema de Distribuci</span><span 
+class="pplr8t-x-x-90">ón Local</span></a>
+           </dd><dt class="description">
+           <!--l. 88--><p class="noindent" >
+<a 
+ id="STR"></a><a 
+href="#x1-140002"><span 
+class="pplb8t-x-x-90">STR</span></a>  </dt><dd 
+class="description">
+           <!--l. 88--><p class="noindent" ><a 
+href="#x1-140002"><span 
+class="pplr8t-x-x-90">Sistema de Transmisi</span><span 
+class="pplr8t-x-x-90">ón Regional</span></a>
+           </dd></dl>
+                                           
+                                           
+</div>
+                                           
+                                           
+<h2 class="chapterHead"><span class="titlemark"><span 
+class="ec-lmss-10">Cap</span><span 
+class="ec-lmss-10">ítulo</span><span 
+class="ec-lmss-10">&#x00A0;1</span></span><br /><a 
+ id="x1-20001"></a><span 
+class="ec-lmss-10">ELEMENTOS DE LA SUBESTACI</span><span 
+class="ec-lmss-10">ÓN</span></h2>
+<!--l. 97--><p class="noindent" ><span 
+class="ec-lmss-10">En las subestaciones existen distintos elementos los cuales</span>
+<span 
+class="ec-lmss-10">permiten realizar sus funcionalidades como transformar</span>
+<span 
+class="ec-lmss-10">niveles de tensi</span><span 
+class="ec-lmss-10">ón y conectar l</span><span 
+class="ec-lmss-10">íneas, generadores y/o</span>
+<span 
+class="ec-lmss-10">cargas. Entre la simbolog</span><span 
+class="ec-lmss-10">ía empleada por el RETIE para</span>
+<span 
+class="ec-lmss-10">las subestaciones, existen las siguientes:</span>
+<!--l. 100--><p class="noindent" ><hr class="figure"><div class="figure" 
+>
+                                           
+                                           
+<a 
+ id="x1-2001r1"></a>
+                                           
+                                           
+<br /> <div class="caption" 
+><span class="id">Figura&#x00A0;1.1: </span><span  
+class="content">símbolo de subestación</span></div><!--tex4ht:label?: x1-2001r1 -->
+<!--l. 104--><p class="noindent" ><img 
+src="simbolo_subestacion.png" alt="PIC"  
+width="68" height="68" >
+                                           
+                                           
+<!--l. 105--><p class="noindent" ></div><hr class="endfigure">
+<!--l. 107--><p class="noindent" ><hr class="figure"><div class="figure" 
+>
+                                           
+                                           
+<a 
+ id="x1-2002r2"></a>
+                                           
+                                           
+<br /> <div class="caption" 
+><span class="id">Figura&#x00A0;1.2: </span><span  
+class="content">Central térmica</span></div><!--tex4ht:label?: x1-2002r2 -->
+<!--l. 111--><p class="noindent" ><img 
+src="central_termica.png" alt="PIC"  
+width="68" height="68" >
+                                           
+                                           
+<!--l. 112--><p class="noindent" ></div><hr class="endfigure">
+<!--l. 114--><p class="noindent" ><hr class="figure"><div class="figure" 
+>
+                                           
+                                           
+<a 
+ id="x1-2003r3"></a>
+                                           
+                                           
+<br /> <div class="caption" 
+><span class="id">Figura&#x00A0;1.3: </span><span  
+class="content">Central hidráulica</span></div><!--tex4ht:label?: x1-2003r3 -->
+<!--l. 118--><p class="noindent" ><img 
+src="central-hidraulica.png" alt="PIC"  
+width="68" height="68" >
+                                           
+                                           
+<!--l. 119--><p class="noindent" ></div><hr class="endfigure">
+<a 
+ id="x1-2004r1"></a>
+<h3 class="sectionHead"><span class="titlemark"><span 
+class="ec-lmss-10">1.1.   </span></span> <a 
+ id="x1-30001"></a><span 
+class="ec-lmss-10">Transformadores</span></h3>
+<!--l. 124--><p class="noindent" ><hr class="figure"><div class="figure" 
+>
+                                           
+                                           
+<a 
+ id="x1-3001r4"></a>
+                                           
+                                           
+<br />  <div class="caption" 
+><span class="id">Figura&#x00A0;1.4:   </span><span  
+class="content">Transformador   con   regulación   en
+carga  con  9  escalones  733  V  y  555  V,  cada  uno
+respectivamente. Tensión primaria de 66 kV o 50 kV.
+Tensión secundaria de 22 kV o 16,3 kV</span></div><!--tex4ht:label?: x1-3001r4 -->
+<!--l. 128--><p class="noindent" ><img 
+src="transformador-bidemisional.png" alt="PIC"  
+width="227" height="227" >
+                                           
+                                           
+<!--l. 129--><p class="noindent" ></div><hr class="endfigure">
+<h5 class="likesubsubsectionHead"><a 
+ id="x1-40001"></a><span 
+class="ec-lmss-10">POLARIDAD</span></h5>
+<!--l. 135--><p class="noindent" ><span 
+class="ec-lmss-10">La direcci</span><span 
+class="ec-lmss-10">ón relativa de los voltajes inducidos, que</span>
+<span 
+class="ec-lmss-10">aparecen en los terminales de los devanados secundarios,</span>
+<span 
+class="ec-lmss-10">depende del orden en que estos terminales se enrollan</span>
+<span 
+class="ec-lmss-10">dentro del n</span><span 
+class="ec-lmss-10">úcleo del transformador. Como los voltajes</span>
+<span 
+class="ec-lmss-10">primario y secundario son producidos por el mismo flujo</span>
+<span 
+class="ec-lmss-10">mutuo, estos deben estar en la misma direcci</span><span 
+class="ec-lmss-10">ón. La</span>
+<span 
+class="ec-lmss-10">corriente de carga en el secundario fluye en una direcci</span><span 
+class="ec-lmss-10">ón</span>
+<span 
+class="ec-lmss-10">tal que neutraliza la fuerza magnetomotriz FMM de la</span>
+<span 
+class="ec-lmss-10">tensi</span><span 
+class="ec-lmss-10">ón primaria. La forma en que aparecer</span><span 
+class="ec-lmss-10">án los voltajes</span>
+<span 
+class="ec-lmss-10">inducidos como se ve desde los terminales del secundario</span>
+<span 
+class="ec-lmss-10">depende de la direcci</span><span 
+class="ec-lmss-10">ón relativa de los devanados.</span>
+<span 
+class="ec-lmss-10">La polaridad se refiere al orden definido en el que se</span>
+<span 
+class="ec-lmss-10">sacan los terminales del tanque. La polaridad puede</span>
+<span 
+class="ec-lmss-10">definirse como las relaciones vectoriales de voltaje de los</span>
+<span 
+class="ec-lmss-10">cables del transformador extra</span><span 
+class="ec-lmss-10">ídos del tanque. Con</span>
+<span 
+class="ec-lmss-10">referencia a la figura </span><a 
+href="#x1-4001r5"><span 
+class="ec-lmss-10">1.5</span><!--tex4ht:ref: fig:polaridadtransformadores --></a><span 
+class="ec-lmss-10">a, la polaridad es la direcci</span><span 
+class="ec-lmss-10">ón</span>
+<span 
+class="ec-lmss-10">relativa del voltaje inducido de H1 a H2 en comparaci</span><span 
+class="ec-lmss-10">ón</span>
+<span 
+class="ec-lmss-10">con el de X1 a X2, ambos en el mismo orden. </span><span class="cite"><span 
+class="ec-lmss-10">[</span><a 
+href="#XPOWERSADAS2012"><span 
+class="ec-lmss-10">DAS,</span>
+</a><span 
+class="ec-lmss-10">]</span></span><br 
+class="newline" /><br 
+class="newline" /><span 
+class="ec-lmss-10">Cuando los devanados primarios y secundarios tienen el</span>
+<span 
+class="ec-lmss-10">mismo sentido de arrollamiento se dice que tienen</span>
+<span 
+class="ec-lmss-10">polaridad sustractiva, mientras que si el sentido del</span>
+                                           
+                                           
+<span 
+class="ec-lmss-10">devano es opuesto se dice que las polaridades son</span>
+<span 
+class="ec-lmss-10">aditivas.</span>
+<!--l. 138--><p class="noindent" ><hr class="figure"><div class="figure" 
+>
+                                           
+                                           
+<a 
+ id="x1-4001r5"></a>
+                                           
+                                           
+<!--l. 140--><p class="noindent" ><img 
+src="polaridad_transformadores.png" alt="PIC"  
+width="159" height="159" >
+<br /> <div class="caption" 
+><span class="id">Figura&#x00A0;1.5:  </span><span  
+class="content">Marcas  de  polaridad  a)  sustractiva  b)
+aditiva</span></div><!--tex4ht:label?: x1-4001r5 -->
+                                           
+                                           
+<!--l. 143--><p class="noindent" ></div><hr class="endfigure">
+<a 
+ id="x1-4002r1"></a>
+<h4 class="subsectionHead"><span class="titlemark"><span 
+class="ec-lmss-10">1.1.1.   </span></span> <a 
+ id="x1-50001"></a><span 
+class="ec-lmss-10">Operaci</span><span 
+class="ec-lmss-10">ón en paralelo de transformadores</span></h4>
+<!--l. 147--><p class="noindent" ><span 
+class="ec-lmss-10">Para crear transformadores en paralelo, se deben tener en</span>
+<span 
+class="ec-lmss-10">cuenta los siguientes par</span><span 
+class="ec-lmss-10">ámetros:</span>
+     <ul class="itemize1">
+     <li class="itemize">
+     <!--l. 150--><p class="noindent" ><span 
+class="ec-lmss-10">Debe tener la misma secuencia de fase.</span>
+     </li>
+     <li class="itemize">
+     <!--l. 151--><p class="noindent" ><span 
+class="ec-lmss-10">La polaridad tiene que ser la misma.</span>
+     </li>
+     <li class="itemize">
+     <!--l. 152--><p class="noindent" ><span 
+class="ec-lmss-10">La relaci</span><span 
+class="ec-lmss-10">ón de tensi</span><span 
+class="ec-lmss-10">ón debe ser las misma.</span>
+     </li>
+     <li class="itemize">
+     <!--l. 153--><p class="noindent" ><span 
+class="ec-lmss-10">El grupo vectorial debe ser el mismo (o en su</span>
+     <span 
+class="ec-lmss-10">defecto el desplazamiento angular)</span>
+     </li>
+     <li class="itemize">
+     <!--l. 154--><p class="noindent" ><span 
+class="ec-lmss-10">La  diferencia  de  las  impedancias  deben  ser</span>
+     <span 
+class="ec-lmss-10">similares.</span></li></ul>
+                                           
+                                           
+<!--l. 158--><p class="noindent" ><span class="likeparagraphHead"><a 
+ id="x1-60001"></a><span 
+class="ec-lmss-10">Ejemplo</span></span>
+<hr class="figure"><div class="figure" 
+>
+                                           
+                                           
+<a 
+ id="x1-6001r6"></a>
+                                           
+                                           
+<br />   <div class="caption" 
+><span class="id">Figura&#x00A0;1.6:      </span><span  
+class="content">Operación      en      paralelo      de
+transformadores</span></div><!--tex4ht:label?: x1-6001r6 -->
+<!--l. 164--><p class="noindent" ><img 
+src="paralelo.png" alt="PIC"  
+width="227" height="227" >
+                                           
+                                           
+</div><hr class="endfigure">
+<!--l. 168--><p class="noindent" ><span 
+class="ec-lmss-10">Un transformador de 10 MVA, 13.8&#8211;4.16 kV tiene una</span>
+<span 
+class="ec-lmss-10">resistencia y una reactancia en por unidad de 0.005 y</span>
+<span 
+class="ec-lmss-10">0.05 , respectivamente. Este est</span><span 
+class="ec-lmss-10">á en paralelo con un</span>
+<span 
+class="ec-lmss-10">transformador de 5 MVA con la misma relaci</span><span 
+class="ec-lmss-10">ón de</span>
+<span 
+class="ec-lmss-10">transformaci</span><span 
+class="ec-lmss-10">ón, y tiene una reactancia en por unidad de</span>
+<span 
+class="ec-lmss-10">0.006 y 0.04, respectivamente.</span><br 
+class="newline" /><br 
+class="newline" /><span 
+class="ec-lmss-10">Calcule como pueden alimentar los dos una carga de 15</span>
+<span 
+class="ec-lmss-10">MVA con un factor de potencia de 0.8 en atrazo.</span><br 
+class="newline" /><br 
+class="newline" />
+<!--l. 170--><p class="noindent" ><span 
+class="ec-lmss-10">Soluci</span><span 
+class="ec-lmss-10">ón :</span>
+<!--l. 172--><p class="noindent" ><span 
+class="ec-lmss-10">Se debe convertir en una base com</span><span 
+class="ec-lmss-10">ún las impedancias </span><span 
+class="zplmr7m-">Z</span><sub><span 
+class="pplr7t-x-x-76">1</span></sub>  <span 
+class="ec-lmss-10">y</span>
+<span 
+class="zplmr7m-">Z</span><sub><span 
+class="pplr7t-x-x-76">2</span></sub>  <span 
+class="ec-lmss-10">y luego aplicar un divisor de potencia as</span><span 
+class="ec-lmss-10">í:</span><br 
+class="newline" />
+<!--l. 174--><p class="noindent" >
+<div class="math-display" >
+<img 
+src="analisis_regulatorio0x.png" alt="Z1 = 0,005 +j0,05(base10MVA )
+" class="math-display" ></div>
+<!--l. 175--><p class="noindent" >
+<div class="math-display" >
+<img 
+src="analisis_regulatorio1x.png" alt="Z2 = 0,006+ j0,04(base5MVA )
+" class="math-display" ></div>
+<!--l. 177--><p class="noindent" ><span 
+class="ec-lmss-10">Entonces se va a cambiar la base de </span><span 
+class="zplmr7m-">Z</span><sub><span 
+class="pplr7t-x-x-76">2</span></sub>  <span 
+class="ec-lmss-10">a 10 MVA:</span>
+<!--l. 179--><p class="noindent" >
+<div class="math-display" >
+<img 
+src="analisis_regulatorio2x.png" alt="Z 2N = Z2&#x22C5; 105MMVVAA---= 0,012+ j0,08
+" class="math-display" ></div>
+<!--l. 181--><p class="noindent" ><span 
+class="ec-lmss-10">Para el transformador de 10 MVA la potencia entregada </span><span 
+class="zplmr7m-">S</span><sub><span 
+class="pplr7t-x-x-76">1</span></sub>
+<span 
+class="ec-lmss-10">es:</span>
+<!--l. 183--><p class="noindent" >
+<div class="math-display" >
+<img 
+src="analisis_regulatorio3x.png" alt="         Z2
+S1 = S&#x22C5; Z1+-Z2
+" class="math-display" ></div>
+<!--l. 184--><p class="noindent" ><span 
+class="ec-lmss-10">Convert Z1 and Z2 on any common MVA base and</span>
+<span 
+class="ec-lmss-10">apply Equations C.14 and C.15. The results are as</span>
+<span 
+class="ec-lmss-10">follows:</span>
+<!--l. 186--><p class="noindent" ><span 
+class="ec-lmss-10">10 MVA transformer: S1 1</span><span 
+class="ts1-lmss10-">&#x2044;</span><span 
+class="ec-lmss-10">4 9.255 &#x003C;37.938 5 MVA</span>
+<span 
+class="ec-lmss-10">transformer: S2 1</span><span 
+class="ts1-lmss10-">&#x2044;</span><span 
+class="ec-lmss-10">4 5.749 &#x003C;35.208</span>
+<a 
+ id="x1-6002r6"></a>
+                                           
+                                           
+<h3 class="sectionHead"><span class="titlemark"><span 
+class="ec-lmss-10">1.2.   </span></span> <a 
+ id="x1-70002"></a><span 
+class="ec-lmss-10">Seccionadores</span></h3>
+<!--l. 193--><p class="noindent" ><span 
+class="ec-lmss-10">Uno de los principales elementos que define el tama</span><span 
+class="ec-lmss-10">ño de</span>
+<span 
+class="ec-lmss-10">la subestaci</span><span 
+class="ec-lmss-10">ón son los seccionadores, estos pueden ser</span>
+<span 
+class="ec-lmss-10">tipo: apertura central, rotaci</span><span 
+class="ec-lmss-10">ón central, pant</span><span 
+class="ec-lmss-10">ógrafo,</span>
+<span 
+class="ec-lmss-10">semi pantografo o pantografo horizontal </span><span class="cite"><span 
+class="ec-lmss-10">[</span><a 
+href="#XCARLOSF"><span 
+class="ec-lmss-10">Ramirez, </span></a><span 
+class="ec-lmss-10">]</span></span><span 
+class="ec-lmss-10">.</span>
+<hr class="figure"><div class="figure" 
+>
+                                           
+                                           
+<a 
+ id="x1-7001r7"></a>
+                                           
+                                           
+<!--l. 196--><p class="noindent" ><img 
+src="seccionamientos.png" alt="PIC"  
+width="227" height="227" >
+<br /> <div class="caption" 
+><span class="id">Figura&#x00A0;1.7: </span><span  
+class="content">vista lateral de seccionamientos</span></div><!--tex4ht:label?: x1-7001r7 -->
+                                           
+                                           
+<!--l. 199--><p class="noindent" ></div><hr class="endfigure">
+<a 
+ id="x1-7002r13"></a>
+<h3 class="sectionHead"><span class="titlemark"><span 
+class="ec-lmss-10">1.3.   </span></span> <a 
+ id="x1-80003"></a><span 
+class="ec-lmss-10">Seccionadores de tierra</span></h3>
+<!--l. 203--><p class="noindent" ><span 
+class="ec-lmss-10">Los seccionadores de tierra son empleados para elaborar la</span>
+<span 
+class="ec-lmss-10">puesta a tierra de los elementos de la subestaci</span><span 
+class="ec-lmss-10">ón. Para</span>
+<span 
+class="ec-lmss-10">impedir ser operados cuando la red esta energizada ( lo</span>
+<span 
+class="ec-lmss-10">cual ocasionar</span><span 
+class="ec-lmss-10">ía un cortocircuito ) generalmente se</span>
+<span 
+class="ec-lmss-10">emplean bloqueos mec</span><span 
+class="ec-lmss-10">ánicos (Interlocks) como se muestra</span>
+<span 
+class="ec-lmss-10">en la figura </span><a 
+href="#x1-8001r8"><span 
+class="ec-lmss-10">1.8</span><!--tex4ht:ref: fig:cuchilla-tierra --></a> <span class="cite"><span 
+class="ec-lmss-10">[</span><a 
+href="#XHORIZON2019"><span 
+class="ec-lmss-10">HORIZON, 2019</span></a><span 
+class="ec-lmss-10">]</span></span><span 
+class="ec-lmss-10">.</span>
+<!--l. 205--><p class="noindent" ><hr class="figure"><div class="figure" 
+>
+                                           
+                                           
+<a 
+ id="x1-8001r8"></a>
+                                           
+                                           
+<br /> <div class="caption" 
+><span class="id">Figura&#x00A0;1.8: </span><span  
+class="content">Seccionador de tierra y de línea</span></div><!--tex4ht:label?: x1-8001r8 -->
+<!--l. 209--><p class="noindent" ><img 
+src="cuchilla-tierra.png" alt="PIC"  
+width="227" height="227" >
+                                           
+                                           
+<!--l. 210--><p class="noindent" ></div><hr class="endfigure">
+<a 
+ id="x1-8002r15"></a>
+<h3 class="sectionHead"><span class="titlemark"><span 
+class="ec-lmss-10">1.4.   </span></span> <a 
+ id="x1-90004"></a><span 
+class="ec-lmss-10">Seccionadores Monopolares</span></h3>
+<!--l. 213--><p class="noindent" ><span 
+class="ec-lmss-10">Estos seccionadores generalmente operan en el rango de</span>
+<span 
+class="ec-lmss-10">400 y 600 A, como se muestra en la figura </span><a 
+href="#x1-9001r9"><span 
+class="ec-lmss-10">1.9</span><!--tex4ht:ref: fig:seccionadores-monopolares --></a><span 
+class="ec-lmss-10">. Son</span>
+<span 
+class="ec-lmss-10">generalmente usados para aislar transformadores, secciones</span>
+<span 
+class="ec-lmss-10">de circuitos o interconectar transformadores.</span>
+<!--l. 215--><p class="noindent" ><hr class="figure"><div class="figure" 
+>
+                                           
+                                           
+<a 
+ id="x1-9001r9"></a>
+                                           
+                                           
+<br /> <div class="caption" 
+><span class="id">Figura&#x00A0;1.9: </span><span  
+class="content">Seccionadores monopolares</span></div><!--tex4ht:label?: x1-9001r9 -->
+<!--l. 219--><p class="noindent" ><img 
+src="seccionadores-monopolares.png" alt="PIC"  
+width="227" height="227" >
+                                           
+                                           
+<!--l. 220--><p class="noindent" ></div><hr class="endfigure">
+                                           
+                                           
+<!--l. 225--><p class="noindent" >
+                                           
+                                           
+<h2 class="chapterHead"><span class="titlemark"><span 
+class="ec-lmss-10">Cap</span><span 
+class="ec-lmss-10">ítulo</span><span 
+class="ec-lmss-10">&#x00A0;2</span></span><br /><a 
+ id="x1-100002"></a><span 
+class="ec-lmss-10">RED DE TRANSMISI</span><span 
+class="ec-lmss-10">ÓN Y DISTRIBUCI</span><span 
+class="ec-lmss-10">ÓN</span></h2>
+<a 
+ id="x1-10001r17"></a>
+<h3 class="sectionHead"><span class="titlemark"><span 
+class="ec-lmss-10">2.1.   </span></span> <a 
+ id="x1-110001"></a><span 
+class="ec-lmss-10">Nivele de tensi</span><span 
+class="ec-lmss-10">ón</span></h3>
+<!--l. 229--><p class="noindent" ><span 
+class="ec-lmss-10">Los niveles de tensi</span><span 
+class="ec-lmss-10">ón de acuerdo al RETIE </span><span class="cite"><span 
+class="ec-lmss-10">[</span><a 
+href="#XRETIE2013"><span 
+class="ec-lmss-10">RETIE,</span>
+</a><span 
+class="ec-lmss-10">]</span></span><span 
+class="ec-lmss-10">:</span>
+     <ul class="itemize1">
+     <li class="itemize">
+     <!--l. 232--><p class="noindent" ><span 
+class="ec-lmssbx-10">Extra  alta  tensi</span><span 
+class="ec-lmssbx-10">ón  (EAT)</span><span 
+class="ec-lmss-10">:  Corresponde  a</span>
+     <span 
+class="ec-lmss-10">tensiones superiores a 230 kV.</span>
+     </li>
+     <li class="itemize">
+     <!--l. 233--><p class="noindent" ><span 
+class="ec-lmssbx-10">Alta tensi</span><span 
+class="ec-lmssbx-10">ón (AT)</span><span 
+class="ec-lmss-10">: Tensiones mayores o iguales</span>
+     <span 
+class="ec-lmss-10">a 57,5 kV y menores o iguales a 230 kV.</span>
+     </li>
+     <li class="itemize">
+     <!--l. 234--><p class="noindent" ><span 
+class="ec-lmssbx-10">Media tensi</span><span 
+class="ec-lmssbx-10">ón (MT)</span><span 
+class="ec-lmss-10">: Los de tensi</span><span 
+class="ec-lmss-10">ón nominal</span>
+     <span 
+class="ec-lmss-10">superior a 1000 V e inferior a 57,5 kV.</span>
+     </li>
+     <li class="itemize">
+     <!--l. 235--><p class="noindent" ><span 
+class="ec-lmssbx-10">Baja  tensi</span><span 
+class="ec-lmssbx-10">ón  (BT)</span><span 
+class="ec-lmss-10">:  Los  de  tensi</span><span 
+class="ec-lmss-10">ón  nominal</span>
+     <span 
+class="ec-lmss-10">mayor o igual a 25 V y menor o igual a 1000 V.</span>
+                                           
+                                           
+     </li>
+     <li class="itemize">
+     <!--l. 236--><p class="noindent" ><span 
+class="ec-lmssbx-10">Muy baja tensi</span><span 
+class="ec-lmssbx-10">ón (MBT)</span><span 
+class="ec-lmss-10">: Tensiones menores</span>
+     <span 
+class="ec-lmss-10">de 25 V.</span></li></ul>
+<!--l. 239--><p class="noindent" ><span 
+class="ec-lmss-10">De acuerdo a la </span><a 
+ id="section*.1"></a><span 
+class="ec-lmss-10">Comisi</span><span 
+class="ec-lmss-10">ón de Reguladora de Energ</span><span 
+class="ec-lmss-10">ía y</span>
+<span 
+class="ec-lmss-10">Gas (</span><a 
+href="#CREG"><span 
+class="ec-lmss-10">CREG</span></a><span 
+class="ec-lmss-10">) las redes de transporte y distribuci</span><span 
+class="ec-lmss-10">ón se</span>
+<span 
+class="ec-lmss-10">pueden clasificar en funci</span><span 
+class="ec-lmss-10">ón de su nivel de tensi</span><span 
+class="ec-lmss-10">ón y su</span>
+<span 
+class="ec-lmss-10">participaci</span><span 
+class="ec-lmss-10">ón dentro de los esquemas de transporte de</span>
+<span 
+class="ec-lmss-10">energ</span><span 
+class="ec-lmss-10">ía, como se muestra en la figura </span><a 
+href="#x1-11001r1"><span 
+class="ec-lmss-10">2.1</span><!--tex4ht:ref: fig:sistema-interconectado --></a><span 
+class="ec-lmss-10">, en donde el</span>
+<a 
+ id="section*.2"></a><span 
+class="ec-lmss-10">Sistema Interconectado Nacional (</span><a 
+href="#SIN"><span 
+class="ec-lmss-10">SIN</span></a><span 
+class="ec-lmss-10">) alberga toda la</span>
+<span 
+class="ec-lmss-10">red el</span><span 
+class="ec-lmss-10">éctrica, mientras que el </span><a 
+ id="section*.3"></a><span 
+class="ec-lmss-10">Sistema de Transmisi</span><span 
+class="ec-lmss-10">ón</span>
+<span 
+class="ec-lmss-10">Nacional (</span><a 
+href="#STN"><span 
+class="ec-lmss-10">STN</span></a><span 
+class="ec-lmss-10">) hace referencia a las redes que cumplen la</span>
+<span 
+class="ec-lmss-10">funci</span><span 
+class="ec-lmss-10">ón de transporte de energ</span><span 
+class="ec-lmss-10">ía entre las regiones del</span>
+<span 
+class="ec-lmss-10">sistema el</span><span 
+class="ec-lmss-10">éctrico colombiano.</span><span class="cite"><span 
+class="ec-lmss-10">[</span><span 
+class="pplb8t-">?</span><span 
+class="ec-lmss-10">]</span></span>
+<!--l. 241--><p class="noindent" ><hr class="figure"><div class="figure" 
+>
+                                           
+                                           
+<a 
+ id="x1-11001r1"></a>
+                                           
+                                           
+<br /> <div class="caption" 
+><span class="id">Figura&#x00A0;2.1:  </span><span  
+class="content">Niveles  de  tensión  de  acuerdo  ala
+<a 
+href="#CREG">CREG</a></span></div><!--tex4ht:label?: x1-11001r1 -->
+<!--l. 245--><p class="noindent" ><img 
+src="sistema interconectado.png" alt="PIC"  
+width="227" height="227" >
+                                           
+                                           
+<!--l. 247--><p class="noindent" ></div><hr class="endfigure">
+<a 
+ id="x1-11002r20"></a>
+<h3 class="sectionHead"><span class="titlemark"><span 
+class="ec-lmss-10">2.2.   </span></span> <a 
+ id="x1-120002"></a><span 
+class="ec-lmss-10">Sistema interconectado nacional</span></h3>
+<a 
+ id="x1-12001r10"></a>
+<h4 class="subsectionHead"><span class="titlemark"><span 
+class="ec-lmss-10">2.2.1.   </span></span> <a 
+ id="x1-130001"></a><span 
+class="ec-lmss-10">STN</span></h4>
+<!--l. 254--><p class="noindent" ><span 
+class="ec-lmss-10">El</span> <a 
+href="#STN"><span 
+class="ec-lmss-10">STN</span></a> <span 
+class="ec-lmss-10">del Valle se caracteriza por redes de 220 kV y 500</span>
+<span 
+class="ec-lmss-10">kV como se muestra en la figura </span><a 
+href="#x1-13001r2"><span 
+class="ec-lmss-10">2.2</span><!--tex4ht:ref: fig:stn --></a>
+<!--l. 256--><p class="noindent" ><hr class="figure"><div class="figure" 
+>
+                                           
+                                           
+<a 
+ id="x1-13001r2"></a>
+                                           
+                                           
+<!--l. 258--><p class="noindent" ><img 
+src="stn.png" alt="PIC"  
+width="204" height="204" >
+<br /> <div class="caption" 
+><span class="id">Figura&#x00A0;2.2: </span><span  
+class="content">Sistema de transmisión nacional en el
+nivel de 220 kV para el departamento del Valle del
+Cauca</span></div><!--tex4ht:label?: x1-13001r2 -->
+                                           
+                                           
+<!--l. 261--><p class="noindent" ></div><hr class="endfigure">
+<a 
+ id="x1-13002r23"></a>
+<h4 class="subsectionHead"><span class="titlemark"><span 
+class="ec-lmss-10">2.2.2.   </span></span> <a 
+ id="x1-140002"></a><span 
+class="ec-lmss-10">STR</span></h4>
+<!--l. 307--><p class="noindent" ><span 
+class="ec-lmss-10">El </span><a 
+ id="section*.4"></a><span 
+class="ec-lmss-10">Sistema de Transmisi</span><span 
+class="ec-lmss-10">ón Regional (</span><a 
+href="#STR"><span 
+class="ec-lmss-10">STR</span></a><span 
+class="ec-lmss-10">) de EMCALI</span>
+<span 
+class="ec-lmss-10">est</span><span 
+class="ec-lmss-10">á constituido por las l</span><span 
+class="ec-lmss-10">íneas y subestaciones conectadas</span>
+<span 
+class="ec-lmss-10">a 115 kV en el sur del departamento del Valle del Cauca.</span>
+<span 
+class="ec-lmss-10">Estas son mostradas es la figura </span><a 
+href="#x1-14001r3"><span 
+class="ec-lmss-10">2.3</span><!--tex4ht:ref: fig:str --></a><span 
+class="ec-lmss-10">, en ella se destaca que</span>
+<span 
+class="ec-lmss-10">aunque las subestaciones Sur y Diesel II aparecen en el</span>
+<span 
+class="ec-lmss-10">gr</span><span 
+class="ec-lmss-10">áfico no hacen parte del</span> <a 
+href="#STR"><span 
+class="ec-lmss-10">STR</span></a><span 
+class="ec-lmss-10">, si no del </span><a 
+ id="section*.5"></a><span 
+class="ec-lmss-10">Sistema de</span>
+<span 
+class="ec-lmss-10">Distribuci</span><span 
+class="ec-lmss-10">ón Local (</span><a 
+href="#SDL"><span 
+class="ec-lmss-10">SDL</span></a><span 
+class="ec-lmss-10">).</span>
+<!--l. 309--><p class="noindent" ><hr class="figure"><div class="figure" 
+>
+                                           
+                                           
+<a 
+ id="x1-14001r3"></a>
+                                           
+                                           
+<!--l. 311--><p class="noindent" ><img 
+src="str.png" alt="PIC"  
+width="227" height="227" >
+<br /> <div class="caption" 
+><span class="id">Figura&#x00A0;2.3: </span><span  
+class="content">Sistema de transmisión del Valle</span></div><!--tex4ht:label?: x1-14001r3 -->
+                                           
+                                           
+<!--l. 314--><p class="noindent" ></div><hr class="endfigure">
+<a 
+ id="x1-14002r25"></a>
+<h4 class="subsectionHead"><span class="titlemark"><span 
+class="ec-lmss-10">2.2.3.   </span></span> <a 
+ id="x1-150003"></a><span 
+class="ec-lmss-10">Sistema de distribuci</span><span 
+class="ec-lmss-10">ón local (SDL)</span></h4>
+<!--l. 318--><p class="noindent" ><span 
+class="ec-lmss-10">El</span> <a 
+href="#SDL"><span 
+class="ec-lmss-10">SDL</span></a> <span 
+class="ec-lmss-10">se caracteriza por tener redes de distribuci</span><span 
+class="ec-lmss-10">ón</span>
+<span 
+class="ec-lmss-10">a nivel de 13.2 , 34.5 y 115 kV </span><span class="cite"><span 
+class="ec-lmss-10">[</span><a 
+href="#XEMCALI2007"><span 
+class="ec-lmss-10">EMCALI, 2007</span></a><span 
+class="ec-lmss-10">]</span></span><span 
+class="ec-lmss-10">.</span>
+<span 
+class="ec-lmss-10">Las subestaciones que hacen parte del</span> <a 
+href="#SDL"><span 
+class="ec-lmss-10">SDL</span></a> <span 
+class="ec-lmss-10">tienen</span>
+<span 
+class="ec-lmss-10">transformadores en conexi</span><span 
+class="ec-lmss-10">ón </span><span 
+class="zplmr7m-">Dyn</span><span 
+class="pplr7t-">1</span>
+<a 
+ id="x1-15001r22"></a>
+<h3 class="sectionHead"><span class="titlemark"><span 
+class="ec-lmss-10">2.3.   </span></span> <a 
+ id="x1-160003"></a><span 
+class="ec-lmss-10">Limites de tensi</span><span 
+class="ec-lmss-10">ón</span></h3>
+<!--l. 325--><p class="noindent" ><span 
+class="ec-lmss-10">En estado estacionario las tensiones en las barras de 115</span>
+<span 
+class="ec-lmss-10">kV, 110 kV y 220 kV, 230 kV no deben ser inferiores al</span>
+<span 
+class="ec-lmss-10">90% ni superiores al 110% del valor nominal.-Para la red</span>
+<span 
+class="ec-lmss-10">de 500 kV el voltaje m</span><span 
+class="ec-lmss-10">ínimo permitido es del 90% y</span>
+<span 
+class="ec-lmss-10">el m</span><span 
+class="ec-lmss-10">áximo es del 105% del valor nominal.</span><span class="cite"><span 
+class="ec-lmss-10">[</span><a 
+href="#XCREG0251995"><span 
+class="ec-lmss-10">CREG,</span>
+<span 
+class="ec-lmss-10">1995</span></a><span 
+class="ec-lmss-10">]</span></span><span 
+class="ec-lmss-10">.</span>
+<a 
+ id="x1-16001r28"></a>
+<h3 class="sectionHead"><span class="titlemark"><span 
+class="ec-lmss-10">2.4.   </span></span> <a 
+ id="x1-170004"></a><span 
+class="ec-lmss-10">PUESTA A TIERRA</span></h3>
+<!--l. 330--><p class="noindent" ><span 
+class="ec-lmss-10">La resistencia de puesta a tierra es un indicador que limita</span>
+<span 
+class="ec-lmss-10">directamente la m</span><span 
+class="ec-lmss-10">áxima elevaci</span><span 
+class="ec-lmss-10">ón de potencial, pueden</span>
+<span 
+class="ec-lmss-10">tomarse como referencia los valores m</span><span 
+class="ec-lmss-10">áximos de la tabla</span>
+<a 
+href="#x1-17001r1"><span 
+class="ec-lmss-10">2.1</span><!--tex4ht:ref: tab:valorestierraretie --></a><span 
+class="ec-lmss-10">.</span>
+<div class="table">
+                                           
+                                           
+<!--l. 332--><p class="noindent" ><a 
+ id="x1-17001r1"></a><hr class="float"><div class="float" 
+>
+                                           
+                                           
+<!--l. 334--><p class="noindent" ><img 
+src="valores_tierra_retie.png" alt="PIC"  
+width="227" height="227" >
+<br /> <div class="caption" 
+><span class="id">Cuadro&#x00A0;2.1: </span><span  
+class="content">Valores de puesta a tierra de acuerdo
+al RETIE <span class="cite">[<a 
+href="#XRETIE2013">RETIE, </a>]</span></span></div><!--tex4ht:label?: x1-17001r1 -->
+                                           
+                                           
+</div><hr class="endfloat" />
+</div>
+<a 
+ id="x1-17002r29"></a>
+<h3 class="sectionHead"><span class="titlemark"><span 
+class="ec-lmss-10">2.5.   </span></span> <a 
+ id="x1-180005"></a><span 
+class="ec-lmss-10">Distancias de seguridad</span></h3>
+<!--l. 342--><p class="noindent" ><span 
+class="ec-lmss-10">Si se presentan partes expuestas, separadas por malla</span>
+<span 
+class="ec-lmss-10">eslabonada u otra barrera que permita la entrada de</span>
+<span 
+class="ec-lmss-10">cuerpos tales como varillas, tubos o palos, la distncia debe</span>
+<span 
+class="ec-lmss-10">aplicar la siguiente tabla adaptada del NEC 2014 Tabla</span>
+<span 
+class="ec-lmss-10">110.31.</span><br 
+class="newline" /><br 
+class="newline" /><div class="table">
+                                           
+                                           
+<!--l. 343--><p class="noindent" ><a 
+ id="x1-18001r2"></a><hr class="float"><div class="float" 
+>
+                                           
+                                           
+<br />  <div class="caption" 
+><span class="id">Cuadro&#x00A0;2.2:    </span><span  
+class="content">Distancias    mínimas    a    partes
+energizadas (espacios de trabajo)</span></div><!--tex4ht:label?: x1-18001r2 -->
+<div class="tabular"> <table id="TBL-2" class="tabular" 
+ 
+><colgroup id="TBL-2-1g"><col 
+id="TBL-2-1"></colgroup><colgroup id="TBL-2-2g"><col 
+id="TBL-2-2"></colgroup><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-1-"><td  style="white-space:nowrap; text-align:center;" id="TBL-2-1-1"  
+class="td11">                </td><td  style="white-space:normal; text-align:left;" id="TBL-2-1-2"  
+class="td11"> <!--l. 348--><p class="noindent" >Distancia      mínima      a
+  partes energizadas               </td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-2-"><td  style="white-space:nowrap; text-align:center;" id="TBL-2-2-1"  
+class="td11"> Tensión nominal  </td><td  style="white-space:normal; text-align:left;" id="TBL-2-2-2"  
+class="td11"> <!--l. 349--><p class="noindent" >(m)                                          </td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-3-"><td  style="white-space:nowrap; text-align:center;" id="TBL-2-3-1"  
+class="td11">   601 &#8211; 13.799       </td><td  style="white-space:normal; text-align:left;" id="TBL-2-3-2"  
+class="td11"> <!--l. 350--><p class="noindent" >3,05                                         </td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-4-"><td  style="white-space:nowrap; text-align:center;" id="TBL-2-4-1"  
+class="td11"> 13.800 &#8211; 230.000   </td><td  style="white-space:normal; text-align:left;" id="TBL-2-4-2"  
+class="td11"> <!--l. 351--><p class="noindent" >4,57                                         </td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-5-"><td  style="white-space:nowrap; text-align:center;" id="TBL-2-5-1"  
+class="td11">    &#x003E;230.000         </td><td  style="white-space:normal; text-align:left;" id="TBL-2-5-2"  
+class="td11"> <!--l. 352--><p class="noindent" >5,49                                         </td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-6-"><td  style="white-space:nowrap; text-align:center;" id="TBL-2-6-1"  
+class="td11">                </td></tr></table></div>
+                                           
+                                           
+</div><hr class="endfloat" />
+</div>
+     <ul class="itemize1">
+     <li class="itemize">
+     <!--l. 358--><p class="noindent" ><span 
+class="ec-lmss-10">Distancia</span>
+     <span 
+class="ec-lmss-10">vertical &#8220;a&#8221; sobre techos y proyecciones, aplicable</span>
+     <span 
+class="ec-lmss-10">solamente a zonas de dif</span><span 
+class="ec-lmss-10">ícil acceso a personas y</span>
+     <span 
+class="ec-lmss-10">siempre y cuando forme parte de una planta de</span>
+     <span 
+class="ec-lmss-10">generaci</span><span 
+class="ec-lmss-10">ón, una subestaci</span><span 
+class="ec-lmss-10">ón o una industria y el</span>
+     <span 
+class="ec-lmss-10">propietario o tenedor de la instalaci</span><span 
+class="ec-lmss-10">ón el</span><span 
+class="ec-lmss-10">éctrica</span>
+     <span 
+class="ec-lmss-10">tenga  absoluto  control  tanto  de  la  instalaci</span><span 
+class="ec-lmss-10">ón</span>
+     <span 
+class="ec-lmss-10">como de la edificaci</span><span 
+class="ec-lmss-10">ón o estructura </span><a 
+href="#x1-18002r4"><span 
+class="ec-lmss-10">2.4</span><!--tex4ht:ref: fig:distancias-construccion --></a><span 
+class="ec-lmss-10">.</span>
+     </li>
+     <li class="itemize">
+     <!--l. 361--><p class="noindent" ><span 
+class="ec-lmss-10">Distancia  horizontal  &#8220;b&#8221;  a  muros,  balcones,</span>
+     <span 
+class="ec-lmss-10">salientes,</span>
+     <span 
+class="ec-lmss-10">ventanas y diferentes </span><span 
+class="ec-lmss-10">áreas independientemente</span>
+     <span 
+class="ec-lmss-10">de la facilidad de accesibilidad de personas. </span><a 
+href="#x1-18002r4"><span 
+class="ec-lmss-10">2.4</span><!--tex4ht:ref: fig:distancias-construccion --></a>
+     </li>
+     <li class="itemize">
+     <!--l. 365--><p class="noindent" ><span 
+class="ec-lmss-10">Distancia vertical &#8220;c&#8221; sobre o debajo de balcones</span>
+     <span 
+class="ec-lmss-10">o techos de f</span><span 
+class="ec-lmss-10">ácil acceso a personas, y sobre techos</span>
+     <span 
+class="ec-lmss-10">acce</span><a 
+href="#x1-18002r4"><span 
+class="ec-lmss-10">2.4</span><!--tex4ht:ref: fig:distancias-construccion --></a>
+                                           
+                                           
+     </li>
+     <li class="itemize">
+     <!--l. 368--><p class="noindent" ><span 
+class="ec-lmss-10">Distancia   vertical   &#8220;d&#8221;   a   carreteras,   calles,</span>
+     <span 
+class="ec-lmss-10">callejones,  zonas  peatonales,  </span><span 
+class="ec-lmss-10">áreas  sujetas  a</span>
+     <span 
+class="ec-lmss-10">tr</span><span 
+class="ec-lmss-10">áfico vehicular. </span><a 
+href="#x1-18002r4"><span 
+class="ec-lmss-10">2.4</span><!--tex4ht:ref: fig:distancias-construccion --></a> <span 
+class="ec-lmss-10">para veh</span><span 
+class="ec-lmss-10">ículos de m</span><span 
+class="ec-lmss-10">ás de</span>
+     <span 
+class="ec-lmss-10">2,45 m de altura. </span><span class="cite"><span 
+class="ec-lmss-10">[</span><a 
+href="#XRETIE2013"><span 
+class="ec-lmss-10">RETIE, </span></a><span 
+class="ec-lmss-10">]</span></span></li></ul>
+<!--l. 371--><p class="noindent" ><hr class="figure"><div class="figure" 
+>
+                                           
+                                           
+<a 
+ id="x1-18002r4"></a>
+                                           
+                                           
+<br /> <div class="caption" 
+><span class="id">Figura&#x00A0;2.4: </span><span  
+class="content">Distancias de seguridad en zonas con
+construcciones</span></div><!--tex4ht:label?: x1-18002r4 -->
+<!--l. 375--><p class="noindent" ><img 
+src="distancias-construccion.png" alt="PIC"  
+width="227" height="227" >
+                                           
+                                           
+<!--l. 376--><p class="noindent" ></div><hr class="endfigure">
+<div class="table">
+                                           
+                                           
+<!--l. 378--><p class="noindent" ><hr class="float"><div class="float" 
+>
+                                           
+                                           
+<div class="tabular"> <table id="TBL-3" class="tabular" 
+ 
+><colgroup id="TBL-3-1g"><col 
+id="TBL-3-1"></colgroup><colgroup id="TBL-3-2g"><col 
+id="TBL-3-2"></colgroup><colgroup id="TBL-3-3g"><col 
+id="TBL-3-3"></colgroup><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-1-"><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-3-1-1"  
+class="td11"> <!--l. 382--><p class="noindent" >Tensión      nominal
+  entre fases (kV)         </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-1-2"  
+class="td11"> Distancia (m)  </td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-1-3"  
+class="td11">   </td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-2-"><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-3-2-1"  
+class="td11"> <!--l. 383--><p class="noindent" >44/34,5/33                  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-2-2"  
+class="td11">      3,8            </td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-2-3"  
+class="td11"> a   </td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-3-"><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-3-3-1"  
+class="td11"> <!--l. 384--><p class="noindent" >13,8/13,2/11,4/7,6    </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-3-2"  
+class="td11">      3,8            </td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-3-3"  
+class="td11"> a   </td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-4-"><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-3-4-1"  
+class="td11"> <!--l. 385--><p class="noindent" >&#x003C;1                                 </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-4-2"  
+class="td11">     0,45           </td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-4-3"  
+class="td11"> a   </td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-5-"><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-3-5-1"  
+class="td11"> <!--l. 386--><p class="noindent" >66/57,5                        </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-5-2"  
+class="td11">      2,5            </td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-5-3"  
+class="td11"> b   </td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-6-"><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-3-6-1"  
+class="td11"> <!--l. 387--><p class="noindent" >44/34,5/33                  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-6-2"  
+class="td11">      2,3            </td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-6-3"  
+class="td11"> b   </td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-7-"><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-3-7-1"  
+class="td11"> <!--l. 388--><p class="noindent" >13,8/13,2/11,4/7,6    </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-7-2"  
+class="td11">      2,3            </td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-7-3"  
+class="td11"> b   </td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-8-"><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-3-8-1"  
+class="td11"> <!--l. 389--><p class="noindent" >&#x003C;1                                 </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-8-2"  
+class="td11">      1,7            </td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-8-3"  
+class="td11"> b   </td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-9-"><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-3-9-1"  
+class="td11"> <!--l. 390--><p class="noindent" >44/34,5/33                  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-9-2"  
+class="td11">      4,1            </td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-9-3"  
+class="td11"> c   </td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-10-"><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-3-10-1"  
+class="td11"> <!--l. 391--><p class="noindent" >13,8/13,2/11,4/7,6    </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-10-2"  
+class="td11">      4,1            </td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-10-3"  
+class="td11"> c   </td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-11-"><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-3-11-1"  
+class="td11"> <!--l. 392--><p class="noindent" >&#x003C;1                                 </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-11-2"  
+class="td11">      3,5            </td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-11-3"  
+class="td11"> c   </td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-12-"><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-3-12-1"  
+class="td11"> <!--l. 393--><p class="noindent" >115/110                       </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-12-2"  
+class="td11">      6,1            </td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-12-3"  
+class="td11"> d  </td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-13-"><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-3-13-1"  
+class="td11"> <!--l. 394--><p class="noindent" >66/57,5                        </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-13-2"  
+class="td11">      5,8            </td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-13-3"  
+class="td11"> d  </td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-14-"><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-3-14-1"  
+class="td11"> <!--l. 395--><p class="noindent" >44/34,5/33                  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-14-2"  
+class="td11">      5,6            </td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-14-3"  
+class="td11"> d  </td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-15-"><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-3-15-1"  
+class="td11"> <!--l. 396--><p class="noindent" >13,8/13,2/11,4/7,6    </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-15-2"  
+class="td11">      5,6            </td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-15-3"  
+class="td11"> d  </td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-16-"><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-3-16-1"  
+class="td11"> <!--l. 397--><p class="noindent" >&#x003C;1                                 </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-16-2"  
+class="td11">      5             </td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-16-3"  
+class="td11"> d  </td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-17-"><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-3-17-1"  
+class="td11">                   </td></tr></table></div>
+                                           
+                                           
+</div><hr class="endfloat" />
+</div>
+                                           
+                                           
+<h2 class="chapterHead"><span class="titlemark"><span 
+class="ec-lmss-10">Cap</span><span 
+class="ec-lmss-10">ítulo</span><span 
+class="ec-lmss-10">&#x00A0;3</span></span><br /><a 
+ id="x1-190003"></a><span 
+class="ec-lmss-10">PLANEACI</span><span 
+class="ec-lmss-10">ÓN DE LA OPERACI</span><span 
+class="ec-lmss-10">ÓN</span></h2>
+<!--l. 406--><p class="noindent" ><span 
+class="ec-lmss-10">Se estudiar</span><span 
+class="ec-lmss-10">á la planeaci</span><span 
+class="ec-lmss-10">ón de la operaci</span><span 
+class="ec-lmss-10">ón en las redes de</span>
+<span 
+class="ec-lmss-10">EMCALI, para ello se integran los criterios regulatorios</span>
+<span 
+class="ec-lmss-10">establecidos por la CREG y los criterios del CNO (Consejo</span>
+<span 
+class="ec-lmss-10">nacional de Operaci</span><span 
+class="ec-lmss-10">ón) Criterios Generales Los criterios</span>
+<span 
+class="ec-lmss-10">generales del planeamiento de la operaci</span><span 
+class="ec-lmss-10">ón el</span><span 
+class="ec-lmss-10">éctrica son los</span>
+<span 
+class="ec-lmss-10">siguientes </span><span class="cite"><span 
+class="ec-lmss-10">[</span><a 
+href="#XCREG0251995"><span 
+class="ec-lmss-10">CREG, 1995</span></a><span 
+class="ec-lmss-10">]</span></span><span 
+class="ec-lmss-10">:</span>
+<a 
+ id="x1-19001r27"></a>
+<h4 class="subsectionHead"><span class="titlemark"><span 
+class="ec-lmss-10">3.0.1.   </span></span> <a 
+ id="x1-200001"></a><span 
+class="ec-lmss-10">FUNCIONES</span></h4>
+<!--l. 415--><p class="noindent" ><span 
+class="ec-lmss-10">El Planeamiento Operativo El</span><span 
+class="ec-lmss-10">éctrico se ha dividido en</span>
+<span 
+class="ec-lmss-10">cuatro etapas denominadas </span><span 
+class="ec-lmssbx-10">Largo</span><span 
+class="ec-lmss-10">, </span><span 
+class="ec-lmssbx-10">Mediano</span><span 
+class="ec-lmss-10">, </span><span 
+class="ec-lmssbx-10">Corto</span>
+<span 
+class="ec-lmss-10">y </span><span 
+class="ec-lmssbx-10">muy Corto Plazo</span><span 
+class="ec-lmss-10">. En cada una de las etapas se</span>
+<span 
+class="ec-lmss-10">efect</span><span 
+class="ec-lmss-10">úa an</span><span 
+class="ec-lmss-10">álisis de estado </span><span 
+class="ec-lmsso-10">estacionario</span><span 
+class="ec-lmss-10">, </span><span 
+class="ec-lmsso-10">transitorio </span><span 
+class="ec-lmss-10">y</span>
+<span 
+class="ec-lmsso-10">din</span><span 
+class="ec-lmsso-10">ámico</span><span 
+class="ec-lmss-10">. Para el an</span><span 
+class="ec-lmss-10">álisis de estado estacionario se</span>
+<span 
+class="ec-lmss-10">utiliza el programa de flujo de cargas convencional y el</span>
+<span 
+class="ec-lmss-10">programa de flujo de cargas </span><span 
+class="ec-lmss-10">óptimo. Este </span><span 
+class="ec-lmss-10">último se</span>
+<span 
+class="ec-lmss-10">utiliza particularmente para establecer los taps de</span>
+<span 
+class="ec-lmss-10">referencia y los </span><span 
+class="ec-lmssbx-10">voltajes objetivo en las unidades de</span>
+<span 
+class="ec-lmssbx-10">generaci</span><span 
+class="ec-lmssbx-10">ón</span><span 
+class="ec-lmss-10">.</span><br 
+class="newline" /><br 
+class="newline" /><span 
+class="ec-lmss-10">El estado transitorio se analiza mediante el programa</span>
+<span 
+class="ec-lmss-10">cl</span><span 
+class="ec-lmss-10">ásico de estabilidad, el cual da la respuesta en el</span>
+<span 
+class="ec-lmss-10">tiempo del sistema ante perturbaciones de peque</span><span 
+class="ec-lmss-10">ña o</span>
+<span 
+class="ec-lmss-10">gran magnitud a partir de una condici</span><span 
+class="ec-lmss-10">ón de operaci</span><span 
+class="ec-lmss-10">ón</span>
+<span 
+class="ec-lmss-10">espec</span><span 
+class="ec-lmss-10">ífica.</span><br 
+class="newline" /><br 
+class="newline" /><span 
+class="ec-lmss-10">Para el an</span><span 
+class="ec-lmss-10">álisis de peque</span><span 
+class="ec-lmss-10">ñas perturbaciones se utiliza el</span>
+<span 
+class="ec-lmss-10">programa de estabilidad din</span><span 
+class="ec-lmss-10">ámica en el cual se hace una</span>
+<span 
+class="ec-lmss-10">representaci</span><span 
+class="ec-lmss-10">ón lineal de los elementos en torno a una</span>
+<span 
+class="ec-lmss-10">condici</span><span 
+class="ec-lmss-10">ón de operaci</span><span 
+class="ec-lmss-10">ón espec</span><span 
+class="ec-lmss-10">ífica, se calculan los valores y</span>
+<span 
+class="ec-lmss-10">vectores propios de la matriz caracter</span><span 
+class="ec-lmss-10">ística. Los valores y</span>
+<span 
+class="ec-lmss-10">vectores propios junto con los factores de participaci</span><span 
+class="ec-lmss-10">ón</span>
+<span 
+class="ec-lmss-10">permiten analizar en forma detallada el comportamiento</span>
+<span 
+class="ec-lmss-10">din</span><span 
+class="ec-lmss-10">ámico del sistema.</span><br 
+class="newline" /><br 
+class="newline" /><span 
+class="ec-lmss-10">Adicionalmente, mediante el programa de cortocircuito se</span>
+<span 
+class="ec-lmss-10">analiza el comportamiento de voltajes y corrientes en el</span>
+<span 
+class="ec-lmss-10">sistema de transmisi</span><span 
+class="ec-lmss-10">ón como resultado de la ocurrencia</span>
+<span 
+class="ec-lmss-10">de una falla. Estos resultados se complementan con</span>
+<span 
+class="ec-lmss-10">los de estabilidad y flujo de cargas para analizar el</span>
+<span 
+class="ec-lmss-10">comportamiento de las protecciones y recomendar o revisar</span>
+<span 
+class="ec-lmss-10">sus ajustes.</span><br 
+class="newline" /><br 
+class="newline" />
+<h5 class="likesubsubsectionHead"><a 
+ id="x1-210001"></a><span 
+class="ec-lmss-10">Largo Plazo y Mediano Plazo</span></h5>
+<!--l. 422--><p class="noindent" ><span 
+class="ec-lmss-10">El objetivo es planear en el Largo Plazo con un horizonte</span>
+<span 
+class="ec-lmss-10">de cinco (5) a</span><span 
+class="ec-lmss-10">ños y resoluci</span><span 
+class="ec-lmss-10">ón semestral y en el Mediano</span>
+<span 
+class="ec-lmss-10">Plazo con un horizonte de un a</span><span 
+class="ec-lmss-10">ño y resoluci</span><span 
+class="ec-lmss-10">ón trimestral,</span>
+<span 
+class="ec-lmss-10">la operaci</span><span 
+class="ec-lmss-10">ón el</span><span 
+class="ec-lmss-10">éctrica del SIN para suplir la demanda con</span>
+<span 
+class="ec-lmss-10">los criterios de calidad y seguridad.</span><br 
+class="newline" /><br 
+class="newline" />
+     <ul class="itemize1">
+     <li class="itemize">
+     <!--l. 425--><p class="noindent" ><span 
+class="ec-lmss-10">L</span><span 
+class="ec-lmss-10">ímites de voltaje en las principales barras del</span>
+     <span 
+class="ec-lmss-10">sistema de transmisi</span><span 
+class="ec-lmss-10">ón.</span>
+     </li>
+     <li class="itemize">
+     <!--l. 426--><p class="noindent" ><span 
+class="ec-lmss-10">Los l</span><span 
+class="ec-lmss-10">ímites de transferencias por el sistema de</span>
+     <span 
+class="ec-lmss-10">transmisi</span><span 
+class="ec-lmss-10">ón.</span>
+     </li>
+     <li class="itemize">
+     <!--l. 427--><p class="noindent" ><span 
+class="ec-lmss-10">Las </span><span 
+class="ec-lmss-10">áreas operativas.</span>
+     </li>
+     <li class="itemize">
+     <!--l. 428--><p class="noindent" ><span 
+class="ec-lmss-10">Los  l</span><span 
+class="ec-lmss-10">ímites  de  transferencias  para  las  </span><span 
+class="ec-lmss-10">áreas</span>
+     <span 
+class="ec-lmss-10">operativas.</span>
+     </li>
+     <li class="itemize">
+     <!--l. 429--><p class="noindent" ><span 
+class="ec-lmss-10">Generaciones m</span><span 
+class="ec-lmss-10">ínimas de seguridad por </span><span 
+class="ec-lmss-10">área.</span>
+     </li>
+     <li class="itemize">
+                                           
+                                           
+     <!--l. 430--><p class="noindent" ><span 
+class="ec-lmss-10">Gu</span><span 
+class="ec-lmss-10">ías para la operaci</span><span 
+class="ec-lmss-10">ón de equipos.</span>
+     </li>
+     <li class="itemize">
+     <!--l. 431--><p class="noindent" ><span 
+class="ec-lmss-10">Necesidades de compensaci</span><span 
+class="ec-lmss-10">ón reactiva.</span>
+     </li>
+     <li class="itemize">
+     <!--l. 432--><p class="noindent" ><span 
+class="ec-lmss-10">Recomendaciones   para   modificar   fechas   de</span>
+     <span 
+class="ec-lmss-10">entrada de proyectos.</span>
+     </li>
+     <li class="itemize">
+     <!--l. 433--><p class="noindent" ><span 
+class="ec-lmss-10">Tiempos cr</span><span 
+class="ec-lmss-10">íticos de despeje de fallas en la red de</span>
+     <span 
+class="ec-lmss-10">transmisi</span><span 
+class="ec-lmss-10">ón.</span>
+     </li>
+     <li class="itemize">
+     <!--l. 434--><p class="noindent" ><span 
+class="ec-lmss-10">El  esquema  de  Desconexi</span><span 
+class="ec-lmss-10">ón  Autom</span><span 
+class="ec-lmss-10">ática  de</span>
+     <span 
+class="ec-lmss-10">Carga.</span>
+     </li>
+     <li class="itemize">
+     <!--l. 435--><p class="noindent" ><span 
+class="ec-lmss-10">An</span><span 
+class="ec-lmss-10">álisis para la conexi</span><span 
+class="ec-lmss-10">ón de nuevos equipos al</span>
+     <span 
+class="ec-lmss-10">SIN.</span>
+                                           
+                                           
+     </li>
+     <li class="itemize">
+     <!--l. 436--><p class="noindent" ><span 
+class="ec-lmss-10">Control de generaci</span><span 
+class="ec-lmss-10">ón para regulaci</span><span 
+class="ec-lmss-10">ón primaria y</span>
+     <span 
+class="ec-lmss-10">secundaria de la frecuencia.</span>
+     </li>
+     <li class="itemize">
+     <!--l. 437--><p class="noindent" ><span 
+class="ec-lmss-10">Recomendaciones  de  ajustes  y  coordinaci</span><span 
+class="ec-lmss-10">ón  al</span>
+     <span 
+class="ec-lmss-10">sistema de protecciones. Consignas de operaci</span><span 
+class="ec-lmss-10">ón.</span>
+     </li>
+     <li class="itemize">
+     <!--l. 439--><p class="noindent" ><span 
+class="ec-lmss-10">An</span><span 
+class="ec-lmss-10">álisis   de   mantenimientos   de   equipos   de</span>
+     <span 
+class="ec-lmss-10">generaci</span><span 
+class="ec-lmss-10">ón y transmisi</span><span 
+class="ec-lmss-10">ón del SIN.</span></li></ul>
+<a 
+ id="x1-21001r31"></a>
+<h3 class="sectionHead"><span class="titlemark"><span 
+class="ec-lmss-10">3.1.   </span></span> <a 
+ id="x1-220001"></a><span 
+class="ec-lmss-10">Cargabilidad de las l</span><span 
+class="ec-lmss-10">íneas</span></h3>
+<!--l. 444--><p class="noindent" ><span 
+class="ec-lmss-10">La m</span><span 
+class="ec-lmss-10">áxima transferencia por las l</span><span 
+class="ec-lmss-10">íneas se considera como</span>
+<span 
+class="ec-lmss-10">el m</span><span 
+class="ec-lmss-10">ínimo valor entre:</span>
+     <ul class="itemize1">
+     <li class="itemize">
+     <!--l. 446--><p class="noindent" ><span 
+class="ec-lmss-10">El l</span><span 
+class="ec-lmss-10">ímite t</span><span 
+class="ec-lmss-10">érmico de los conductores.</span>
+     </li>
+     <li class="itemize">
+                                           
+                                           
+     <!--l. 447--><p class="noindent" ><span 
+class="ec-lmss-10">M</span><span 
+class="ec-lmss-10">áxima  capacidad  de  los  transformadores  de</span>
+     <span 
+class="ec-lmss-10">corriente.</span>
+     </li>
+     <li class="itemize">
+     <!--l. 448--><p class="noindent" ><span 
+class="ec-lmss-10">El l</span><span 
+class="ec-lmss-10">ímite de transmisi</span><span 
+class="ec-lmss-10">ón por regulaci</span><span 
+class="ec-lmss-10">ón de voltaje.</span>
+     </li>
+     <li class="itemize">
+     <!--l. 449--><p class="noindent" ><span 
+class="ec-lmss-10">El    l</span><span 
+class="ec-lmss-10">ímite    por    estabilidad    transitoria    y</span>
+     <span 
+class="ec-lmss-10">din</span><span 
+class="ec-lmss-10">ámica</span><span class="cite"><span 
+class="ec-lmss-10">[</span><a 
+href="#XCREG0251995"><span 
+class="ec-lmss-10">CREG, 1995</span></a><span 
+class="ec-lmss-10">]</span></span><span 
+class="ec-lmss-10">.</span></li></ul>
+<!--l. 452--><p class="noindent" ><span 
+class="ec-lmss-10">Para el caso de EMCALI, la mayor parte de las l</span><span 
+class="ec-lmss-10">íneas</span>
+<span 
+class="ec-lmss-10">a</span><span 
+class="ec-lmss-10">éreas, en las cuales se tendr</span><span 
+class="ec-lmss-10">á como criterio de carga</span>
+<span 
+class="ec-lmss-10">m</span><span 
+class="ec-lmss-10">áxima (limite t</span><span 
+class="ec-lmss-10">érmico), la permitida por el conductor en</span>
+<span 
+class="ec-lmss-10">caso de realimentaciones. En condiciones </span><span 
+class="ec-lmss-10">óptimas (circuito</span>
+<span 
+class="ec-lmss-10">sin realimentar) no se debe superar el 70% de la capacidad</span>
+<span 
+class="ec-lmss-10">t</span><span 
+class="ec-lmss-10">érmica del conductor </span><span class="cite"><span 
+class="ec-lmss-10">[</span><a 
+href="#XMANUALEMCALI"><span 
+class="ec-lmss-10">EMCALI, 2017</span></a><span 
+class="ec-lmss-10">]</span></span><span 
+class="ec-lmss-10">.</span>
+<a 
+ id="x1-22001r37"></a>
+<h3 class="sectionHead"><span class="titlemark"><span 
+class="ec-lmss-10">3.2.   </span></span> <a 
+ id="x1-230002"></a><span 
+class="ec-lmss-10">Cargabilidad de los transformadores</span></h3>
+<!--l. 455--><p class="noindent" ><span 
+class="ec-lmss-10">La cargabilidad de los transformadores se mide por su</span>
+<span 
+class="ec-lmss-10">capacidad de corriente nominal, para tener en cuenta las</span>
+<span 
+class="ec-lmss-10">variaciones de voltaje de operaci</span><span 
+class="ec-lmss-10">ón con respecto al nominal</span>
+<span 
+class="ec-lmss-10">del equipo.</span><span class="cite"><span 
+class="ec-lmss-10">[</span><a 
+href="#XCREG0251995"><span 
+class="ec-lmss-10">CREG, 1995</span></a><span 
+class="ec-lmss-10">]</span></span><br 
+class="newline" /><br 
+class="newline" /><span 
+class="ec-lmss-10">En el Largo y Mediano Plazo no se permiten sobrecargas</span>
+                                           
+                                           
+<span 
+class="ec-lmss-10">permanentes. En el Corto y muy Corto Plazo se pueden</span>
+<span 
+class="ec-lmss-10">fijar l</span><span 
+class="ec-lmss-10">ímites de sobrecarga de acuerdo a la duraci</span><span 
+class="ec-lmss-10">ón de</span>
+<span 
+class="ec-lmss-10">la misma sin sobrepasar las temperaturas m</span><span 
+class="ec-lmss-10">áximas</span>
+<span 
+class="ec-lmss-10">permisibles de los equipos y sin disminuir la vida </span><span 
+class="ec-lmss-10">útil de los</span>
+<span 
+class="ec-lmss-10">mismos. Para los transformadores, el m</span><span 
+class="ec-lmss-10">étodo empleado</span>
+<span 
+class="ec-lmss-10">para determinar la m</span><span 
+class="ec-lmss-10">áxima sobrecarga se basa en el</span>
+<span 
+class="ec-lmss-10">c</span><span 
+class="ec-lmss-10">álculo de la temperatura hora a hora del aceite y de los</span>
+<span 
+class="ec-lmss-10">devanados del transformador como una funci</span><span 
+class="ec-lmss-10">ón de su carga</span>
+<span 
+class="ec-lmss-10">horaria. No se debe perder vida </span><span 
+class="ec-lmss-10">útil del equipo en su ciclo</span>
+<span 
+class="ec-lmss-10">de carga. </span><span class="cite"><span 
+class="ec-lmss-10">[</span><a 
+href="#XCREG0251995"><span 
+class="ec-lmss-10">CREG, 1995</span></a><span 
+class="ec-lmss-10">]</span></span><br 
+class="newline" /><br 
+class="newline" /><span 
+class="ec-lmss-10">Se considera entonces para las subestaciones de EMCALI</span>
+<span 
+class="ec-lmss-10">una sobrecarga m</span><span 
+class="ec-lmss-10">áxima del 130% </span><span class="cite"><span 
+class="ec-lmss-10">[</span><a 
+href="#XEMCALI2007"><span 
+class="ec-lmss-10">EMCALI, 2007</span></a><span 
+class="ec-lmss-10">]</span></span> <span 
+class="ec-lmss-10">en el</span>
+<span 
+class="ec-lmss-10">corto plazo.</span><br 
+class="newline" /><br 
+class="newline" /><span 
+class="ec-lmss-10">Para el caso de derrateo por arm</span><span 
+class="ec-lmss-10">ónicos se debe tener en</span>
+<span 
+class="ec-lmss-10">cuenta el factor k de la carga y la curva de derrateo del</span>
+<span 
+class="ec-lmss-10">transformador.</span>
+<a 
+ id="x1-23001r38"></a>
+<h3 class="sectionHead"><span class="titlemark"><span 
+class="ec-lmss-10">3.3.   </span></span> <a 
+ id="x1-240003"></a><span 
+class="ec-lmss-10">CONTINGENCIAS</span></h3>
+<!--l. 464--><p class="noindent" ><span 
+class="ec-lmss-10">Una contingencia se refiere a una situaci</span><span 
+class="ec-lmss-10">ón de emergencia</span>
+<span 
+class="ec-lmss-10">donde se puede llegar a perder parte del sistema de</span>
+<span 
+class="ec-lmss-10">potencia. El sistema de distribuci</span><span 
+class="ec-lmss-10">ón debe estar en</span>
+<span 
+class="ec-lmss-10">capacidad de seguir suministrando carga en caso de una de</span>
+<span 
+class="ec-lmss-10">las siguientes contingencias </span><span class="cite"><span 
+class="ec-lmss-10">[</span><a 
+href="#XEMCALI2007"><span 
+class="ec-lmss-10">EMCALI, 2007</span></a><span 
+class="ec-lmss-10">]</span></span><span 
+class="ec-lmss-10">:</span>
+                                           
+                                           
+     <ol  class="enumerate1" >
+<li 
+  class="enumerate" id="x1-24002x1">
+     <!--l. 467--><p class="noindent" ><span 
+class="ec-lmss-10">P</span><span 
+class="ec-lmss-10">érdida  de  una  subestaci</span><span 
+class="ec-lmss-10">ón  con  dos  o  tres</span>
+     <span 
+class="ec-lmss-10">transformadores.</span>
+     </li>
+<li 
+  class="enumerate" id="x1-24004x2">
+     <!--l. 468--><p class="noindent" ><span 
+class="ec-lmss-10">P</span><span 
+class="ec-lmss-10">érdida de una barra de 13.2 kV</span>
+     </li>
+<li 
+  class="enumerate" id="x1-24006x3">
+     <!--l. 469--><p class="noindent" ><span 
+class="ec-lmss-10">P</span><span 
+class="ec-lmss-10">érdida de un transformador.</span>
+     </li>
+<li 
+  class="enumerate" id="x1-24008x4">
+     <!--l. 470--><p class="noindent" ><span 
+class="ec-lmss-10">P</span><span 
+class="ec-lmss-10">érdida de un tramo de circuito.</span>
+     </li>
+<li 
+  class="enumerate" id="x1-24010x5">
+     <!--l. 471--><p class="noindent" ><span 
+class="ec-lmss-10">P</span><span 
+class="ec-lmss-10">érdida de un interruptor de circuito.</span>
+                                           
+                                           
+     </li>
+<li 
+  class="enumerate" id="x1-24012x6">
+     <!--l. 472--><p class="noindent" ><span 
+class="ec-lmss-10">P</span><span 
+class="ec-lmss-10">érdida del tramo subterr</span><span 
+class="ec-lmss-10">áneo.</span></li></ol>
+<h5 class="likesubsubsectionHead"><a 
+ id="x1-250003"></a><span 
+class="ec-lmss-10">P</span><span 
+class="ec-lmss-10">érdida de una Subestaci</span><span 
+class="ec-lmss-10">ón con Dos o Tres Transformadores</span></h5>
+<!--l. 477--><p class="noindent" ><span 
+class="ec-lmss-10">En caso de p</span><span 
+class="ec-lmss-10">érdida de una subestaci</span><span 
+class="ec-lmss-10">ón se pierden</span>
+<span 
+class="ec-lmss-10">aproximadamente 77 MVA en 13.2 kV (teniendo en</span>
+<span 
+class="ec-lmss-10">cuenta una subestaci</span><span 
+class="ec-lmss-10">ón con dos transformadores de</span>
+<span 
+class="ec-lmss-10">41.75 MVA cargados al 90%), las cuales deben ser</span>
+<span 
+class="ec-lmss-10">atendidos por las subestaciones adyacentes mediante</span>
+<span 
+class="ec-lmss-10">transferencias de carga en la red. El valor esperado de</span>
+<span 
+class="ec-lmss-10">carga en cada transformador de 41.75 MVA es de 38</span>
+<span 
+class="ec-lmss-10">MVA y en cada transformador de 28 MVA es de 26</span>
+<span 
+class="ec-lmss-10">MVA, quedando una capacidad disponible en cada</span>
+<span 
+class="ec-lmss-10">transformador de 16 MVA (en transformadores de</span>
+<span 
+class="ec-lmss-10">41.75 MVA) y de 10 MVA (en transformadores de 28</span>
+<span 
+class="ec-lmss-10">MVA) para obtener una cargabilidad del 130%. En el</span>
+<span 
+class="ec-lmss-10">momento del pico de la subestaci</span><span 
+class="ec-lmss-10">ón cada alimentador a</span>
+<span 
+class="ec-lmss-10">13.2 kV estar</span><span 
+class="ec-lmss-10">ía con 8.2 MVA, transfiriendo la tercera</span>
+<span 
+class="ec-lmss-10">parte de la carga de un alimentador a otro.</span><span class="cite"><span 
+class="ec-lmss-10">[</span><a 
+href="#XEMCALI2007"><span 
+class="ec-lmss-10">EMCALI,</span>
+<span 
+class="ec-lmss-10">2007</span></a><span 
+class="ec-lmss-10">]</span></span><span 
+class="ec-lmss-10">.</span><br 
+class="newline" /><br 
+class="newline" />
+<!--l. 481--><p class="noindent" ><span 
+class="ec-lmss-10">En caso de realizar realimentaciones totales de una</span>
+<span 
+class="ec-lmss-10">subestaci</span><span 
+class="ec-lmss-10">ón , de acuerdo a la cargabilidad del momento se</span>
+                                           
+                                           
+<span 
+class="ec-lmss-10">recomienda seguir el siguiente plan de contingencia.</span>
+<h5 class="likesubsubsectionHead"><a 
+ id="x1-260003"></a><span 
+class="ec-lmss-10">Suplencias Pance</span></h5>
+<!--l. 485--><p class="noindent" ><span 
+class="ec-lmss-10">Para la subestaci</span><span 
+class="ec-lmss-10">ón Pance se tiene un </span><span 
+class="ec-lmss-10">único transformador</span>
+<span 
+class="ec-lmss-10">de 41.75 MVA, la carga pico de los circuitos es la</span>
+<span 
+class="ec-lmss-10">siguiente:</span>
+<div class="table">
+                                           
+                                           
+<!--l. 487--><p class="noindent" ><a 
+ id="x1-26001r1"></a><hr class="float"><div class="float" 
+>
+                                           
+                                           
+<br /> <div class="caption" 
+><span class="id">Cuadro&#x00A0;3.1: </span><span  
+class="content">Cargas de subestación Pance </span></div><!--tex4ht:label?: x1-26001r1 -->
+<div class="tabular"> <table id="TBL-4" class="tabular" 
+ 
+><colgroup id="TBL-4-1g"><col 
+id="TBL-4-1"></colgroup><colgroup id="TBL-4-2g"><col 
+id="TBL-4-2"></colgroup><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-4-1-"><td  style="white-space:nowrap; text-align:center;" id="TBL-4-1-1"  
+class="td11">   Circuito       </td><td  style="white-space:nowrap; text-align:center;" id="TBL-4-1-2"  
+class="td11">  Carga     </td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-4-2-"><td  style="white-space:nowrap; text-align:center;" id="TBL-4-2-1"  
+class="td11">   La maria       </td><td  style="white-space:nowrap; text-align:center;" id="TBL-4-2-2"  
+class="td11"> 2.4 MVA  </td></tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-4-3-"><td  style="white-space:nowrap; text-align:center;" id="TBL-4-3-1"  
+class="td11"> La buitrera </td><td  style="white-space:nowrap; text-align:center;" id="TBL-4-3-2"  
+class="td11"> 3 MVA</td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-4-4-"><td  style="white-space:nowrap; text-align:center;" id="TBL-4-4-1"  
+class="td11">  Multicentro    </td><td  style="white-space:nowrap; text-align:center;" id="TBL-4-4-2"  
+class="td11">  5 MVA    </td></tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-4-5-"><td  style="white-space:nowrap; text-align:center;" id="TBL-4-5-1"  
+class="td11"> Capri </td><td  style="white-space:nowrap; text-align:center;" id="TBL-4-5-2"  
+class="td11"> 1.4 MVA</td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-4-6-"><td  style="white-space:nowrap; text-align:center;" id="TBL-4-6-1"  
+class="td11">  Paso Ancho    </td><td  style="white-space:nowrap; text-align:center;" id="TBL-4-6-2"  
+class="td11">  8 MVA    </td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-4-7-"><td  style="white-space:nowrap; text-align:center;" id="TBL-4-7-1"  
+class="td11"> Cañas Gordas  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-4-7-2"  
+class="td11">  5 MVA    </td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-4-8-"><td  style="white-space:nowrap; text-align:center;" id="TBL-4-8-1"  
+class="td11">  La montaña    </td><td  style="white-space:nowrap; text-align:center;" id="TBL-4-8-2"  
+class="td11"> 1.5 MVA  </td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-4-9-"><td  style="white-space:nowrap; text-align:center;" id="TBL-4-9-1"  
+class="td11">     Viga           </td><td  style="white-space:nowrap; text-align:center;" id="TBL-4-9-2"  
+class="td11"> 1.5 MVA  </td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-4-10-"><td  style="white-space:nowrap; text-align:center;" id="TBL-4-10-1"  
+class="td11">              </td></tr></table></div>
+                                           
+                                           
+</div><hr class="endfloat" />
+</div>
+<!--l. 504--><p class="noindent" ><span 
+class="ec-lmss-10">Para realizar las suplencias se utilizaran las cargas de las</span>
+<span 
+class="ec-lmss-10">subestaciones vecinas, las cuales son subestaci</span><span 
+class="ec-lmss-10">ón Alrerez,</span>
+<span 
+class="ec-lmss-10">Melendez, Sur y Ladera. Por ejemplo para el circuito</span>
+<span class="underline"><span 
+class="ec-lmss-10">Ca</span><span 
+class="ec-lmss-10">ñasgordas</span></span> <span 
+class="ec-lmss-10">, que tiene una carga m</span><span 
+class="ec-lmss-10">áxima de 8MVA, se</span>
+<span 
+class="ec-lmss-10">fracciona en dos partes, la primera cerca a la subestaci</span><span 
+class="ec-lmss-10">ón a</span>
+<span 
+class="ec-lmss-10">trav</span><span 
+class="ec-lmss-10">és del circuito Bochalema y la segunda la cola del</span>
+<span 
+class="ec-lmss-10">circuito se suplir</span><span 
+class="ec-lmss-10">á su carga por el circuito </span><span class="underline"><span 
+class="ec-lmss-10">El castillo</span></span> <span 
+class="ec-lmss-10">el cual</span>
+<span 
+class="ec-lmss-10">tiene una carga de 2MVA, quedando este </span><span 
+class="ec-lmss-10">último con</span>
+<span 
+class="ec-lmss-10">una carga de 6 MVA (437 A en 13.2 kV). Para esto</span>
+<span 
+class="ec-lmss-10">previamente debe descargarse el circuito bochalema a</span>
+<span 
+class="ec-lmss-10">trav</span><span 
+class="ec-lmss-10">és del circuito la bocha para que pueda suplir dicha</span>
+<span 
+class="ec-lmss-10">carga</span>
+<div class="table">
+                                           
+                                           
+<!--l. 506--><p class="noindent" ><a 
+ id="x1-26002r2"></a><hr class="float"><div class="float" 
+>
+                                           
+                                           
+<br /> <div class="caption" 
+><span class="id">Cuadro&#x00A0;3.2: </span><span  
+class="content">Suplencias recomendadas sen caso de
+falla de la subestación Pance</span></div><!--tex4ht:label?: x1-26002r2 -->
+<div class="tabular"> <table id="TBL-5" class="tabular" 
+ 
+><colgroup id="TBL-5-1g"><col 
+id="TBL-5-1"></colgroup><colgroup id="TBL-5-2g"><col 
+id="TBL-5-2"></colgroup><colgroup id="TBL-5-3g"><col 
+id="TBL-5-3"></colgroup><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-5-1-"><td  style="white-space:nowrap; text-align:center;" id="TBL-5-1-1"  
+class="td11">  <span 
+class="pplr8t-x-x-90">CIRCUITO    </span></td><td  style="white-space:nowrap; text-align:center;" id="TBL-5-1-2"  
+class="td11"> <span 
+class="pplr8t-x-x-90">REALIMENTADOR   </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-5-1-3"  
+class="td11"> <span 
+class="pplr8t-x-x-90">SUBESTACION   </span></td></tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-5-2-"><td  style="white-space:nowrap; text-align:center;" id="TBL-5-2-1"  
+class="td
+11"> <span 
+class="pplr8t-x-x-90">Ca</span><span 
+class="pplr8t-x-x-90">ñasgordas   </span></td><td  style="white-space:nowrap; text-align:center;" id="TBL-5-2-2"  
+class="td11">       <span 
+class="pplr8t-x-x-90">Castillo              </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-5-2-3"  
+class="td11"> <span 
+class="pplr8t-x-x-90">Alferez                  </span></td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-5-3-"><td  style="white-space:nowrap; text-align:center;" id="TBL-5-3-1"  
+class="td11">     <span 
+class="pplr8t-x-x-90">Viga          </span></td><td  style="white-space:nowrap; text-align:center;" id="TBL-5-3-2"  
+class="td11">     <span 
+class="pplr8t-x-x-90">Bochalema           </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-5-3-3"  
+class="td11"> <span 
+class="pplr8t-x-x-90">Alferez                  </span></td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-5-4-"><td  style="white-space:nowrap; text-align:center;" id="TBL-5-4-1"  
+class="td11">    <span 
+class="pplr8t-x-x-90">Capri         </span></td><td  style="white-space:nowrap; text-align:center;" id="TBL-5-4-2"  
+class="td11">      <span 
+class="pplr8t-x-x-90">Univalle             </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-5-4-3"  
+class="td11"> <span 
+class="pplr8t-x-x-90">Melendez             </span></td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-5-5-"><td  style="white-space:nowrap; text-align:center;" id="TBL-5-5-1"  
+class="td11">  <span 
+class="pplr8t-x-x-90">Paso Ancho   </span></td><td  style="white-space:nowrap; text-align:center;" id="TBL-5-5-2"  
+class="td11">       <span 
+class="pplr8t-x-x-90">Campo              </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-5-5-3"  
+class="td11"> <span 
+class="pplr8t-x-x-90">Melendez             </span></td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-5-6-"><td  style="white-space:nowrap; text-align:center;" id="TBL-5-6-1"  
+class="td11">   <span 
+class="pplr8t-x-x-90">Buitrera       </span></td><td  style="white-space:nowrap; text-align:center;" id="TBL-5-6-2"  
+class="td11">     <span 
+class="pplr8t-x-x-90">Bella Suiza           </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-5-6-3"  
+class="td11"> <span 
+class="pplr8t-x-x-90">Ladera                  </span></td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-5-7-"><td  style="white-space:nowrap; text-align:center;" id="TBL-5-7-1"  
+class="td11">    <span 
+class="pplr8t-x-x-90">Maria         </span></td><td  style="white-space:nowrap; text-align:center;" id="TBL-5-7-2"  
+class="td11">    <span 
+class="pplr8t-x-x-90">Ca</span><span 
+class="pplr8t-x-x-90">ñas Gordas        </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-5-7-3"  
+class="td11"> <span 
+class="pplr8t-x-x-90">Pance                    </span></td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-5-8-"><td  style="white-space:nowrap; text-align:center;" id="TBL-5-8-1"  
+class="td11">   <span 
+class="pplr8t-x-x-90">Monta</span><span 
+class="pplr8t-x-x-90">ña      </span></td><td  style="white-space:nowrap; text-align:center;" id="TBL-5-8-2"  
+class="td11">      <span 
+class="pplr8t-x-x-90">Buitrera             </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-5-8-3"  
+class="td11"> <span 
+class="pplr8t-x-x-90">Pance                    </span></td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-5-9-"><td  style="white-space:nowrap; text-align:center;" id="TBL-5-9-1"  
+class="td11">             </td></tr></table></div>
+                                           
+                                           
+</div><hr class="endfloat" />
+</div>
+<div class="table">
+                                           
+                                           
+<!--l. 526--><p class="noindent" ><a 
+ id="x1-26003r3"></a><hr class="float"><div class="float" 
+>
+                                           
+                                           
+<br /> <div class="caption" 
+><span class="id">Cuadro&#x00A0;3.3: </span><span  
+class="content">Suplencias recomendadas en caso de
+falla de la subestación Sur</span></div><!--tex4ht:label?: x1-26003r3 -->
+<div class="tabular"> <table id="TBL-6" class="tabular" 
+ 
+><colgroup id="TBL-6-1g"><col 
+id="TBL-6-1"></colgroup><colgroup id="TBL-6-2g"><col 
+id="TBL-6-2"></colgroup><colgroup id="TBL-6-3g"><col 
+id="TBL-6-3"></colgroup><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-6-1-"><td  style="white-space:nowrap; text-align:center;" id="TBL-6-1-1"  
+class="td11">  <span 
+class="pplr8t-x-x-90">CIRCUITO    </span></td><td  style="white-space:nowrap; text-align:center;" id="TBL-6-1-2"  
+class="td11"> <span 
+class="pplr8t-x-x-90">REALIMENTADOR   </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-6-1-3"  
+class="td11"> <span 
+class="pplr8t-x-x-90">SUBESTACION   </span></td></tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-6-2-"><td  style="white-space:nowrap; text-align:center;" id="TBL-6-2-1"  
+class="td
+11">    <span 
+class="pplr8t-x-x-90">Breta</span><span 
+class="pplr8t-x-x-90">ña       </span></td><td  style="white-space:nowrap; text-align:center;" id="TBL-6-2-2"  
+class="td11">       <span 
+class="pplr8t-x-x-90">Acacias              </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-6-2-3"  
+class="td11"> <span 
+class="pplr8t-x-x-90">Diesel II                </span></td></tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-6-3-"><td  style="white-space:nowrap; text-align:center;" id="TBL-6-3-1"  
+class="td
+11">    <span 
+class="pplr8t-x-x-90">Colon         </span></td><td  style="white-space:nowrap; text-align:center;" id="TBL-6-3-2"  
+class="td11">     <span 
+class="pplr8t-x-x-90">Guayaquil           </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-6-3-3"  
+class="td11"> <span 
+class="pplr8t-x-x-90">Diesel II                </span></td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-6-4-"><td  style="white-space:nowrap; text-align:center;" id="TBL-6-4-1"  
+class="td11">    <span 
+class="pplr8t-x-x-90">Union         </span></td><td  style="white-space:nowrap; text-align:center;" id="TBL-6-4-2"  
+class="td11">       <span 
+class="pplr8t-x-x-90">Calipso              </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-6-4-3"  
+class="td11"> <span 
+class="pplr8t-x-x-90">Aguablanca          </span></td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-6-5-"><td  style="white-space:nowrap; text-align:center;" id="TBL-6-5-1"  
+class="td11">   <span 
+class="pplr8t-x-x-90">San Judas     </span></td><td  style="white-space:nowrap; text-align:center;" id="TBL-6-5-2"  
+class="td11">    <span 
+class="pplr8t-x-x-90">Simon Bolivar        </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-6-5-3"  
+class="td11"> <span 
+class="pplr8t-x-x-90">Melendez             </span></td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-6-6-"><td  style="white-space:nowrap; text-align:center;" id="TBL-6-6-1"  
+class="td11">   <span 
+class="pplr8t-x-x-90">Melendez     </span></td><td  style="white-space:nowrap; text-align:center;" id="TBL-6-6-2"  
+class="td11">      <span 
+class="pplr8t-x-x-90">Limonar             </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-6-6-3"  
+class="td11"> <span 
+class="pplr8t-x-x-90">Melendez             </span></td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-6-7-"><td  style="white-space:nowrap; text-align:center;" id="TBL-6-7-1"  
+class="td11"> <span 
+class="pplr8t-x-x-90">Tequendama   </span></td><td  style="white-space:nowrap; text-align:center;" id="TBL-6-7-2"  
+class="td11">     <span 
+class="pplr8t-x-x-90">Bella Suiza           </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-6-7-3"  
+class="td11"> <span 
+class="pplr8t-x-x-90">Ladera                  </span></td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-6-8-"><td  style="white-space:nowrap; text-align:center;" id="TBL-6-8-1"  
+class="td11">     <span 
+class="pplr8t-x-x-90">Lido          </span></td><td  style="white-space:nowrap; text-align:center;" id="TBL-6-8-2"  
+class="td11">     <span 
+class="pplr8t-x-x-90">Santa Isabel          </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-6-8-3"  
+class="td11"> <span 
+class="pplr8t-x-x-90">Ladera                  </span></td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-6-9-"><td  style="white-space:nowrap; text-align:center;" id="TBL-6-9-1"  
+class="td11">   <span 
+class="pplr8t-x-x-90">Imbanaco     </span></td><td  style="white-space:nowrap; text-align:center;" id="TBL-6-9-2"  
+class="td11">      <span 
+class="pplr8t-x-x-90">Cristales             </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-6-9-3"  
+class="td11"> <span 
+class="pplr8t-x-x-90">San Antonio         </span></td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-6-10-"><td  style="white-space:nowrap; text-align:center;" id="TBL-6-10-1"  
+class="td11">             </td></tr></table></div>
+                                           
+                                           
+</div><hr class="endfloat" />
+</div>
+<div class="table">
+                                           
+                                           
+<!--l. 544--><p class="noindent" ><a 
+ id="x1-26004r4"></a><hr class="float"><div class="float" 
+>
+                                           
+                                           
+<br /> <div class="caption" 
+><span class="id">Cuadro&#x00A0;3.4: </span><span  
+class="content">Suplencias recomendadas en caso de
+falla de la subestación Meléndez</span></div><!--tex4ht:label?: x1-26004r4 -->
+<div class="tabular"> <table id="TBL-7" class="tabular" 
+ 
+><colgroup id="TBL-7-1g"><col 
+id="TBL-7-1"></colgroup><colgroup id="TBL-7-2g"><col 
+id="TBL-7-2"></colgroup><colgroup id="TBL-7-3g"><col 
+id="TBL-7-3"></colgroup><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-7-1-"><td  style="white-space:nowrap; text-align:center;" id="TBL-7-1-1"  
+class="td11">  <span 
+class="pplr8t-x-x-90">CIRCUITO     </span></td><td  style="white-space:nowrap; text-align:center;" id="TBL-7-1-2"  
+class="td11"> <span 
+class="pplr8t-x-x-90">REALIMENTADOR   </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-7-1-3"  
+class="td11"> <span 
+class="pplr8t-x-x-90">SUBESTACI</span><span 
+class="pplr8t-x-x-90">ÓN   </span></td></tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-7-2-"><td  style="white-space:nowrap; text-align:center;" id="TBL-7-2-1"  
+class="td
+11">   <span 
+class="pplr8t-x-x-90">Carbonero      </span></td><td  style="white-space:nowrap; text-align:center;" id="TBL-7-2-2"  
+class="td11">     <span 
+class="pplr8t-x-x-90">Multicentro          </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-7-2-3"  
+class="td11"> <span 
+class="pplr8t-x-x-90">Pance                   </span></td></tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-7-3-"><td  style="white-space:nowrap; text-align:center;" id="TBL-7-3-1"  
+class="td
+11">    <span 
+class="pplr8t-x-x-90">Campo         </span></td><td  style="white-space:nowrap; text-align:center;" id="TBL-7-3-2"  
+class="td11">     <span 
+class="pplr8t-x-x-90">Paso Ancho          </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-7-3-3"  
+class="td11"> <span 
+class="pplr8t-x-x-90">Pance                   </span></td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-7-4-"><td  style="white-space:nowrap; text-align:center;" id="TBL-7-4-1"  
+class="td11">   <span 
+class="pplr8t-x-x-90">San Isidro      </span></td><td  style="white-space:nowrap; text-align:center;" id="TBL-7-4-2"  
+class="td11">     <span 
+class="pplr8t-x-x-90">Paso Ancho          </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-7-4-3"  
+class="td11"> <span 
+class="pplr8t-x-x-90">Pance                   </span></td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-7-5-"><td  style="white-space:nowrap; text-align:center;" id="TBL-7-5-1"  
+class="td11">    <span 
+class="pplr8t-x-x-90">Limonar        </span></td><td  style="white-space:nowrap; text-align:center;" id="TBL-7-5-2"  
+class="td11">      <span 
+class="pplr8t-x-x-90">Melendez            </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-7-5-3"  
+class="td11"> <span 
+class="pplr8t-x-x-90">Sur                        </span></td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-7-6-"><td  style="white-space:nowrap; text-align:center;" id="TBL-7-6-1"  
+class="td11"> <span 
+class="pplr8t-x-x-90">Simon Bolivar   </span></td><td  style="white-space:nowrap; text-align:center;" id="TBL-7-6-2"  
+class="td11">      <span 
+class="pplr8t-x-x-90">San Judas            </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-7-6-3"  
+class="td11"> <span 
+class="pplr8t-x-x-90">Sur                        </span></td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-7-7-"><td  style="white-space:nowrap; text-align:center;" id="TBL-7-7-1"  
+class="td11">     <span 
+class="pplr8t-x-x-90">Bocha          </span></td><td  style="white-space:nowrap; text-align:center;" id="TBL-7-7-2"  
+class="td11">     <span 
+class="pplr8t-x-x-90">Bochalema           </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-7-7-3"  
+class="td11"> <span 
+class="pplr8t-x-x-90">Alferez                 </span></td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-7-8-"><td  style="white-space:nowrap; text-align:center;" id="TBL-7-8-1"  
+class="td11">    <span 
+class="pplr8t-x-x-90">Univalle        </span></td><td  style="white-space:nowrap; text-align:center;" id="TBL-7-8-2"  
+class="td11">       <span 
+class="pplr8t-x-x-90">Capri                </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-7-8-3"  
+class="td11"> <span 
+class="pplr8t-x-x-90">Pance                   </span></td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-7-9-"><td  style="white-space:nowrap; text-align:center;" id="TBL-7-9-1"  
+class="td11">              </td></tr></table></div>
+                                           
+                                           
+</div><hr class="endfloat" />
+</div>
+<div class="table">
+                                           
+                                           
+<!--l. 561--><p class="noindent" ><a 
+ id="x1-26005r5"></a><hr class="float"><div class="float" 
+>
+                                           
+                                           
+<br /> <div class="caption" 
+><span class="id">Cuadro&#x00A0;3.5: </span><span  
+class="content">Suplencias recomendadas en caso de
+falla de la subestación Centro</span></div><!--tex4ht:label?: x1-26005r5 -->
+<div class="tabular"> <table id="TBL-8" class="tabular" 
+ 
+><colgroup id="TBL-8-1g"><col 
+id="TBL-8-1"></colgroup><colgroup id="TBL-8-2g"><col 
+id="TBL-8-2"></colgroup><colgroup id="TBL-8-3g"><col 
+id="TBL-8-3"></colgroup><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-8-1-"><td  style="white-space:nowrap; text-align:center;" id="TBL-8-1-1"  
+class="td11"> <span 
+class="pplr8t-x-x-90">CIRCUITO   </span></td><td  style="white-space:nowrap; text-align:center;" id="TBL-8-1-2"  
+class="td11"> <span 
+class="pplr8t-x-x-90">REALIMENTADOR   </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-8-1-3"  
+class="td11"> <span 
+class="pplr8t-x-x-90">SUBESTACI</span><span 
+class="pplr8t-x-x-90">ÓN   </span></td></tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-8-2-"><td  style="white-space:nowrap; text-align:center;" id="TBL-8-2-1"  
+class="td11"> <span 
+class="pplr8t-x-x-90">Santa Rosa </span></td><td  style="white-space:nowrap; text-align:center;" id="TBL-8-2-2"  
+class="td11"> <span 
+class="pplr8t-x-x-90">Carrera 4 </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-8-2-3"  
+class="td11"> <span 
+class="pplr8t-x-x-90">San Antonio</span></td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-8-3-"><td  style="white-space:nowrap; text-align:center;" id="TBL-8-3-1"  
+class="td11">   <span 
+class="pplr8t-x-x-90">Calle 10      </span></td><td  style="white-space:nowrap; text-align:center;" id="TBL-8-3-2"  
+class="td11">     <span 
+class="pplr8t-x-x-90">Santa Rosa           </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-8-3-3"  
+class="td11"> <span 
+class="pplr8t-x-x-90">Centro                  </span></td></tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-8-4-"><td  style="white-space:nowrap; text-align:center;" id="TBL-8-4-1"  
+class="td
+11">   <span 
+class="pplr8t-x-x-90">Calle 11      </span></td><td  style="white-space:nowrap; text-align:center;" id="TBL-8-4-2"  
+class="td11">      <span 
+class="pplr8t-x-x-90">Calle 12              </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-8-4-3"  
+class="td11"> <span 
+class="pplr8t-x-x-90">Centro                  </span></td></tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-8-5-"><td  style="white-space:nowrap; text-align:center;" id="TBL-8-5-1"  
+class="td
+11">   <span 
+class="pplr8t-x-x-90">Calle 12      </span></td><td  style="white-space:nowrap; text-align:center;" id="TBL-8-5-2"  
+class="td11"> <span 
+class="pplr8t-x-x-90">Alameda , Carrera 4   </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-8-5-3"  
+class="td11"> <span 
+class="pplr8t-x-x-90">San Antonio        </span></td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-8-6-"><td  style="white-space:nowrap; text-align:center;" id="TBL-8-6-1"  
+class="td11">   <span 
+class="pplr8t-x-x-90">Calle 13      </span></td><td  style="white-space:nowrap; text-align:center;" id="TBL-8-6-2"  
+class="td11">      <span 
+class="pplr8t-x-x-90">Callen12             </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-8-6-3"  
+class="td11"> <span 
+class="pplr8t-x-x-90">Centro                  </span></td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-8-7-"><td  style="white-space:nowrap; text-align:center;" id="TBL-8-7-1"  
+class="td11">   <span 
+class="pplr8t-x-x-90">Calle 14      </span></td><td  style="white-space:nowrap; text-align:center;" id="TBL-8-7-2"  
+class="td11">       <span 
+class="pplr8t-x-x-90">CAM                </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-8-7-3"  
+class="td11"> <span 
+class="pplr8t-x-x-90">Centro                  </span></td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-8-8-"><td  style="white-space:nowrap; text-align:center;" id="TBL-8-8-1"  
+class="td11">   <span 
+class="pplr8t-x-x-90">Calle 15      </span></td><td  style="white-space:nowrap; text-align:center;" id="TBL-8-8-2"  
+class="td11">       <span 
+class="pplr8t-x-x-90">Obrero              </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-8-8-3"  
+class="td11"> <span 
+class="pplr8t-x-x-90">Disel I                  </span></td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-8-9-"><td  style="white-space:nowrap; text-align:center;" id="TBL-8-9-1"  
+class="td11">    <span 
+class="pplr8t-x-x-90">CAM        </span></td><td  style="white-space:nowrap; text-align:center;" id="TBL-8-9-2"  
+class="td11">      <span 
+class="pplr8t-x-x-90">Versalles             </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-8-9-3"  
+class="td11"> <span 
+class="pplr8t-x-x-90">Chipichape         </span></td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-8-10-"><td  style="white-space:nowrap; text-align:center;" id="TBL-8-10-1"  
+class="td11">            </td></tr></table></div>
+                                           
+                                           
+</div><hr class="endfloat" />
+</div>
+<div class="table">
+                                           
+                                           
+<!--l. 579--><p class="noindent" ><a 
+ id="x1-26006r6"></a><hr class="float"><div class="float" 
+>
+                                           
+                                           
+<br /> <div class="caption" 
+><span class="id">Cuadro&#x00A0;3.6: </span><span  
+class="content">Suplencias recomendadas en caso de
+falla de la subestación Chipichape</span></div><!--tex4ht:label?: x1-26006r6 -->
+<div class="tabular"> <table id="TBL-9" class="tabular" 
+ 
+><colgroup id="TBL-9-1g"><col 
+id="TBL-9-1"></colgroup><colgroup id="TBL-9-2g"><col 
+id="TBL-9-2"></colgroup><colgroup id="TBL-9-3g"><col 
+id="TBL-9-3"></colgroup><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-9-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-9-1-1"  
+class="td11"> <span 
+class="pplr8t-x-x-90">CIRCUITO       </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-9-1-2"  
+class="td11"> <span 
+class="pplr8t-x-x-90">REALIMENTADOR   </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-9-1-3"  
+class="td11"> <span 
+class="pplr8t-x-x-90">SUBESTACI</span><span 
+class="pplr8t-x-x-90">ÓN   </span></td></tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-9-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-9-2-1"  
+class="td
+11"> <span 
+class="pplr8t-x-x-90">La Merced         </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-9-2-2"  
+class="td11"> <span 
+class="pplr8t-x-x-90">Carrera 5N                   </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-9-2-3"  
+class="td11"> <span 
+class="pplr8t-x-x-90">Disel I                  </span></td></tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-9-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-9-3-1"  
+class="td
+11"> <span 
+class="pplr8t-x-x-90">La flora              </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-9-3-2"  
+class="td11"> <span 
+class="pplr8t-x-x-90">Alamos                         </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-9-3-3"  
+class="td11"> <span 
+class="pplr8t-x-x-90">Menga                 </span></td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-9-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-9-4-1"  
+class="td11"> <span 
+class="pplr8t-x-x-90">Yumbo Cobre    </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-9-4-2"  
+class="td11"> <span 
+class="pplr8t-x-x-90">Alto Menga                 </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-9-4-3"  
+class="td11"> <span 
+class="pplr8t-x-x-90">Campi</span><span 
+class="pplr8t-x-x-90">ña              </span></td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-9-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-9-5-1"  
+class="td11"> <span 
+class="pplr8t-x-x-90">Avenida Sexta   </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-9-5-2"  
+class="td11">                    </td><td  style="white-space:nowrap; text-align:left;" id="TBL-9-5-3"  
+class="td11">               </td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-9-6-"><td  style="white-space:nowrap; text-align:left;" id="TBL-9-6-1"  
+class="td11"> <span 
+class="pplr8t-x-x-90">San Vicente       </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-9-6-2"  
+class="td11"> <span 
+class="pplr8t-x-x-90">Obrero                          </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-9-6-3"  
+class="td11"> <span 
+class="pplr8t-x-x-90">Disel I                  </span></td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-9-7-"><td  style="white-space:nowrap; text-align:left;" id="TBL-9-7-1"  
+class="td11"> <span 
+class="pplr8t-x-x-90">Piloto                 </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-9-7-2"  
+class="td11">                    </td><td  style="white-space:nowrap; text-align:left;" id="TBL-9-7-3"  
+class="td11">               </td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-9-8-"><td  style="white-space:nowrap; text-align:left;" id="TBL-9-8-1"  
+class="td11"> <span 
+class="pplr8t-x-x-90">Versalles            </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-9-8-2"  
+class="td11"> <span 
+class="pplr8t-x-x-90">Centro                          </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-9-8-3"  
+class="td11"> <span 
+class="pplr8t-x-x-90">Disel I                  </span></td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-9-9-"><td  style="white-space:nowrap; text-align:left;" id="TBL-9-9-1"  
+class="td11"> <span 
+class="pplr8t-x-x-90">Santa Monica    </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-9-9-2"  
+class="td11"> <span 
+class="pplr8t-x-x-90">Carrera 4                      </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-9-9-3"  
+class="td11"> <span 
+class="pplr8t-x-x-90">San Antonio        </span></td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-9-10-"><td  style="white-space:nowrap; text-align:left;" id="TBL-9-10-1"  
+class="td11"> <span 
+class="pplr8t-x-x-90">Granada             </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-9-10-2"  
+class="td11">                    </td><td  style="white-space:nowrap; text-align:left;" id="TBL-9-10-3"  
+class="td11">               </td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-9-11-"><td  style="white-space:nowrap; text-align:left;" id="TBL-9-11-1"  
+class="td11">               </td></tr></table></div>
+                                           
+                                           
+</div><hr class="endfloat" />
+</div>
+<h5 class="likesubsubsectionHead"><a 
+ id="x1-270003"></a><span 
+class="ec-lmss-10">P</span><span 
+class="ec-lmss-10">érdida de una Barra de 13.2 kV</span></h5>
+<!--l. 599--><p class="noindent" ><span 
+class="ec-lmss-10">transferir las secciones de los alimentadores a alimentadores</span>
+<span 
+class="ec-lmss-10">de otras subestaciones</span>
+<h5 class="likesubsubsectionHead"><a 
+ id="x1-280003"></a><span 
+class="ec-lmss-10">P</span><span 
+class="ec-lmss-10">érdida de un Transformador</span></h5>
+<!--l. 604--><p class="noindent" ><hr class="figure"><div class="figure" 
+>
+                                           
+                                           
+<a 
+ id="x1-28001r1"></a>
+                                           
+                                           
+<br /> <div class="caption" 
+><span class="id">Figura&#x00A0;3.1:  </span><span  
+class="content">Comportamiento  de  la  red  antes  del
+fallo del transformador</span></div><!--tex4ht:label?: x1-28001r1 -->
+<!--l. 608--><p class="noindent" ><img 
+src="fallo-trafo-1.png" alt="PIC"  
+width="227" height="227" >
+                                           
+                                           
+<!--l. 609--><p class="noindent" ></div><hr class="endfigure">
+<!--l. 611--><p class="noindent" ><hr class="figure"><div class="figure" 
+>
+                                           
+                                           
+<a 
+ id="x1-28002r2"></a>
+                                           
+                                           
+<br /> <div class="caption" 
+><span class="id">Figura&#x00A0;3.2: </span><span  
+class="content">Comportamiento de la red después del
+fallo del transformador</span></div><!--tex4ht:label?: x1-28002r2 -->
+<!--l. 615--><p class="noindent" ><img 
+src="fallo-trafo-2.png" alt="PIC"  
+width="227" height="227" >
+                                           
+                                           
+<!--l. 616--><p class="noindent" ></div><hr class="endfigure">
+<h5 class="likesubsubsectionHead"><a 
+ id="x1-290003"></a><span 
+class="ec-lmss-10">P</span><span 
+class="ec-lmss-10">érdida de un Tramo de Circuito</span></h5>
+<!--l. 619--><p class="noindent" ><span 
+class="ec-lmss-10">Ante una falla N-1 cambia </span><span class="cite"><span 
+class="ec-lmss-10">[</span><a 
+href="#Xtrashorras2015subestaciones"><span 
+class="ec-lmss-10">TRASHORRAS</span><span 
+class="ec-lmss-10">&#x00A0;MONTECELOS,</span>
+<span 
+class="ec-lmss-10">2015</span></a><span 
+class="ec-lmss-10">]</span></span><span 
+class="ec-lmss-10">:</span>
+     <ul class="itemize1">
+     <li class="itemize">
+     <!--l. 621--><p class="noindent" ><span 
+class="ec-lmss-10">El flujo que circula por las l</span><span 
+class="ec-lmss-10">íneas</span>
+     </li>
+     <li class="itemize">
+     <!--l. 622--><p class="noindent" ><span 
+class="ec-lmss-10">El reparto de la carga de los transformadores</span>
+     </li>
+     <li class="itemize">
+     <!--l. 623--><p class="noindent" ><span 
+class="ec-lmss-10">La tensi</span><span 
+class="ec-lmss-10">ón en diferentes nodos</span>
+     </li></ul>
+<!--l. 626--><p class="noindent" ><hr class="figure"><div class="figure" 
+><a 
+ id="x1-29001r3"></a>
+<br /> <div class="caption" 
+><span class="id">Figura&#x00A0;3.3:  </span><span  
+class="content">Comportamiento  antes  de  la  falla  de
+línea</span></div><!--tex4ht:label?: x1-29001r3 -->
+<!--l. 630--><p class="noindent" ><img 
+src="fallo-linea-1.png" alt="PIC"  
+width="227" height="227" >
+<!--l. 632--><p class="noindent" ></div><hr class="endfigure">
+<!--l. 634--><p class="noindent" ><hr class="figure"><div class="figure" 
+>
+                                           
+                                           
+<a 
+ id="x1-29002r4"></a>
+                                           
+                                           
+<br /> <div class="caption" 
+><span class="id">Figura&#x00A0;3.4: </span><span  
+class="content">Comportamiento después de la falla de
+línea</span></div><!--tex4ht:label?: x1-29002r4 -->
+<!--l. 639--><p class="noindent" ><img 
+src="fallo-linea-2.png" alt="PIC"  
+width="227" height="227" >
+                                           
+                                           
+<!--l. 640--><p class="noindent" ></div><hr class="endfigure">
+<h5 class="likesubsubsectionHead"><a 
+ id="x1-300003"></a><span 
+class="ec-lmss-10">P</span><span 
+class="ec-lmss-10">érdida de un Interruptor de Circuito</span></h5>
+<h5 class="likesubsubsectionHead"><a 
+ id="x1-310003"></a><span 
+class="ec-lmss-10">P</span><span 
+class="ec-lmss-10">érdida del Tramo Subterr</span><span 
+class="ec-lmss-10">áneo</span></h5>
+                                           
+                                           
+<!--l. 647--><p class="noindent" >
+                                           
+                                           
+<h2 class="chapterHead"><span class="titlemark"><span 
+class="ec-lmss-10">Cap</span><span 
+class="ec-lmss-10">ítulo</span><span 
+class="ec-lmss-10">&#x00A0;4</span></span><br /><a 
+ id="x1-320004"></a><span 
+class="ec-lmss-10">PROTECCIONES</span></h2>
+<a 
+ id="x1-32001r39"></a>
+<h3 class="sectionHead"><span class="titlemark"><span 
+class="ec-lmss-10">4.1.   </span></span> <a 
+ id="x1-330001"></a><span 
+class="ec-lmss-10">Sobre corriente</span></h3>
+<!--l. 650--><p class="noindent" ><span 
+class="ec-lmss-10">La mayor parte de las protecciones empleadas en los</span>
+<span 
+class="ec-lmss-10">circuitos de distribuci</span><span 
+class="ec-lmss-10">ón son las de sobre corriente, sin</span>
+<span 
+class="ec-lmss-10">embargo el ajuste de estas esta limitado por la m</span><span 
+class="ec-lmss-10">áxima</span>
+<span 
+class="ec-lmss-10">corriente de carga previsible y los cambios de corrientes en</span>
+<span 
+class="ec-lmss-10">el tiempo (cambios en el clima y crecimiento de la</span>
+<span 
+class="ec-lmss-10">demanda) lo que la hace una protecci</span><span 
+class="ec-lmss-10">ón lenta y poco</span>
+<span 
+class="ec-lmss-10">sensible </span><span class="cite"><span 
+class="ec-lmss-10">[</span><a 
+href="#Xferrer2010modern"><span 
+class="ec-lmss-10">Ferrer and Schweitzer, 2010</span></a><span 
+class="ec-lmss-10">]</span></span><span 
+class="ec-lmss-10">.</span>
+<!--l. 652--><p class="noindent" ><hr class="figure"><div class="figure" 
+>
+                                           
+                                           
+<a 
+ id="x1-33001r1"></a>
+                                           
+                                           
+<!--l. 654--><p class="noindent" ><img 
+src="coordinacion_de_tiempo.png" alt="PIC"  
+width="227" height="227" >
+<br /> <div class="caption" 
+><span class="id">Figura&#x00A0;4.1: </span><span  
+class="content">Margen de coordinación en dispositivos
+de protección</span></div><!--tex4ht:label?: x1-33001r1 -->
+                                           
+                                           
+<!--l. 657--><p class="noindent" ></div><hr class="endfigure">
+<!--l. 658--><p class="noindent" ><span 
+class="ec-lmss-10">En la figura </span><a 
+href="#x1-33001r1"><span 
+class="ec-lmss-10">4.1</span><!--tex4ht:ref: fig:coordinaciondetiempo --></a> <span 
+class="ec-lmss-10">se muestra una coordinaci</span><span 
+class="ec-lmss-10">ón corriente</span>
+<span 
+class="ec-lmss-10">tiempo en la cual el </span><span 
+class="ec-lmsso-10">upstream device (2) </span><span 
+class="ec-lmss-10">debe esperar a</span>
+<span 
+class="ec-lmss-10">que el </span><span 
+class="ec-lmsso-10">downstrem device (1) </span><span 
+class="ec-lmss-10">despeje la falla. Esto implica</span>
+<span 
+class="ec-lmss-10">mayor tiempo para despejar la falla , repercutiendo en</span>
+<span 
+class="ec-lmss-10">mayor desgaste de la vida </span><span 
+class="ec-lmss-10">útil de los elementos de la red</span>
+<span class="cite"><span 
+class="ec-lmss-10">[</span><a 
+href="#Xferrer2010modern"><span 
+class="ec-lmss-10">Ferrer and Schweitzer, 2010</span></a><span 
+class="ec-lmss-10">]</span></span><span 
+class="ec-lmss-10">.</span>
+<!--l. 660--><p class="noindent" ><hr class="figure"><div class="figure" 
+>
+                                           
+                                           
+<a 
+ id="x1-33002r2"></a>
+                                           
+                                           
+<br /> <div class="caption" 
+><span class="id">Figura&#x00A0;4.2: </span><span  
+class="content">Conexión del relé de secuencia negativa</span></div><!--tex4ht:label?: x1-33002r2 -->
+<!--l. 664--><p class="noindent" ><img 
+src="conexion_secuencia_negativa.png" alt="PIC"  
+width="227" height="227" >
+                                           
+                                           
+<!--l. 665--><p class="noindent" ></div><hr class="endfigure">
+<h5 class="likesubsubsectionHead"><a 
+ id="x1-340001"></a><span 
+class="ec-lmss-10">(50Q) Secuencia negativa</span></h5>
+<!--l. 668--><p class="noindent" ><span 
+class="ec-lmss-10">El rel</span><span 
+class="ec-lmss-10">é de sobrecorriente de secuencia negativa opera</span>
+<span 
+class="ec-lmss-10">cuando se presenta un desbalance de corrientes y puede</span>
+<span 
+class="ec-lmss-10">ser ajustado a corrientes m</span><span 
+class="ec-lmss-10">ás bajas que la corriente</span>
+<span 
+class="ec-lmss-10">nominal.</span><br 
+class="newline" /><span 
+class="ec-lmss-10">Para coordinar con el rel</span><span 
+class="ec-lmss-10">é de sobre corriente (51), se debe</span>
+<span 
+class="ec-lmss-10">mantener la siguiente relaci</span><span 
+class="ec-lmss-10">ón con respecto a la corriente</span>
+<span 
+class="ec-lmss-10">de ajuste:</span>
+<!--l. 671--><p class="noindent" >
+<div class="math-display" >
+<img 
+src="analisis_regulatorio4x.png" alt="     &#x221A;-
+3I2 = 3IP
+" class="math-display" ></div>
+<!--l. 673--><p class="noindent" ><hr class="figure"><div class="figure" 
+>
+                                           
+                                           
+<a 
+ id="x1-34001r3"></a>
+                                           
+                                           
+<br /> <div class="caption" 
+><span class="id">Figura&#x00A0;4.3: </span><span  
+class="content">Coordinación de secuencia negativa</span></div><!--tex4ht:label?: x1-34001r3 -->
+<!--l. 677--><p class="noindent" ><img 
+src="coordinacionnegativa.png" alt="PIC"  
+width="227" height="227" >
+                                           
+                                           
+<!--l. 678--><p class="noindent" ></div><hr class="endfigure">
+<a 
+ id="x1-34002r35"></a>
+<h4 class="subsectionHead"><span class="titlemark"><span 
+class="ec-lmss-10">4.1.1.   </span></span> <a 
+ id="x1-350001"></a><span 
+class="ec-lmss-10">FUSIBLES</span></h4>
+<!--l. 685--><p class="noindent" ><span 
+class="ec-lmss-10">La figura </span><a 
+href="#x1-35001r4"><span 
+class="ec-lmss-10">4.4</span><!--tex4ht:ref: fig:tiposfusibles --></a> <span 
+class="ec-lmss-10">muestra los principales tipos de fusibles</span>
+<span 
+class="ec-lmss-10">empleados en las redes de distribuci</span><span 
+class="ec-lmss-10">ón.</span>
+<!--l. 687--><p class="noindent" ><hr class="figure"><div class="figure" 
+>
+                                           
+                                           
+<a 
+ id="x1-35001r4"></a>
+                                           
+                                           
+<!--l. 689--><p class="noindent" ><img 
+src="tipos_fusibles.png" alt="PIC"  
+width="227" height="227" >
+<br /> <div class="caption" 
+><span class="id">Figura&#x00A0;4.4: </span><span  
+class="content">Tipos de fusibles empleados en media
+tensión</span></div><!--tex4ht:label?: x1-35001r4 -->
+                                           
+                                           
+<!--l. 692--><p class="noindent" ></div><hr class="endfigure">
+<a 
+ id="x1-35002r58"></a>
+<h3 class="sectionHead"><span class="titlemark"><span 
+class="ec-lmss-10">4.2.   </span></span> <a 
+ id="x1-360002"></a><span 
+class="ec-lmss-10">Transformador</span></h3>
+<a 
+ id="x1-36001r63"></a>
+<h4 class="subsectionHead"><span class="titlemark"><span 
+class="ec-lmss-10">4.2.1.   </span></span> <a 
+ id="x1-370001"></a><span 
+class="ec-lmss-10">Proteccion de sobre intensidad de tierra</span>
+<span 
+class="ec-lmss-10">(50N/51N)</span></h4>
+<!--l. 698--><p class="noindent" ><span 
+class="ec-lmss-10">El rele 50N es de tipo instantaneo mientras el 51N</span>
+<span 
+class="ec-lmss-10">es de tipo temporizado , y ambos operan en base a</span>
+<span 
+class="ec-lmss-10">la corriente residual que pasa por el neutro de los</span>
+<span 
+class="ec-lmss-10">transformadores de corriente conectados en Y. Para</span>
+<span 
+class="ec-lmss-10">fallas monof</span><span 
+class="ec-lmss-10">ásicas esta corriente de neutro es igual a</span>
+<span 
+class="pplr7t-">3</span><span 
+class="zplmr7m-">I</span><sub><span 
+class="pplr7t-x-x-76">0</span></sub><span 
+class="ec-lmss-10">.</span>
+<a 
+ id="x1-37001r66"></a>
+<h4 class="subsectionHead"><span class="titlemark"><span 
+class="ec-lmss-10">4.2.2.   </span></span> <a 
+ id="x1-380002"></a><span 
+class="ec-lmss-10">Proteccion de tierra restringida (64REF)</span></h4>
+<!--l. 702--><p class="noindent" ><span 
+class="ec-lmss-10">Se usa para detectar fallas a tierra con mayor sensibilidad</span>
+<span 
+class="ec-lmss-10">que la proteccion diferencial.</span>
+<!--l. 704--><p class="noindent" ><hr class="figure"><div class="figure" 
+>
+                                           
+                                           
+<a 
+ id="x1-38001r5"></a>
+                                           
+                                           
+<br /> <div class="caption" 
+><span class="id">Figura&#x00A0;4.5: </span><span  
+class="content">Proteccion de teierra restringida</span></div><!--tex4ht:label?: x1-38001r5 -->
+<!--l. 708--><p class="noindent" ><img 
+src="64R.png" alt="PIC"  
+width="227" height="227" >
+                                           
+                                           
+<!--l. 709--><p class="noindent" ></div><hr class="endfigure">
+<a 
+ id="x1-38002r67"></a>
+<h4 class="subsectionHead"><span class="titlemark"><span 
+class="ec-lmss-10">4.2.3.   </span></span> <a 
+ id="x1-390003"></a><span 
+class="ec-lmss-10">Rel</span><span 
+class="ec-lmss-10">é Buchholz (63B)</span></h4>
+<!--l. 714--><p class="noindent" ><span 
+class="ec-lmss-10">Cuando se presentan calentamientos o movimientos ya sea</span>
+<span 
+class="ec-lmss-10">en el bobinado o el circuito magn</span><span 
+class="ec-lmss-10">ético, se generan gases</span>
+<span 
+class="ec-lmss-10">dentro de la cuba del transformador o flujos de aceite hacia</span>
+<span 
+class="ec-lmss-10">el tanque de conservaci</span><span 
+class="ec-lmss-10">ón. Cuando en el rel</span><span 
+class="ec-lmss-10">é butchholz de</span>
+<span 
+class="ec-lmss-10">la figura </span><a 
+href="#x1-39001r6"><span 
+class="ec-lmss-10">4.6</span><!--tex4ht:ref: fig:relebuthhulz --></a> <span 
+class="ec-lmss-10">se generan burbujas podr</span><span 
+class="ec-lmss-10">ía disparar el</span>
+<span 
+class="ec-lmss-10">contacto de alarma (8) y si se genera un flujo de mas de</span>
+<span 
+class="ec-lmss-10">1m/s el flotador (2) podr</span><span 
+class="ec-lmss-10">í</span><span 
+class="ec-lmss-10">ía generar una se</span><span 
+class="ec-lmss-10">ñal de</span>
+<span 
+class="ec-lmss-10">disparo.</span>
+<!--l. 716--><p class="noindent" ><hr class="figure"><div class="figure" 
+>
+                                           
+                                           
+<a 
+ id="x1-39001r6"></a>
+                                           
+                                           
+<br /> <div class="caption" 
+><span class="id">Figura&#x00A0;4.6: </span><span  
+class="content">Funcionamiento del relé buchholz</span></div><!--tex4ht:label?: x1-39001r6 -->
+<!--l. 720--><p class="noindent" ><img 
+src="relebuthhulz.png" alt="PIC"  
+width="227" height="227" >
+                                           
+                                           
+<!--l. 721--><p class="noindent" ></div><hr class="endfigure">
+<a 
+ id="x1-39002r69"></a>
+<h4 class="subsectionHead"><span class="titlemark"><span 
+class="ec-lmss-10">4.2.4.   </span></span> <a 
+ id="x1-400004"></a><span 
+class="ec-lmss-10">Dispositivo de imagen t</span><span 
+class="ec-lmss-10">érmica (49)</span></h4>
+<!--l. 724--><p class="noindent" ><span 
+class="ec-lmss-10">Mide indirectamente la temperatura del bobinado ,</span>
+<span 
+class="ec-lmss-10">bas</span><span 
+class="ec-lmss-10">ándose en la temperatura del aceite y la corriente de la</span>
+<span 
+class="ec-lmss-10">carga </span><hr class="figure"><div class="figure" 
+>
+                                           
+                                           
+<a 
+ id="x1-40001r7"></a>
+                                           
+                                           
+<br /> <div class="caption" 
+><span class="id">Figura&#x00A0;4.7: </span><span  
+class="content">Conexión del relé de imagen térmica</span></div><!--tex4ht:label?: x1-40001r7 -->
+<!--l. 729--><p class="noindent" ><img 
+src="imagentermica.png" alt="PIC"  
+width="227" height="227" >
+                                           
+                                           
+<!--l. 730--><p class="noindent" ></div><hr class="endfigure">
+<a 
+ id="x1-40002r71"></a>
+<h4 class="subsectionHead"><span class="titlemark"><span 
+class="ec-lmss-10">4.2.5.   </span></span> <a 
+ id="x1-410005"></a><span 
+class="ec-lmss-10">Protecci</span><span 
+class="ec-lmss-10">ón de la cuba (64)</span></h4>
+<!--l. 733--><p class="noindent" ><hr class="figure"><div class="figure" 
+>
+                                           
+                                           
+<a 
+ id="x1-41001r8"></a>
+                                           
+                                           
+<br /> <div class="caption" 
+><span class="id">Figura&#x00A0;4.8: </span><span  
+class="content">Conexion de proteccion de la cuba</span></div><!--tex4ht:label?: x1-41001r8 -->
+<!--l. 737--><p class="noindent" ><img 
+src="proteccion-cuba.png" alt="PIC"  
+width="227" height="227" >
+                                           
+                                           
+<!--l. 738--><p class="noindent" ></div><hr class="endfigure">
+<a 
+ id="x1-41002r73"></a>
+<h4 class="subsectionHead"><span class="titlemark"><span 
+class="ec-lmss-10">4.2.6.   </span></span> <a 
+ id="x1-420006"></a><span 
+class="ec-lmss-10">Protecci</span><span 
+class="ec-lmss-10">ón sobre intensidad Neutro - Estrella</span>
+<span 
+class="ec-lmss-10">(51G)</span></h4>
+<!--l. 742--><p class="noindent" ><hr class="figure"><div class="figure" 
+>
+                                           
+                                           
+<a 
+ id="x1-42001r9"></a>
+                                           
+                                           
+<br /> <div class="caption" 
+><span class="id">Figura&#x00A0;4.9: </span><span  
+class="content">Proteccion 51G</span></div><!--tex4ht:label?: x1-42001r9 -->
+<!--l. 746--><p class="noindent" ><img 
+src="51G.png" alt="PIC"  
+width="159" height="159" >
+                                           
+                                           
+<!--l. 747--><p class="noindent" ></div><hr class="endfigure">
+<a 
+ id="x1-42002r75"></a>
+<h4 class="subsectionHead"><span class="titlemark"><span 
+class="ec-lmss-10">4.2.7.   </span></span> <a 
+ id="x1-430007"></a><span 
+class="ec-lmss-10">Protecci</span><span 
+class="ec-lmss-10">ón diferencial (87)</span></h4>
+<!--l. 751--><p class="noindent" ><span 
+class="ec-lmss-10">Es una protecci</span><span 
+class="ec-lmss-10">ón que opera en funci</span><span 
+class="ec-lmss-10">ón de la corriente</span>
+<span 
+class="ec-lmss-10">diferencial entre alta y baja tensi</span><span 
+class="ec-lmss-10">ón la cual se acopla al rel</span><span 
+class="ec-lmss-10">é</span>
+<span 
+class="ec-lmss-10">por medio de transformadores de corriente como lo</span>
+<span 
+class="ec-lmss-10">muestra la figura </span><a 
+href="#x1-43001r10"><span 
+class="ec-lmss-10">4.10</span><!--tex4ht:ref: fig:diferencial1 --></a><span 
+class="ec-lmss-10">.</span>
+<!--l. 753--><p class="noindent" ><hr class="figure"><div class="figure" 
+>
+                                           
+                                           
+<a 
+ id="x1-43001r10"></a>
+                                           
+                                           
+<br /> <div class="caption" 
+><span class="id">Figura&#x00A0;4.10: </span><span  
+class="content">Conexión de la proteccion diferencial</span></div><!--tex4ht:label?: x1-43001r10 -->
+<!--l. 757--><p class="noindent" ><img 
+src="diferencial1.png" alt="PIC"  
+width="227" height="227" >
+                                           
+                                           
+<!--l. 758--><p class="noindent" ></div><hr class="endfigure">
+<!--l. 760--><p class="noindent" ><span 
+class="ec-lmss-10">Cuando se presenta falla en el transformador aparece una</span>
+<span 
+class="ec-lmss-10">corriente diferencial mayor que el umbral m</span><span 
+class="ec-lmss-10">ínimo</span>
+<span 
+class="ec-lmss-10">esperado, como se muestra en la figura </span><a 
+href="#x1-43002r11"><span 
+class="ec-lmss-10">4.11</span><!--tex4ht:ref: fig:falladiferencial --></a><span 
+class="ec-lmss-10">, lo que causa</span>
+<span 
+class="ec-lmss-10">la operaci</span><span 
+class="ec-lmss-10">ón del rel</span><span 
+class="ec-lmss-10">é de protecci</span><span 
+class="ec-lmss-10">ón.</span><br 
+class="newline" /><br 
+class="newline" />
+<!--l. 762--><p class="noindent" ><hr class="figure"><div class="figure" 
+>
+                                           
+                                           
+<a 
+ id="x1-43002r11"></a>
+                                           
+                                           
+<br /> <div class="caption" 
+><span class="id">Figura&#x00A0;4.11: </span><span  
+class="content">Falla en el transformador</span></div><!--tex4ht:label?: x1-43002r11 -->
+<!--l. 765--><p class="noindent" ><img 
+src="falladiferencial.png" alt="PIC"  
+width="227" height="227" >
+                                           
+                                           
+<!--l. 768--><p class="noindent" ></div><hr class="endfigure">
+<!--l. 772--><p class="noindent" ><span 
+class="ec-lmss-10">El rel</span><span 
+class="ec-lmss-10">é m</span><span 
+class="ec-lmss-10">ás utilizado es el porcentrual como aparece en la</span>
+<span 
+class="ec-lmss-10">figura </span><a 
+href="#x1-43003r12"><span 
+class="ec-lmss-10">4.12</span><!--tex4ht:ref: fig:bobina87 --></a> <span 
+class="ec-lmss-10">en donde la </span><span 
+class="ec-lmsso-10">bobina de operaci</span><span 
+class="ec-lmsso-10">ón </span><span 
+class="ec-lmss-10">(O), por la</span>
+<span 
+class="ec-lmss-10">cual circula la corriente diferencial y las dos </span><span 
+class="ec-lmsso-10">bobinas de</span>
+<span 
+class="ec-lmsso-10">restricci</span><span 
+class="ec-lmsso-10">ón  </span><span 
+class="ec-lmss-10">(R) que impide la operaci</span><span 
+class="ec-lmss-10">ón del rel</span><span 
+class="ec-lmss-10">é , aun</span>
+<span 
+class="ec-lmss-10">cuando la corriente diferencial sea cero.</span>
+<!--l. 774--><p class="noindent" ><hr class="figure"><div class="figure" 
+>
+                                           
+                                           
+<a 
+ id="x1-43003r12"></a>
+                                           
+                                           
+<br />  <div class="caption" 
+><span class="id">Figura&#x00A0;4.12:    </span><span  
+class="content">Conexión    del    relé    diferencial
+porcentual</span></div><!--tex4ht:label?: x1-43003r12 -->
+<!--l. 778--><p class="noindent" ><img 
+src="bobina87.png" alt="PIC"  
+width="227" height="227" >
+                                           
+                                           
+<!--l. 779--><p class="noindent" ></div><hr class="endfigure">
+<!--l. 781--><p class="noindent" ><span 
+class="ec-lmss-10">La corriente de operaci</span><span 
+class="ec-lmss-10">ón resultante es proporcional</span>
+<span 
+class="ec-lmss-10">a:</span>
+<div class="math-display" >
+<img 
+src="analisis_regulatorio5x.png" alt="I1 - I2
+" class="math-display" ></div>
+<!--l. 784--><p class="noindent" ><span 
+class="ec-lmss-10">La corriente en cualquiera de las dos bobinas de restricci</span><span 
+class="ec-lmss-10">ón</span>
+<span 
+class="ec-lmss-10">es proporcional a :</span>
+<!--l. 786--><p class="noindent" >
+<div class="math-display" >
+<img 
+src="analisis_regulatorio6x.png" alt="I1+2I2
+" class="math-display" ></div>
+<!--l. 788--><p class="noindent" ><span 
+class="ec-lmss-10">La relaci</span><span 
+class="ec-lmss-10">ón entre la corriente diferencial y el promedio de la</span>
+<span 
+class="ec-lmss-10">corriente de operacion se conocoe como pendiente </span><span 
+class="zplmr7m-">K </span><span 
+class="ec-lmss-10">del</span>
+<span 
+class="ec-lmss-10">siguiente modo:</span>
+<!--l. 790--><p class="noindent" >
+<div class="math-display" >
+<img 
+src="analisis_regulatorio7x.png" alt="    I1--I2-
+K =  I1+I2-
+      2
+" class="math-display" ></div>
+<!--l. 792--><p class="noindent" ><hr class="figure"><div class="figure" 
+>
+                                           
+                                           
+<a 
+ id="x1-43004r13"></a>
+                                           
+                                           
+<br /> <div class="caption" 
+><span class="id">Figura&#x00A0;4.13: </span><span  
+class="content">Pendiente de la corriente diferencial</span></div><!--tex4ht:label?: x1-43004r13 -->
+<!--l. 796--><p class="noindent" ><img 
+src="curvadiferencial.png" alt="PIC"  
+width="227" height="227" >
+                                           
+                                           
+<!--l. 797--><p class="noindent" ></div><hr class="endfigure">
+<a 
+ id="x1-43005r65"></a>
+<h3 class="sectionHead"><span class="titlemark"><span 
+class="ec-lmss-10">4.3.   </span></span> <a 
+ id="x1-440003"></a><span 
+class="ec-lmss-10">Frecuencia</span></h3>
+<!--l. 802--><p class="noindent" ><span 
+class="ec-lmss-10">En la figura </span><a 
+href="#x1-44001r14"><span 
+class="ec-lmss-10">4.14</span><!--tex4ht:ref: fig:edac1 --></a> <span 
+class="ec-lmss-10">se muestra los l</span><span 
+class="ec-lmss-10">ímites de la frecuencia en</span>
+<span 
+class="ec-lmss-10">estado normal y las diferentes etapas de operaci</span><span 
+class="ec-lmss-10">ón del</span>
+<span 
+class="ec-lmss-10">esquema EDAC.</span>
+<!--l. 804--><p class="noindent" ><hr class="figure"><div class="figure" 
+>
+                                           
+                                           
+<a 
+ id="x1-44001r14"></a>
+                                           
+                                           
+<br /> <div class="caption" 
+><span class="id">Figura&#x00A0;4.14: </span><span  
+class="content">Esquema de deslastre automático de
+Carga</span></div><!--tex4ht:label?: x1-44001r14 -->
+<!--l. 808--><p class="noindent" ><img 
+src="EDAC1.jpg" alt="PIC"  
+width="227" height="227" >
+                                           
+                                           
+<!--l. 810--><p class="noindent" ></div><hr class="endfigure">
+<!--l. 812--><p class="noindent" ><hr class="figure"><div class="figure" 
+>
+                                           
+                                           
+<a 
+ id="x1-44002r15"></a>
+                                           
+                                           
+<br /> <div class="caption" 
+><span class="id">Figura&#x00A0;4.15:  </span><span  
+class="content">Perfil  de  operación  del  esquema  del
+deslastre automático de carga</span></div><!--tex4ht:label?: x1-44002r15 -->
+<!--l. 816--><p class="noindent" ><img 
+src="EDAC.jpg" alt="PIC"  
+width="227" height="227" >
+                                           
+                                           
+<!--l. 817--><p class="noindent" ></div><hr class="endfigure">
+                                           
+                                           
+<!--l. 820--><p class="noindent" >
+                                           
+                                           
+<h2 class="chapterHead"><span class="titlemark"><span 
+class="ec-lmss-10">Cap</span><span 
+class="ec-lmss-10">ítulo</span><span 
+class="ec-lmss-10">&#x00A0;5</span></span><br /><a 
+ id="x1-450005"></a><span 
+class="ec-lmss-10">TAREAS DE MANTENIMIENTO</span></h2>
+<a 
+ id="x1-45001r82"></a>
+<h3 class="sectionHead"><span class="titlemark"><span 
+class="ec-lmss-10">5.1.   </span></span> <a 
+ id="x1-460001"></a><span 
+class="ec-lmss-10">Trabajos con tensi</span><span 
+class="ec-lmss-10">ón</span></h3>
+<!--l. 824--><p class="noindent" ><span 
+class="ec-lmss-10">Todo trabajo en circuitos energizados de m</span><span 
+class="ec-lmss-10">ás de 450</span>
+<span 
+class="ec-lmss-10">voltios debe hacerse con un grupo de trabajo de al</span>
+<span 
+class="ec-lmss-10">menos dos (2) personas. Los grupos de trabajos que</span>
+<span 
+class="ec-lmss-10">realicen labores en circuitos por encima de 1000 V deben</span>
+<span 
+class="ec-lmss-10">contar con al menos dos (2) operarios y un (1) jefe que</span>
+<span 
+class="ec-lmss-10">coordine y supervise las labores estando atento del</span>
+<span 
+class="ec-lmss-10">trabajo del grupo para controlar cualquier riesgo que los</span>
+<span 
+class="ec-lmss-10">pueda afectar en el desarrollo del trabajo. </span><span class="cite"><span 
+class="ec-lmss-10">[</span><a 
+href="#XRETIE2013"><span 
+class="ec-lmss-10">RETIE,</span>
+</a><span 
+class="ec-lmss-10">]</span></span><br 
+class="newline" /><br 
+class="newline" />
+<!--l. 827--><p class="noindent" ><span 
+class="ec-lmss-10">Los m</span><span 
+class="ec-lmss-10">étodos de trabajo m</span><span 
+class="ec-lmss-10">ás comunes, seg</span><span 
+class="ec-lmss-10">ún los medios</span>
+<span 
+class="ec-lmss-10">utilizados para proteger al operario y el nivel de tensi</span><span 
+class="ec-lmss-10">ón son</span>
+<span class="cite"><span 
+class="ec-lmss-10">[</span><a 
+href="#XRETIE2013"><span 
+class="ec-lmss-10">RETIE, </span></a><span 
+class="ec-lmss-10">]</span></span><span 
+class="ec-lmss-10">:</span>
+     <ol  class="enumerate1" >
+<li 
+  class="enumerate" id="x1-46002x1">
+     <!--l. 830--><p class="noindent" ><span 
+class="ec-lmss-10">Trabajo a distancia: En este m</span><span 
+class="ec-lmss-10">étodo, el operario</span>
+     <span 
+class="ec-lmss-10">ejecuta el trabajo con la ayuda de herramientas</span>
+     <span 
+class="ec-lmss-10">montadas en el extremo de p</span><span 
+class="ec-lmss-10">értigas aislantes.</span>
+     </li>
+                                           
+                                           
+<li 
+  class="enumerate" id="x1-46004x2">
+     <!--l. 831--><p class="noindent" ><span 
+class="ec-lmss-10">Trabajo a contacto: En este m</span><span 
+class="ec-lmss-10">étodo, el operario</span>
+     <span 
+class="ec-lmss-10">se  a</span><span 
+class="ec-lmss-10">ísla  del  conductor  en  el  que  trabaja  y  de</span>
+     <span 
+class="ec-lmss-10">los elementos tomados como masa por medio de</span>
+     <span 
+class="ec-lmss-10">elementos de protecci</span><span 
+class="ec-lmss-10">ón personal, dispositivos y</span>
+     <span 
+class="ec-lmss-10">equipos aislantes.</span>
+     </li>
+<li 
+  class="enumerate" id="x1-46006x3">
+     <!--l. 832--><p class="noindent" ><span 
+class="ec-lmss-10">Trabajo a potencial: En el cual el operario queda</span>
+     <span 
+class="ec-lmss-10">al potencial de la l</span><span 
+class="ec-lmss-10">ínea de transmisi</span><span 
+class="ec-lmss-10">ón en la cual</span>
+     <span 
+class="ec-lmss-10">trabaja, mediante vestuario conductivo.</span></li></ol>
+                                           
+                                           
+<h2 class="chapterHead"><span class="titlemark"><span 
+class="ec-lmss-10">Cap</span><span 
+class="ec-lmss-10">ítulo</span><span 
+class="ec-lmss-10">&#x00A0;6</span></span><br /><a 
+ id="x1-470006"></a><span 
+class="ec-lmss-10">RED SUBTERR</span><span 
+class="ec-lmss-10">ÁNEA</span></h2>
+<!--l. 837--><p class="noindent" ><span 
+class="ec-lmss-10">La red subterr</span><span 
+class="ec-lmss-10">ánea consiste en un conjunto de conductores,</span>
+<span 
+class="ec-lmss-10">transformadores y seccionamientos empleados para</span>
+<span 
+class="ec-lmss-10">suplir principalmente las tensiones de 120/208 kV.</span>
+<span 
+class="ec-lmss-10">Por tanto un transformador alimenta los predios a</span>
+<span 
+class="ec-lmss-10">trav</span><span 
+class="ec-lmss-10">és de conexiones, las cuales pueden estar protegidas</span>
+<span 
+class="ec-lmss-10">mediante fusibles. Las redes de baja tensi</span><span 
+class="ec-lmss-10">ón generalmente</span>
+<span 
+class="ec-lmss-10">no operan en modo anillado como lo hace la media</span>
+<span 
+class="ec-lmss-10">tensi</span><span 
+class="ec-lmss-10">ón, en su lugar emplean puntos de apertura ,</span>
+<span 
+class="ec-lmss-10">los cuales pueden ser establecidos en tableros o en</span>
+<span 
+class="ec-lmss-10">pilares.</span>
+<a 
+ id="x1-47001r86"></a>
+<h3 class="sectionHead"><span class="titlemark"><span 
+class="ec-lmss-10">6.1.   </span></span> <a 
+ id="x1-480001"></a><span 
+class="ec-lmss-10">Conductores de redes subterr</span><span 
+class="ec-lmss-10">áneas </span></h3>
+<!--l. 842--><p class="noindent" ><span 
+class="ec-lmss-10">Los conductores deben ser monopolares de cobre aislado</span>
+<span 
+class="ec-lmss-10">100% en polietileno reticulado (</span><span 
+class="pplr7t-">90</span><span 
+class="zplmr7m-">C</span><span 
+class="ec-lmss-10">) para 15 KV, en el</span>
+<span 
+class="ec-lmss-10">caso de las redes a 13.2 KV., y para 35 KV., en el caso de</span>
+<span 
+class="ec-lmss-10">las redes a 34.5 KV.</span><br 
+class="newline" /><br 
+class="newline" /><span 
+class="ec-lmss-10">Los calibres para las redes de distribuci</span><span 
+class="ec-lmss-10">ón deben ser: 33.62</span>
+<span 
+class="ec-lmss-10">mm2 (2 AWG), 53.50 mm 2 (1/0 AWG), 107.21mm2 (4/0</span>
+<span 
+class="ec-lmss-10">AWG) y 253.4 mm2(500 KCM), para redes a 13.2 KV. y</span>
+<span 
+class="ec-lmss-10">53.50 mm2(1/0 AWG), 107.21 mm2(4/0 AWG) y 253.4</span>
+<span 
+class="ec-lmss-10">mm2 (500 KCM) para redes a 34.5 KV. Las principales</span>
+<span 
+class="ec-lmss-10">caracter</span><span 
+class="ec-lmss-10">ísticas el</span><span 
+class="ec-lmss-10">éctricas de los conductores monopolares</span>
+<span 
+class="ec-lmss-10">de cobre en media tensi</span><span 
+class="ec-lmss-10">ón figuran en la Tabla </span><a 
+href="#x1-48001r1"><span 
+class="ec-lmss-10">6.1</span><!--tex4ht:ref: fig:conductores-subterraneos --></a><span 
+class="ec-lmss-10">.</span>
+                                           
+                                           
+<span class="cite"><span 
+class="ec-lmss-10">[</span><a 
+href="#XEMCALI2007"><span 
+class="ec-lmss-10">EMCALI, 2007</span></a><span 
+class="ec-lmss-10">]</span></span>
+<div class="table">
+                                           
+                                           
+<!--l. 846--><p class="noindent" ><a 
+ id="x1-48001r1"></a><hr class="float"><div class="float" 
+>
+                                           
+                                           
+<br />  <div class="caption" 
+><span class="id">Cuadro&#x00A0;6.1:    </span><span  
+class="content">Capacidad    de    los    conductores
+subterráneos <span class="cite">[<a 
+href="#XEMCALI2007">EMCALI, 2007</a>]</span></span></div><!--tex4ht:label?: x1-48001r1 -->
+<div class="tabular"> <table id="TBL-10" class="tabular" 
+ 
+><colgroup id="TBL-10-1g"><col 
+id="TBL-10-1"></colgroup><colgroup id="TBL-10-2g"><col 
+id="TBL-10-2"></colgroup><colgroup id="TBL-10-3g"><col 
+id="TBL-10-3"></colgroup><colgroup id="TBL-10-4g"><col 
+id="TBL-10-4"></colgroup><colgroup id="TBL-10-5g"><col 
+id="TBL-10-5"></colgroup><colgroup id="TBL-10-6g"><col 
+id="TBL-10-6"></colgroup><colgroup id="TBL-10-7g"><col 
+id="TBL-10-7"></colgroup><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-10-1-"><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-10-1-1"  
+class="td11">  <!--l. 854--><p class="noindent" ><span 
+class="pplr8t-x-x-70">CALIBRE</span>
+   <span 
+class="pplr8t-x-x-70">CONDUCTOR</span>
+   <span 
+class="zplmr7m-x-x-70">mm</span><sup><span 
+class="pplr7t-x-x-50">2</span></sup>
+     <span 
+class="pplr8t-x-x-70">(AWG/MCM)</span>           </td><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-10-1-2"  
+class="td11">  <!--l. 855--><p class="noindent" ><span 
+class="pplr8t-x-x-70">R</span>
+   <span 
+class="pplr8t-x-x-70">(ohm/km)</span> </td><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-10-1-3"  
+class="td11">  <!--l. 856--><p class="noindent" ><span 
+class="pplr8t-x-x-70">XL</span>
+   <span 
+class="pplr8t-x-x-70">(ohm/km)</span> </td><td  style="white-space:nowrap; text-align:center;" id="TBL-10-1-4"  
+class="td11">  <span 
+class="pplr8t-x-x-70">I (A)    </span></td><td  style="white-space:nowrap; text-align:center;" id="TBL-10-1-5"  
+class="td11">  <span 
+class="pplr8t-x-x-70">I (A)    </span></td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-10-2-"><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-10-2-1"  
+class="td11">  <!--l. 859--><p class="noindent" ><span 
+class="pplr8t-x-x-70">Tensi</span><span 
+class="pplr8t-x-x-70">ón</span>                       </td><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-10-2-2"  
+class="td11">  <!--l. 859--><p class="noindent" >         </td><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-10-2-3"  
+class="td11">  <!--l. 859--><p class="noindent" >         </td><td  style="white-space:nowrap; text-align:center;" id="TBL-10-2-4"  
+class="td11">  <span 
+class="pplr8t-x-x-70">15 kV   </span></td><td  style="white-space:nowrap; text-align:center;" id="TBL-10-2-5"  
+class="td11">  <span 
+class="pplr8t-x-x-70">35 kV   </span></td></tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-10-3-"><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-10-3-1"  
+class="td
+11">  <!--l. 861--><p class="noindent" ><span 
+class="pplr8t-x-x-70">33.62 (2)</span>                      </td><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-10-3-2"  
+class="td11">  <!--l. 862--><p class="noindent" ><span 
+class="pplr8t-x-x-70">0.6505</span>         </td><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-10-3-3"  
+class="td11">  <!--l. 863--><p class="noindent" ><span 
+class="pplr8t-x-x-70">3.3</span>               </td><td  style="white-space:nowrap; text-align:center;" id="TBL-10-3-4"  
+class="td11">   <span 
+class="pplr8t-x-x-70">172     </span></td><td  style="white-space:nowrap; text-align:center;" id="TBL-10-3-5"  
+class="td11">   <span 
+class="pplr8t-x-x-70">168     </span></td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-10-4-"><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-10-4-1"  
+class="td11">  <!--l. 866--><p class="noindent" ><span 
+class="pplr8t-x-x-70">53.50 (1/0)</span>                  </td><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-10-4-2"  
+class="td11">  <!--l. 867--><p class="noindent" ><span 
+class="pplr8t-x-x-70">0.4096</span>         </td><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-10-4-3"  
+class="td11">  <!--l. 868--><p class="noindent" ><span 
+class="pplr8t-x-x-70">3.2</span>               </td><td  style="white-space:nowrap; text-align:center;" id="TBL-10-4-4"  
+class="td11">   <span 
+class="pplr8t-x-x-70">225     </span></td><td  style="white-space:nowrap; text-align:center;" id="TBL-10-4-5"  
+class="td11">   <span 
+class="pplr8t-x-x-70">218     </span></td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-10-5-"><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-10-5-1"  
+class="td11">  <!--l. 871--><p class="noindent" ><span 
+class="pplr8t-x-x-70">67.44 (2/0)</span>                  </td><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-10-5-2"  
+class="td11">  <!--l. 872--><p class="noindent" ><span 
+class="pplr8t-x-x-70">0.3246</span>         </td><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-10-5-3"  
+class="td11">  <!--l. 873--><p class="noindent" ><span 
+class="pplr8t-x-x-70">3</span>                  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-10-5-4"  
+class="td11">   <span 
+class="pplr8t-x-x-70">256     </span></td><td  style="white-space:nowrap; text-align:center;" id="TBL-10-5-5"  
+class="td11">   <span 
+class="pplr8t-x-x-70">248     </span></td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-10-6-"><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-10-6-1"  
+class="td11">  <!--l. 876--><p class="noindent" ><span 
+class="pplr8t-x-x-70">85.02 (3/0)</span>                  </td><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-10-6-2"  
+class="td11">  <!--l. 877--><p class="noindent" ><span 
+class="pplr8t-x-x-70">0.2578</span>         </td><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-10-6-3"  
+class="td11">  <!--l. 878--><p class="noindent" ><span 
+class="pplr8t-x-x-70">2.9</span>               </td><td  style="white-space:nowrap; text-align:center;" id="TBL-10-6-4"  
+class="td11">   <span 
+class="pplr8t-x-x-70">297     </span></td><td  style="white-space:nowrap; text-align:center;" id="TBL-10-6-5"  
+class="td11">   <span 
+class="pplr8t-x-x-70">282     </span></td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-10-7-"><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-10-7-1"  
+class="td11">  <!--l. 881--><p class="noindent" ><span 
+class="pplr8t-x-x-70">107.21 (4/0)</span>                </td><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-10-7-2"  
+class="td11">  <!--l. 882--><p class="noindent" ><span 
+class="pplr8t-x-x-70">0.2044</span>         </td><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-10-7-3"  
+class="td11">  <!--l. 883--><p class="noindent" ><span 
+class="pplr8t-x-x-70">2.8</span>               </td><td  style="white-space:nowrap; text-align:center;" id="TBL-10-7-4"  
+class="td11">   <span 
+class="pplr8t-x-x-70">343     </span></td><td  style="white-space:nowrap; text-align:center;" id="TBL-10-7-5"  
+class="td11">   <span 
+class="pplr8t-x-x-70">237     </span></td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-10-8-"><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-10-8-1"  
+class="td11">  <!--l. 886--><p class="noindent" ><span 
+class="pplr8t-x-x-70">177.4 (350)</span>                  </td><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-10-8-2"  
+class="td11">  <!--l. 887--><p class="noindent" ><span 
+class="pplr8t-x-x-70">0.1302</span>         </td><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-10-8-3"  
+class="td11">  <!--l. 888--><p class="noindent" ><span 
+class="pplr8t-x-x-70">2.7</span>               </td><td  style="white-space:nowrap; text-align:center;" id="TBL-10-8-4"  
+class="td11">   <span 
+class="pplr8t-x-x-70">471     </span></td><td  style="white-space:nowrap; text-align:center;" id="TBL-10-8-5"  
+class="td11">   <span 
+class="pplr8t-x-x-70">428     </span></td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-10-9-"><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-10-9-1"  
+class="td11">  <!--l. 891--><p class="noindent" ><span 
+class="pplr8t-x-x-70">253.4 (500)</span>                  </td><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-10-9-2"  
+class="td11">  <!--l. 892--><p class="noindent" ><span 
+class="pplr8t-x-x-70">0.0953</span>         </td><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-10-9-3"  
+class="td11">  <!--l. 893--><p class="noindent" ><span 
+class="pplr8t-x-x-70">2.6</span>               </td><td  style="white-space:nowrap; text-align:center;" id="TBL-10-9-4"  
+class="td11">   <span 
+class="pplr8t-x-x-70">488     </span></td><td  style="white-space:nowrap; text-align:center;" id="TBL-10-9-5"  
+class="td11">   <span 
+class="pplr8t-x-x-70">470     </span></td>
+</tr><tr class="hline" style="border-top:1px solid #000"><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-10-10-"><td  style="white-space:nowrap; text-align:left; vertical-align:middle;" id="TBL-10-10-1"  
+class="td11">                   </td></tr></table></div>
+                                           
+                                           
+</div><hr class="endfloat" />
+</div>
+<!--l. 899--><p class="noindent" ><hr class="figure"><div class="figure" 
+>
+                                           
+                                           
+<a 
+ id="x1-48002r1"></a>
+                                           
+                                           
+<!--l. 901--><p class="noindent" ><img 
+src="../capacity.png" alt="PIC"  
+width="227" height="227" >
+<br /> <div class="caption" 
+><span class="id">Figura&#x00A0;6.1: </span><span  
+class="content">Capacidad de corriente de conductores
+subterraneos</span></div><!--tex4ht:label?: x1-48002r1 -->
+                                           
+                                           
+<!--l. 904--><p class="noindent" ></div><hr class="endfigure">
+                                           
+                                           
+<h2 class="likechapterHead"><a 
+ id="x1-490001"></a><span 
+class="ec-lmss-10">Bibliograf</span><span 
+class="ec-lmss-10">ía</span></h2>
+  <div class="thebibliography">
+  <p class="bibitem" ><span class="biblabel">
+ <span 
+class="ec-lmss-10">[CREG, 1995]</span><span class="bibsp"><span 
+class="ec-lmss-10">&#x00A0;</span><span 
+class="ec-lmss-10">&#x00A0;</span><span 
+class="ec-lmss-10">&#x00A0;</span></span></span>
+  <a 
+ id="XCREG0251995"></a><span 
+class="ec-lmss-10">CREG (1995). </span><span 
+class="ec-lmsso-10">Por la cual se establece el C</span><span 
+class="ec-lmsso-10">ódigo de</span>
+  <span 
+class="ec-lmsso-10">Redes, como parte del Reglamento de Operaci</span><span 
+class="ec-lmsso-10">ón del</span>
+  <span 
+class="ec-lmsso-10">Sistema Interconectado Nacional.</span>
+  </p>
+  <p class="bibitem" ><span class="biblabel">
+ <span 
+class="ec-lmss-10">[DAS, ]</span><span class="bibsp"><span 
+class="ec-lmss-10">&#x00A0;</span><span 
+class="ec-lmss-10">&#x00A0;</span><span 
+class="ec-lmss-10">&#x00A0;</span></span></span><a 
+ id="XPOWERSADAS2012"></a><span 
+class="ec-lmss-10">DAS, J.</span><span 
+class="ec-lmss-10">&#x00A0;C. </span><span 
+class="ec-lmsso-10">POWER SYSTEM ANALYSIS,</span>
+  <span 
+class="ec-lmsso-10">short circuit, load flow and armonics</span><span 
+class="ec-lmss-10">.</span>
+  </p>
+  <p class="bibitem" ><span class="biblabel">
+ <span 
+class="ec-lmss-10">[EMCALI, 2007]</span><span class="bibsp"><span 
+class="ec-lmss-10">&#x00A0;</span><span 
+class="ec-lmss-10">&#x00A0;</span><span 
+class="ec-lmss-10">&#x00A0;</span></span></span><a 
+ id="XEMCALI2007"></a><span 
+class="ec-lmss-10">EMCALI (2007). Normas tecnicas</span>
+  <span 
+class="ec-lmss-10">de dise</span><span 
+class="ec-lmss-10">Ño - conductores.</span>
+                                           
+                                           
+  </p>
+  <p class="bibitem" ><span class="biblabel">
+ <span 
+class="ec-lmss-10">[EMCALI, 2017]</span><span class="bibsp"><span 
+class="ec-lmss-10">&#x00A0;</span><span 
+class="ec-lmss-10">&#x00A0;</span><span 
+class="ec-lmss-10">&#x00A0;</span></span></span><a 
+ id="XMANUALEMCALI"></a><span 
+class="ec-lmss-10">EMCALI  (2017).     </span><span 
+class="ec-lmsso-10">Manual  de</span>
+  <span 
+class="ec-lmsso-10">operaci</span><span 
+class="ec-lmsso-10">ón EMCALI</span><span 
+class="ec-lmss-10">.</span>
+  </p>
+  <p class="bibitem" ><span class="biblabel">
+ <span 
+class="ec-lmss-10">[Ferrer and Schweitzer, 2010]</span><span class="bibsp"><span 
+class="ec-lmss-10">&#x00A0;</span><span 
+class="ec-lmss-10">&#x00A0;</span><span 
+class="ec-lmss-10">&#x00A0;</span></span></span><a 
+ id="Xferrer2010modern"></a><span 
+class="ec-lmss-10">Ferrer, H. J.</span><span 
+class="ec-lmss-10">&#x00A0;A. and</span>
+  <span 
+class="ec-lmss-10">Schweitzer,  E.</span><span 
+class="ec-lmss-10">&#x00A0;O.  (2010).    </span><span 
+class="ec-lmsso-10">Modern  solutions  for</span>
+  <span 
+class="ec-lmsso-10">protection,   control,   and   monitoring   of   electric</span>
+  <span 
+class="ec-lmsso-10">power systems</span><span 
+class="ec-lmss-10">. Schweitzer Engineering Laboratories</span>
+  <span 
+class="ec-lmss-10">Pullman, WA, USA.</span>
+  </p>
+  <p class="bibitem" ><span class="biblabel">
+ <span 
+class="ec-lmss-10">[HORIZON, 2019]</span><span class="bibsp"><span 
+class="ec-lmss-10">&#x00A0;</span><span 
+class="ec-lmss-10">&#x00A0;</span><span 
+class="ec-lmss-10">&#x00A0;</span></span></span><a 
+ id="XHORIZON2019"></a><span 
+class="ec-lmss-10">HORIZON  (2019).   </span><span 
+class="ec-lmsso-10">Switching</span>
+  <span 
+class="ec-lmsso-10">Operator&#8217;s Manual Transmission Switching</span><span 
+class="ec-lmss-10">.</span>
+  </p>
+  <p class="bibitem" ><span class="biblabel">
+ <span 
+class="ec-lmss-10">[Ramirez, ]</span><span class="bibsp"><span 
+class="ec-lmss-10">&#x00A0;</span><span 
+class="ec-lmss-10">&#x00A0;</span><span 
+class="ec-lmss-10">&#x00A0;</span></span></span><a 
+ id="XCARLOSF"></a><span 
+class="ec-lmss-10">Ramirez, C.</span><span 
+class="ec-lmss-10">&#x00A0;F.  </span><span 
+class="ec-lmsso-10">Subestaciones de Alta</span>
+  <span 
+class="ec-lmsso-10">y Extra alta tensi</span><span 
+class="ec-lmsso-10">ón</span><span 
+class="ec-lmss-10">.</span>
+  </p>
+                                           
+                                           
+  <p class="bibitem" ><span class="biblabel">
+ <span 
+class="ec-lmss-10">[RETIE, ]</span><span class="bibsp"><span 
+class="ec-lmss-10">&#x00A0;</span><span 
+class="ec-lmss-10">&#x00A0;</span><span 
+class="ec-lmss-10">&#x00A0;</span></span></span><a 
+ id="XRETIE2013"></a><span 
+class="ec-lmss-10">RETIE.    </span><span 
+class="ec-lmsso-10">Reglamento  T</span><span 
+class="ec-lmsso-10">écnico  de  las</span>
+  <span 
+class="ec-lmsso-10">Instalaciones El</span><span 
+class="ec-lmsso-10">éctricas</span><span 
+class="ec-lmss-10">.</span>
+  </p>
+  <p class="bibitem" ><span class="biblabel">
+ <span 
+class="ec-lmss-10">[TRASHORRAS</span><span 
+class="ec-lmss-10">&#x00A0;MONTECELOS, 2015]</span><span class="bibsp"><span 
+class="ec-lmss-10">&#x00A0;</span><span 
+class="ec-lmss-10">&#x00A0;</span><span 
+class="ec-lmss-10">&#x00A0;</span></span></span>
+  <a 
+ id="Xtrashorras2015subestaciones"></a><span 
+class="ec-lmss-10">TRASHORRAS</span><span 
+class="ec-lmss-10">&#x00A0;MONTECELOS,      J.      (2015).</span>
+  <span 
+class="ec-lmsso-10">Subestaciones el</span><span 
+class="ec-lmsso-10">éctricas</span><span 
+class="ec-lmss-10">. Ediciones Paraninfo, SA.</span>
+</p>
+  </div>
+ 
+</body></html> 
+
+                                           
+
+
