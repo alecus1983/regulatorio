@@ -21,7 +21,6 @@
 \usepackage[backend=biber, style=verbose, hyperref=true]{biblatex}
 \usepackage{longtable}
 \usepackage[table,dvipsnames]{xcolor}
-\renewcommand{\labelenumi}{$\blacktriangleright$}
 \usepackage{titling}
 \usepackage{needspace}
 
@@ -128,7 +127,11 @@
 % personalización de los caption
 \usepackage[font=small,labelfont=bf,
 labelsep=endash]{caption}
-%\captionsetup[figure]{}
+
+%% Para colocar un simbolo a los item
+\renewcommand{\labelitemi}{\color{ForestGreen}{$\blacktriangleright$}}
+%% para colocar color a las listas enumeradas
+\renewcommand{\labelenumi}{\bfseries\color{red}{\theenumi .}} 
 
 \begin{document}
 	
@@ -186,7 +189,7 @@ labelsep=endash]{caption}
 \item  Coordinar y supervisar la ejecución de las diferentes actividades de operación y mantenimiento predictivo,  preventivo y correctivo de la red de servicios.
 \item  Administrar adecuadamente los equipos, materiales Y herramientas requeridas para las actividades a realizar por el personal a su cargo.
 \item  Propender por el cumplimiento de los indicadores de gestión establecidos para el área.
-\item  Formular iniciativas tendientes a la optimizacion de los procesos y procedimientos de operación y mantenimiento de la red de servicios.
+\item  Formular iniciativas tendientes a la optimización de los procesos y procedimientos de operación y mantenimiento de la red de servicios.
 \item  Coordinar los diferentes grupos de trabajo para efectuar las actividades programadas en  el Sistema de Distribución Local de Energía.
 \item  Elaborar informes de las actividades desarrolladas con la oportunidad y periodicidad requeridas.
 \item  Realizar la supervisión, coordinación y control de las subestaciones, redes eléctricas y sus equipos asociados utilizando las herramientas y
@@ -440,14 +443,10 @@ CREG 128 de 2010& Por la cual se establecen reglas para hacer la transición al 
 \textbf{CREG 156 de 2011}& Codigo de comercialización \\\hline
   
 CREG 093 de 2012& Por la cual se establecen el reglamento para el \textbf{reporte de Eventos }y el procedimiento
-para el cálculo de la \textbf{Energía No Suministrada}, y se precisan otras disposiciones
-relacionadas con la calidad del servicio en el Sistema de Transmisión
-                  Nacional\\\hline
+para el cálculo de la \textbf{Energía No Suministrada}, y se precisan otras disposiciones relacionadas con la calidad del servicio en el Sistema de Transmisión Nacional\\\hline
   
-CREG 094 de 2012& Por la cual se establecen el reglamento para el \textbf{reporte de Eventos} y el procedimiento
-para el cálculo de la \textbf{Energía No Suministrada}, y se precisan
-                  otras disposiciones relacionadas con la calidad del servicio en los Sistemas de
-                  Transmisión Regional\\\hline
+CREG 094 de 2012& Por la cual se establecen el reglamento para el \textbf{reporte de Eventos} y el procedimiento para el cálculo de la \textbf{Energía No Suministrada}, y se precisan
+                  otras disposiciones relacionadas con la calidad del servicio en los Sistemas de Transmisión Regional\\\hline
   
 CREG 038 de 2014& \\\hline  
 CREG 224 de 2016& Por la cual se establecen los criterios de
@@ -1713,15 +1712,50 @@ En el caso de transformadores usados y o reparados éstos deben cumplir con los 
 
 \chapter{COMUNICACIONES Y CONFIGURACIONES}
 
-Los protocolos de comunicaciones empleados en los sistemas eléctricos son:
+Los protocolos de comunicaciones empleados en los sistemas eléctricos son los que se muestran en la figura \ref{fig:protocoloscomunicacion}, en que los OR se comunican con el \ac{CND} mediante el protocolo \textbf{ICCP} (\textit{Inter Control Center Communication Protocol}). El protocol ICCP  es basado en el concepto cliente servidor. Este protocolo se desarrolla en la capa 7 del modelo OSI. Todas las transferencias de datos se originan con una solicitud de un centro de control (el cliente) a otro centro de control que posee y administra los datos (el servidor). Por ejemplo, si una aplicación del Centro de Control X necesita datos de la base de datos SCADA de Centro de Cotrol Y, la aplicación Control Center X, que actúa como cliente, podría solicitar que Control Center Y, que actúa como servidor, envíe los datos en las condiciones especificadas por el cliente.\\\\
+
+Existen varios servicios proporcionados en \textbf{ICCP} para realizar transferencias de datos, según el tipo de solicitud. Por ejemplo, si el cliente realiza una solicitud única, los datos se devolverán como un respuesta a la solicitud. Sin embargo, si el cliente solicita la transferencia periódica de datos o la transferencia de datos solo cuando cambian, entonces el cliente establecerá primero el informe. El servidor (es decir, especificar condiciones de informes como la periodicidad de las transferencias periódicas u otras condiciones desencadenantes como el informe por excepción únicamente), y el servidor luego enviará los datos como un informe no solicitado siempre que se cumplan las condiciones de informe.\\\\
+
+\begin{figure}[H]
+  \caption{Protocolos de comunicación en sistemas ecléctico}
+  \label{fig:protocoloscomunicacion}
+  \includegraphics[width=\linewidth]{protocolos_comunicacion}
+\end{figure}
+
+\begin{figure}[H]
+  \caption{Comunicación en la capa 7}
+  \label{fig:capa7iccp}
+  \includegraphics[width=\linewidth]{capas_iccp}
+\end{figure}
+
+
+
+De acuerdo a la resolución \textbf{CREG 083 de 1999} Por cada evento que se registre se debe enviar la fecha y hora con \textit{resolución de un (1) ms}, la identificación del elemento que cambió de estado y el estado. final del dispositivo.\\\\
+
+\section{Regulación aplicable a las comunicaciones}
+
+\subsection{Regulación}
+La regulación aplicable a las comunicaciones es la siguiente:
 
 \begin{itemize}
-\item DNP
-\item IEC 60870-5-101
-\item IEC 60870-5-104
-\item Modbus
-\item IEC 61850
+\item CREG 025 – 1995: Código de Redes, como parte del Reglamento de Operación del Sistema Interconectado Nacional
+\item CREG 080 - 1999: Funciones de planeación, coordinación supervisión y control entre el Centro Nacional de Despacho (CND) y los agentes del SIN
+\item CREG 060 - 2019: Reglamento de Operación para permitir la conexión y operación de plantas solares fotovoltaicas y eólicas en el SIN
+\item CREG 148 - 2021: Conexión y operación de plantas solares fotovoltaicas y eólicas en el SDL con capacidad efectiva neta o potencia máxima declarada igual o mayor a 5 MW
 \end{itemize}
+
+\subsection{Acuerdos}
+
+los acuerdos vigentes con relación a las comunicaciones son :
+
+\begin{itemize}
+\item 1411: Por el cual se aprueban los procedimientos y los indicadores relacionados con la Supervisión del SIN
+\item 1428: Requisitos para la Prestación del Servicio de Regulación Secundaria de Frecuencia – AGC
+\item 1525: Por el cual se aprueban los requisitos de la supervisión de las variables eléctricas de las plantas solares fotovoltaicas y eólicas en el SDL con capacidad efectiva neta o potencia máxima declarada igual o mayor a 5 MW
+\item 1612: Puesta en operación de proyectos de transmisión que incluyan activos de uso del STN, STR, SDL y recursos de Generación
+  \end{itemize}
+
+\section{Automatización de Subestaciones}
 
 En la automatización de subestaciones se reconocen  tres partes:
 
@@ -1748,7 +1782,7 @@ Los datos  dentro del estandard IEC61850 son agrupados como muestra la figura :
   \includegraphics[width=\linewidth]{anatomia_iec}
 \end{figure}
 
-\section{Visión General del Modelo de Datos IEC 61850}
+\subsection{Modelo de Datos IEC 61850}
 
 El modelo de datos IEC 61850 es una representación jerárquica de la información dentro de un \textit{servidor} IEC 61850 de un IED (Dispositivo Electrónico Inteligente). Su propósito es estandarizar la comunicación y el intercambio de información en sistemas de automatización de subestaciones, entre otros dominios.
 
@@ -1764,13 +1798,13 @@ El modelo de datos IEC 61850 es una representación jerárquica de la informaci�
 \item Atributo de Datos (Data Attribute): Las "hojas" de la jerarquía, donde se encuentran los valores. Pueden tener una estructura interna.
   \end{enumerate}
 
-\subsection{ Dispositivo Lógico (Logical Device)}
+\subsubsection{ Dispositivo Lógico (Logical Device)}
 
     Definición: La parte superior de la estructura jerárquica del modelo. Es una colección de Nodos Lógicos.
     Función: Agrupar Nodos Lógicos para funciones específicas (ej. protección, control, medición). También se utilizan para la jerarquía de nombres y la gestión del comportamiento del dispositivo (ej. modo de prueba).
     Estándar: No definidos por el estándar IEC 61850; típicamente los define el fabricante del IED.
 
-\subsection{Nodo Lógico (Logical Node - LN)}
+\subsubsection{Nodo Lógico (Logical Node - LN)}
 
     Definición: Elementos clave para modelar funciones de aplicación. Representan un elemento funcional fraccional (ej. elemento de distancia de una función de protección, interfaz a un seccionador). Contienen todos los datos que pertenecen a esa función.
     Nombres: Estandarizados con cuatro caracteres. El primer carácter indica el grupo de funcionalidad (ej. P para protección, X para aparamenta).
@@ -1778,14 +1812,14 @@ El modelo de datos IEC 61850 es una representación jerárquica de la informaci�
     Especificación: Definidos en las partes 7-4, 7-410 y 7-420 del estándar. La especificación incluye una descripción textual de la semántica y una tabla que define la estructura en términos de objetos de datos.
     Contenido: Los objetos de datos dentro de un LN pueden ser obligatorios (M) u opcionales (O). Se clasifican según su propósito (ej. información de estado, control del comportamiento).
 
-\subsection{Objeto de Datos (Data Object - DO)}
+\subsubsection{Objeto de Datos (Data Object - DO)}
 
     Definición: Componente de un Nodo Lógico. Su estructura y los atributos de datos disponibles están definidos por la Clase de Datos Común (CDC).
     Contenido: Un objeto de datos puede tener múltiples atributos de datos. También puede contener sub-objetos de datos (que a su vez son de otras Clases de Datos Comunes).
     Ejemplo: El objeto de datos POS (posición de un interruptor) es de la Clase de Datos Común DPC (Double Point Control).
     Especificación: Definidos en las partes 7-4, 7-410 y 7-420 del estándar junto con los Nodos Lógicos. Incluyen un nombre, referencia a la CDC, explicación corta e indicación de obligatoriedad/opcionalidad.
 
-\subsection{Clase de Datos Común (Common Data Class - CDC)}
+\subsubsection{Clase de Datos Común (Common Data Class - CDC)}
 
     Definición: Una definición de tipo estructurado que define qué atributos de datos están disponibles para un objeto de datos.
     Función: Determina la estructura de un objeto de datos.
@@ -1793,7 +1827,7 @@ El modelo de datos IEC 61850 es una representación jerárquica de la informaci�
     Especificación: Definidas en la parte 7-3 del estándar. La especificación incluye una lista de atributos de datos, el tipo de atributo (básico o clase de atributo construida), restricción de función, condición de presencia y posibles rangos de valores.
     Ejemplo: INS es una CDC para información de estado de enteros; DPC es una CDC para control de doble punto.
 
-\subsection{Atributo de Datos (Data Attribute - DA)}
+\subsubsection{Atributo de Datos (Data Attribute - DA)}
 
     Definición: Las hojas de la jerarquía del modelo de datos donde se encuentran los valores.
     Tipos:Tipo Básico (Basic Type): Tipos de datos fundamentales (ej. entero de 32 bits sin signo, punto flotante). Definidos en la parte 7-2.
@@ -1805,7 +1839,7 @@ El modelo de datos IEC 61850 es una representación jerárquica de la informaci�
     SP: Atributos de punto de ajuste (settings).
     Contenido: Los atributos de datos pueden ser de un tipo básico o tener niveles jerárquicos adicionales a través de Clases de Atributo Construidas hasta llegar a los componentes primitivos.
 
-\subsection{Clase de Atributo Construida (Constructed Attribute Class - CAC)}
+\subsubsection{Clase de Atributo Construida (Constructed Attribute Class - CAC)}
 
     Definición: Un tipo de atributo de datos que posee una estructura interna, es decir, se compone de otros sub-atributos.
     Ejemplos: Quality (calidad de la información), Timestamp (marca de tiempo), Vector (magnitud y ángulo).
@@ -1821,52 +1855,63 @@ Relación entre los Elementos y las Partes del Estándar
 
 Instrucciones: Responda cada pregunta con 2-3 oraciones.
 
-    ¿Cuál es el propósito principal de un Dispositivo Lógico en el modelo de datos IEC 61850 y quién lo define típicamente?
-    Describa qué es un Nodo Lógico y por qué se considera un elemento clave en el modelo.
-    Explique la relación entre un Objeto de Datos y una Clase de Datos Común.
-    ¿Qué son las "hojas" de la jerarquía del modelo de datos IEC 61850 y qué se encuentra en ellas?
-    Diferencie entre un Tipo Básico y una Clase de Atributo Construida en el contexto de los Atributos de Datos.
-    Mencione dos ejemplos de Grupos de Nodos Lógicos y el propósito de esta agrupación.
-    ¿Qué información se utiliza para clasificar los Atributos de Datos según su propósito, y dé un ejemplo?
-    En la especificación de un Nodo Lógico, ¿qué indican las marcas "M" y "O" junto a los Objetos de Datos?
-    ¿Qué parte del estándar IEC 61850 define las Clases de Datos Comunes y qué tipo de información incluyen estas definiciones?
-    Explique cómo un Objeto de Datos puede tener una estructura jerárquica más allá de sus atributos de datos directos.
+\begin{enumerate}
+\item ¿Cuál es el propósito principal de un Dispositivo Lógico en el modelo de datos IEC 61850 y quién lo define típicamente?
+\item Describa qué es un Nodo Lógico y por qué se considera un elemento clave en el modelo.
+\item Explique la relación entre un Objeto de Datos y una Clase de Datos Común.
+\item ¿Qué son las "hojas" de la jerarquía del modelo de datos IEC 61850 y qué se encuentra en ellas?
+\item Diferencie entre un Tipo Básico y una Clase de Atributo Construida en el contexto de los Atributos de Datos.
+\item Mencione dos ejemplos de Grupos de Nodos Lógicos y el propósito de esta agrupación.
+\item ¿Qué información se utiliza para clasificar los Atributos de Datos según su propósito, y dé un ejemplo?
+\item En la especificación de un Nodo Lógico, ¿qué indican las marcas "M" y "O" junto a los Objetos de Datos?
+\item ¿Qué parte del estándar IEC 61850 define las Clases de Datos Comunes y qué tipo de información incluyen estas definiciones?
+\item Explique cómo un Objeto de Datos puede tener una estructura jerárquica más allá de sus atributos de datos directos.
+  \end{enumerate}
 
 Clave de Respuestas del Quiz
 
-    El propósito principal de un Dispositivo Lógico es agrupar Nodos Lógicos para funciones específicas, como protección o control, y para la gestión del comportamiento del dispositivo. Estos no son definidos por el estándar, sino típicamente por el fabricante del IED.
-    Un Nodo Lógico es un elemento clave para modelar funciones de aplicación, representando una funcionalidad fraccional (ej. un elemento de protección o una interfaz a un interruptor). Contiene todos los datos relacionados con esa función, estandarizando su representación.
-    Un Objeto de Datos es un componente de un Nodo Lógico, y su estructura, es decir, qué Atributos de Datos están disponibles, está completamente definida por su Clase de Datos Común. La CDC actúa como una plantilla o tipo estructurado para el Objeto de Datos.
-    Las "hojas" de la jerarquía del modelo de datos IEC 61850 son los Atributos de Datos. Es en estos atributos donde finalmente se encuentran los valores de la información modelada, ya sea directamente o dentro de estructuras anidadas.
-    Un Tipo Básico es un tipo de dato fundamental y primitivo (ej. entero, punto flotante) que no tiene una estructura interna adicional. Una Clase de Atributo Construida, en cambio, es un tipo de atributo de datos que posee una estructura interna y se compone de otros sub-atributos (ej. Quality, Timestamp).
-    Dos ejemplos de Grupos de Nodos Lógicos son "Protección" (ej. PDIF para protección diferencial) y "Aparamenta" (ej. XSWI para interruptor). Esta agrupación facilita el manejo y la comprensión de las funcionalidades estandarizadas.
-    Las Restricciones de Función (Function Constraints - FC) se utilizan para clasificar los Atributos de Datos según su propósito. Por ejemplo, ST identifica atributos de estado, mientras que CF identifica atributos de configuración.
-    En la especificación de un Nodo Lógico, la indicación "M" (obligatorio) significa que el Objeto de Datos debe estar presente en la implementación de ese Nodo Lógico. La "O" (opcional) indica que su presencia es discrecional.
-    La Parte 7-3 del estándar IEC 61850 define las Clases de Datos Comunes. Estas definiciones incluyen una lista de atributos de datos, su nombre, semántica, tipo, la restricción de función y la condición de presencia.
-    Un Objeto de Datos puede tener una estructura jerárquica adicional si una de sus Clases de Datos Comunes se refiere a otros objetos de datos, que a su vez son de otras Clases de Datos Comunes. Un ejemplo es la CDC Y para mediciones trifásicas, que contiene sub-objetos para cada fase (ej. Phase A, Phase B, Phase C) de tipo CMV.
+\begin{itemize}
+\item El propósito principal de un Dispositivo Lógico es agrupar Nodos Lógicos para funciones específicas, como protección o control, y para la gestión del comportamiento del dispositivo. Estos no son definidos por el estándar, sino típicamente por el fabricante del IED.
+\item Un Nodo Lógico es un elemento clave para modelar funciones de aplicación, representando una funcionalidad fraccional (ej. un elemento de protección o una interfaz a un interruptor). Contiene todos los datos relacionados con esa función, estandarizando su representación.
+\item Un Objeto de Datos es un componente de un Nodo Lógico, y su estructura, es decir, qué Atributos de Datos están disponibles, está completamente definida por su Clase de Datos Común. La CDC actúa como una plantilla o tipo estructurado para el Objeto de Datos.
+\item Las "hojas" de la jerarquía del modelo de datos IEC 61850 son los Atributos de Datos. Es en estos atributos donde finalmente se encuentran los valores de la información modelada, ya sea directamente o dentro de estructuras anidadas.
+\item Un Tipo Básico es un tipo de dato fundamental y primitivo (ej. entero, punto flotante) que no tiene una estructura interna adicional. Una Clase de Atributo Construida, en cambio, es un tipo de atributo de datos que posee una estructura interna y se compone de otros sub-atributos (ej. Quality, Timestamp).
+\item Dos ejemplos de Grupos de Nodos Lógicos son "Protección" (ej. PDIF para protección diferencial) y "Aparamenta" (ej. XSWI para interruptor). Esta agrupación facilita el manejo y la comprensión de las funcionalidades estandarizadas.
+\item Las Restricciones de Función (Function Constraints - FC) se utilizan para clasificar los Atributos de Datos según su propósito. Por ejemplo, ST identifica atributos de estado, mientras que CF identifica atributos de configuración.
+\item En la especificación de un Nodo Lógico, la indicación "M" (obligatorio) significa que el Objeto de Datos debe estar presente en la implementación de ese Nodo Lógico. La "O" (opcional) indica que su presencia es discrecional.
+\item La Parte 7-3 del estándar IEC 61850 define las Clases de Datos Comunes. Estas definiciones incluyen una lista de atributos de datos, su nombre, semántica, tipo, la restricción de función y la condición de presencia.
+\item Un Objeto de Datos puede tener una estructura jerárquica adicional si una de sus Clases de Datos Comunes se refiere a otros objetos de datos, que a su vez son de otras Clases de Datos Comunes. Un ejemplo es la CDC Y para mediciones trifásicas, que contiene sub-objetos para cada fase (ej. Phase A, Phase B, Phase C) de tipo CMV.
+\end{itemize}
 
 Preguntas de Formato Ensayo (No se proporcionan respuestas)
 
-    Analice cómo la estructura jerárquica del modelo de datos IEC 61850 (Dispositivos Lógicos, Nodos Lógicos, Objetos de Datos, Atributos de Datos) contribuye a la estandarización y modularidad de la comunicación en los sistemas de automatización de subestaciones.
-    Compare y contraste el papel de las Clases de Datos Comunes (CDCs) y las Clases de Atributos Construidas (CACs) en la definición de la estructura y el tipo de los datos dentro del modelo IEC 61850. Incluya ejemplos para ilustrar su explicación.
-    Explique cómo las diferentes partes del estándar IEC 61850 (7-2, 7-3, 7-4/7-410/7-420) colaboran para proporcionar una definición completa y coherente de los elementos del modelo de datos.
-    Discuta la importancia de las Restricciones de Función (Function Constraints) y la indicación de obligatoriedad/opcionalidad en la especificación de los Objetos de Datos y Atributos de Datos para la flexibilidad y la correcta interpretación del modelo.
-    Utilizando el ejemplo del Objeto de Datos POS (posición de un interruptor), describa cómo se modelan tanto la información operativa como la no operativa (ej. configuración, sustitución) dentro de un mismo Objeto de Datos y la relevancia de los Atributos de Datos para ello.
+\begin{enumerate}
+\item Analice cómo la estructura jerárquica del modelo de datos IEC 61850 (Dispositivos Lógicos, Nodos Lógicos, Objetos de Datos, Atributos de Datos) contribuye a la estandarización y modularidad de la comunicación en los sistemas de automatización de subestaciones.
+\item Compare y contraste el papel de las Clases de Datos Comunes (CDCs) y las Clases de Atributos Construidas (CACs) en la definición de la estructura y el tipo de los datos dentro del modelo IEC 61850. Incluya ejemplos para ilustrar su explicación.
+\item Explique cómo las diferentes partes del estándar IEC 61850 (7-2, 7-3, 7-4/7-410/7-420) colaboran para proporcionar una definición completa y coherente de los elementos del modelo de datos.
+\item Discuta la importancia de las Restricciones de Función (Function Constraints) y la indicación de obligatoriedad/opcionalidad en la especificación de los Objetos de Datos y Atributos de Datos para la flexibilidad y la correcta interpretación del modelo.
+\item Utilizando el ejemplo del Objeto de Datos POS (posición de un interruptor), describa cómo se modelan tanto la información operativa como la no operativa (ej. configuración, sustitución) dentro de un mismo Objeto de Datos y la relevancia de los Atributos de Datos para ello.
+\end{enumerate}
+
 
 Glosario de Términos Clave
 
-    ACSI (Abstract Communication Service Interface): Interfaz de Servicio de Comunicación Abstracta. Parte del estándar IEC 61850 que define los servicios abstractos para la comunicación entre IEDs.
-    Atributo de Datos (Data Attribute - DA): El elemento más básico del modelo de datos, donde se encuentra el valor de la información. Puede ser de un tipo básico o una clase de atributo construida.
-    Clase de Atributo Construida (Constructed Attribute Class - CAC): Un tipo de atributo de datos que tiene una estructura interna, es decir, se compone de otros sub-atributos (ej. Quality, Timestamp).
-    Clase de Datos Común (Common Data Class - CDC): Una definición de tipo estructurado que define la lista de atributos de datos disponibles para un objeto de datos, determinando su estructura.
-    Dispositivo Lógico (Logical Device): El nivel superior de la jerarquía del modelo de datos, una colección de Nodos Lógicos que agrupa funcionalidades.
-    IEC 61850: Un estándar internacional para la comunicación en subestaciones eléctricas y, por extensión, en sistemas de automatización de la energía, que define un modelo de datos orientado a objetos.
-    IED (Intelligent Electronic Device): Dispositivo Electrónico Inteligente. Un dispositivo basado en microprocesador utilizado en sistemas de energía, como relés de protección, RTUs y controladores.
-    Nodo Lógico (Logical Node - LN): Elemento clave del modelo de datos que representa una función de aplicación específica (ej. un relé de protección, un interruptor) y contiene los datos asociados.
-    Objeto de Datos (Data Object - DO): Un componente de un Nodo Lógico cuya estructura está definida por una Clase de Datos Común. Puede contener múltiples atributos de datos.
-    Restricción de Función (Function Constraint - FC): Un clasificador utilizado para categorizar los atributos de datos según su propósito (ej. ST para estado, CF para configuración).
-    Servidor IEC 61850: Un componente de un IED que expone el modelo de datos IEC 61850 a otros dispositivos o sistemas.
-    Tipo Básico (Basic Type): Un tipo de dato primitivo y fundamental (ej. entero de 32 bits, punto flotante) que no posee una estructura interna.
+\begin{itemize}
+\item ACSI (Abstract Communication Service Interface): Interfaz de Servicio de Comunicación Abstracta. Parte del estándar IEC 61850 que define los servicios abstractos para la comunicación entre IEDs.
+\item Atributo de Datos (Data Attribute - DA): El elemento más básico del modelo de datos, donde se encuentra el valor de la información. Puede ser de un tipo básico o una clase de atributo construida.
+\item Clase de Atributo Construida (Constructed Attribute Class - CAC): Un tipo de atributo de datos que tiene una estructura interna, es decir, se compone de otros sub-atributos (ej. Quality, Timestamp).
+\item Clase de Datos Común (Common Data Class - CDC): Una definición de tipo estructurado que define la lista de atributos de datos disponibles para un objeto de datos, determinando su estructura.
+\item Dispositivo Lógico (Logical Device): El nivel superior de la jerarquía del modelo de datos, una colección de Nodos Lógicos que agrupa funcionalidades.
+\item IEC 61850: Un estándar internacional para la comunicación en subestaciones eléctricas y, por extensión, en sistemas de automatización de la energía, que define un modelo de datos orientado a objetos.
+\item IED (Intelligent Electronic Device): Dispositivo Electrónico Inteligente. Un dispositivo basado en microprocesador utilizado en sistemas de energía, como relés de protección, RTUs y controladores.
+\item Nodo Lógico (Logical Node - LN): Elemento clave del modelo de datos que representa una función de aplicación específica (ej. un relé de protección, un interruptor) y contiene los datos asociados.
+  
+\item Objeto de Datos (Data Object - DO): Un componente de un Nodo Lógico cuya estructura está definida por una Clase de Datos Común. Puede contener múltiples atributos de datos.
+  \item Restricción de Función (Function Constraint - FC): Un clasificador utilizado para categorizar los atributos de datos según su propósito (ej. ST para estado, CF para configuración).
+  \item Servidor IEC 61850: Un componente de un IED que expone el modelo de datos IEC 61850 a otros dispositivos o sistemas.
+  \item Tipo Básico (Basic Type): Un tipo de dato primitivo y fundamental (ej. entero de 32 bits, punto flotante) que no posee una estructura interna.
+\end{itemize}
+
     
 \chapter{CONEXIÓN DE USUARIOS}
 
