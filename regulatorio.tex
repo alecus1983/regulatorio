@@ -1784,14 +1784,14 @@ Los datos  dentro del estandard IEC61850 son agrupados como muestra la figura :
 
 \subsection{Modelo de Datos IEC 61850}
 
-El modelo de datos IEC 61850 es una representación jerárquica de la información dentro de un \textit{servidor} IEC 61850 de un IED (Dispositivo Electrónico Inteligente). Su propósito es estandarizar la comunicación y el intercambio de información en sistemas de automatización de subestaciones, entre otros dominios.
+El modelo de datos IEC 61850 es una representación jerárquica de la información dentro de un IED (Dispositivo Electrónico Inteligente). Su propósito es estandarizar la comunicación y el intercambio de información en sistemas de automatización de subestaciones.
 
 \paragraph{Estructura Jerárquica}
 
 \begin{enumerate}
 \item     Dispositivo Lógico (Logical Device): El nivel superior del modelo, una colección de múltiples nodos lógicos.
     
-\item Nodo Lógico (Logical Node): Elementos clave para modelar funciones de aplicación, contienen objetos de datos.
+\item Nodo Lógico (Logical Node): Modela las  aplicaciones y contienen objetos de datos.
     
 \item Objeto de Datos (Data Object): Contenidos dentro de los nodos lógicos, su estructura está definida por la Clase de Datos Común.
     
@@ -1800,9 +1800,7 @@ El modelo de datos IEC 61850 es una representación jerárquica de la informaci�
 
 \subsubsection{ Dispositivo Lógico (Logical Device)}
 
-    Definición: La parte superior de la estructura jerárquica del modelo. Es una colección de Nodos Lógicos.
-    Función: Agrupar Nodos Lógicos para funciones específicas (ej. protección, control, medición). También se utilizan para la jerarquía de nombres y la gestión del comportamiento del dispositivo (ej. modo de prueba).
-    Estándar: No definidos por el estándar IEC 61850; típicamente los define el fabricante del IED.
+Estan definidos principalmente por el fabricante más que por la norma IEC 61850 y hacen referencia a los IDEs.
 
 \subsubsection{Nodo Lógico (Logical Node - LN)}
 
