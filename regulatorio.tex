@@ -829,6 +829,14 @@ La \textbf{Resolución CREG 080 de 1999} define las responsabilidades del CND y 
 
 El Acuerdo 1617 introduce actualizaciones basadas en las Resoluciones \textbf{CREG 015 de 2018}, \textbf{036 de 2019} y \textbf{101023 de 2022}, incluyendo la responsabilidad de reporte de información por parte de los Operadores de Red (OR), los plazos para reportar el valor de la Energía No Suministrada (ENS) al LAC, y la inclusión de eventos no programados en los Sistemas de Almacenamiento de Energía Eléctrica con Baterías (SAEB). Los Anexos 1 y 2 detallan el procedimiento y los formatos específicos para la elaboración de estos informes.
 
+\begin{figure}[H]
+  \centering
+  
+  \caption{insumos para el análisis de eventos}
+  \label{fig:insumoseventos}
+  \includegraphics[width=0.8\linewidth]{insumos_eventos}
+\end{figure}
+
 \subsubsection{Responsables de los análisis y elaboración de informes}
 
 \begin{itemize}
@@ -1308,9 +1316,12 @@ En caso de un mantenimiento mayor el cual requiere más horas de las programadas
 	\item Alta Seguridad: Probabilidad de no tener disparos indeseados
 	\item Selectividad: Desconectar sólo lo fallado, evitando trasladar los efectos de las fallas a otros lugares del STN. 
 	\item Rapidez: El tiempo de operación debe ser lo suficientemente corto de modo que garantice mantenerla estabilidad del sistema
-\end{itemize}
+        \end{itemize}
 
-Los tipos de relés de sobre corriente se pueden clasificar como se muestra en la figura:
+        En los sistemas eléctricos de los distribuidores, grandes consumidores y transportadores, el tiempo máximo de despeje de falla de la protección principal, desde el inicio de la falla hasta la extinción del arco en el interruptor de potencia, no debe
+        ser mayor que 150 milisegundos.\\\\
+
+        Los tipos de relés de sobre corriente se pueden clasificar como se muestra en la figura:
 
 \begin{figure}[H]
       \centering
@@ -1319,6 +1330,8 @@ Los tipos de relés de sobre corriente se pueden clasificar como se muestra en l
       \label{fig:tiporele}
       \includegraphics[width=\linewidth]{tipos_rele}
     \end{figure}
+
+
 
     \section{PROTECCIONES DEL TRANSFORMADOR}
 
@@ -1755,7 +1768,12 @@ los acuerdos vigentes con relación a las comunicaciones son :
 \item 1612: Puesta en operación de proyectos de transmisión que incluyan activos de uso del STN, STR, SDL y recursos de Generación
   \end{itemize}
 
-\section{Automatización de Subestaciones}
+  \section{Informe de superación y enlaces CND}
+
+  En cada punto a supervisar el valor será de 100\% si está supervisado, o 0\% si no está supervisado. Porcentaje de tiempo en que el Punto a Supervisar llega al sistema SCADA del CND. La meta CNO: 95\%, pero la meta del la CREG es 97 \%,  con periodicidad semanal. Para realizar este reporte se utiliza la plataforma GAO.
+
+
+  \section{Automatización de Subestaciones}
 
 En la automatización de subestaciones se reconocen  tres partes:
 
@@ -1911,7 +1929,7 @@ Glosario de Términos Clave
 \end{itemize}
 
     
-\chapter{CONEXIÓN DE USUARIOS}
+\chapter{PROCESO DE CONEXIÓN}
 
 \section{Conexión de usuarios}
 
@@ -1927,6 +1945,16 @@ del 2021 en tipo 1 y tipo 2 , como lo muestra la figura
     2021}
   \label{fig:tipoproyecto}
 \end{figure}
+
+    \section{ENTRADA EN OPERACIÓN COMERCIAL}
+
+    El procedimiento guía y los plazos aclaratorios no previstos en la regulación para la entrada en operación de plantas al SIN de Activos dei Sistema de Transmisión Nacional - STN del Sistema de Transmisión Regional - STR - y de Activos de conexión al STN,  se ,muestra en el acuerdo 646 del 2013, como se muestra en la figura \ref{fig:plazo646}.
+
+    \begin{figure}[H]
+      \caption{Plazos Acuerdo CNO 646 de 2013}
+      \label{fig:plazo646}
+      \includegraphics[width=\linewidth]{plazo_cno}
+      \end{figure}
 
 
 \chapter{SEGURIDAD EN EL TRABAJO}
