@@ -1724,15 +1724,16 @@ En el caso de transformadores usados y o reparados éstos deben cumplir con los 
 
 \chapter{COMUNICACIONES Y CONFIGURACIONES}
 
-Los protocolos de comunicaciones empleados en los sistemas eléctricos son los que se muestran en la figura \ref{fig:protocoloscomunicacion}, en que los OR se comunican con el \ac{CND} mediante el protocolo \textbf{ICCP} (\textit{Inter Control Center Communication Protocol}). El protocol ICCP  es basado en el concepto cliente servidor. Este protocolo se desarrolla en la capa 7 del modelo OSI. Todas las transferencias de datos se originan con una solicitud de un centro de control (el cliente) a otro centro de control que posee y administra los datos (el servidor). Por ejemplo, si una aplicación del Centro de Control X necesita datos de la base de datos SCADA de Centro de Cotrol Y, la aplicación Control Center X, que actúa como cliente, podría solicitar que Control Center Y, que actúa como servidor, envíe los datos en las condiciones especificadas por el cliente.\\\\
-
-Existen varios servicios proporcionados en \textbf{ICCP} para realizar transferencias de datos, según el tipo de solicitud. Por ejemplo, si el cliente realiza una solicitud única, los datos se devolverán como un respuesta a la solicitud. Sin embargo, si el cliente solicita la transferencia periódica de datos o la transferencia de datos solo cuando cambian, entonces el cliente establecerá primero el informe. El servidor (es decir, especificar condiciones de informes como la periodicidad de las transferencias periódicas u otras condiciones desencadenantes como el informe por excepción únicamente), y el servidor luego enviará los datos como un informe no solicitado siempre que se cumplan las condiciones de informe.\\\\
+Los protocolos de comunicaciones empleados en los sistemas eléctricos son los que se muestran en la figura \ref{fig:protocoloscomunicacion} de lo que se destaca la comunicación entre el \ac{OR} y el \ac{CND}, en que los OR se comunican con el \ac{CND} mediante el protocolo \textbf{ICCP} (\textit{Inter Control Center Communication Protocol}).
 
 \begin{figure}[H]
+  \centering
   \caption{Protocolos de comunicación en sistemas ecléctico}
   \label{fig:protocoloscomunicacion}
-  \includegraphics[width=\linewidth]{protocolos_comunicacion}
+  \includegraphics[width=0.5\linewidth]{protocolos_comunicacion}
 \end{figure}
+
+El protocol ICCP  es basado en el concepto cliente servidor. Este protocolo se desarrolla en la capa 7 del modelo OSI. Todas las transferencias de datos se originan con una solicitud de un centro de control (el cliente) a otro centro de control que posee y administra los datos (el servidor). Por ejemplo, si una aplicación del Centro de Control X necesita datos de la base de datos SCADA de Centro de Control Y, la aplicación Control Center X, que actúa como cliente, podría solicitar que Control Center Y, que actúa como servidor, envíe los datos en las condiciones especificadas por el cliente.\\
 
 \begin{figure}[H]
   \caption{Comunicación en la capa 7}
@@ -1740,7 +1741,7 @@ Existen varios servicios proporcionados en \textbf{ICCP} para realizar transfere
   \includegraphics[width=\linewidth]{capas_iccp}
 \end{figure}
 
-
+Existen varios servicios proporcionados en \textbf{ICCP} para realizar transferencias de datos, según el tipo de solicitud. Por ejemplo, si el cliente realiza una solicitud única, los datos se devolverán como un respuesta a la solicitud. Sin embargo, si el cliente solicita la transferencia periódica de datos o la transferencia de datos solo cuando cambian, entonces el cliente establecerá primero el informe. El servidor (es decir, especificar condiciones de informes como la periodicidad de las transferencias periódicas u otras condiciones desencadenantes como el informe por excepción únicamente), y el servidor luego enviará los datos como un informe no solicitado siempre que se cumplan las condiciones de informe.\\\\
 
 De acuerdo a la resolución \textbf{CREG 083 de 1999} Por cada evento que se registre se debe enviar la fecha y hora con \textit{resolución de un (1) ms}, la identificación del elemento que cambió de estado y el estado. final del dispositivo.\\\\
 
