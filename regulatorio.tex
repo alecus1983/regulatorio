@@ -1,4 +1,3 @@
-
 \documentclass[a5paper]{book}% Tipo libro
 % medidas del papel
 \usepackage[paperwidth=15cm, paperheight=20cm]{geometry}
@@ -1725,15 +1724,16 @@ En el caso de transformadores usados y o reparados éstos deben cumplir con los 
 
 \chapter{COMUNICACIONES Y CONFIGURACIONES}
 
-Los protocolos de comunicaciones empleados en los sistemas eléctricos son los que se muestran en la figura \ref{fig:protocoloscomunicacion}, en que los OR se comunican con el \ac{CND} mediante el protocolo \textbf{ICCP} (\textit{Inter Control Center Communication Protocol}). El protocol ICCP  es basado en el concepto cliente servidor. Este protocolo se desarrolla en la capa 7 del modelo OSI. Todas las transferencias de datos se originan con una solicitud de un centro de control (el cliente) a otro centro de control que posee y administra los datos (el servidor). Por ejemplo, si una aplicación del Centro de Control X necesita datos de la base de datos SCADA de Centro de Cotrol Y, la aplicación Control Center X, que actúa como cliente, podría solicitar que Control Center Y, que actúa como servidor, envíe los datos en las condiciones especificadas por el cliente.\\\\
-
-Existen varios servicios proporcionados en \textbf{ICCP} para realizar transferencias de datos, según el tipo de solicitud. Por ejemplo, si el cliente realiza una solicitud única, los datos se devolverán como un respuesta a la solicitud. Sin embargo, si el cliente solicita la transferencia periódica de datos o la transferencia de datos solo cuando cambian, entonces el cliente establecerá primero el informe. El servidor (es decir, especificar condiciones de informes como la periodicidad de las transferencias periódicas u otras condiciones desencadenantes como el informe por excepción únicamente), y el servidor luego enviará los datos como un informe no solicitado siempre que se cumplan las condiciones de informe.\\\\
+Los protocolos de comunicaciones empleados en los sistemas eléctricos son los que se muestran en la figura \ref{fig:protocoloscomunicacion} de lo que se destaca la comunicación entre el \ac{OR} y el \ac{CND}, en que los OR se comunican con el \ac{CND} mediante el protocolo \textbf{ICCP} (\textit{Inter Control Center Communication Protocol}).
 
 \begin{figure}[H]
+  \centering
   \caption{Protocolos de comunicación en sistemas ecléctico}
   \label{fig:protocoloscomunicacion}
-  \includegraphics[width=\linewidth]{protocolos_comunicacion}
+  \includegraphics[width=0.5\linewidth]{protocolos_comunicacion}
 \end{figure}
+
+El protocol ICCP  es basado en el concepto cliente servidor. Este protocolo se desarrolla en la capa 7 del modelo OSI. Todas las transferencias de datos se originan con una solicitud de un centro de control (el cliente) a otro centro de control que posee y administra los datos (el servidor). Por ejemplo, si una aplicación del Centro de Control X necesita datos de la base de datos SCADA de Centro de Control Y, la aplicación Control Center X, que actúa como cliente, podría solicitar que Control Center Y, que actúa como servidor, envíe los datos en las condiciones especificadas por el cliente.\\
 
 \begin{figure}[H]
   \caption{Comunicación en la capa 7}
@@ -1741,7 +1741,7 @@ Existen varios servicios proporcionados en \textbf{ICCP} para realizar transfere
   \includegraphics[width=\linewidth]{capas_iccp}
 \end{figure}
 
-
+Existen varios servicios proporcionados en \textbf{ICCP} para realizar transferencias de datos, según el tipo de solicitud. Por ejemplo, si el cliente realiza una solicitud única, los datos se devolverán como un respuesta a la solicitud. Sin embargo, si el cliente solicita la transferencia periódica de datos o la transferencia de datos solo cuando cambian, entonces el cliente establecerá primero el informe. El servidor (es decir, especificar condiciones de informes como la periodicidad de las transferencias periódicas u otras condiciones desencadenantes como el informe por excepción únicamente), y el servidor luego enviará los datos como un informe no solicitado siempre que se cumplan las condiciones de informe.\\\\
 
 De acuerdo a la resolución \textbf{CREG 083 de 1999} Por cada evento que se registre se debe enviar la fecha y hora con \textit{resolución de un (1) ms}, la identificación del elemento que cambió de estado y el estado. final del dispositivo.\\\\
 
@@ -1867,6 +1867,7 @@ Relación entre los Elementos y las Partes del Estándar
     Parte 7-3: Define todas las Clases de Datos Comunes (CDCs) con su estructura en términos de Atributos de Datos (nombres, semántica, tipo). También define las Clases de Atributo Construidas (CACs).
     Parte 7-2: Especifica los tipos básicos y los tipos ACSI comunes.
 
+
     La configuración en el estándar IEC 61850 se basa en el uso de **archivos XML** a través del **Lenguaje de Descripción de Configuración de Subestaciones (SCL)**, definido en la parte 6 de la norma [1-6]. El SCL es la parte más importante de la serie IEC 61850 para el diseño de sistemas, ya que todo el proceso de ingeniería se puede apoyar en este lenguaje [2].
 
 Los archivos SCL contienen información crítica del sistema y son fundamentales para el proceso de ingeniería, desde la especificación hasta el despliegue del sistema [3, 5, 7]. Se utilizan para describir las capacidades de los IEDs, el diseño del sistema y la configuración de la comunicación [3, 5, 8-11].
@@ -1907,6 +1908,34 @@ Además de los archivos SCL, se utilizan otros tipos de archivos en contextos re
 La interoperabilidad se logra con la capacidad de los IEDs de diferentes fabricantes de intercambiar información y utilizarla para sus propias funciones, lo cual se facilita mediante el uso de un lenguaje común como SCL, evitando ambigüedades [23-25].
 
 
+
+    \subsection{Ejemplo de aplicacion para el área de protecciones}
+
+    En el siguiete ejemplo correlacionado al área de protecciones se describiran los nodos lógicos que interactuan en la protección de una central de generación, para lo cual se toma como el diagrama de la figura \ref{fig:centralgen}.
+
+    \begin{figure}[H]
+      \centering
+      \caption{diagrama de la central de generación}
+      \label{fig:centralgen}
+      \includegraphics[width=\linewidth]{generador}
+    \end{figure}
+
+
+    \begin{figure}[H]
+      \centering
+      \caption{nodos logicos de la central de generación}
+      \label{fig:nlcentral}
+      \includegraphics[width=\linewidth]{nl_generador}
+    \end{figure}    
+
+    \begin{figure}[H]
+      \centering
+      \caption{tabla nodos logicos de la central de generación}
+      \label{fig:tnlcentral}
+      \includegraphics[width=\linewidth]{t_nl_generador}
+    \end{figure}    
+    
+>>>>>>> refs/remotes/origin/master
 \subsection{Quiz (10 Preguntas de Respuesta Corta)}
 
 Instrucciones: Responda cada pregunta con 2-3 oraciones.
