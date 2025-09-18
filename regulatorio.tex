@@ -1867,6 +1867,46 @@ Relación entre los Elementos y las Partes del Estándar
     Parte 7-3: Define todas las Clases de Datos Comunes (CDCs) con su estructura en términos de Atributos de Datos (nombres, semántica, tipo). También define las Clases de Atributo Construidas (CACs).
     Parte 7-2: Especifica los tipos básicos y los tipos ACSI comunes.
 
+    La configuración en el estándar IEC 61850 se basa en el uso de **archivos XML** a través del **Lenguaje de Descripción de Configuración de Subestaciones (SCL)**, definido en la parte 6 de la norma [1-6]. El SCL es la parte más importante de la serie IEC 61850 para el diseño de sistemas, ya que todo el proceso de ingeniería se puede apoyar en este lenguaje [2].
+
+Los archivos SCL contienen información crítica del sistema y son fundamentales para el proceso de ingeniería, desde la especificación hasta el despliegue del sistema [3, 5, 7]. Se utilizan para describir las capacidades de los IEDs, el diseño del sistema y la configuración de la comunicación [3, 5, 8-11].
+
+Los principales **tipos de archivo SCL** empleados en la configuración de 61850 son:
+
+1.  **Archivos SSD (System Specification Description)**:
+    *   Son el **punto de partida inicial** en el proceso de ingeniería [3, 8].
+    *   Proporcionan información sobre la **topología planificada** y los **nodos lógicos (LNodes) requeridos** para el sistema [3, 8, 9, 11].
+    *   Se utilizan para especificar los requisitos de un sistema y pueden servir como base para el proceso de adquisición, permitiendo la automatización del proceso de compra [12, 13].
+
+2.  **Archivos ICD (IED Capability Description)**:
+    *   Describen las **capacidades genéricas de un Dispositivo Electrónico Inteligente (IED)** específico [3, 8, 9, 11].
+    *   Son proporcionados por el fabricante y describen el modelo de datos y las capacidades de comunicación del dispositivo [8, 14].
+    *   Contienen una sección IED para el dispositivo cuyas capacidades representa. Antes de ser configurado, el nombre del IED en este archivo es típicamente "TEMPLATE" [15].
+
+3.  **Archivos IID (Instantiated IED Description)**:
+    *   Representan la **funcionalidad de un archivo ICD parcialmente configurado** [9, 11].
+    *   En este archivo, el nombre del IED ya no es "TEMPLATE", sino que refleja el rol específico del IED en un esquema estándar [16].
+
+4.  **Archivos CID (Configured IED Description)**:
+    *   Son archivos de configuración específicos [7, 11].
+
+5.  **Archivos SCD (Substation Configuration Description)**:
+    *   Son el **resultado final del proceso de configuración** del sistema [3, 5, 8].
+    *   Contienen toda la información necesaria para configurar un sistema de automatización de subestaciones [3, 5, 8, 11].
+    *   Pueden ser utilizados para una variedad de aplicaciones y son clave para la automatización y la puesta en marcha de los sistemas IEC 61850 [17, 18].
+
+6.  **Archivos SIED (System Interface Exchange Description)**:
+    *   Se utilizan para el **intercambio de datos entre herramientas de configuración** de sistemas para diferentes proyectos de subestaciones [11].
+    *   Son importantes para establecer comunicaciones entre subestaciones, fijando referencias de objetos de origen ya definidas y especificando nuevas conexiones de interfaz entre proyectos [19].
+
+Además de los archivos SCL, se utilizan otros tipos de archivos en contextos relacionados:
+
+*   **Archivos COMTRADE**: Se utilizan para el **registro de perturbaciones** y para la grabación de perturbaciones basada en sincronofasores [20-22]. Estos archivos son generados por los nodos lógicos relacionados con la protección [20].
+*   **Archivos de "system configuration"**: La información de ingeniería almacenada como archivos SCL puede reutilizarse, por ejemplo, en caso de extensiones o renovaciones [23].
+
+La interoperabilidad se logra con la capacidad de los IEDs de diferentes fabricantes de intercambiar información y utilizarla para sus propias funciones, lo cual se facilita mediante el uso de un lenguaje común como SCL, evitando ambigüedades [23-25].
+
+
 \subsection{Quiz (10 Preguntas de Respuesta Corta)}
 
 Instrucciones: Responda cada pregunta con 2-3 oraciones.
