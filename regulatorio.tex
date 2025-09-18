@@ -1724,28 +1724,7 @@ En el caso de transformadores usados y o reparados éstos deben cumplir con los 
 
 \chapter{COMUNICACIONES Y CONFIGURACIONES}
 
-Los protocolos de comunicaciones empleados en los sistemas eléctricos son los que se muestran en la figura \ref{fig:protocoloscomunicacion} de lo que se destaca la comunicación entre el \ac{OR} y el \ac{CND}, en que los OR se comunican con el \ac{CND} mediante el protocolo \textbf{ICCP} (\textit{Inter Control Center Communication Protocol}).
-
-\begin{figure}[H]
-  \centering
-  \caption{Protocolos de comunicación en sistemas ecléctico}
-  \label{fig:protocoloscomunicacion}
-  \includegraphics[width=0.5\linewidth]{protocolos_comunicacion}
-\end{figure}
-
-El protocol ICCP  es basado en el concepto cliente servidor. Este protocolo se desarrolla en la capa 7 del modelo OSI. Todas las transferencias de datos se originan con una solicitud de un centro de control (el cliente) a otro centro de control que posee y administra los datos (el servidor). Por ejemplo, si una aplicación del Centro de Control X necesita datos de la base de datos SCADA de Centro de Control Y, la aplicación Control Center X, que actúa como cliente, podría solicitar que Control Center Y, que actúa como servidor, envíe los datos en las condiciones especificadas por el cliente.\\
-
-\begin{figure}[H]
-  \caption{Comunicación en la capa 7}
-  \label{fig:capa7iccp}
-  \includegraphics[width=\linewidth]{capas_iccp}
-\end{figure}
-
-Existen varios servicios proporcionados en \textbf{ICCP} para realizar transferencias de datos, según el tipo de solicitud. Por ejemplo, si el cliente realiza una solicitud única, los datos se devolverán como un respuesta a la solicitud. Sin embargo, si el cliente solicita la transferencia periódica de datos o la transferencia de datos solo cuando cambian, entonces el cliente establecerá primero el informe. El servidor (es decir, especificar condiciones de informes como la periodicidad de las transferencias periódicas u otras condiciones desencadenantes como el informe por excepción únicamente), y el servidor luego enviará los datos como un informe no solicitado siempre que se cumplan las condiciones de informe.\\\\
-
-De acuerdo a la resolución \textbf{CREG 083 de 1999} Por cada evento que se registre se debe enviar la fecha y hora con \textit{resolución de un (1) ms}, la identificación del elemento que cambió de estado y el estado. final del dispositivo.\\\\
-
-\section{Regulación aplicable a las comunicaciones}
+\section{Acuerdos y regulación aplicable a las comunicaciones}
 
 \subsection{Regulación}
 La regulación aplicable a las comunicaciones es la siguiente:
@@ -1768,30 +1747,61 @@ los acuerdos vigentes con relación a las comunicaciones son :
 \item 1612: Puesta en operación de proyectos de transmisión que incluyan activos de uso del STN, STR, SDL y recursos de Generación
   \end{itemize}
 
+
+Los protocolos de comunicaciones empleados en los sistemas eléctricos son los que se muestran en la figura \ref{fig:protocoloscomunicacion} de lo que se destaca la comunicación entre el \ac{OR} y el \ac{CND}, en que los OR se comunican con el \ac{CND} mediante el protocolo \textbf{ICCP} (\textit{Inter Control Center Communication Protocol}).
+
+\begin{figure}[H]
+  \centering
+  \caption{Protocolos de comunicación en sistemas ecléctico}
+  \label{fig:protocoloscomunicacion}
+  \includegraphics[width=0.5\linewidth]{protocolos_comunicacion}
+\end{figure}
+
+El protocol ICCP  es basado en el concepto cliente servidor. Este protocolo se desarrolla en la capa 7 del modelo OSI. Todas las transferencias de datos se originan con una solicitud de un centro de control (el cliente) a otro centro de control que posee y administra los datos (el servidor). \texttt{Por ejemplo, si una aplicación del Centro de Control X necesita datos de la base de datos SCADA de Centro de Control Y, la aplicación Control Center X, que actúa como cliente, podría solicitar que Control Center Y, que actúa como servidor, envíe los datos en las condiciones especificadas por el cliente}.\\
+
+\begin{figure}[H]
+  \caption{Comunicación en la capa 7 para el protocolo ICCP}
+  \label{fig:capa7iccp}
+  \includegraphics[width=\linewidth]{capas_iccp}
+\end{figure}
+
+
+El Association Control Service Element (ACSE) es un mecanismo utilizado por el protocolo ICCP (Inter-Control Center Communications Protocol) para el establecimiento de asociaciones lógicas entre un cliente y múltiples centros de control servidores\\\\
+% Existen varios servicios proporcionados en \textbf{ICCP} para realizar transferencias de datos, según el tipo de solicitud. Por ejemplo, si el cliente realiza una solicitud única, los datos se devolverán como un respuesta a la solicitud. Sin embargo, si el cliente solicita la transferencia periódica de datos o la transferencia de datos solo cuando cambian, entonces el cliente establecerá primero el informe. El servidor (es decir, especificar condiciones de informes como la periodicidad de las transferencias periódicas u otras condiciones desencadenantes como el informe por excepción únicamente), y el servidor luego enviará los datos como un informe no solicitado siempre que se cumplan las condiciones de informe.\\\\
+
+
   \section{Informe de superación y enlaces CND}
 
   En cada punto a supervisar el valor será de 100\% si está supervisado, o 0\% si no está supervisado. Porcentaje de tiempo en que el Punto a Supervisar llega al sistema SCADA del CND. La meta CNO: 95\%, pero la meta del la CREG es 97 \%,  con periodicidad semanal. Para realizar este reporte se utiliza la plataforma GAO.
 
 
+  
+  De acuerdo a la resolución \textbf{CREG 083 de 1999} Por cada evento que se registre se debe enviar la fecha y hora con \textit{resolución de un (1) ms}, la identificación del elemento que cambió de estado y el estado. final del dispositivo.\\\\
+
+
   \section{Automatización de Subestaciones}
 
-En la automatización de subestaciones se reconocen  tres partes:
+En la automatización de subestaciones,  se reconocen  tres componentes dentro de la red de comunicación:
 
 \begin{itemize}
-\item nivel de estación 
-\item nivel de proceso
+\item nivel de estación (\textit{station bus}) se caracteriza por comunicar los relay (IDE)  con el gateway,  con velocidades de 10 a 1GB.
+\item nivel de proceso (\textit{process bus}) se caracteriza por comunicar las MU (\textit{Merging Unit}) ó los concentradores de medidas con los relés de la estación.
 \item nivel de bahía
 \end{itemize}
 
 \begin{figure}[H]
   \centering
   
-  \caption{Estructura IEC61850}
+  \caption{Estructura de redes de comunicación del protocolo IEC61850}
   \label{fig:iec61850}
   \includegraphics[width=\linewidth]{iec61850}
 \end{figure}
 
-Los datos  dentro del estandard IEC61850 son agrupados como muestra la figura :
+
+
+\subsection{Modelo de Datos IEC 61850}
+
+El modelo de datos IEC 61850 es una representación jerárquica de la información dentro de un IED (Dispositivo Electrónico Inteligente). Su propósito es estandarizar la comunicación y el intercambio de información en sistemas de automatización de subestaciones.
 
 \begin{figure}[H]
   \centering
@@ -1800,10 +1810,6 @@ Los datos  dentro del estandard IEC61850 son agrupados como muestra la figura :
   \includegraphics[width=\linewidth]{anatomia_iec}
 \end{figure}
 
-\subsection{Modelo de Datos IEC 61850}
-
-El modelo de datos IEC 61850 es una representación jerárquica de la información dentro de un IED (Dispositivo Electrónico Inteligente). Su propósito es estandarizar la comunicación y el intercambio de información en sistemas de automatización de subestaciones.
-
 \paragraph{Estructura Jerárquica}
 
 \begin{enumerate}
@@ -1811,19 +1817,19 @@ El modelo de datos IEC 61850 es una representación jerárquica de la informaci�
     
 \item Nodo Lógico (Logical Node): Modela las  aplicaciones y contienen objetos de datos.
     
-\item Objeto de Datos (Data Object): Contenidos dentro de los nodos lógicos, su estructura está definida por la Clase de Datos Común.
+\item Objeto de Datos (Data Object): O data de acuerdo a la figura \ref{fig:iec61850} están dentro de los nodos lógicos, su estructura está definida por la Clase de Datos.
     
-\item Atributo de Datos (Data Attribute): Las "hojas" de la jerarquía, donde se encuentran los valores. Pueden tener una estructura interna.
+\item Atributo de Datos (Data Attribute): es donde se encuentran los valores de los data objects.
   \end{enumerate}
 
 \subsubsection{ Dispositivo Lógico (Logical Device)}
 
-Estan definidos principalmente por el fabricante más que por la norma IEC 61850 y hacen referencia a los IDEs.
+Estan definidos principalmente por el fabricante más que por la norma IEC 61850 y hacen referencia a los IDEs. De acuerdo a la figura \ref{fig:iec61850} hace referencia a Relay1.
 
 \subsubsection{Nodo Lógico (Logical Node - LN)}
 
-    Definición: Elementos clave para modelar funciones de aplicación. Representan un elemento funcional fraccional (ej. elemento de distancia de una función de protección, interfaz a un seccionador). Contienen todos los datos que pertenecen a esa función.
-    Nombres: Estandarizados con cuatro caracteres. El primer carácter indica el grupo de funcionalidad (ej. P para protección, X para aparamenta).
+Es el elementos clave para modelar los elementos que componen los sistemas de comunicación, protecciones y automatización (ej. el elemento de la protección de distancia, interfaz a un seccionador).\\\\
+Los nombres son estandarizados con cuatro caracteres. El primer carácter indica el grupo  (ej. P para protección, X para los equipos de maniobra).
     Grupos: Organizados por funcionalidad (ej. Protección, Relacionados con Protección, Aparamenta, Control, Medición/Medida, Transformadores de Potencia).
     Especificación: Definidos en las partes 7-4, 7-410 y 7-420 del estándar. La especificación incluye una descripción textual de la semántica y una tabla que define la estructura en términos de objetos de datos.
     Contenido: Los objetos de datos dentro de un LN pueden ser obligatorios (M) u opcionales (O). Se clasifican según su propósito (ej. información de estado, control del comportamiento).
@@ -1935,7 +1941,12 @@ La interoperabilidad se logra con la capacidad de los IEDs de diferentes fabrica
       \includegraphics[width=\linewidth]{t_nl_generador}
     \end{figure}    
     
->>>>>>> refs/remotes/origin/master
+    \subsection{Ejemplo para el área de generación}
+De acuerdo a lo realizado en \cite{salazar2017},  donde se realiza la estructura de  los nodos lógicos del IEC 61850
+
+
+
+    
 \subsection{Quiz (10 Preguntas de Respuesta Corta)}
 
 Instrucciones: Responda cada pregunta con 2-3 oraciones.
