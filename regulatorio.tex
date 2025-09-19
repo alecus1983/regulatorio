@@ -1807,7 +1807,14 @@ El modelo de datos IEC 61850 es una representación jerárquica de la informaci�
   \centering
   \caption{Estructura IEC61850}
   \label{fig:iec61850}
-  \includegraphics[width=\linewidth]{anatomia_iec}
+  \includegraphics[width=0.5\linewidth]{anatomia_iec}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \caption{Estructura IEC61850 esquema gráfico}
+  \label{fig:iec61850_ln}
+  \includegraphics[width=0.7\linewidth]{LNs}
 \end{figure}
 
 \paragraph{Estructura Jerárquica}
@@ -1829,16 +1836,46 @@ Estan definidos principalmente por el fabricante más que por la norma IEC 61850
 \subsubsection{Nodo Lógico (Logical Node - LN)}
 
 Es el elementos clave para modelar los elementos que componen los sistemas de comunicación, protecciones y automatización (ej. el elemento de la protección de distancia, interfaz a un seccionador).\\\\
-Los nombres son estandarizados con cuatro caracteres. El primer carácter indica el grupo  (ej. P para protección, X para los equipos de maniobra).
-    Grupos: Organizados por funcionalidad (ej. Protección, Relacionados con Protección, Aparamenta, Control, Medición/Medida, Transformadores de Potencia).
-    Especificación: Definidos en las partes 7-4, 7-410 y 7-420 del estándar. La especificación incluye una descripción textual de la semántica y una tabla que define la estructura en términos de objetos de datos.
-    Contenido: Los objetos de datos dentro de un LN pueden ser obligatorios (M) u opcionales (O). Se clasifican según su propósito (ej. información de estado, control del comportamiento).
+Los nombres son estandarizados con cuatro caracteres. El primer carácter indica el grupo  (ej. P para protección, X para los equipos de maniobra). Los nodos se agrupan en grupos funcionales:
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{|l | p{0.2\linewidth} |p{0.4\linewidth}|}
+    \hline
+    Grupo funcional & Designación & Nodos típicos \\\hline
+    System & Lxxx & \textbf{LLN0} (Datos de placa del IDE) \\\hline
+    Automatic Control & Axxx & \textbf{ATCC} (Cambiador de tomas) \\\hline
+    Control & Cxxx & \textbf{CSWI}  (Control de switches)  \\\hline
+    Generic Functions & Fxxx & \textbf{FSCH} (funciones programadas) \\\hline
+    Interfacing and Archiving & Ixxx & IHMI (representa el sistema SCADA) \\\hline
+    Metering  and measurements & Mxxx & MMXU (medidas voltajes corrientes  o frecuencias) \\\hline
+    Protection & Pxxx & \textbf{PDIS} (protección de distancia) \textbf{PTUV} (protección de bajo voltaje) \textbf{PDIR} (protección direccional) \textbf{PIOC} (protección de sobre corriente)\\\hline
+
+    Power Quality & Qxxx & \\\hline
+    Supervision & Sxxx & \textbf{SLTC} (supervición del OLTC) \textbf{SSWI} (supervición de switches) \textbf{SPTR} (supervición a transformadores de potencia) \\\hline
+
+    Transformador de instrumento & Txxx  & \textbf{TCTR} (transformadores de corriente) \textbf{TVTR} (transformadores de voltaje) \\\hline
+
+    Switchgear & Sxxx & \textbf{XCBR} (interruptor) \textbf{XSWI} (seccionador) \\\hline
+
+    
+    \end{tabular}
+  \end{table}
+
+  \begin{figure}[H]
+  \centering
+  \caption{Restricción protocolo IEC61850}
+  \label{fig:iec61850resticcion}
+  \includegraphics[width=\linewidth]{restricciones}
+\end{figure}
+
+
 
 \subsubsection{Objeto de Datos (Data Object - DO)}
 
-    Definición: Componente de un Nodo Lógico. Su estructura y los atributos de datos disponibles están definidos por la Clase de Datos Común (CDC).
-    Contenido: Un objeto de datos puede tener múltiples atributos de datos. También puede contener sub-objetos de datos (que a su vez son de otras Clases de Datos Comunes).
-    Ejemplo: El objeto de datos POS (posición de un interruptor) es de la Clase de Datos Común DPC (Double Point Control).
+Componente de un Nodo Lógico. Su estructura y los atributos de datos disponibles están definidos por la Clase de Datos Común (CDC).Un objeto de datos puede tener múltiples atributos de datos. También puede contener sub-objetos de datos (que a su vez son de otras Clases de Datos Comunes).\\\\
+Ejemplo:\\
+El objeto de datos POS (posición de un interruptor) es de la Clase de Datos Común DPC (Double Point Control).\\\\
     Especificación: Definidos en las partes 7-4, 7-410 y 7-420 del estándar junto con los Nodos Lógicos. Incluyen un nombre, referencia a la CDC, explicación corta e indicación de obligatoriedad/opcionalidad.
 
 \subsubsection{Clase de Datos Común (Common Data Class - CDC)}
@@ -1861,7 +1898,8 @@ Los nombres son estandarizados con cuatro caracteres. El primer carácter indica
     SP: Atributos de punto de ajuste (settings).
     Contenido: Los atributos de datos pueden ser de un tipo básico o tener niveles jerárquicos adicionales a través de Clases de Atributo Construidas hasta llegar a los componentes primitivos.
 
-\subsubsection{Clase de Atributo Construida (Constructed Attribute Class - CAC)}
+    \subsubsection{Clase de Atributo Construida (Constructed Attribute Class - CAC)}
+    
 
     Definición: Un tipo de atributo de datos que posee una estructura interna, es decir, se compone de otros sub-atributos.
     Ejemplos: Quality (calidad de la información), Timestamp (marca de tiempo), Vector (magnitud y ángulo).
@@ -1878,67 +1916,68 @@ Relación entre los Elementos y las Partes del Estándar
 
 Los archivos SCL contienen información crítica del sistema y son fundamentales para el proceso de ingeniería, desde la especificación hasta el despliegue del sistema [3, 5, 7]. Se utilizan para describir las capacidades de los IEDs, el diseño del sistema y la configuración de la comunicación [3, 5, 8-11].
 
-Los principales **tipos de archivo SCL** empleados en la configuración de 61850 son:
 
-1.  **Archivos SSD (System Specification Description)**:
-    *   Son el **punto de partida inicial** en el proceso de ingeniería [3, 8].
-    *   Proporcionan información sobre la **topología planificada** y los **nodos lógicos (LNodes) requeridos** para el sistema [3, 8, 9, 11].
-    *   Se utilizan para especificar los requisitos de un sistema y pueden servir como base para el proceso de adquisición, permitiendo la automatización del proceso de compra [12, 13].
+\subsection{Tipos de archivos }
 
-2.  **Archivos ICD (IED Capability Description)**:
-    *   Describen las **capacidades genéricas de un Dispositivo Electrónico Inteligente (IED)** específico [3, 8, 9, 11].
-    *   Son proporcionados por el fabricante y describen el modelo de datos y las capacidades de comunicación del dispositivo [8, 14].
-    *   Contienen una sección IED para el dispositivo cuyas capacidades representa. Antes de ser configurado, el nombre del IED en este archivo es típicamente "TEMPLATE" [15].
+Los principales tipos de archivo SCL empleados en la configuración de 61850 son:
 
-3.  **Archivos IID (Instantiated IED Description)**:
-    *   Representan la **funcionalidad de un archivo ICD parcialmente configurado** [9, 11].
-    *   En este archivo, el nombre del IED ya no es "TEMPLATE", sino que refleja el rol específico del IED en un esquema estándar [16].
+\begin{enumerate}
 
-4.  **Archivos CID (Configured IED Description)**:
-    *   Son archivos de configuración específicos [7, 11].
+\item {\textbf{SSD} (\textit{System Specification Description})}:Son el \textit{punto de partida inicial} en el proceso de ingeniería. Proporcionan información sobre la \textit{topología planificada} y los nodos lógicos (LN) requeridos para el sistema.
 
-5.  **Archivos SCD (Substation Configuration Description)**:
-    *   Son el **resultado final del proceso de configuración** del sistema [3, 5, 8].
-    *   Contienen toda la información necesaria para configurar un sistema de automatización de subestaciones [3, 5, 8, 11].
-    *   Pueden ser utilizados para una variedad de aplicaciones y son clave para la automatización y la puesta en marcha de los sistemas IEC 61850 [17, 18].
+\item{\textbf{ICD} (\textit{IED Capability Description})}: Describen las capacidades genéricas de un Dispositivo Electrónico Inteligente (IED) específico. Son proporcionados por el fabricante y describen el modelo de datos y las capacidades de comunicación del dispositivo. Contienen una sección IED para el dispositivo cuyas capacidades representa. Antes de ser configurado, el nombre del IED en este archivo es típicamente "TEMPLATE".
 
-6.  **Archivos SIED (System Interface Exchange Description)**:
-    *   Se utilizan para el **intercambio de datos entre herramientas de configuración** de sistemas para diferentes proyectos de subestaciones [11].
-    *   Son importantes para establecer comunicaciones entre subestaciones, fijando referencias de objetos de origen ya definidas y especificando nuevas conexiones de interfaz entre proyectos [19].
+\item {\textbf{IID} (\textit{Instantiated IED Description})}: Representan la \textit{funcionalidad de un archivo ICD parcialmente configurado}. En este archivo, el nombre del IED ya no es "TEMPLATE", sino que refleja el rol específico del IED en un esquema estándar.
+
+\item{\textbf{CID} (\textit{Configured IED Description})}: Son archivos de configuración específicos.
+
+\item{\textbf{SCD} (\textit{Substation Configuration Description}): Son el \textit{resultado final del proceso de configuración} del sistema. Contienen toda la información necesaria para configurar un sistema de automatización de subestaciones . Pueden ser utilizados para una variedad de aplicaciones y son clave para la automatización y la puesta en marcha de los sistemas IEC 61850.
+
+\item {\textbf{SIED} (\textit{System Interface Exchange Description})}:Se utilizan para el intercambio de datos entre herramientas de configuración de sistemas para diferentes proyectos de subestaciones. Son importantes para establecer comunicaciones entre subestaciones, fijando referencias de objetos de origen ya definidas y especificando nuevas conexiones de interfaz entre proyectos.
+
+\end{enumerate}
 
 Además de los archivos SCL, se utilizan otros tipos de archivos en contextos relacionados:
 
-*   **Archivos COMTRADE**: Se utilizan para el **registro de perturbaciones** y para la grabación de perturbaciones basada en sincronofasores [20-22]. Estos archivos son generados por los nodos lógicos relacionados con la protección [20].
-*   **Archivos de "system configuration"**: La información de ingeniería almacenada como archivos SCL puede reutilizarse, por ejemplo, en caso de extensiones o renovaciones [23].
-
-La interoperabilidad se logra con la capacidad de los IEDs de diferentes fabricantes de intercambiar información y utilizarla para sus propias funciones, lo cual se facilita mediante el uso de un lenguaje común como SCL, evitando ambigüedades [23-25].
+\paragraph{Archivos COMTRADE}: Se utilizan para el \textit{registro de perturbaciones} y para la grabación de perturbaciones basada en sincronofasores. Estos archivos son generados por los nodos lógicos relacionados con la protección.
 
 
+\subsection{Protocolos empleados en IEC 61850}
 
-    \subsection{Ejemplo de aplicacion para el área de protecciones}
+En la figura \ref{fig:protocolosiec61850} se muestra la relación de los protocolos empleados en el estandard IEC 61850 y su relación con el modelo OSI.
+
+\begin{figure}[H]
+      \centering
+      \caption{protocolos empleados en IEC 61850}
+      \label{fig:protocolosiec61850}
+      \includegraphics[width=0.7\linewidth]{cliente_servidor_61850}
+    \end{figure}
+
+
+\subsection{Ejemplo de aplicación para el área de protecciones}
 
     En el siguiete ejemplo correlacionado al área de protecciones se describiran los nodos lógicos que interactuan en la protección de una central de generación, para lo cual se toma como el diagrama de la figura \ref{fig:centralgen}.
 
     \begin{figure}[H]
       \centering
-      \caption{diagrama de la central de generación}
+      \caption{diagrama de la central de generación del ejemplo \thesubsection}
       \label{fig:centralgen}
-      \includegraphics[width=\linewidth]{generador}
+      \includegraphics[width=0.7\linewidth]{generador}
     \end{figure}
 
 
     \begin{figure}[H]
       \centering
-      \caption{nodos logicos de la central de generación}
+      \caption{nodos lógicos de la central de generación del ejemplo \thesubsection}
       \label{fig:nlcentral}
-      \includegraphics[width=\linewidth]{nl_generador}
+      \includegraphics[width=0.7\linewidth]{nl_generador}
     \end{figure}    
 
     \begin{figure}[H]
       \centering
       \caption{tabla nodos logicos de la central de generación}
       \label{fig:tnlcentral}
-      \includegraphics[width=\linewidth]{t_nl_generador}
+      \includegraphics[width=0.7\linewidth]{t_nl_generador}
     \end{figure}    
     
     \subsection{Ejemplo para el área de generación}
