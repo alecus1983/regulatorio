@@ -19,6 +19,7 @@
     "CREG0942012"
     "CREG0652000"
     "CREG2242016"
+    "CREG0972008"
     "MANOPEMCALI"
     "trashorras2015subestaciones"
     "CREG0611996"

@@ -603,7 +603,18 @@ Por otra parte de acuerdo  al \ac{RETIE} \cite{RETIE2013} en el articulo 12, las
 \item  230 kV  $\leqslant$ Alta tensión  > 57.5 kV .
 \item 57.5 kV  $\leqslant$ Media tensión  > 1 kV .
 \item Baja tensión < 1kV.
-  \end{itemize}
+\end{itemize}
+
+\section{ACTIVOS DE CONEXIÓN}
+
+Los activos de conexión y activos de uso son descritos en  la resolución \cite{CREG0972008}. 
+
+\begin{figure}[H]
+  \centering
+  \caption{Activos de conexión y activos de uso del \ac{SIN}}
+  \label{fig:activosdeuso}
+  \includegraphics[width=\linewidth]{activos_de_conexion}
+\end{figure}
 
 
 \section{AREAS DE DISTRIBUCIÓN}
@@ -793,11 +804,11 @@ ecuación en un mercado de comencialización :\\\\
   transferencias por el sistema de transmisión.\\\\
 
 
-  \chapter{EVENTOS}
+                          \chapter{EVENTOS}
 
 \section{REPORTE DE EVENTOS Y ENERGÍA NO SUMINISTRADA}
 
-Cuando ocurre un evento programado o no programado se causa una
+Cuando ocurre un evento programado (manenimiento ) o no programado (falla) se causa una
 indisponibilidad total o parcial  sobre un activo \cite{CREG0942012}. Cuando esta
 insisponibilidad causa un apagón en parte de la red se debe reportar la
  \ac{ENS} \cite{CREG0152018}, cuyo diagrama se muestra en la figura \ref{fig:ens}.
@@ -1102,7 +1113,7 @@ Cantidad de carga en MW que se desconectaría de las redes del SIN ante la ocurr
 
 \chapter{CALIDAD DEL SERVICIO}
 
-La calidad del servicio  es una variable que representa las características técnicas del servicio que el usuario persive. Esta afectada por los eventos que ocurren en
+La calidad del servicio  es una variable que representa las características técnicas del servicio que el usuario percibe. Esta afectada por los eventos que ocurren en
 el \ac{SIN}, los cuales pueden o no dejar demanda no atendida.
 
 \begin{figure}[H]
@@ -1113,30 +1124,29 @@ el \ac{SIN}, los cuales pueden o no dejar demanda no atendida.
 \end{figure}
 
 Es preciso indicar que las compensaciones por calidad se sustentan en fundamentos regulatorios
-de acuerdo con el sistema o nivel de tensión, como se muestra en la
+de acuerdo con el sistema o nivel de tensión.
 
-\begin{tabular}{llp{0.25\linewidth}p{0.25\linewidth}}
-  \hline
-Resolución CREG& Sistema & Nivel de tensión & Aplicación \\\hline
-  097 de 2008 & STR & & Actual  \\\hline
-  \end{tabular}
 
 \section{CALIDAD DEL SERVICIO EN EL STR}
 
+Las definiciones de la calidad del servicio en el \ac{STR} son las siguientes:
+
+\begin{itemize}
+\item  \textbf{CNE} - Compensación por energía no suministrada: Compensación por ocasionar energía no suministrada o por dejar no operativos otros activos
+\item \textbf{ENS} - Energía no suministrada: Estimación de la cantidad de energía que no pudo ser entregada cuando se presentan eventos en el sistema, realizada con base en las disposiciones que para tal fin se establecen en la regulación vigente.
+\item \textbf{Indisponibilidad}: Se define como el tiempo durante el cual un activo de uso no estuvo en servicio total o parcialmente. Un activo estará indisponible, y se seguirá considerando en esta condición, aunque su función esté siendo suplida por otro activo del SIN.
+\item \textbf{Disponibilidad}: Se define como el tiempo total sobre un período dado, durante el cual un activo de uso estuvo en servicio o cuando, sin estar en servicio, el agente lo declara disponible y el CND no instruye su conexión por condiciones de topología, seguridad, confiabilidad o calidad del SIN.
+\end{itemize}
 
 
+ Los siguientes  grupos de activos incluyen las bahías de conexión :\\\\
+  \begin{itemize}
+  \item Conexión del OR al STN
+  \item Equipo de compensación
+  \item Línea del \ac{STR}
+  \end{itemize}
 
-
-los reportes realizados por el \ac{OR} al \ac{CND} son los que se muestran en la figura:
-
-
-\begin{figure}[H]
-  \centering
-  
-  \caption{Reportes enviados al CND}
-  \label{fig:reportes_transmision}
-  \includegraphics[width=\linewidth ]{reportes_transmision}
-\end{figure}
+\subsection{Cambios del ingreso del OR por eventos en el STR}
 
 El ingreso de cada agente se ve afectado por las siguientes variables:\\\\
 
@@ -1147,10 +1157,14 @@ El ingreso de cada agente se ve afectado por las siguientes variables:\\\\
 \item Un activo que supero las máximas horas de in-disponibilidad ajustada no se puede permitir que deje otros activos no operativos
 \end{itemize}
 
-
+\subsection{Plazos para los informes de eventos}
 Para realizar los procedimientos descritos (eventos programados y no programados ) se tendrán en cuenta los siguientes plazos, cada uno contado a partir de las 24:00 horas del día de operación:\\\\
 
-\begin{tabular}[H]{|p{4cm}|c|c|}
+
+\begin{table}[H]
+  \centering
+  \caption{Tiempos de reportes}
+\begin{tabular}{|p{4cm}|c|c|}
   \hline
 Actividad & Responsable&Plazo (h)\\\hline
 Ingreso de reporte de eventos &Agente&12\\\hline
@@ -1163,11 +1177,18 @@ Agente&
 Respuesta a solicitudes de modificación&
 CND&
 72\\\hline
-  \end{tabular}
+\end{tabular}
+\end{table}
+
+\subsection{Tiempos de indisponibilidad en el STR}
 
   Los siguientes grupos de activos utilizados en la prestación del servicio de distribución de energía eléctrica en el STR, no deberán superar, en una ventana móvil de doce meses, el número de máximas horas anuales de indisponibilidad, MHAI, que se definen para los grupos de activos identificados en la tabla \cite{CREG0152018}.\\\\
 
-  \begin{tabular}[H]{|p{6cm}|c|}
+
+  \begin{table}[H]
+    \centering
+    \caption{Máximas horas anuales de  indisponibilidad  en el \ac{STR}}
+  \begin{tabular}{|p{6cm}|c|}
     \hline
 Grupos de Activos&
 MHAI\\\hline
@@ -1183,35 +1204,7 @@ Barraje con bahías de maniobra&
 30\\\hline
 
   \end{tabular}
-
-  Los siguientes  grupos de activos incluyen las bahías de conexión :\\\\
-  \begin{itemize}
-  \item Conexión del OR al STN
-  \item Equipo de compensación
-  \item Línea del \ac{STR}
-  \end{itemize}
-
-  Las máximas horas anuales de indisponibilidad  se reducen en 0.5 h cuando se presenten unas de las siguientes situaciones:
-  
-  \begin{figure}[H]
-    \centering
-    \caption{incremento de las maximas horas anuales de indisponibilidad}
-    \label{fig:mhaia}
-    \includegraphics[width=0.6\linewidth]{MHAIA}
-  \end{figure}
-  
-Las horas que un activo  se encuentra  in disponible durante un mes, se pueden calcular como \cite{CREG0152018}:
-
-  \[ HID_{m,u} = \sum_{x=i}^{n}(H_{i,u}*(1-CAPD_{i,u}))  \]
-
-    La \textbf{capacidad de los activos} tras suceder un evento queda establecido  como se muestra en la figura \ref{fig:capacidad} \cite{CREG0152018}:
-
-    \begin{figure}[H]
-      \centering
-      \caption[capacidad]{Capacidad de los activos tras ocurrir un evento}
-      \label{fig:capacidad}
-      \includegraphics[width=\linewidth]{capacidad_eventos}
-    \end{figure}
+\end{table}
 
 En caso de un mantenimiento mayor el cual requiere más horas de las programadas en las máximas horas anuales de indisponibilidad, se tienen en cuenta las horas que se muestran en la figura \ref{fig:mayor} \cite{CREG0152018}.
 
@@ -1222,6 +1215,42 @@ En caso de un mantenimiento mayor el cual requiere más horas de las programadas
       \includegraphics[width=\linewidth]{mantenimoento_mayor}
     \end{figure}
   
+
+  Los reportes realizados por el \ac{OR} al \ac{CND} son los que se muestran en la figura:
+  
+\begin{figure}[H]
+  \centering
+  \caption{Reportes enviados al CND}
+  \label{fig:reportes_transmision}
+  \includegraphics[width=\linewidth ]{reportes_transmision}
+\end{figure}
+  
+   Las máximas horas anuales de indisponibilidad  se reducen en 0.5 h cuando se presenten unas de las siguientes situaciones:
+  
+  \begin{figure}[H]
+    \centering
+    \caption{incremento de las maximas horas anuales de indisponibilidad}
+    \label{fig:mhaia}
+    \includegraphics[width=0.6\linewidth]{MHAIA}
+  \end{figure}
+
+\subsection{Cálculo de indisponibilidad en el STR}
+Las horas que un activo  se encuentra  in disponible durante un mes, se pueden calcular como \cite{CREG0152018}:
+
+\[ HID_{m,u} = \sum_{x=i}^{n}(H_{i,u}*(1-CAPD_{i,u}))  \]
+
+\subsection{Capacidad de los activos tras un evento en el STR}
+
+    La \textbf{capacidad de los activos} tras suceder un evento queda establecido  como se muestra en la figura \ref{fig:capacidad} \cite{CREG0152018}:
+
+    \begin{figure}[H]
+      \centering
+      \caption[capacidad]{Capacidad de los activos tras ocurrir un evento}
+      \label{fig:capacidad}
+      \includegraphics[width=\linewidth]{capacidad_eventos}
+    \end{figure}
+
+
 
 
     \section{CALIDAD DEL SERVICIO EN EL SDL}
@@ -1939,7 +1968,7 @@ Los principales tipos de archivo SCL empleados en la configuración de 61850 son
 
 \item{\textbf{CID} (\textit{Configured IED Description})}: Son archivos de configuración específicos.
 
-\item{\textbf{SCD} (\textit{Substation Configuration Description}): Son el \textit{resultado final del proceso de configuración} del sistema. Contienen toda la información necesaria para configurar un sistema de automatización de subestaciones . Pueden ser utilizados para una variedad de aplicaciones y son clave para la automatización y la puesta en marcha de los sistemas IEC 61850.
+\item{\textbf{SCD} (\textit{Substation Configuration Description})}: Son el \textit{resultado final del proceso de configuración} del sistema. Contienen toda la información necesaria para configurar un sistema de automatización de subestaciones . Pueden ser utilizados para una variedad de aplicaciones y son clave para la automatización y la puesta en marcha de los sistemas IEC 61850.
 
 \item {\textbf{SIED} (\textit{System Interface Exchange Description})}:Se utilizan para el intercambio de datos entre herramientas de configuración de sistemas para diferentes proyectos de subestaciones. Son importantes para establecer comunicaciones entre subestaciones, fijando referencias de objetos de origen ya definidas y especificando nuevas conexiones de interfaz entre proyectos.
 
