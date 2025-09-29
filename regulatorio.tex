@@ -17,7 +17,7 @@
 \usepackage{csquotes}
 \usepackage{imakeidx}
 \makeindex[columns=3, title=Alphabetical Index, intoc]
-\usepackage[backend=biber, style=verbose, hyperref=true]{biblatex}
+\usepackage[backend=biber, style=numeric, hyperref=true]{biblatex}
 \usepackage{longtable}
 \usepackage[table,dvipsnames]{xcolor}
 \usepackage{titling}
@@ -146,7 +146,7 @@ labelsep=endash]{caption}
   \acro{FNCER}{Fuentes no convencionales de energía renovable}
   \acro{LAC}{Liquidación y Administración de Cuentas}
   \acro{OR}{Operador de red}
-  \acro{PENS}{Potencia Equivalente No Suministrada}
+  \acro{PENS}{Porcentaje de Energía no  Suministrada}
   \acro{RCM}{Mantenimiento Centrado en Confiabilidad}
   \acro{RETIE}{Reglamento técnico de las instalaciones eléctricas}
   \acro{SAEB}{Sistemas de Almacenamiento de Energía Eléctrica con Baterías}
@@ -804,22 +804,45 @@ ecuación en un mercado de comencialización :\\\\
   transferencias por el sistema de transmisión.\\\\
 
 
-                          \chapter{EVENTOS}
+  \chapter{EVENTOS}
+
+  \section{MARCO REGULATORIO}
+
+\begin{center}
+\begin{tcolorbox}
+La Ley 143 de 1994, en sus Artículos 34 y 38, establece las responsabilidades del Centro Nacional de Despacho (CND) en la coordinación, supervisión, control y análisis de la operación de los recursos del SIN, así como la obligación de las empresas generadoras, distribuidoras y operadoras de redes de suministro de información oportuna y fiel al CND y los CRD's.
+\end{tcolorbox}
+\end{center}
+
+  La \textbf{Resolución CREG 080 de 1999} define las responsabilidades del CND y los agentes del SIN en la realización de estudios sobre fallas y emergencias. La \textbf{Resolución CREG 083 de 1999} detalla la información obligatoria que los agentes deben adquirir y suministrar al CND, incluyendo registros cronológicos de eventos con alta resolución temporal y libre acceso a esta información. Las Resoluciones CREG 093 y 094 de 2012 requieren informes detallados para eventos no programados que superen un cierto umbral de \ac{PENS}.\\\\
+
+\begin{figure}[H]
+   \centering
+   \caption{Metodología del calculo del pronostico de la energía no
+     suministrada}
+   \label{fig:ens}
+   \includegraphics[width=\linewidth]{calculo_ens.png}
+ \end{figure}
+
+El Acuerdo 1617 introduce actualizaciones basadas en las Resoluciones \textbf{CREG 015 de 2018}, \textbf{036 de 2019} y \textbf{101023 de 2022}, incluyendo la responsabilidad de reporte de información por parte de los Operadores de Red (OR), los plazos para reportar el valor de la Energía No Suministrada (ENS) al LAC, y la inclusión de eventos no programados en los Sistemas de Almacenamiento de Energía Eléctrica con Baterías (SAEB). Los Anexos 1 y 2 detallan el procedimiento y los formatos específicos para la elaboración de estos informes.
 
 \section{REPORTE DE EVENTOS Y ENERGÍA NO SUMINISTRADA}
 
-Cuando ocurre un evento programado (manenimiento ) o no programado (falla) se causa una
-indisponibilidad total o parcial  sobre un activo \cite{CREG0942012}. Cuando esta
-insisponibilidad causa un ausencia de tensión  en parte de la red y el \ac{PENS} supera el 2\%  se debe reportar la \ac{ENS} \cite{CREG0152018}, cuyo diagrama se muestra en la figura \ref{fig:ens}.
+Cuando ocurre un evento programado (manenimiento ) o no programado (falla)  tiene como consecuencia la  indisponibilidad total o parcial  de un activo \cite{CREG0942012}. Cuando esta indisponibilidad causa un ausencia de tensión  en parte de la red y el \ac{PENS} supera el 2\% ,  el \ac{CND} envía a la Superintendencia de Servicios Públicos Domiciliarios, SSPD, un informe donde se haga el análisis detallado del Evento ocurrido y contenga como mínimo lo siguiente \cite{CREG0152018}.
 
-\begin{figure}[H]
-  \centering
-  \caption{Metodología del calculo del pronostico de la energía no
-    suministrada}
-  \label{fig:ens}
-  \includegraphics[width=\linewidth]{calculo_ens.png}
-\end{figure}
 
+ \begin{itemize}
+ \item Número y descripción de los eventos.
+ \item Activos causantes de los eventos.
+ \item Valores y memoria de cálculo de las variables para cálculo de ENS.
+ \item Para los MC afectados, curva de potencia activa del periodo horario del evento.
+ \item De los 12 periodos anteriores y de los 12 siguientes a la ocurrencia del mismo.
+ \item Informe final del evento previsto en los acuerdos del CNO.
+ \end{itemize}
+
+
+ ”… Y en su articulo 24, adiciona el siguiente párrafo al final del numeral 5.1.14.2 Compensaciones por dejar no operativos otros activos o por energía no suministrada: “Cuando el valor del PENS supere el 2\%, los OR tendrán un plazo de dos días, contados a partir de la publicación por parte del CND del informe de ENS, para reportar el valor de la ENS al LAC
+ 
 \begin{figure}[H]
  816   \centering
  817   \caption{Estructura informe de eventos acuerdo CNO 1617}
@@ -828,26 +851,14 @@ insisponibilidad causa un ausencia de tensión  en parte de la red y el \ac{PENS
  821 \end{figure}
 
 
-La energía con la que se calcula la \ac{ENS} es la reportada por los
-distintos comercializadores del mercado de comercialización.
+La energía con la que se calcula la \ac{ENS} es la reportada por los distintos comercializadores del mercado de comercialización.
 
   \section{ANÁLISIS DE EVENTOS}
 
-El Acuerdo CNO 1617 actualiza el procedimiento para la elaboración de informes de análisis de eventos en el \ac{SIN}. El objetivo principal es identificar la causa raíz de los eventos no programados y determinar medidas para reducir o evitar su ocurrencia.\\\\
 
-\begin{center}
-\begin{tcolorbox}
-La Ley 143 de 1994, en sus Artículos 34 y 38, establece las responsabilidades del Centro Nacional de Despacho (CND) en la coordinación, supervisión, control y análisis de la operación de los recursos del SIN, así como la obligación de las empresas generadoras, distribuidoras y operadoras de redes de suministro de información oportuna y fiel al CND y los CRD's.
-\end{tcolorbox}
-\end{center}
-
-La \textbf{Resolución CREG 080 de 1999} define las responsabilidades del CND y los agentes del SIN en la realización de estudios sobre fallas y emergencias. La \textbf{Resolución CREG 083 de 1999} detalla la información obligatoria que los agentes deben adquirir y suministrar al CND, incluyendo registros cronológicos de eventos con alta resolución temporal y libre acceso a esta información. Las Resoluciones CREG 093 y 094 de 2012 requieren informes detallados para eventos no programados que superen un cierto umbral de PENS.\\\\
-
-El Acuerdo 1617 introduce actualizaciones basadas en las Resoluciones \textbf{CREG 015 de 2018}, \textbf{036 de 2019} y \textbf{101023 de 2022}, incluyendo la responsabilidad de reporte de información por parte de los Operadores de Red (OR), los plazos para reportar el valor de la Energía No Suministrada (ENS) al LAC, y la inclusión de eventos no programados en los Sistemas de Almacenamiento de Energía Eléctrica con Baterías (SAEB). Los Anexos 1 y 2 detallan el procedimiento y los formatos específicos para la elaboración de estos informes.
 
 \begin{figure}[H]
   \centering
-  
   \caption{insumos para el análisis de eventos}
   \label{fig:insumoseventos}
   \includegraphics[width=0.8\linewidth]{insumos_eventos}
@@ -861,7 +872,7 @@ El Acuerdo 1617 introduce actualizaciones basadas en las Resoluciones \textbf{CR
     
   \item Transportadores de energía eléctrica en el \ac{STN} y/o Servicio de Conexión al \ac{STN}: Eventos en sus activos del \ac{STN}, incluyendo Interconexiones Internacionales con tensión igual o superior a 220 kV y Activos de Conexión al \ac{STN}.
   
-  \item Operadores de Red (OR's): Eventos en los activos bajo su supervisión.
+  \item Operadores de Red (OR's): Eventos en los activos bajo su supervisión. Los OR son los responsables de la recolección y el reporte de la información de eventos y la requerida para la aplicación de las disposiciones de calidad del servicio. Cuando el OR no opere los activos directamente, la información será reportada por quien los opera, y en el respectivo contrato de operación podrán precisarse los mecanismos para que el OR conozca la información reportada al CND. En todo caso, el responsable de la calidad y la oportunidad de la información reportada, a través del sistema dispuesto por el CND para este fin, es el agente a quien se le están remunerando los activos.
     
   \item Generadores: Deben suministrar información de plantas de generación si el \ac{CND} la requiere para sus análisis.
 
@@ -1805,6 +1816,147 @@ El Association Control Service Element (ACSE) es un mecanismo utilizado por el p
 % Existen varios servicios proporcionados en \textbf{ICCP} para realizar transferencias de datos, según el tipo de solicitud. Por ejemplo, si el cliente realiza una solicitud única, los datos se devolverán como un respuesta a la solicitud. Sin embargo, si el cliente solicita la transferencia periódica de datos o la transferencia de datos solo cuando cambian, entonces el cliente establecerá primero el informe. El servidor (es decir, especificar condiciones de informes como la periodicidad de las transferencias periódicas u otras condiciones desencadenantes como el informe por excepción únicamente), y el servidor luego enviará los datos como un informe no solicitado siempre que se cumplan las condiciones de informe.\\\\
 
 
+
+
+\subsection{Estructura y Tipos de Tramas IEC 60870-5-104}
+
+\begin{figure}[H]
+  \caption{Introducción a IEC 61870 104}
+  \label{fig:capa7iccp}
+  \includegraphics[width=\linewidth]{resumen_iec_61870_104}
+\end{figure}
+
+La trama de comunicación IEC 60870-5-104 se basa en la estructura de la Unidad de Datos del Protocolo de Aplicación (APDU), y es una adaptación del protocolo IEC 60870-5-101 que utiliza TCP/IP para la comunicación en red.
+
+La APDU se compone de dos partes principales: la Información de Control del Protocolo de Aplicación (APCI) y, opcionalmente, la Unidad de Datos del Servicio de Aplicación (ASDU), que contiene los datos de usuario
+A continuación, se detalla la estructura y los tipos de tramas principales:
+
+1. Estructura general de la APDU
+La estructura de la APDU sigue un formato definido en la norma IEC 60870-5-104
+:
+Campo	Contenido	Longitud (Octetos)
+START	Octeto de inicio, siempre 68h	1
+		
+Longitud de APDU (L)	Indica la longitud del resto de la trama (sin contar el START ni este campo)	1
+		
+Campos de Control (APCI)	Cuatro octetos que definen el tipo y control de la trama	4
+		
+Datos de Usuario (ASDU)	Opcional, contiene la información de la aplicación	L-4
+
+La longitud máxima de una APDU es de 253 octetos
+.
+2. Tipos de tramas (definidos por el APCI)
+
+
+Los cuatro campos de control (APCI) son cruciales, ya que definen si la trama es de tipo Información, Supervisión o Control
+
+\begin{enumerate}
+\item Tramas de Formato Tipo I (Información):
+    ◦ Utilizadas para la transferencia de información del usuario
+.
+    ◦ Contienen campos de secuencia de transmisión y recepción, denotados como N(S) (mensajes enviados) y N(R) (mensajes recibidos y confirmados)
+.
+    ◦ Permiten la comunicación de datos como señales analógicas o comandos
+.
+    ◦ Si se pierde un mensaje, se detecta un error de secuencia y el canal puede cerrarse
+
+\item Tramas de Formato Tipo S (Supervisión):
+    ◦ Utilizadas exclusivamente para confirmar la recepción de tramas de Formato Tipo I
+.
+    ◦ No contienen datos de usuario (ASDU)
+.
+    ◦ La confirmación se realiza mediante el campo de secuencia N(R), el cual indica el siguiente número de secuencia esperado, confirmando así todos los mensajes anteriores recibidos correctamente
+.
+\item Tramas de Formato Tipo U (Control):
+    ◦ Utilizadas para funciones de control, como el inicio o la detención de la transferencia de datos, o para verificar la actividad del canal
+.
+    ◦ Ejemplos de estas funciones incluyen el inicio de la comunicación (STARTDT act/con), la parada de la comunicación (STOPDT act/con) o el envío de una trama de prueba (test frame o señal de vida) (TESTFR act/con)
+\end{enumerate}
+
+
+3. Estructura de la ASDU (Datos de Usuario)
+Cuando la trama contiene datos de usuario (Formato Tipo I), esta incluye una ASDU
+. La ASDU se compone de una unidad de identificación y un objeto de información
+.
+La estructura simplificada de la ASDU es la siguiente:
+1. Identificador de tipo (1 octeto): Determina la función de aplicación y la estructura del ASDU
+.
+2. Cualificador de estructura variable (1 octeto): Generalmente vale 1
+.
+3. Causa de Transmisión (CDT) (1 octeto): Indica por qué se transmite el mensaje (e.g., "solicitada", "activación", "confirmación")
+.
+4. Dirección Común del ASDU (2 octetos): Identifica la estación terminal (ET) con la que se intercambia la información
+.
+5. Dirección del Objeto de Información (1 octeto): A menudo vale 0 en ciertas aplicaciones
+.
+6. Datos de Información: Contiene los datos específicos de la aplicación (comandos, medidas analógicas, etc.)
+.
+El estándar IEC 60870-5-104 soporta una amplia variedad de datos en ambas direcciones (dirección monitor, desde la estación controlada hacia la controladora; y dirección control, desde la controladora hacia la controlada)
+.
+4. Mecanismos de Temporización y Control
+Para garantizar una comunicación confiable, el protocolo utiliza mecanismos de temporización clave
+:
+• Tiempos de Supervisión (T1, T2, T3, T0): Estos tiempos controlan el flujo de datos y la actividad del canal
+.
+• Tiempo T3 (Tiempo de envío de trama de prueba): Si no se envía ningún mensaje durante el tiempo T3, se envía una trama de prueba (TESTFR) para verificar que el canal está activo
+.
+• Tiempo T2 (Tiempo de confirmación): Define cuánto tiempo debe esperar un receptor antes de enviar una trama Tipo S para confirmar mensajes recibidos
+.
+• Tiempo T1 (Tiempo de espera de confirmación): Si se envía un mensaje Tipo I y no se recibe la confirmación (mediante una trama Tipo I o Tipo S que contenga el N(R) esperado) antes de que expire T1, se puede cerrar el canal o reintentar la comunicación
+.
+Estos mecanismos de control y temporización permiten que el protocolo 104 mejore el uso del ancho de banda al permitir el envío de múltiples mensajes de información (Tipo I) antes de requerir una confirmación explícita (Tipo S), a diferencia de comunicaciones seriales más antiguas
+.
+
+Intercambio de Estados Digitales IEC 60870-5-104
+
+El envío de un valor de estado digital (o indicación) entre la Unidad Terminal Remota (RTU, a menudo denominada Equipo Terminal o ET, o Equipo de Medida, Control y Comunicaciones o EMCC) y el Centro de Control (SCADA o SG, Sistema de Gestión) utilizando el protocolo IEC 60870-5-104 se realiza a través de unidades de datos de servicio de aplicación (ASDUs) contenidas en tramas de Formato Tipo I
+.
+A continuación, se describe este intercambio en ambas direcciones, basándose en el flujo de información en sistemas que utilizan este protocolo, como se ilustra en un sistema de pasarela de comunicación:
+1. Desde la RTU/Subestación hacia el Centro de Control (Dirección Monitor)
+En esta dirección, el equipo (RTU/EMCC) envía datos a la estación controladora (SCADA/SG)
+. Para un estado digital, la información se reporta como una indicación o evento.
+El flujo de información se inicia generalmente por un cambio de valor en el dispositivo de campo que debe ser reportado al centro de control
+:
+1. Lectura del Estado Digital: En arquitecturas de mediación como la pasarela GM104, un componente llamado Control Maestro realiza un proceso periódico de lectura o "escaneo" (polling) de las variables Modbus (dispositivos de la subestación)
+.
+2. Detección de Evento y Consulta de Metadato: Cuando el valor de una variable (p. ej., un bit) cambia en el dispositivo de campo (RTU), el Control Maestro consulta la Base de Datos de Intercambio (Metadato) para determinar si el valor debe ser actualizado
+. Si el valor ha cambiado, se considera que se ha generado un evento
+.
+3. Mapeo del Metadato: La información actualizada se almacena en el Metadato
+, que contiene datos como el valor (True/False), la calidad (ej. Óptima) y, opcionalmente, una estampa de tiempo (time tag) asociada al momento exacto en que ocurrió el cambio
+.
+4. Generación de la Trama IEC 60870-5-104: El componente Control Esclavo (encargado de la comunicación IEC 104) mapea el Metadato a una trama IEC 60870-5-104 específica para el Centro de Control
+.
+    ◦ Si se trata de una indicación de 1 bit, se utiliza un tipo de dato como Single Indication [1 Bit] with quality (o con estampa de tiempo)
+. Si es una indicación de 2 bits, se utiliza Double Indication [2 bit]
+.
+    ◦ La trama contendrá un Identificador de tipo que indica que se transmite un objeto de información single (por ejemplo, 01h)
+.
+    ◦ La Causa de Transmisión (CDT) indica que se ha generado un evento (p. ej., CDT = 03h)
+.
+5. Transmisión y Confirmación: La trama se envía al Centro de Control. El Centro de Control debe reconocer la recepción de la información
+.
+-------------------------------------------------------------------------------- 
+2. Desde el Centro de Control hacia la RTU/Subestación (Dirección Control)
+En esta dirección, la estación controladora (SCADA/SG) envía comandos para cambiar el estado de un dispositivo en la RTU
+.
+1. Envío de la Orden de Control (SCADA): El SCADA envía una trama IEC 60870-5-104 que contiene un comando para modificar el estado digital (p. ej., abrir o cerrar un interruptor). Para esto, se puede utilizar un Single Command o Double Command
+.
+2. Recepción y Decodificación (Control Esclavo): El componente Control Esclavo (parte de la pasarela/Gateway) recibe y desempaqueta la información enviada por el SCADA
+.
+3. Búsqueda y Actualización de Metadato: El Control Esclavo utiliza la dirección del objeto de información (en la trama IEC 104) para buscar el Metadato asociado en la Base de Datos de Intercambio
+. Este Metadato, que puede tener asociado un comando (comando Modbus, por ejemplo), es actualizado con el nuevo valor de la orden de control
+.
+4. Procesamiento y Envío del Comando (Control Maestro): El Control Maestro toma el Metadato actualizado y lo procesa, encargándose de encapsular la información en el protocolo de la subestación (p. ej., Modbus)
+.
+5. Ejecución en el Dispositivo: El comando, ahora en el formato de protocolo local (p. ej., una orden de escritura a un registro de tipo Coil
+), es enviado al dispositivo de campo (RTU) indicado para su ejecución
+.
+6. Reconocimiento: El dispositivo Modbus retorna un reconocimiento de la escritura de la variable
+, que es gestionado internamente por el sistema (Control Maestro) y potencialmente notificado de vuelta al SCADA.
+Las tramas utilizadas para la transferencia de información del usuario, como los comandos y las indicaciones de estado digital, son de Formato Tipo I (Información), que contienen secuencias de transmisión y recepción
+.
+
   \section{Informe de superación y enlaces CND}
 
   En cada punto a supervisar el valor será de 100\% si está supervisado, o 0\% si no está supervisado. Porcentaje de tiempo en que el Punto a Supervisar llega al sistema SCADA del CND. La meta CNO: 95\%, pero la meta del la CREG es 97 \%,  con periodicidad semanal. Para realizar este reporte se utiliza la plataforma GAO.
@@ -1871,10 +2023,14 @@ Estan definidos principalmente por el fabricante más que por la norma IEC 61850
 \subsubsection{Nodo Lógico (Logical Node - LN)}
 
 Es el elementos clave para modelar los elementos que componen los sistemas de comunicación, protecciones y automatización (ej. el elemento de la protección de distancia, interfaz a un seccionador).\\\\
+
 Los nombres son estandarizados con cuatro caracteres. El primer carácter indica el grupo  (ej. P para protección, X para los equipos de maniobra). Los nodos se agrupan en grupos funcionales:
 
 \begin{table}[H]
   \centering
+  \label{Ejemplos de nodos Lógicos}
+
+  \small
   \begin{tabular}{|l | p{0.2\linewidth} |p{0.4\linewidth}|}
     \hline
     Grupo funcional & Designación & Nodos típicos \\\hline
@@ -2090,6 +2246,86 @@ Glosario de Términos Clave
   \item Tipo Básico (Basic Type): Un tipo de dato primitivo y fundamental (ej. entero de 32 bits, punto flotante) que no posee una estructura interna.
 \end{itemize}
 
+\chapter{COMANDOS CISCO}
+
+La siguiente tabla muestra los comandos Cisco más empleados:
+
+
+\begin{longtable}{|p{2cm}|p{3cm}|p{4cm}|p{2cm}|p{2cm}|}
+\hline
+\textbf{Área de Configuración} & \textbf{Comando} & \textbf{Descripción/Función} & \textbf{Fuente(s)} \\
+\hline
+\endfirsthead
+\caption{Cuadro Resumen de Comandos de Configuración del Enrutador Agua\_Blanca (Continuación)}\\
+\hline
+\textbf{Área de Configuración} & \textbf{Comando} & \textbf{Descripción/Función} & \textbf{Fuente(s)} \\
+\hline
+\endhead
+\hline
+\endfoot
+
+\textbf{Configuración General/Sistema} & \texttt{version 12.4} & Especifica la versión del software del IOS. & [1] \\
+& \texttt{service timestamps debug datetime msec} & Configura las marcas de tiempo para mensajes de depuración (debug), incluyendo fecha, hora y milisegundos. & [1] \\
+& \texttt{service timestamps log datetime msec} & Configura las marcas de tiempo para mensajes de registro (log), incluyendo fecha, hora y milisegundos. & [1] \\
+& \texttt{no service password-encryption} & Desactiva la encriptación de las contraseñas de servicio (evita que las contraseñas débiles sean encriptadas con cifrado tipo 7). & [1] \\
+& \texttt{hostname Agua\_Blanca} & Asigna el nombre del dispositivo como "Agua\_Blanca". & [1] \\
+& \texttt{boot system flash c1841-ipbasek9-mz.124-24.T7.bin} & Especifica el archivo de imagen de IOS a cargar durante el inicio del sistema. & [1] \\
+& \texttt{no aaa new-model} & Desactiva el nuevo modelo de Autenticación, Autorización y Contabilidad (AAA). & [1] \\
+& \texttt{clock timezone pacific -5} & Configura la zona horaria del reloj del sistema a Pacífico, con un desplazamiento de -5 horas respecto a UTC. & [1] \\
+& \texttt{dot11 syslog} & Habilita el registro de mensajes de sistema relacionados con 802.11. & [1] \\
+& \texttt{ip cef} & Habilita Cisco Express Forwarding (un mecanismo avanzado de reenvío de paquetes). & [1] \\
+& \texttt{ip domain name Emcalired.com} & Define el nombre de dominio predeterminado para búsquedas de nombres de host. & [1] \\
+& \texttt{ip forward-protocol nd} & Habilita el reenvío del protocolo de descubrimiento de vecinos (Neighbor Discovery). & [2] \\
+& \texttt{ip source-route} & Comando presente en la configuración. & [1] \\
+& \texttt{scheduler allocate 20000 1000} & Configura parámetros para la asignación de tiempo de procesamiento por parte del planificador (scheduler). & [3] \\
+\textbf{Seguridad y Usuarios} & \texttt{logging message-counter syslog} & Habilita el contador de mensajes para los registros del sistema (syslog). & [1] \\
+& \texttt{logging buffered 51200 warnings} & Define el tamaño del buffer interno de registro a 51200 bytes y establece el nivel mínimo de severidad en \textit{warnings}. & [1] \\
+& \texttt{enable secret 5 \$1\$pmFi\$H/aIWEttUDF5jkMwFelet.} & Establece una contraseña secreta y encriptada (tipo 5) para el modo EXEC privilegiado. & [1] \\
+& \texttt{enable password emcaligati2} & Establece una contraseña no encriptada para el modo EXEC privilegiado. & [1] \\
+& \texttt{login block-for 120 attempts 5 within 60} & Bloquea los intentos de inicio de sesión durante 120 segundos si hay 5 fallos dentro de 60 segundos. & [1] \\
+& \texttt{login on-failure} & Habilita el registro de eventos cuando falla un intento de inicio de sesión. & [4] \\
+& \texttt{login on-success} & Habilita el registro de eventos cuando un inicio de sesión es exitoso. & [4] \\
+& \texttt{username emcaliaguablanca privilege 15 secret 5 \$1\$ITUF\$DcFacmym.duWMz/q9lTT61} & Crea un usuario local con nivel de privilegio 15 (máximo acceso) y una contraseña secreta encriptada. & [4] \\
+& \texttt{archive log config hidekeys} & Configura el registro de las modificaciones de configuración, ocultando las claves secretas. & [4] \\
+\textbf{Configuración de Interfaz (Físicas)} & \texttt{interface FastEthernet0/0} & Entra al modo de configuración para la interfaz FastEthernet 0/0. & [4] \\
+& \texttt{description \$ETH-LAN\$\$ETH-SW-LAUNCH\$\$INTF-INFO-FE 0\$} & Asigna una descripción a la interfaz. & [4] \\
+& \texttt{bandwidth [valor]} & Establece el ancho de banda de referencia para el cálculo de métricas de protocolos de enrutamiento. & [4], [5] \\
+& \texttt{ip address 172.22.110.6 255.255.255.252} & Asigna la dirección IP y la máscara de subred a la interfaz. & [4] \\
+& \texttt{duplex auto} & Configura el modo dúplex para que se negocie automáticamente. & [4], [5] \\
+& \texttt{speed auto} & Configura la velocidad de la interfaz para que se negocie automáticamente. & [4], [5] \\
+& \texttt{interface Serial0/0/0} & Entra al modo de configuración para la interfaz Serial 0/0/0. & [5] \\
+& \texttt{shutdown} & Deshabilita administrativamente la interfaz. & [5] \\
+& \texttt{clock rate 2000000} & Establece la frecuencia de reloj para la interfaz serial (lado DCE). & [5] \\
+\textbf{Configuración de Subinterfaces} & \texttt{interface FastEthernet0/1.1} & Entra al modo de configuración de la subinterfaz 0/1.1. & [4] \\
+& \texttt{encapsulation dot1Q 1 native} & Configura la encapsulación 802.1Q (VLAN Trunking), especificando el ID de la VLAN 1 como nativa. & [4] \\
+& \texttt{ip address 172.22.6.1 255.255.255.0} & Asigna la IP a la subinterfaz. & [5] \\
+\textbf{Enrutamiento EIGRP} & \texttt{router eigrp 101} & Inicia el proceso del protocolo de enrutamiento EIGRP con el sistema autónomo (AS) número 101. & [5] \\
+& \texttt{network [dirección] [wildcard]} & Anuncia una red específica dentro del proceso EIGRP. & [5], [2] \\
+& \texttt{no auto-summary} & Deshabilita la sumarización automática de redes en los límites de clase en EIGRP. & [2] \\
+\textbf{Rutas Estáticas} & \texttt{ip route [destino] [máscara] [next-hop] name [nombre]} & Define una ruta estática específica, identificándola con un nombre. & [2] \\
+\textbf{Servicios Web (HTTP)} & \texttt{ip http server} & Habilita el servidor HTTP. & [6] \\
+& \texttt{ip http access-class 23} & Aplica la lista de acceso 23 para restringir el acceso al servidor HTTP. & [6] \\
+& \texttt{ip http authentication local} & Especifica que la autenticación para el servidor HTTP debe usar las cuentas de usuario locales. & [6] \\
+& \texttt{no ip http secure-server} & Deshabilita el servidor HTTPS. & [6] \\
+& \texttt{ip http timeout-policy idle 60 life 86400 requests 10000} & Configura la política de tiempo de espera (timeout) para las sesiones HTTP. & [6] \\
+\textbf{SNMP} & \texttt{snmp-server community ccemcali RO} & Configura una cadena de comunidad SNMP de solo lectura (RO) llamada 'ccemcali'. & [6] \\
+& \texttt{snmp-server location PQServer} & Establece la ubicación administrativa del dispositivo. & [6] \\
+& \texttt{snmp-server contact Jairo Torres} & Establece la información de contacto del sistema. & [6] \\
+\textbf{Control-Plane} & \texttt{control-plane} & Entra en el modo de configuración del Control Plane (plano de control). & [6] \\
+\textbf{Banner} & \texttt{banner motd \textvisiblespace CC... \textvisiblespace} & Configura el "Message of the Day" (MOTD), un mensaje que se muestra a los usuarios antes de iniciar sesión. & [6], [7] \\
+\textbf{Configuración de Líneas} & \texttt{line con 0} & Entra al modo de configuración para la línea de consola 0. & [7] \\
+& \texttt{line aux 0} & Entra al modo de configuración para la línea auxiliar 0. & [7] \\
+& \texttt{line vty 0 4} / \texttt{line vty 5 15} & Entra al modo de configuración para las líneas de terminal virtual (VTY). & [3] \\
+& \texttt{login local} & Configura la línea para que use las bases de datos de usuarios locales para la autenticación. & [7], [3] \\
+& \texttt{access-class 23 in} & Aplica la lista de acceso 23 para filtrar el tráfico entrante en las líneas VTY. & [3] \\
+& \texttt{privilege level 15} & Otorga automáticamente el nivel de privilegio 15 a los usuarios que inician sesión en la línea. & [3] \\
+& \texttt{password emcaligati22} & Establece una contraseña para la línea. & [3] \\
+& \texttt{transport input telnet} & Especifica que solo se permite el protocolo Telnet para las conexiones entrantes a estas líneas VTY. & [3] \\
+\textbf{NTP} & \texttt{ntp update-calendar} & Configura el Network Time Protocol (NTP) para actualizar el reloj de hardware (calendario). & [3] \\
+& \texttt{ntp server 172.22.6.99 prefer source FastEthernet0/1.1} & Configura un servidor NTP, lo marca como preferido, y especifica la interfaz de origen. & [3] \\
+\textbf{Fin de Configuración} & \texttt{end} & Sale del modo de configuración global o de subconfiguración y vuelve al modo EXEC privilegiado. & [3] \\
+\hline
+\end{longtable}
     
 \chapter{PROCESO DE CONEXIÓN}
 
@@ -2284,4 +2520,7 @@ La Mejorabilidad en su extensión más amplia incluye las siguientes variables:
 %% Local Variables:
 %%% mode: latex
 %%% TeX-master: t
+%% TeX-master: t
+%% TeX-master: t
+%% TeX-master: t
 %%% End:
