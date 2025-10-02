@@ -1822,8 +1822,6 @@ El protocol ICCP  es basado en el concepto cliente servidor. Este protocolo se d
 
 El Association Control Service Element (ACSE) es un mecanismo utilizado por el protocolo ICCP (Inter-Control Center Communications Protocol) para el establecimiento de asociaciones lógicas entre un cliente y múltiples centros de control servidores\\\\
 % Existen varios servicios proporcionados en \textbf{ICCP} para realizar transferencias de datos, según el tipo de solicitud. Por ejemplo, si el cliente realiza una solicitud única, los datos se devolverán como un respuesta a la solicitud. Sin embargo, si el cliente solicita la transferencia periódica de datos o la transferencia de datos solo cuando cambian, entonces el cliente establecerá primero el informe. El servidor (es decir, especificar condiciones de informes como la periodicidad de las transferencias periódicas u otras condiciones desencadenantes como el informe por excepción únicamente), y el servidor luego enviará los datos como un informe no solicitado siempre que se cumplan las condiciones de informe.\\\\
-
-
  
 
 \section{ IEC 60870-5-104}
@@ -1838,8 +1836,7 @@ La trama de comunicación IEC 60870-5-104 se basa en la estructura de la \textit
 
 La \textbf{APDU} se compone de dos partes principales: la \textit{Información de Control del Protocolo de Aplicación }(\textbf{APCI}) y, opcionalmente, la \textit{Unidad de Datos del Servicio de Aplicación} (\textbf{ASDU}), que contiene los datos de usuario.\\\\
 
-La estructura de la \textbf{APDU} sigue un formato definido en la norma IEC 60870-5-104
-:\\\\
+La estructura de la \textbf{APDU} sigue un formato definido en la norma IEC 60870-5-104:\\\\
 
 \begin{tabular}{|p{0.3\linewidth}|p{0.45\linewidth}|p{0.15\linewidth}|}
   \hline
@@ -1855,23 +1852,39 @@ Datos de Usuario (ASDU)&Opcional, contiene la información de la aplicación& \\
   \subsection{Tipos de tramas (definidos por el APCI)}
 
 
-  Los cuatro campos de control (APCI) son cruciales, ya que definen si la trama es de tipo Información, Supervisión o Control
+  Los cuatro campos de control (APCI) son cruciales, ya que definen si la trama es de tipo Información, Supervisión o Control \cite{GOMEZ2019}.
+  
+  
+\begin{figure}[H]
+  	\centering
+  	\caption{Formato del APCI}
+  	\label{fig:cabecera104}
+  	\includegraphics[width=0.7\linewidth]{cabecera_104}
+\end{figure}
+  
+  
+\begin{figure}[H]
+	\centering
+	\caption{Tipo de APCI de IEC 60870-5-104}
+	\label{fig:tramas104}
+	\includegraphics[width=0.7\linewidth]{tramas_104_}
+\end{figure}
   
 
 \begin{enumerate}
 \item Tramas de Formato Tipo I (Información):
   \begin{itemize}
-  \item Utilizadas para la transferencia de información del usuario
-  \item Contienen campos de secuencia de transmisión y recepción, denotados como N(S) (mensajes enviados) y N(R) (mensajes recibidos y confirmados)
-  \item Permiten la comunicación de datos como señales analógicas o comandos
-  \item Si se pierde un mensaje, se detecta un error de secuencia y el canal puede cerrarse
+  \item Utilizadas para la transferencia de información del usuario.
+  \item Contienen campos de secuencia de transmisión y recepción, denotados como N(S) (mensajes enviados) y N(R) (mensajes recibidos y confirmados).
+  \item Permiten la comunicación de datos como señales analógicas o comandos.
+  \item Si se pierde un mensaje, se detecta un error de secuencia y el canal puede cerrarse.
     \end{itemize}
 
 \item Tramas de Formato Tipo S (Supervisión):
 \begin{itemize}
-\item Utilizadas exclusivamente para confirmar la recepción de tramas de Formato Tipo I
+\item Utilizadas exclusivamente para confirmar la recepción de tramas de Formato Tipo I.
 \item No contienen datos de usuario (ASDU)
-\item La confirmación se realiza mediante el campo de secuencia N(R), el cual indica el siguiente número de secuencia esperado, confirmando así todos los mensajes anteriores recibidos correctamente
+\item La confirmación se realiza mediante el campo de secuencia N(R), el cual indica el siguiente número de secuencia esperado, confirmando así todos los mensajes anteriores recibidos correctamente.
 \end{itemize}
 
 \item Tramas de Formato Tipo U (Control):
@@ -1885,20 +1898,27 @@ Datos de Usuario (ASDU)&Opcional, contiene la información de la aplicación& \\
 
 \subsection{Estructura de la ASDU (Datos de Usuario)}
 
-Cuando la trama contiene datos de usuario (Formato Tipo I), esta incluye una ASDU
-. La ASDU se compone de una \textit{unidad de identificación} y un \textit{objeto de información}.\\\\
+\begin{figure}[H]
+	\centering
+	\caption{Formato ASDU}
+	\label{fig:formatoasdu}
+	\includegraphics[width=0.7\linewidth]{formato_ASDU}
+\end{figure}
+
+
+Cuando la trama contiene datos de aplicación (Formato Tipo I), esta incluye una ASDU. La ASDU se compone de una \textit{unidad de identificación} (\textbf{data unit identifier}) y un \textit{objeto de información} (\textbf{objeto de identificacion}),  como muestra la figura \ref{fig:formatoasdu}.\\\\
 
 La estructura simplificada de la ASDU es la siguiente:
 
 \begin{enumerate}
-\item Identificador de tipo (1 octeto): Determina la función de aplicación y la estructura del ASDU.
+\item Identificador de tipo \textit{type indentification} (1 BYTE): Determina la función de aplicación y la estructura del ASDU.
 \item Cualificador de estructura variable (1 octeto): Generalmente vale 1.
-\item Causa de Transmisión (CDT) (1 octeto): Indica por qué se transmite el mensaje (e.g., "solicitada", "activación", "confirmación").
+\item Causa de Transmisión \textbf{cause of trasmission (CDT)} \ref{fig:formatoasdu}) (1 octeto): Indica por qué se transmite el mensaje (e.g., "solicitada", "activación", "confirmación").
 \item Dirección Común del ASDU (2 octetos): Identifica la estación terminal (ET) con la que se intercambia la información
-\item Dirección del Objeto de Información (1 octeto): A menudo vale 0 en ciertas aplicaciones
+\item Dirección del Objeto de Información (1 octeto): A menudo vale 0 en ciertas aplicaciones.
 \item Datos de Información: Contiene los datos específicos de la aplicación (comandos, medidas analógicas, etc.)
 \item El estándar IEC 60870-5-104 soporta una amplia variedad de datos en ambas direcciones (dirección monitor, desde la estación controlada hacia la controladora; y dirección control, desde la controladora hacia la controlada)
-\item Mecanismos de Temporización y Control
+\item Mecanismos de Temporización y Control.
 
 \end{enumerate}
 
@@ -1917,30 +1937,35 @@ Estos mecanismos de control y temporización permiten que el protocolo 104 mejor
 
 \subsection{Intercambio de Estados Digitales IEC 60870-5-104}
 
-El envío de un valor por una RTU y el SCADA utilizando el protocolo IEC 60870-5-104 se realiza a través de (ASDUs) contenidas en tramas de Formato Tipo I.\\
+El envío de un valor por una RTU y el SCADA utilizando el protocolo IEC 60870-5-104 se realiza a través de (ASDUs) contenidas en tramas de Formato Tipo I.\\\\
+
+La unidad de datos que intercambian el nivel de aplicación de una RTU y una SCADA se denomina ASDU (Aplication Service Data Unit). Hay por lo menos un ASDU definido por cada tipo de punto de información que se puede manejar con el protocolo. La identificación de un punto de información en este protocolo es por una dirección del punto IOA (Information Objet Address) más una dirección de común al ASDU, CAA (Common Address of ASDU).\\\\
+
+
+Una conexión es un enlace TCP con la estación controlada. A cada servidor se le pueden asociar varias conexiones que se pueden mantener conectadas. Así una conexión puede estar desconectada, conectada y activa. Se considera activa cuando (estando conectada) la estación controladora habilita transferencia de datos para esa conexión. Todos los intercambios de ASDU son por la conexión activa. Dado que todas las conexiones se establecen por un mismo puerto TCP (2404) que establece la norma, la única forma de identificación de un servidor es por la dirección IP de la estación controlada. El que un servidor tenga más de una conexión se debe a la existencia de varios dispositivos de red o
+bien redundancia de equipo en el servidor. El BinController i4m, no gestiona directamente el acceso a TCP/IP sino que hace uso del módulo de canales.\\\\
+
 A continuación, se describe este intercambio en ambas direcciones, basándose en el flujo de información en sistemas que utilizan este protocolo, como se ilustra en un sistema de pasarela de comunicación:
 
 \subsubsection{Desde la RTU hacia el \textbf{SCADA} (Dirección Monitor)}
-En esta dirección, el equipo (RTU/EMCC) envía datos a la estación controladora (SCADA/SG)
-. Para un estado digital, la información se reporta como una indicación o evento.
-El flujo de información se inicia generalmente por un cambio de valor en el dispositivo de campo que debe ser reportado al centro de control:
+En esta dirección, el equipo (RTU) envía datos a la estación controladora (SCADA). Para un estado digital, la información se reporta como una indicación o evento. El flujo de información se inicia generalmente por un cambio de valor en el dispositivo de campo que debe ser reportado al centro de control:
 
 \begin{enumerate}
-\item Lectura del Estado Digital: En arquitecturas de mediación como la pasarela GM104, un componente llamado Control Maestro realiza un proceso periódico de lectura o "escaneo" (polling) de las variables Modbus (dispositivos de la subestación).
+\item Lectura del Estado Digital: En arquitecturas de mediación como la pasarela 104, un componente llamado Control Maestro realiza un proceso periódico de lectura o "escaneo" (polling).
 \item Detección de Evento y Consulta de Metadato: Cuando el valor de una variable (p. ej., un bit) cambia en el dispositivo de campo (RTU), el Control Maestro consulta la Base de Datos de Intercambio (Metadato) para determinar si el valor debe ser actualizado
 \item Si el valor ha cambiado, se considera que se ha generado un evento.
-\item Mapeo del Metadato: La información actualizada se almacena en el Metadato
-, que contiene datos como el valor (True/False), la calidad (ej. Óptima) y, opcionalmente, una estampa de tiempo (time tag) asociada al momento exacto en que ocurrió el cambio
+\item Mapeo del Metadato: La información actualizada se almacena en el Metadato, que contiene datos como el valor (True/False), la calidad (ej. Óptima) y, opcionalmente, una estampa de tiempo (time tag) asociada al momento exacto en que ocurrió el cambio.
 \item Generación de la Trama IEC 60870-5-104: El componente Control Esclavo (encargado de la comunicación IEC 104) mapea el Metadato a una trama IEC 60870-5-104 específica para el Centro de Control.
-\item Si se trata de una indicación de 1 bit, se utiliza un tipo de dato como Single Indication [1 Bit] with quality (o con estampa de tiempo)
-. Si es una indicación de 2 bits, se utiliza Double Indication [2 bit].
+\item Si se trata de una indicación de 1 bit, se utiliza un tipo de dato como Single Indication [1 Bit] with quality (o con estampa de tiempo). Si es una indicación de 2 bits, se utiliza Double Indication [2 bit].
 \item La trama contendrá un Identificador de tipo que indica que se transmite un objeto de información single (por ejemplo, 01h).
 \item La Causa de Transmisión (CDT) indica que se ha generado un evento (p. ej., CDT = 03h).
 \item Transmisión y Confirmación: La trama se envía al Centro de Control. El Centro de Control debe reconocer la recepción de la información.
 \end{enumerate}
 
 \subsubsection{Desde el Centro de Control hacia la RTU/Subestación (Dirección Control)}
-En esta dirección, la estación controladora (SCADA/SG) envía comandos para cambiar el estado de un dispositivo en la RTU
+
+
+En esta dirección, la estación controladora (SCADA) envía comandos para cambiar el estado de un dispositivo en la RTU
 
 \begin{enumerate}
 \item \textbf{Envío de la Orden de Control (SCADA)}: El SCADA envía una trama IEC 60870-5-104 que contiene un comando para modificar el estado digital (p. ej., abrir o cerrar un interruptor). Para esto, se puede utilizar un \textit{Single Command} o \textit{Double Command}.
@@ -1954,14 +1979,72 @@ En esta dirección, la estación controladora (SCADA/SG) envía comandos para ca
 \item Reconocimiento: El dispositivo Modbus retorna un reconocimiento de la escritura de la variable, que es gestionado internamente por el sistema (Control Maestro) y potencialmente notificado de vuelta al SCADA. Las tramas utilizadas para la transferencia de información del usuario, como los comandos y las indicaciones de estado digital, son de Formato Tipo I (Información), que contienen secuencias de transmisión y recepción.
 \end{enumerate}
 
-\section{IEC 61850}
 
-En la automatización de subestaciones,  se reconocen  tres niveles dentro de la red de comunicación:
+\subsubsection{Tipos de Datos}
+
+Los datos de entrada:
 
 \begin{itemize}
-\item nivel de estación (\textit{station bus}) se caracteriza por comunicar los relay (IDE)  con el gateway,  con velocidades de 10 a 1GB.
-\item nivel de proceso (\textit{process bus}) se caracteriza por comunicar las MU (\textit{Merging Unit}) ó los concentradores de medidas con los relés de la estación.
-\item nivel de bahía
+	\item \textbf{MSP}: Single-Point information.
+	\item \textbf{MDP}: Double-Point Information.
+	\item \textbf{MST}: Step position information.
+	\item \textbf{MBO}: Bitstring of 32 bits.
+	\item \textbf{MMEA}: Measured value, normalized value.
+	\item \textbf{MMEB}: Measured value, scaled value.
+	\item \textbf{MMEC}: Measured value, short floating point number.
+	\item \textbf{MIT}: Integrated totals.
+\end{itemize}
+
+Los datos de salida:
+
+\begin{itemize}
+	\item \textbf{CSC}: Single command.
+	\item \textbf{CDC}: Double command.
+	\item \textbf{CRC}: Regulating step command.
+	\item \textbf{CSEA}: Set-point command, normalizad value.
+	\item \textbf{CSEB}: Set-point command, scaled value.
+	\item \textbf{CSEC}: Set-point, command, short floating point number.
+	\item \textbf{CBO}: Bitstring of 32 bits.
+\end{itemize}
+
+
+\subsection{Ejemplo 104 - Reconectador}
+
+\begin{figure}[H]
+	\centering
+	\caption{Diagrama de conexión del reconectador}
+	\label{fig:reco104diagrama}
+	\includegraphics[width=0.7\linewidth]{reco_104_diagrama}
+\end{figure}
+
+En el siguiente ejemplo se documenta la captura del trafico de un reconectador ( nodo \textit{522432} ) y el centro de control usando el protocolo \textit{IEC 60870-5-104}. En la figura \ref{fig:reco104} se muestra, a nivel de capa tres, que el reconectador usa la dirección \textit{IP 10.205.37.10}, mientras el centro de control emplea la dirección \textit{172.24.48.22}. En cuanto a la capa cuatro se observa que se emplea el protocolo TCP  con el puerto \textit{2404} en el reconectador y el puerto \textit{55464} en el centro de control. 
+
+\begin{figure}[H]
+	\centering
+	\caption{Tramas capturadas de reconectador en el protocolo IEC 6070-5-104}
+	\label{fig:reco104}
+	\includegraphics[width=\linewidth]{reco_104}
+\end{figure}
+
+En el caso del tipo de tramas se pueden observar al inicio dos tramas tipo S, luego una trama tipo U, dos tramas mas tipo S y dos tramas tipo I y así sucesivamente en la columna \textit{Length info} de la figura \ref{fig:reco104}.\\\\
+
+Para la última trama tipo I, se observa igualmente que la dirección global del ASDU en el campo \textit{Addr} es \textbf{104}. Por otra parte las dirección de objeto es IOA son 13002, 13003, 13003, etc.
+
+
+\section{IEC 61850}
+
+En la automatización de subestaciones, se reconoce como dos niveles :
+
+\begin{itemize}
+\item nivel de estación.
+\item nivel de bahía.
+\end{itemize}
+
+En cuanto a los buses de comunicación tenemos:
+
+\begin{itemize}
+	\item Bus de estación (\textit{station bus}) x de 10 a 1GB se caracteriza por comunicar las MU (\textit{Merging Unit}) ó los concentradores de medidas con los relés de la estación.
+    \item Bus de proceso se caracteriza por comunicar las MU (\textit{Merging Unit}) ó los concentradores de medidas con los relés de la estación.
 \end{itemize}
 
 \begin{figure}[H]
