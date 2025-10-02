@@ -1954,7 +1954,7 @@ En esta dirección, la estación controladora (SCADA/SG) envía comandos para ca
 \item Reconocimiento: El dispositivo Modbus retorna un reconocimiento de la escritura de la variable, que es gestionado internamente por el sistema (Control Maestro) y potencialmente notificado de vuelta al SCADA. Las tramas utilizadas para la transferencia de información del usuario, como los comandos y las indicaciones de estado digital, son de Formato Tipo I (Información), que contienen secuencias de transmisión y recepción.
 \end{enumerate}
 
-\section{IEC 61850}
+   \section{IEC 61850}
 
 En la automatización de subestaciones,  se reconocen  tres niveles dentro de la red de comunicación:
 
@@ -2019,10 +2019,9 @@ Los nombres son estandarizados con cuatro caracteres. El primer carácter indica
   \label{Ejemplos de nodos Lógicos}
 
   \small
-  \begin{tabular}{|p{0.2\linewidth} | p{0.2\linewidth}|p{0.5\linewidth}|}
+  \begin{tabular}{|l | p{0.2\linewidth} |p{0.4\linewidth}|}
     \hline
-    \rowcolor{black}
-    \color{white}{Grupo funcional} & \color{white}{Designación} &\color{white} {Nodos típicos} \\\hline
+    Grupo funcional & Designación & Nodos típicos \\\hline
     System & Lxxx & \textbf{LLN0} (Datos de placa del IDE) \\\hline
     Automatic Control & Axxx & \textbf{ATCC} (Cambiador de tomas) \\\hline
     Control & Cxxx & \textbf{CSWI}  (Control de switches)  \\\hline
@@ -2068,8 +2067,6 @@ Componente de un Nodo Lógico. La Clase de Datos Común (CDC) define la estructu
 Ejemplo:\\
 El objeto de datos POS (posición de un interruptor) es de la Clase de Datos Común DPC (Double Point Control).\\\\
     Especificación: Definidos en las partes 7-4, 7-410 y 7-420 del estándar junto con los Nodos Lógicos. Incluyen un nombre, referencia a la CDC, explicación corta e indicación de obligatoriedad/opcionalidad.
-
-
 
 \subsubsection{Atributo de Datos (Data Attribute - DA)}
 
@@ -2137,63 +2134,7 @@ En la figura \ref{fig:protocolosiec61850} se muestra la relación de los protoco
       \label{fig:protocolosiec61850}
       \includegraphics[width=0.7\linewidth]{cliente_servidor_61850}
     \end{figure}
-    
-    
 
-\subsection{Arquitecturas}
-
-\begin{figure}[h]
-	\centering
-	\caption{Arquitectura general de una subestacion}
-	\label{fig:arquitecturasubestacion}
-	\includegraphics[width=0.7\linewidth]{arquitectura_subestacion}
-\end{figure}
-
-
-\subsubsection{Anillo Sencillo}
-
-
-\paragraph{Rapid Spanning Tree Protocol (RSTP)}
-
-Definida en la IEEE 802.1w y IEC 62439-1 es recomendada para todos los mensajes exepto GOOSE  y Sampled Values.
-
-
-\paragraph{Media Redundancy Protocol (MRP)}
-
-Esta definida en la IEC 62439-2,  tiene tiempos de recpración bajos y puede ser usada con mensajes GOOSE.
-
-\paragraph{High-availability Seamless Redundancy (HSR)}
-
-Indicado en la IEC 62439-3 Clause 5,  no utiliza equipos intermedios y requiere que todos los dispositivos sean compatibles con esta arquitectura.\\\\ 
-
-\begin{figure}[h]
-	\centering
-	\caption{Anillo HSR}
-	\label{fig:hsr}
-	\includegraphics[width=0.7\linewidth]{hsr}
-\end{figure}
-
-\subsubsection{Anillo doble}
-
-\paragraph{Parallel Redundancy Protocol (PRP)}
-
-Indicado en IEC 62439-3, Clause 4, tiene dos redes independientes conectadas cada una a sus swhiches, opera de tal modo que se envían los mensajes cada una por una red y al final  el nodo receptor descarta uno de los dos mensajes.
-
-\begin{figure}[H]
-	\centering
-	\caption{Red PRP}
-	\label{fig:prp}
-	\includegraphics[width=0.7\linewidth]{prp}
-\end{figure}
-
-
-\paragraph{Malla}
-
-El protocolo más utilizado en esa configuración es \textbf{RSTP}. No es aconsejable apara usar en sistemas SCADA dado la falla de un shwich deja indisponibles  muchos elementos.
-
-\paragraph{Software-defined Networks (SDN)}
-
-\subsection{}
 
 \subsection{Ejemplo de aplicación para el área de protecciones}
 
@@ -2291,8 +2232,6 @@ Glosario de Términos Clave
 \chapter{COMANDOS CISCO}
 
 La siguiente tabla muestra los comandos Cisco más empleados:
-
-
 
 
 \begin{longtable}{|p{3cm}|p{4cm}|p{2cm}|}
