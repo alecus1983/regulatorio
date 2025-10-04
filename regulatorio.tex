@@ -2007,6 +2007,129 @@ Los datos de salida:
 	\item \textbf{CBO}: Bitstring of 32 bits.
 \end{itemize}
 
+\subsection*{Capa de aplicación}
+
+\subsubsection*{1. Funciones de Aplicación Principales}
+\begin{itemize}
+	\item \textbf{Definición:} Solicitudes que pueden enviarse entre el SCADA y la RTU.
+	\item \textbf{Tipos de Funciones:}
+	\begin{itemize}
+		\item Secuencia de inicialización
+		\item Adquisición de datos por polling (solo en Capa de Enlace, modo 101 desequilibrado)
+		\item Transmisión de datos cíclicos
+		\item Adquisición de eventos (espontáneos)
+		\item \textbf{Interrogación General (IG)}
+		\item Sincronización de reloj
+		\item Envío de comandos
+		\item Carga de parámetros
+		\item Pruebas y transferencia de archivos
+	\end{itemize}
+\end{itemize}
+
+\subsubsection*{2. Adquisición de Datos}
+\begin{itemize}
+	\item \textbf{A. Interrogación General (IG)}
+	\begin{itemize}
+		\item \textbf{Propósito:} Sincronizar la base de datos del SCADA con los valores actuales de la RTU.
+		\begin{itemize}
+			\item \textit{Equivalente a "class 0 poll" en DNP3.}
+		\end{itemize}
+		\item \textbf{Alcance:}
+		\begin{itemize}
+			\item Todos los puntos (Interrogación General).
+			\item Subconjuntos o grupos de puntos.
+		\end{itemize}
+		\item \textbf{Componente Clave:} \textbf{QOI (Calificador de Interrogación)} $\rightarrow$ Define el tipo de interrogación.
+		\item \textbf{Secuencia Típica:}
+		\begin{enumerate}
+			\item \textbf{SCADA $\rightarrow$ RTU:} Envía IG (ASDU-100, COT 6 - Activación).
+			\item \textbf{RTU $\rightarrow$ SCADA:} Responde con Confirmación (COT 7 - Act Con).
+			\item \textbf{RTU $\rightarrow$ SCADA:} Envía múltiples ASDUs con los datos (COT 20).
+			\item \textbf{RTU $\rightarrow$ SCADA:} Finaliza con Terminación (COT 10 - Act Term).
+		\end{enumerate}
+	\end{itemize}
+	\item \textbf{B. Transmisión Autónoma (sin solicitud del SCADA)}
+	\begin{itemize}
+		\item \textbf{Transmisión Cíclica/Periódica:}
+		\begin{itemize}
+			\item Uso: Datos estáticos.
+			\item Funcionamiento: La RTU envía datos periódicamente, incluso si no han cambiado.
+		\end{itemize}
+		\item \textbf{Adquisición de Eventos (Espontánea):}
+		\begin{itemize}
+			\item Uso: Cambios de datos.
+			\item Funcionamiento: La RTU identifica un evento y lo reporta al SCADA.
+			\item \textit{Nota: Es similar a "unsolicited response" de DNP3, pero en IEC 60870-5 el SCADA no puede deshabilitarla.}
+		\end{itemize}
+	\end{itemize}
+	\item \textbf{C. Comando de Lectura (Read Command)}
+	\begin{itemize}
+		\item \textbf{Tipo de ASDU:} 102
+		\item \textbf{Limitación:} Solo permite leer un único objeto por solicitud.
+		\item \textbf{Recomendación:} Usar la Interrogación (IG) para leer múltiples objetos.
+	\end{itemize}
+\end{itemize}
+
+
+\begin{figure}[H]
+	\centering
+	\caption{Secuencia de interrogación}
+	\label{fig:secuenciadeinterrogacion}
+	\includegraphics[width=\linewidth]{secuencia_de_interrogacion}
+\end{figure}
+
+
+\subsubsection*{3. Controles y Comandos}
+\begin{itemize}
+	\item \textbf{Definición:} Solicitudes del SCADA para ejecutar una función (ej. enviar un comando de control de salida).
+	\item \textbf{Secuencia de Control:} Similar a la IG, utiliza COT 6 (Activación), COT 7 (Confirmación) y COT 10 (Terminación).
+	\item \textbf{Características:}
+	\begin{itemize}
+		\item Permite múltiples solicitudes simultáneas sin esperar respuesta.
+		\item Las direcciones del punto de control y del punto monitorizado deben ser únicas.
+	\end{itemize}
+	\item \textbf{Mecanismo de Salidas (Control):} \textbf{Select-and-Execute}
+	\begin{itemize}
+		\item \textit{Equivalente a "Select-before-Operate" en DNP3.}
+		\item \textbf{Pasos:}
+		\begin{enumerate}
+			\item SCADA envía \texttt{Select}.
+			\item RTU confirma.
+			\item SCADA envía \texttt{Execute}.
+			\item RTU confirma la ejecución.
+			\item Terminación del comando.
+		\end{enumerate}
+		\item \textbf{Calificadores de Comando:}
+		\begin{itemize}
+			\item Pulso corto
+			\item Pulso largo
+			\item Persistente (\textit{similar a "latched" en DNP3})
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+
+\begin{figure}[H]
+	\centering
+	\caption{Secuencia de comandos en capa de aplicación}
+	\label{fig:comandos104}
+	\includegraphics[width=1\linewidth]{comandos_104}
+\end{figure}
+
+
+\subsubsection*{4. Aclaraciones y Diferencias con DNP3}
+\begin{itemize}
+	\item \textbf{"Polling":}
+	\begin{itemize}
+		\item En la especificación IEC 60870-5, el "polling" de la Capa de Aplicación es un término inapropiado.
+		\item La función real de polling se realiza en la \textbf{Capa de Enlace (Link Layer)} para gestionar enlaces multi-punto.
+	\end{itemize}
+	\item \textbf{Clases de Datos (en Capa de Enlace):}
+	\begin{itemize}
+		\item \textbf{Clase 1:} Datos de eventos (alta prioridad).
+		\item \textbf{Clase 2:} Datos cíclicos/background scan (baja prioridad).
+		\item \textbf{¡Importante!} Estas clases \textbf{NO} tienen ninguna relación con las clases 1, 2 y 3 de DNP3.
+	\end{itemize}
+\end{itemize}
 
 \subsection{Ejemplo 104 - Reconectador}
 
