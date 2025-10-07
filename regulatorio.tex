@@ -2494,6 +2494,376 @@ Glosario de Términos Clave
   \item Tipo Básico (Basic Type): Un tipo de dato primitivo y fundamental (ej. entero de 32 bits, punto flotante) que no posee una estructura interna.
 \end{itemize}
 
+
+	
+	\chapter{COMUNICACIONES Y CONFIGURACIONES}
+	
+	\section{Regulación y Acuerdos Aplicables}
+	
+	\subsection{Regulación}
+	La regulación aplicable a las comunicaciones en el sector eléctrico colombiano se rige principalmente por las siguientes resoluciones de la Comisión de Regulación de Energía y Gas (CREG):
+	
+	\begin{itemize}
+		\item \textbf{CREG 025 de 1995:} Establece el Código de Redes como parte del Reglamento de Operación del Sistema Interconectado Nacional (SIN).
+		\item \textbf{CREG 080 de 1999:} Define las funciones de planeación, coordinación, supervisión y control entre el Centro Nacional de Despacho (CND) y los agentes del SIN.
+		\item \textbf{CREG 060 de 2019:} Aprueba el Reglamento de Operación para permitir la conexión y operación de plantas solares fotovoltaicas y eólicas en el SIN.
+		\item \textbf{CREG 148 de 2021:} Regula la conexión y operación de plantas solares fotovoltaicas y eólicas en los Sistemas de Distribución Local (SDL) con capacidad efectiva neta o potencia máxima declarada igual o superior a 5 MW.
+	\end{itemize}
+	
+	\subsection{Acuerdos}
+	Los acuerdos del Consejo Nacional de Operación (CNO) vigentes y relevantes para las comunicaciones son:
+	
+	\begin{itemize}
+		\item \textbf{Acuerdo 1411:} Por el cual se aprueban los procedimientos e indicadores relacionados con la supervisión del SIN.
+		\item \textbf{Acuerdo 1428:} Establece los requisitos para la prestación del servicio de Regulación Secundaria de Frecuencia (AGC).
+		\item \textbf{Acuerdo 1525:} Aprueba los requisitos para la supervisión de las variables eléctricas de plantas solares fotovoltaicas y eólicas en el SDL con capacidad efectiva neta o potencia máxima declarada igual o superior a 5 MW.
+		\item \textbf{Acuerdo 1612:} Define los lineamientos para la puesta en operación de proyectos de transmisión que incluyan activos de uso del STN, STR, SDL y recursos de generación.
+	\end{itemize}
+	
+	\section{Supervisión de Enlaces con el CND}
+	
+	La supervisión de los enlaces de comunicación con el \ac{CND} se evalúa mediante el porcentaje de tiempo en que cada punto supervisado llega correctamente al sistema SCADA del \ac{CND}. A cada punto se le asigna un valor del 100% si la supervisión es exitosa y 0% en caso contrario. El CNO establece una meta de cumplimiento del 95%, mientras que la CREG exige un 97%, con una evaluación de periodicidad semanal. El seguimiento y la generación de reportes se realizan a través de la plataforma GAO.
+	
+	Adicionalmente, la resolución \textbf{CREG 083 de 1999} estipula que por cada evento registrado, se debe enviar la fecha y hora con una \textit{resolución de un (1) milisegundo (ms)}, junto con la identificación del elemento que cambió de estado y la descripción de su estado final.
+	
+	Los protocolos de comunicación empleados en los sistemas eléctricos se ilustran en la figura \ref{fig:protocoloscomunicacion}. Un aspecto fundamental es la comunicación entre los \ac{OR} y el \ac{CND}, la cual se realiza mediante el protocolo \textbf{ICCP} (\textit{Inter-Control Center Communication Protocol}).
+	
+	\begin{figure}[H]
+		\centering
+		\caption{Protocolos de comunicación en sistemas eléctricos.}
+		\label{fig:protocoloscomunicacion}
+		\includegraphics[width=0.5\linewidth]{protocolos_comunicacion}
+	\end{figure}
+	
+	\section{Protocolo ICCP}
+	
+	El protocolo ICCP se basa en una arquitectura cliente-servidor y opera en la capa 7 (Capa de Aplicación) del modelo OSI. Toda transferencia de datos es iniciada por una solicitud de un centro de control (cliente) hacia otro que posee y gestiona los datos (servidor). Por ejemplo, si una aplicación en el Centro de Control X requiere datos de la base de datos SCADA del Centro de Control Y, la aplicación del Centro X (actuando como cliente) solicitará al Centro Y (servidor) que envíe los datos bajo las condiciones especificadas.
+	
+	\begin{figure}[H]
+		\centering
+		\caption{Comunicación en la capa 7 para el protocolo ICCP.}
+		\label{fig:capa7iccp}
+		\includegraphics[width=\linewidth]{capas_iccp}
+	\end{figure}
+	
+	El protocolo utiliza el \textit{Association Control Service Element} (ACSE) para establecer asociaciones lógicas entre un cliente y múltiples centros de control servidores.
+	
+	ICCP proporciona varios servicios para la transferencia de datos. En una solicitud única, los datos se devuelven como una respuesta directa. Sin embargo, si el cliente requiere transferencias periódicas o por excepción (solo cuando los datos cambian), primero debe establecer un "informe" con el servidor. En este informe se especifican las condiciones de envío, y el servidor enviará los datos de forma no solicitada cada vez que se cumplan dichas condiciones.
+	
+	\section{Protocolo IEC 60870-5-104}
+	
+	El protocolo IEC 60870-5-104 es una extensión del estándar IEC 60870-5-101, adaptado para redes TCP/IP. Su trama de comunicación se basa en la estructura de la \textit{Unidad de Datos del Protocolo de Aplicación} (\textbf{APDU}).
+	
+	\begin{figure}[H]
+		\centering
+		\caption{Introducción al protocolo IEC 60870-5-104.}
+		\label{fig:intro104}
+		\includegraphics[width=\linewidth]{resumen_iec_61870_104}
+	\end{figure}
+	
+	La \textbf{APDU} se compone de dos partes principales: la \textit{Información de Control del Protocolo de Aplicación} (\textbf{APCI}) y, opcionalmente, la \textit{Unidad de Datos del Servicio de Aplicación} (\textbf{ASDU}), que transporta los datos del usuario. La longitud máxima de una APDU es de 253 bytes.
+	
+	La estructura general de la APDU es la siguiente:
+	\begin{table}[H]
+		\centering
+		\caption{Estructura de la trama APDU en IEC 60870-5-104.}
+		\begin{tabular}{|p{0.25\linewidth}|p{0.5\linewidth}|p{0.15\linewidth}|}
+			\hline
+			\rowcolor{black} \color{white} \textbf{Campo} & \color{white} \textbf{Contenido} & \color{white} \textbf{Longitud (Bytes)} \\\hline
+			START & Octeto de inicio (valor fijo 68h) & 1 \\\hline
+			Longitud (L) & Longitud del resto de la APDU, excluyendo el campo de inicio y este mismo campo & 1 \\\hline
+			Campos de Control (APCI) & Cuatro octetos que definen el tipo y control de la trama & 4 \\\hline
+			Datos de Usuario (ASDU) & Unidad de Datos de Servicio de Aplicación (opcional), que transporta los datos del usuario & Variable \\\hline
+		\end{tabular}
+	\end{table}
+	
+	\subsection{Tipos de Tramas (definidos por el APCI)}
+	Los cuatro octetos del APCI son cruciales, ya que definen el formato de la trama, clasificándola en tres tipos principales: Información (I), Supervisión (S) y Control (U) \cite{GOMEZ2019}.
+	
+	\begin{figure}[H]
+		\centering
+		\caption{Formato del campo de control APCI.}
+		\label{fig:cabecera104}
+		\includegraphics[width=0.7\linewidth]{cabecera_104}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		\caption{Tipos de tramas APCI en IEC 60870-5-104.}
+		\label{fig:tramas104}
+		\includegraphics[width=0.7\linewidth]{tramas_104_}
+	\end{figure}
+	
+	\begin{enumerate}
+		\item \textbf{Tramas de Formato I (Información):}
+		\begin{itemize}
+			\item Se utilizan para la transferencia de datos de usuario (contienen una ASDU).
+			\item Incluyen campos de secuencia de transmisión N(S) y recepción N(R) para garantizar la entrega ordenada de mensajes.
+			\item Transportan datos como señales analógicas, estados digitales o comandos.
+			\item La pérdida de un mensaje genera un error de secuencia que puede provocar el cierre del canal.
+		\end{itemize}
+		
+		\item \textbf{Tramas de Formato S (Supervisión):}
+		\begin{itemize}
+			\item Su función exclusiva es confirmar la recepción de tramas de Información (Formato I).
+			\item No contienen datos de usuario (ASDU).
+			\item La confirmación se realiza mediante el campo N(R), que indica el número de secuencia del siguiente mensaje esperado, confirmando implícitamente todos los anteriores.
+		\end{itemize}
+		
+		\item \textbf{Tramas de Formato U (Control):}
+		\begin{itemize}
+			\item Se emplean para funciones de control del enlace, como iniciar o detener la transferencia de datos y verificar la actividad del canal.
+			\item Ejemplos de funciones son: inicio de transferencia (\texttt{STARTDT act/con}), detención de transferencia (\texttt{STOPDT act/con}) y tramas de prueba (\texttt{TESTFR act/con}).
+		\end{itemize}
+		
+	\end{enumerate}
+	
+	\subsection{Estructura de la ASDU (Datos de Usuario)}
+	Cuando una trama transporta datos de aplicación (Formato I), incluye una ASDU. Esta se compone de una \textit{unidad de identificación de datos} y uno o varios \textit{objetos de información}, como se muestra en la figura \ref{fig:formatoasdu}.
+	
+	\begin{figure}[H]
+		\centering
+		\caption{Formato general de la ASDU.}
+		\label{fig:formatoasdu}
+		\includegraphics[width=0.7\linewidth]{formato_ASDU}
+	\end{figure}
+	
+	La estructura simplificada de la ASDU es:
+	\begin{enumerate}
+		\item \textbf{Identificador de Tipo} (1 byte): Define la función de la aplicación y la estructura de los objetos de información.
+		\item \textbf{Cualificador de Estructura Variable} (1 byte): Indica si los objetos de información son contiguos en dirección.
+		\item \textbf{Causa de Transmisión (COT)} (2 bytes): Especifica el motivo del envío del mensaje (ej. "espontáneo", "interrogación general", "activación").
+		\item \textbf{Dirección Común del ASDU (CAA)} (2 bytes): Identifica la estación o sector al que pertenecen los datos.
+		\item \textbf{Dirección del Objeto de Información (IOA)} (3 bytes): Identifica de forma única cada punto de datos dentro de la estación.
+		\item \textbf{Objetos de Información:} Contienen los datos específicos de la aplicación (comandos, medidas analógicas, etc.).
+	\end{enumerate}
+	
+	\subsection{Mecanismos de Temporización y Control}
+	Para garantizar la fiabilidad de la comunicación, el protocolo define varios temporizadores clave:
+	\begin{itemize}
+		\item \textbf{T0 (Timeout de Conexión):} Tiempo máximo de espera para establecer una conexión TCP.
+		\item \textbf{T1 (Timeout de Confirmación de Envío):} Tiempo máximo que se espera por una confirmación (trama I o S) tras enviar una trama I. Si expira, se asume un fallo en el enlace.
+		\item \textbf{T2 (Timeout de Confirmación de Recepción):} Tiempo máximo que puede transcurrir sin enviar una confirmación (trama S) tras recibir una trama I. Es menor que T1 para evitar timeouts innecesarios.
+		\item \textbf{T3 (Timeout de Inactividad):} Tiempo máximo de inactividad en el canal. Si no se envían datos antes de que expire, se transmite una trama de prueba (\texttt{TESTFR}) para verificar la conexión.
+	\end{itemize}
+	Estos mecanismos permiten que el protocolo 104 optimice el uso del ancho de banda, ya que autoriza el envío de múltiples tramas de información antes de requerir una confirmación explícita.
+	
+	\subsection{Intercambio de Estados Digitales}
+	El intercambio de un valor entre una RTU y un SCADA mediante IEC 60870-5-104 se realiza a través de ASDUs contenidas en tramas de Formato I. La identificación de un punto de información se logra combinando la Dirección Común del ASDU (CAA) y la Dirección del Objeto de Información (IOA).
+	
+	\subsubsection{Desde la RTU hacia el SCADA (Dirección de Monitoreo)}
+	En esta dirección, la RTU reporta datos a la estación controladora (SCADA), generalmente tras un cambio de estado en campo.
+	\begin{enumerate}
+		\item \textbf{Detección del Evento:} La RTU detecta un cambio en una de sus entradas digitales.
+		\item \textbf{Generación de la ASDU:} Se crea una ASDU con los datos del evento.
+		\begin{itemize}
+			\item El \textbf{Identificador de Tipo} corresponde al tipo de dato (ej. \texttt{M\_SP\_NA\_1} para una indicación de un solo punto).
+			\item La \textbf{Causa de Transmisión (COT)} se establece como "espontáneo" o "cambio de estado".
+			\item La \textbf{IOA} identifica el punto específico que cambió.
+			\item El \textbf{Objeto de Información} contiene el nuevo valor del estado (0 o 1) y un descriptor de calidad.
+		\end{itemize}
+		\item \textbf{Transmisión y Confirmación:} La ASDU se encapsula en una trama de Formato I y se envía al SCADA. El SCADA debe confirmar su recepción mediante una trama de Formato S o I con el correspondiente número de secuencia N(R).
+	\end{enumerate}
+	
+	\subsubsection{Desde el SCADA hacia la RTU (Dirección de Control)}
+	En esta dirección, el SCADA envía comandos para modificar el estado de un dispositivo en la RTU.
+	\begin{enumerate}
+		\item \textbf{Envío del Comando:} El SCADA genera una ASDU de comando (ej. \texttt{C\_SC\_NA\_1} para un comando simple).
+		\begin{itemize}
+			\item La \textbf{COT} se establece como "activación".
+			\item La \textbf{IOA} especifica el dispositivo que se desea controlar.
+			\item El \textbf{Objeto de Información} contiene la acción a ejecutar (ej. abrir o cerrar).
+		\end{itemize}
+		\item \textbf{Transmisión y Recepción:} La trama se envía a la RTU. Esta decodifica la ASDU y verifica que el comando es válido.
+		\item \textbf{Confirmación de Activación:} La RTU responde con una ASDU de confirmación (COT = "confirmación de activación") para indicar que ha recibido y aceptado el comando.
+		\item \textbf{Ejecución y Reporte:} La RTU ejecuta la acción sobre el dispositivo físico. Una vez completada, reporta el nuevo estado del dispositivo al SCADA a través de una trama de monitoreo (como se describió en el punto anterior), que sirve como confirmación de la ejecución.
+	\end{enumerate}
+	
+	\subsubsection{Tipos de Datos Principales}
+	\begin{itemize}
+		\item \textbf{Datos de Monitoreo (Entrada):}
+		\begin{itemize}
+			\item \texttt{M\_SP\_}: Información de un solo punto (Single-Point).
+			\item \texttt{M\_DP\_}: Información de doble punto (Double-Point).
+			\item \texttt{M\_ME\_}: Valor medido (normalizado, escalado o flotante).
+			\item \texttt{M\_IT\_}: Totales integrados (contadores).
+		\end{itemize}
+		\item \textbf{Datos de Control (Salida):}
+		\begin{itemize}
+			\item \texttt{C\_SC\_}: Comando simple (Single command).
+			\item \texttt{C\_DC\_}: Comando doble (Double command).
+			\item \texttt{C\_SE\_*}: Comando de punto de ajuste (Set-point command).
+		\end{itemize}
+	\end{itemize}
+	
+	\subsection{Funciones de la Capa de Aplicación}
+	
+	\subsubsection{Adquisición de Datos}
+	\begin{itemize}
+		\item \textbf{Interrogación General (IG):}
+		\begin{itemize}
+			\item \textbf{Propósito:} Sincronizar la base de datos del SCADA con los valores actuales en la RTU. Es equivalente al "Class 0 Poll" en DNP3.
+			\item \textbf{Secuencia:}
+			\begin{enumerate}
+				\item \textbf{SCADA → RTU:} Envía una solicitud de IG (ASDU tipo 100, COT 6 - Activación).
+				\item \textbf{RTU → SCADA:} Responde con una confirmación (COT 7 - Confirmación de Activación).
+				\item \textbf{RTU → SCADA:} Envía todos sus datos estáticos en múltiples ASDUs (COT 20 - Solicitado por Interrogación).
+				\item \textbf{RTU → SCADA:} Finaliza el proceso con un mensaje de terminación (COT 10 - Terminación de Activación).
+			\end{enumerate}
+		\end{itemize}
+		\item \textbf{Transmisión Espontánea (Por Eventos):}
+		\begin{itemize}
+			\item \textbf{Funcionamiento:} La RTU envía datos automáticamente cuando detecta un cambio de estado o valor, sin una solicitud previa del SCADA. Es el método principal para reportar eventos.
+		\end{itemize}
+	\end{itemize}
+	
+	\begin{figure}[H]
+		\centering
+		\caption{Secuencia de una Interrogación General.}
+		\label{fig:secuenciadeinterrogacion}
+		\includegraphics[width=\linewidth]{secuencia_de_interrogacion}
+	\end{figure}
+	
+	\subsubsection{Comandos de Control}
+	\begin{itemize}
+		\item \textbf{Propósito:} Permitir al SCADA ejecutar una acción en un dispositivo de campo (ej. abrir un interruptor).
+		\item \textbf{Mecanismo de Seguridad:} Generalmente se utiliza el modelo \textit{Select-Before-Operate} (Seleccionar antes de Operar).
+		\begin{itemize}
+			\item \textbf{Pasos:}
+			\begin{enumerate}
+				\item El SCADA envía un comando de \textbf{Selección} para armar el punto de control.
+				\item La RTU verifica que puede ejecutar la acción y responde con una confirmación.
+				\item El SCADA envía el comando de \textbf{Ejecución}.
+				\item La RTU ejecuta la acción y reporta el resultado.
+			\end{enumerate}
+		\end{itemize}
+	\end{itemize}
+	
+	\begin{figure}[H]
+		\centering
+		\caption{Secuencia de comandos en la capa de aplicación.}
+		\label{fig:comandos104}
+		\includegraphics[width=1\linewidth]{comandos_104}
+	\end{figure}
+	
+	\subsection{Ejemplo de Tráfico de un Reconectador}
+	
+	A continuación, se presenta un ejemplo que documenta el tráfico de red capturado entre un reconectador y el centro de control, utilizando el protocolo IEC 60870-5-104.
+	
+	\begin{figure}[H]
+		\centering
+		\caption{Diagrama de conexión del reconectador.}
+		\label{fig:reco104diagrama}
+		\includegraphics[width=0.7\linewidth]{reco_104_diagrama}
+	\end{figure}
+	
+	En la captura de la figura \ref{fig:reco104}, se observa que el reconectador utiliza la dirección IP \textit{10.205.37.10}, mientras que el centro de control emplea la dirección \textit{172.24.48.22}. La comunicación se establece sobre TCP, utilizando el puerto estándar \textit{2404} en el reconectador y un puerto efímero (\textit{55464}) en el centro de control.
+	
+	\begin{figure}[H]
+		\centering
+		\caption{Tramas capturadas de un reconectador en el protocolo IEC 6070-5-104.}
+		\label{fig:reco104}
+		\includegraphics[width=\linewidth]{reco_104}
+	\end{figure}
+	
+	La columna \textit{Length info} permite identificar los tipos de trama intercambiados: se aprecian tramas de supervisión (Tipo S), de control (Tipo U) para la gestión del enlace, y de información (Tipo I) para el transporte de datos. Para la última trama de Tipo I mostrada, la dirección común del ASDU (campo \textit{Addr}) es \textbf{104}, y se reportan múltiples objetos de información con IOAs como 13002, 13003, etc.
+	
+	\section{Protocolo IEC 61850}
+	
+	En la arquitectura de automatización de subestaciones bajo IEC 61850, se distinguen dos niveles jerárquicos:
+	\begin{itemize}
+		\item \textbf{Nivel de Estación:} Incluye la interfaz hombre-máquina (HMI), el gateway de la estación y los sistemas de ingeniería y monitoreo.
+		\item \textbf{Nivel de Bahía:} Compuesto por los Dispositivos Electrónicos Inteligentes (IEDs) de protección y control asociados a cada bahía.
+	\end{itemize}
+	
+	La comunicación entre estos niveles se realiza a través de dos buses principales:
+	\begin{itemize}
+		\item \textbf{Bus de Estación:} Interconecta los IEDs del nivel de bahía con los sistemas del nivel de estación. Típicamente opera a velocidades de 100 Mbps o 1 Gbps.
+		\item \textbf{Bus de Proceso:} Comunica los IEDs con equipos de campo como las Unidades de Medida Fasorial (PMU) o las Unidades de Fusión (Merging Units), que digitalizan las señales de los transformadores de corriente y tensión.
+	\end{itemize}
+	
+	\begin{figure}[H]
+		\centering
+		\caption{Estructura de redes de comunicación del protocolo IEC 61850.}
+		\label{fig:iec61850_red}
+		\includegraphics[width=\linewidth]{iec61850}
+	\end{figure}
+	
+	\subsection{Modelo de Datos de IEC 61850}
+	
+	El modelo de datos de IEC 61850 es una representación jerárquica y orientada a objetos de la información dentro de una subestación. Su objetivo es estandarizar la semántica y la estructura de los datos, permitiendo la interoperabilidad entre dispositivos de diferentes fabricantes.
+	
+	\begin{figure}[H]
+		\centering
+		\caption{Estructura jerárquica del modelo de datos IEC 61850.}
+		\label{fig:anatomia_iec}
+		\includegraphics[width=0.5\linewidth]{anatomia_iec}
+	\end{figure}
+	
+	\subsubsection{Estructura Jerárquica}
+	\begin{enumerate}
+		\item \textbf{Dispositivo Lógico (Logical Device - LD):} Es la agrupación de funcionalidades dentro de un IED físico. Por ejemplo, un IED puede contener un LD para protección y otro para control.
+		\item \textbf{Nodo Lógico (Logical Node - LN):} Representa una función específica de automatización o protección. Su nomenclatura está estandarizada. Por ejemplo, \textbf{XCBR} modela un interruptor de potencia y \textbf{PDIS} una función de protección de distancia.
+		\item \textbf{Objeto de Datos (Data Object - DO):} Es un componente de un Nodo Lógico que agrupa información relacionada. Por ejemplo, el LN \textbf{XCBR} contiene el DO \textbf{Pos} para representar la posición del interruptor.
+		\item \textbf{Atributo de Datos (Data Attribute - DA):} Es la unidad de información más pequeña, donde se almacena el valor. Por ejemplo, el DO \textbf{Pos} tiene el DA \textbf{stVal} (estado del valor) que indica si el interruptor está abierto, cerrado, etc.
+	\end{enumerate}
+	
+	\begin{figure}[H]
+		\centering
+		\caption{Esquema gráfico de la estructura de Nodos Lógicos.}
+		\label{fig:iec61850_ln}
+		\includegraphics[width=0.7\linewidth]{LNs}
+	\end{figure}
+	
+	\subsubsection{Nodos Lógicos (Logical Nodes - LN)}
+	Los Nodos Lógicos son los bloques de construcción fundamentales del modelo. Sus nombres, estandarizados con cuatro caracteres, indican su función:
+	\begin{itemize}
+		\item El primer carácter denota el grupo funcional (ej. \textbf{P} para protección, \textbf{X} para equipos de maniobra, \textbf{M} para medidas).
+		\item Los siguientes caracteres especifican la función.
+	\end{itemize}
+	
+	\begin{table}[H]
+		\centering
+		\caption{Ejemplos de Nodos Lógicos por Grupo Funcional.}
+		\label{tab:nodos_logicos}
+		\small
+		\begin{tabular}{|p{0.2\linewidth}|p{0.2\linewidth}|p{0.5\linewidth}|}
+			\hline
+			\rowcolor{black}
+			\color{white} \textbf{Grupo Funcional} & \color{white} \textbf{Designación} & \color{white} \textbf{Nodos Típicos} \\ \hline
+			Sistema & Lxxx & \textbf{LLN0} (Datos generales del IED) \\ \hline
+			Control Automático & Axxx & \textbf{ATCC} (Cambiador de tomas) \\ \hline
+			Control & Cxxx & \textbf{CSWI} (Control de interruptores) \\ \hline
+			Medidas & Mxxx & \textbf{MMXU} (Medidas de tensión, corriente, frecuencia) \\ \hline
+			Protección & Pxxx & \textbf{PDIS} (Protección de distancia), \textbf{PIOC} (Protección de sobrecorriente instantánea) \\ \hline
+			Supervisión & Sxxx & \textbf{SSWI} (Supervisión de interruptores) \\ \hline
+			Equipos de Maniobra & Xxxx & \textbf{XCBR} (Interruptor), \textbf{XSWI} (Seccionador) \\ \hline
+			Transformadores de Instrumento & Txxx & \textbf{TCTR} (Transformador de corriente), \textbf{TVTR} (Transformador de tensión) \\ \hline
+		\end{tabular}
+	\end{table}
+	
+	\begin{figure}[H]
+		\centering
+		\caption{Ejemplo de Nodos Lógicos aplicados a una subestación GIS.}
+		\label{fig:ln_example}
+		\includegraphics[width=\linewidth]{ln_example}
+	\end{figure}
+	
+	\subsubsection{Clases de Datos Comunes (Common Data Classes - CDC)}
+	Una CDC es una plantilla que define la estructura de un Objeto de Datos (DO), especificando qué Atributos de Datos (DA) contiene. Por ejemplo, la CDC \textbf{SPS} (Single Point Status) define los atributos para una señal de estado binaria (como \texttt{stVal} y \texttt{q}), mientras que la CDC \textbf{MV} (Measured Value) define los atributos para una medida analógica (como \texttt{mag.f}, \texttt{q} y \texttt{t}).
+	
+	\subsection{Lenguaje de Configuración de Subestaciones (SCL)}
+	
+	La configuración de sistemas bajo el estándar IEC 61850 se realiza mediante el \textbf{Lenguaje de Descripción de Configuración de Subestaciones (SCL)}, definido en la parte 6 de la norma. Este lenguaje, basado en XML, es una pieza fundamental en el proceso de ingeniería, ya que permite describir la configuración completa de la subestación, incluyendo:
+	\begin{itemize}
+		\item La estructura de la red eléctrica.
+		\item Las capacidades de cada IED.
+		\item El modelo de datos y la comunicación entre dispositivos.
+	\end{itemize}
+	
+	El uso de archivos SCL estandariza el diseño, la configuración y la documentación del sistema de automatización, facilitando la interoperabilidad y el mantenimiento a lo largo del ciclo de vida del proyecto.
+
+
 \chapter{COMANDOS CISCO}
 
 La siguiente tabla muestra los comandos Cisco más empleados:
