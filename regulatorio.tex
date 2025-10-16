@@ -1920,15 +1920,15 @@ Datos de Usuario (ASDU)&Opcional, contiene la información de la aplicación& \\
 \end{figure}
 
 
-Cuando la trama contiene datos de aplicación (Formato Tipo I), esta incluye una ASDU. La ASDU se compone de una \textit{unidad de identificación} (\textbf{data unit identifier}) y un \textit{objeto de información} (\textbf{objeto de identificacion}),  como muestra la figura \ref{fig:formatoasdu}.\\\\
+Cuando la trama contiene datos de aplicación (Formato Tipo I), esta incluye una \textit{ASDU}. La \textit{ASDU} se compone de una \textit{unidad de identificación} (\textbf{data unit identifier}) y un \textit{objeto de información} (\textbf{objeto de identificacion}),  como muestra la figura \ref{fig:formatoasdu}.\\\\
 
-La estructura simplificada de la ASDU es la siguiente:
+La estructura simplificada de la \textbf{ASDU} es la siguiente:
 
 \begin{enumerate}
 \item Identificador de tipo \textit{type indentification} (1 BYTE): Determina la función de aplicación y la estructura del ASDU.
 \item Cualificador de estructura variable (1 octeto): Generalmente vale 1.
-\item Causa de Transmisión \textbf{cause of trasmission (CDT)} \ref{fig:formatoasdu}) (1 octeto): Indica por qué se transmite el mensaje (e.g., "solicitada", "activación", "confirmación").
-\item Dirección Común del ASDU (2 octetos): Identifica la estación terminal (ET) con la que se intercambia la información
+\item Causa de Transmisión \textbf{cause of trasmission (CDT)} \ref{fig:formatoasdu} (1 byte): Indica por qué se transmite el mensaje (e.g., "solicitada", "activación", "confirmación").
+\item Dirección Común del \textbf{ASDU} (2 byte): Identifica la estación terminal (ET) con la que se intercambia la información
 \item Dirección del Objeto de Información (1 octeto): A menudo vale 0 en ciertas aplicaciones.
 \item Datos de Información: Contiene los datos específicos de la aplicación (comandos, medidas analógicas, etc.)
 \item El estándar IEC 60870-5-104 soporta una amplia variedad de datos en ambas direcciones (dirección monitor, desde la estación controlada hacia la controladora; y dirección control, desde la controladora hacia la controlada)
@@ -1939,11 +1939,11 @@ La estructura simplificada de la ASDU es la siguiente:
 Para garantizar una comunicación confiable, el protocolo utiliza mecanismos de temporización clave:
 
 \begin{itemize}
-\item Tiempos de Supervisión (T1, T2, T3, T0): Estos tiempos controlan el flujo de datos y la actividad del canal
-\item Tiempo T3 (Tiempo de envío de trama de prueba): Si no se envía ningún mensaje durante el tiempo T3, se envía una trama de prueba (TESTFR) para verificar que el canal está activo
-\item Tiempo T2 (Tiempo de confirmación): Define cuánto tiempo debe esperar un receptor antes de enviar una trama Tipo S para confirmar mensajes recibidos
+\item Tiempos de Supervisión (\textit{T1, T2, T3, T0}): Estos tiempos controlan el flujo de datos y la actividad del canal.
+\item \textit{Tiempo T3} (Tiempo de envío de trama de prueba): Si no se envía ningún mensaje durante el tiempo T3, se envía una trama de prueba (TESTFR) para verificar que el canal está activo
+\item\textit{ Tiempo T2} (Tiempo de confirmación): Define cuánto tiempo debe esperar un receptor antes de enviar una trama Tipo S para confirmar mensajes recibidos
 .
-\item Tiempo T1 (Tiempo de espera de confirmación): Si se envía un mensaje Tipo I y no se recibe la confirmación (mediante una trama Tipo I o Tipo S que contenga el N(R) esperado) antes de que expire T1, se puede cerrar el canal o reintentar la comunicación
+\item \textit{Tiempo T1} (Tiempo de espera de confirmación): Si se envía un mensaje Tipo I y no se recibe la confirmación (mediante una trama Tipo I o Tipo S que contenga el N(R) esperado) antes de que expire T1, se puede cerrar el canal o reintentar la comunicación
 .
 \end{itemize}
 
@@ -1951,13 +1951,13 @@ Estos mecanismos de control y temporización permiten que el protocolo 104 mejor
 
 \subsection{Intercambio de Estados Digitales IEC 60870-5-104}
 
-El envío de un valor por una RTU y el SCADA utilizando el protocolo IEC 60870-5-104 se realiza a través de (ASDUs) contenidas en tramas de Formato Tipo I.\\\\
+El envío de un datos entre una RTU y el SCADA utilizando el protocolo IEC 60870-5-104 se realiza a través de (ASDUs) contenidas en tramas de Formato Tipo I.\\\\
 
-La unidad de datos que intercambian el nivel de aplicación de una RTU y una SCADA se denomina ASDU (Aplication Service Data Unit). Hay por lo menos un ASDU definido por cada tipo de punto de información que se puede manejar con el protocolo. La identificación de un punto de información en este protocolo es por una dirección del punto IOA (Information Objet Address) más una dirección de común al ASDU, CAA (Common Address of ASDU).\\\\
+La unidad de datos que intercambian el nivel de aplicación de una RTU y una SCADA se denomina ASDU (\textit{Aplication Service Data Unit}). Hay por lo menos un ASDU definido por cada tipo de \textit{punto de información} que se puede manejar con el protocolo. La identificación de un punto de información en este protocolo es por una dirección del punto \textit{IOA} (\textit{Information Objet Address}) más una dirección de común al \textbf{ASDU}, CAA (Common Address of ASDU).\\\\
 
 
-Una conexión es un enlace TCP con la estación controlada. A cada servidor se le pueden asociar varias conexiones que se pueden mantener conectadas. Así una conexión puede estar desconectada, conectada y activa. Se considera activa cuando (estando conectada) la estación controladora habilita transferencia de datos para esa conexión. Todos los intercambios de ASDU son por la conexión activa. Dado que todas las conexiones se establecen por un mismo puerto TCP (2404) que establece la norma, la única forma de identificación de un servidor es por la dirección IP de la estación controlada. El que un servidor tenga más de una conexión se debe a la existencia de varios dispositivos de red o
-bien redundancia de equipo en el servidor. El BinController i4m, no gestiona directamente el acceso a TCP/IP sino que hace uso del módulo de canales.\\\\
+Una conexión es un \textit{enlace TCP} con la estación controlada. A cada servidor se le pueden asociar varias conexiones que se pueden mantener conectadas. Así una conexión puede estar 
+	\textbf{desconectada}, \textbf{conectada} y \textbf{activa}. Se considera activa cuando (estando conectada) la estación controladora habilita transferencia de datos para esa conexión. Todos los intercambios de ASDU son por la conexión activa. Dado que todas las conexiones se establecen por un mismo puerto TCP (2404) que establece la norma, la única forma de identificación de un servidor es por la dirección IP de la estación controlada. El que un servidor tenga más de una conexión se debe a la existencia de varios dispositivos de red o bien redundancia de equipo en el servidor.\\\\
 
 A continuación, se describe este intercambio en ambas direcciones, basándose en el flujo de información en sistemas que utilizan este protocolo, como se ilustra en un sistema de pasarela de comunicación:
 
@@ -1965,12 +1965,12 @@ A continuación, se describe este intercambio en ambas direcciones, basándose e
 En esta dirección, el equipo (RTU) envía datos a la estación controladora (SCADA). Para un estado digital, la información se reporta como una indicación o evento. El flujo de información se inicia generalmente por un cambio de valor en el dispositivo de campo que debe ser reportado al centro de control:
 
 \begin{enumerate}
-\item Lectura del Estado Digital: En arquitecturas de mediación como la pasarela 104, un componente llamado Control Maestro realiza un proceso periódico de lectura o "escaneo" (polling).
-\item Detección de Evento y Consulta de Metadato: Cuando el valor de una variable (p. ej., un bit) cambia en el dispositivo de campo (RTU), el Control Maestro consulta la Base de Datos de Intercambio (Metadato) para determinar si el valor debe ser actualizado
-\item Si el valor ha cambiado, se considera que se ha generado un evento.
+\item \textit{Lectura del Estado Digital}: En arquitecturas de mediación como la pasarela 104, un componente llamado Control Maestro realiza un proceso periódico de lectura o "escaneo" (polling).
+\item \textit{Detección de Evento} : Cuando el valor de una variable (p. ej., un bit) cambia en el dispositivo de campo (RTU), el Control Maestro consulta la Base de Datos de Intercambio, para determinar si el valor debe ser actualizado
+\item \textit{Si el valor ha cambiado}, se considera que se ha generado un evento.
 \item Mapeo del Metadato: La información actualizada se almacena en el Metadato, que contiene datos como el valor (True/False), la calidad (ej. Óptima) y, opcionalmente, una estampa de tiempo (time tag) asociada al momento exacto en que ocurrió el cambio.
-\item Generación de la Trama IEC 60870-5-104: El componente Control Esclavo (encargado de la comunicación IEC 104) mapea el Metadato a una trama IEC 60870-5-104 específica para el Centro de Control.
-\item Si se trata de una indicación de 1 bit, se utiliza un tipo de dato como Single Indication [1 Bit] with quality (o con estampa de tiempo). Si es una indicación de 2 bits, se utiliza Double Indication [2 bit].
+\item \textit{Generación de la Trama IEC 60870-5-104}: El componente Control Esclavo (encargado de la comunicación IEC 104) mapea el Metadato a una trama IEC 60870-5-104 específica para el Centro de Control.
+\item Si se trata de una indicación de 1 bit, se utiliza un tipo de dato como 	\textit{Single Indication} [1 Bit] with quality (o con estampa de tiempo). Si es una indicación de 2 bits, se utiliza \textit{Double Indication} [2 bit].
 \item La trama contendrá un Identificador de tipo que indica que se transmite un objeto de información single (por ejemplo, 01h).
 \item La Causa de Transmisión (CDT) indica que se ha generado un evento (p. ej., CDT = 03h).
 \item Transmisión y Confirmación: La trama se envía al Centro de Control. El Centro de Control debe reconocer la recepción de la información.
@@ -1979,7 +1979,7 @@ En esta dirección, el equipo (RTU) envía datos a la estación controladora (SC
 \subsubsection{Desde el Centro de Control hacia la RTU/Subestación (Dirección Control)}
 
 
-En esta dirección, la estación controladora (SCADA) envía comandos para cambiar el estado de un dispositivo en la RTU
+En esta dirección, la estación controladora (SCADA) envía comandos para cambiar el estado de un dispositivo en la RTU.
 
 \begin{enumerate}
 \item \textbf{Envío de la Orden de Control (SCADA)}: El SCADA envía una trama IEC 60870-5-104 que contiene un comando para modificar el estado digital (p. ej., abrir o cerrar un interruptor). Para esto, se puede utilizar un \textit{Single Command} o \textit{Double Command}.
@@ -1990,7 +1990,7 @@ En esta dirección, la estación controladora (SCADA) envía comandos para cambi
   
 \item \textbf {Procesamiento y Envío del Comando (Control Maestro)}: El Control Maestro toma el Metadato actualizado y lo procesa, encargándose de encapsular la información en el protocolo de la subestación (p. ej., IEC61850)
 \item \textbf{Ejecución en el Dispositivo (IDE)}: El comando, ahora en el formato de protocolo local , es enviado al dispositivo de campo (RTU) indicado para su ejecución.
-\item Reconocimiento: El dispositivo Modbus retorna un reconocimiento de la escritura de la variable, que es gestionado internamente por el sistema (Control Maestro) y potencialmente notificado de vuelta al SCADA. Las tramas utilizadas para la transferencia de información del usuario, como los comandos y las indicaciones de estado digital, son de Formato Tipo I (Información), que contienen secuencias de transmisión y recepción.
+\item \textbf{Reconocimiento}: El dispositivo RTU retorna un reconocimiento de la escritura de la variable, que es gestionado internamente por el sistema (Control Maestro) y potencialmente notificado de vuelta al SCADA. Las tramas utilizadas para la transferencia de información del usuario, como los comandos y las indicaciones de estado digital, son de Formato Tipo I (Información), que contienen secuencias de transmisión y recepción.
 \end{enumerate}
 
 
@@ -2021,9 +2021,9 @@ Los datos de salida:
 	\item \textbf{CBO}: Bitstring of 32 bits.
 \end{itemize}
 
-\subsection*{Capa de aplicación}
+\subsection{Capa de aplicación}
 
-\subsubsection*{1. Funciones de Aplicación Principales}
+\subsubsection{Funciones de Aplicación Principales}
 \begin{itemize}
 	\item \textbf{Definición:} Solicitudes que pueden enviarse entre el SCADA y la RTU.
 	\item \textbf{Tipos de Funciones:}
@@ -2032,7 +2032,7 @@ Los datos de salida:
 		\item Adquisición de datos por polling (solo en Capa de Enlace, modo 101 desequilibrado)
 		\item Transmisión de datos cíclicos
 		\item Adquisición de eventos (espontáneos)
-		\item \textbf{Interrogación General (IG)}
+		\item Interrogación General (IG)
 		\item Sincronización de reloj
 		\item Envío de comandos
 		\item Carga de parámetros
@@ -2040,14 +2040,12 @@ Los datos de salida:
 	\end{itemize}
 \end{itemize}
 
-\subsubsection*{2. Adquisición de Datos}
+\subsubsection{Adquisición de Datos}
 \begin{itemize}
 	\item \textbf{A. Interrogación General (IG)}
 	\begin{itemize}
 		\item \textbf{Propósito:} Sincronizar la base de datos del SCADA con los valores actuales de la RTU.
-		\begin{itemize}
-			\item \textit{Equivalente a "class 0 poll" en DNP3.}
-		\end{itemize}
+		
 		\item \textbf{Alcance:}
 		\begin{itemize}
 			\item Todos los puntos (Interrogación General).
@@ -2093,7 +2091,7 @@ Los datos de salida:
 \end{figure}
 
 
-\subsubsection*{3. Controles y Comandos}
+\subsubsection{Controles y Comandos}
 \begin{itemize}
 	\item \textbf{Definición:} Solicitudes del SCADA para ejecutar una función (ej. enviar un comando de control de salida).
 	\item \textbf{Secuencia de Control:} Similar a la IG, utiliza COT 6 (Activación), COT 7 (Confirmación) y COT 10 (Terminación).
@@ -2129,21 +2127,6 @@ Los datos de salida:
 	\includegraphics[width=1\linewidth]{comandos_104}
 \end{figure}
 
-
-\subsubsection*{4. Aclaraciones y Diferencias con DNP3}
-\begin{itemize}
-	\item \textbf{"Polling":}
-	\begin{itemize}
-		\item En la especificación IEC 60870-5, el "polling" de la Capa de Aplicación es un término inapropiado.
-		\item La función real de polling se realiza en la \textbf{Capa de Enlace (Link Layer)} para gestionar enlaces multi-punto.
-	\end{itemize}
-	\item \textbf{Clases de Datos (en Capa de Enlace):}
-	\begin{itemize}
-		\item \textbf{Clase 1:} Datos de eventos (alta prioridad).
-		\item \textbf{Clase 2:} Datos cíclicos/background scan (baja prioridad).
-		\item \textbf{¡Importante!} Estas clases \textbf{NO} tienen ninguna relación con las clases 1, 2 y 3 de DNP3.
-	\end{itemize}
-\end{itemize}
 
 \subsection{Ejemplo 104 - Reconectador}
 
