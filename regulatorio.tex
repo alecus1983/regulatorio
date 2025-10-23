@@ -2519,7 +2519,7 @@ La siguiente tabla muestra los comandos Cisco más empleados:
 \textbf{Comando} & \textbf{Descripción/Función} \\
 \hline
 \endfirsthead
-\caption{Cuadro Resumen de Comandos de Configuración del Enrutador Agua\_Blanca (Continuación)}\\
+\caption{Cuadro Resumen de Comandos de Configuración del enrutador Agua\_Blanca (Continuación)}\\
 \hline
 \textbf{Comando} & \textbf{Descripción/Función} \\
 \hline
@@ -2749,62 +2749,62 @@ La siguiente tabla muestra los comandos Cisco más empleados:
   \subsection{OSPF}
   
   \begin{itemize}
-  	\item \textbf{Algoritmo:} OSPF utiliza el algoritmo $\text{SPF}$ ($\text{Shortest Path First}$) para calcular las rutas óptimas [4].
-  	\item \textbf{Multiárea y Jerarquía:} Se implementa con un \textbf{diseño jerárquico} de dos capas [4, 5]. Esta estructura resuelve problemas asociados con áreas únicas grandes, como tablas de enrutamiento y bases de datos de estado de enlace ($\text{LSDB}$) excesivamente grandes, y la frecuencia de los cálculos del algoritmo $\text{SPF}$ [3, 4].
-  	\item \textbf{Métrica:} La métrica de OSPF es un \textbf{valor de costo} que se basa en el ancho de banda del enlace. El costo de $\text{OSPF}$ para $\text{Ethernet}$ es 10, calculado como $10^8/10^7$ [6]. El costo se puede modificar manualmente en la interfaz (ejemplo: \texttt{ip ospf cost 1562}).
+  	\item \textbf{Algoritmo:} OSPF utiliza el algoritmo $\text{SPF}$ ($\text{Shortest Path First}$) para calcular las rutas óptimas.
+  	\item \textbf{Multiárea y Jerarquía:} Se implementa con un \textbf{diseño jerárquico de dos capas}. Esta estructura resuelve problemas asociados con áreas únicas grandes, como tablas de enrutamiento y bases de datos de estado de enlace ($\text{LSDB}$) excesivamente grandes, y la frecuencia de los cálculos del algoritmo $\text{SPF}$.
+  	\item \textbf{Métrica:} La métrica de OSPF es un \textbf{valor de costo} que se basa en el ancho de banda del enlace. El costo de $\text{OSPF}$ para $\text{Ethernet}$ es 10, calculado como $10^8/10^7$. El costo se puede modificar manualmente en la interfaz (ejemplo: \texttt{ip ospf cost 1562}).
   \end{itemize}
   
   \subsubsection*{Arquitectura Multiárea}
   
-  La estructura de $\text{OSPF}$ multiárea se basa en dos tipos principales de áreas [5]:
+  La estructura de $\text{OSPF}$ multiárea se basa en dos tipos principales de áreas:
   \begin{itemize}
-  	\item \textbf{Área Backbone (Área 0):} Es el área principal o de tránsito, diseñada para el movimiento eficiente de paquetes $\text{IP}$ [5]. \textbf{Todas las demás áreas deben conectarse directamente al Área 0} [5].
-  	\item \textbf{Área Regular (Nonbackbone):} Se conecta a usuarios y recursos [5].
+  	\item \textbf{Área Backbone (Área 0):} Es el área principal o de tránsito, diseñada para el movimiento eficiente de paquetes $\text{IP}$ [5]. \textbf{Todas las demás áreas deben conectarse directamente al Área 0}.
+  	\item \textbf{Área Regular (Nonbackbone):} Se conecta a usuarios y recursos.
   \end{itemize}
   
-  Los \textbf{tipos de routers} en una implementación $\text{OSPF}$ multiárea incluyen [3]:
+  Los \textbf{tipos de routers} en una implementación $\text{OSPF}$ multiárea incluyen:
   \begin{itemize}
-  	\item \textbf{Router Interno:} Opera completamente dentro de un área única [3].
-  	\item \textbf{Router Backbone:} Opera dentro del Área 0 [3].
-  	\item \textbf{ABR ($\text{Area Border Router}$):} Conecta una o más áreas al $\text{backbone}$ (Área 0) [3]. Un router se convierte en ABR cuando tiene dos de sus redes en diferentes áreas [3].
-  	\item \textbf{ASBR ($\text{Autonomous System Boundary Router}$):} Se conecta a una red \textbf{fuera del Sistema Autónomo} ($\text{SA}$) $\text{OSPF}$ [3, 8].
+  	\item \textbf{Router Interno:} Opera completamente dentro de un área única.
+  	\item \textbf{Router Backbone:} Opera dentro del Área 0.
+  	\item \textbf{ABR ($\text{Area Border Router}$):} Conecta una o más áreas al $\text{backbone}$ (Área 0). Un router se convierte en ABR cuando tiene dos de sus redes en diferentes áreas.
+  	\item \textbf{ASBR ($\text{Autonomous System Boundary Router}$):} Se conecta a una red \textbf{fuera del Sistema Autónomo} ($\text{SA}$) $\text{OSPF}$.
   \end{itemize}
   
   \subsubsection*{Anuncios de Estado de Enlace (LSA)}
   
-  Los $\text{LSA}$ son los elementos básicos de $\text{OSPF}$ [3]. Los tipos cubiertos por las fuentes (1 a 5) son [8]:
+  Los $\text{LSA}$ son los elementos básicos de $\text{OSPF}$  son:
   \begin{itemize}
-  	\item \textbf{Tipo 1 ($\text{Router LSA}$):} Generado por todos los routers, describe detalles de los enlaces y se inunda \textbf{dentro del área}. No se propaga más allá de un $\text{ABR}$ [8].
-  	\item \textbf{Tipo 2 ($\text{Network LSA}$):} Generado solo por el $\text{DR}$ ($\text{Designated Router}$), identifica routers y direcciones de red de los enlaces de multiacceso. Se inunda dentro de la red de multiacceso y no va más allá de un $\text{ABR}$ [8].
-  	\item \textbf{Tipo 3 y 4 ($\text{Summary LSA}$):} Generados por los $\text{ABR}$. El Tipo 3 describe direcciones de red aprendidas por $\text{LSA}$ Tipo 1. Los $\text{LSA}$ Tipo 3 inundan otras áreas y son regenerados por otros $\text{ABR}$ [8]. El Tipo 4 anuncia una ruta a un $\text{ASBR}$ [8].
-  	\item \textbf{Tipo 5 ($\text{AS External LSA}$):} Rutas externas a redes fuera del $\text{SA}$ $\text{OSPF}$. Son originadas por el $\text{ASBR}$ y se inundan a \textbf{todo el sistema autónomo} [8].
+  	\item \textbf{Tipo 1 ($\text{Router LSA}$):} Generado por todos los routers, describe detalles de los enlaces y se inunda \textbf{dentro del área}. No se propaga más allá de un $\text{ABR}$.
+  	\item \textbf{Tipo 2 ($\text{Network LSA}$):} Generado solo por el $\text{DR}$ ($\text{Designated Router}$), identifica routers y direcciones de red de los enlaces de multiacceso. Se inunda dentro de la red de multiacceso y no va más allá de un $\text{ABR}$.
+  	\item \textbf{Tipo 3 y 4 ($\text{Summary LSA}$):} Generados por los $\text{ABR}$. El Tipo 3 describe direcciones de red aprendidas por $\text{LSA}$ Tipo 1. Los $\text{LSA}$ Tipo 3 inundan otras áreas y son regenerados por otros $\text{ABR}$. El Tipo 4 anuncia una ruta a un $\text{ASBR}$.
+  	\item \textbf{Tipo 5 ($\text{AS External LSA}$):} Rutas externas a redes fuera del $\text{SA}$ $\text{OSPF}$. Son originadas por el $\text{ASBR}$ y se inundan a \textbf{todo el sistema autónomo}.
   \end{itemize}
   
   \subsubsection*{Cálculo de Rutas y Tabla de Enrutamiento}
   
-  El cálculo de rutas se realiza en tres pasos secuenciales [9]:
+  El cálculo de rutas se realiza en tres pasos secuenciales :
   \begin{enumerate}
-  	\item Cálculo de las mejores rutas a destinos dentro del área ($\text{intraarea}$), basado en $\text{LSA}$ Tipo 1 y 2 [9, 10].
-  	\item Cálculo de las mejores rutas de acceso a otras áreas ($\text{Inter área}$), basadas en $\text{LSA}$ Tipo 3 y 4 [9, 10].
-  	\item Cálculo de las mejores rutas al destino del sistema autónomo externo, basadas en $\text{LSA}$ Tipo 5 [9].
+  	\item Cálculo de las mejores rutas a destinos dentro del área ($\text{intraarea}$), basado en $\text{LSA}$ Tipo 1 y 2.
+  	\item Cálculo de las mejores rutas de acceso a otras áreas ($\text{Inter área}$), basadas en $\text{LSA}$ Tipo 3 y 4.
+  	\item Cálculo de las mejores rutas al destino del sistema autónomo externo, basadas en $\text{LSA}$ Tipo 5.
   \end{enumerate}
   
-  Las rutas $\text{OSPF}$ aparecen en la tabla de enrutamiento $\text{IPv4}$ de la siguiente manera [8, 10]:
+  Las rutas $\text{OSPF}$ aparecen en la tabla de enrutamiento $\text{IPv4}$ de la siguiente manera:
   \begin{itemize}
-  	\item \textbf{O} ($\text{Intraárea}$): Rutas dentro del área [10].
-  	\item \textbf{O IA} ($\text{Interárea}$): Rutas de acceso a otras áreas [10].
-  	\item \textbf{O E1} u \textbf{O E2}: Rutas externas [8, 10].
+  	\item \textbf{O} ($\text{Intraárea}$): Rutas dentro del área.
+  	\item \textbf{O IA} ($\text{Interárea}$): Rutas de acceso a otras áreas.
+  	\item \textbf{O E1} u \textbf{O E2}: Rutas externas.
   \end{itemize}
   
   \subsubsection*{Configuración y Funcionalidades Avanzadas}
   
   \begin{itemize}
-  	\item \textbf{Configuración Básica:} La configuración se realiza bajo el proceso $\text{OSPF}$ con los comandos $\texttt{router ospf [process ID]}$ y $\texttt{network [network-address] [wildcard-mask] area [area-id]}$ [7].
-  	\item \textbf{OSPFv3 (IPv6):} Para $\text{IPv6}$, el comando $\texttt{ip}$ se sustituye por $\texttt{ipv6}$. La habilitación se realiza por interfaz, en lugar de utilizar la declaración $\texttt{network}$ [11].
-  	\item \textbf{Autenticación MD5:} $\text{OSPF}$ puede hacerse seguro habilitando la \textbf{autenticación MD5}, ya sea de forma global en todas las interfaces o por interfaz [12]. Si los vecinos no están configurados con $\text{MD5}$, sus adyacencias cambian al estado $\text{Down}$ (inactivo) [12, 13].
-  	\item \textbf{Redistribución:} Al redistribuir otros protocolos en $\text{OSPF}$, se debe usar la palabra clave $\texttt{subnets}$ si hay redes principales que están $\text{subnetted}$ [6]. Si no se especifica una métrica, $\text{OSPF}$ fija un valor por defecto de \textbf{20} al redistribuir rutas de todos los protocolos, excepto $\text{BGP}$, que tiene una métrica de 1 [6].
-  	\item \textbf{Resumen de Rutas ($\text{Summarization}$):} Por defecto, $\text{OSPF}$ \textbf{no realiza la autosumarización} [8]. La sumarización se configura manualmente en los $\text{ABR}$ para rutas Interárea mediante el comando $\texttt{area [area-id] range [dirección] [máscara]}$ [14]. La sumarización también ocurre en los $\text{ASBR}$ para rutas externas [14].
-  	\item \textbf{Verificación:} Los comandos utilizados para la verificación y solución de problemas incluyen $\texttt{show ip protocols}$, $\texttt{show ip route ospf}$, $\texttt{show ip ospf neighbor}$, $\texttt{show ip ospf interface}$ y $\texttt{show ip ospf database}$ [7, 11, 15].
+  	\item \textbf{Configuración Básica:} La configuración se realiza bajo el proceso $\text{OSPF}$ con los comandos $\texttt{router ospf [process ID]}$ y $\texttt{network [network-address] [wildcard-mask] area [area-id]}$.
+  	\item \textbf{OSPFv3 (IPv6):} Para $\text{IPv6}$, el comando $\texttt{ip}$ se sustituye por $\texttt{ipv6}$. La habilitación se realiza por interfaz, en lugar de utilizar la declaración $\texttt{network}$.
+  	\item \textbf{Autenticación MD5:} $\text{OSPF}$ puede hacerse seguro habilitando la \textbf{autenticación MD5}, ya sea de forma global en todas las interfaces o por interfaz. Si los vecinos no están configurados con $\text{MD5}$, sus adyacencias cambian al estado $\text{Down}$ (inactivo).
+  	\item \textbf{Redistribución:} Al redistribuir otros protocolos en $\text{OSPF}$, se debe usar la palabra clave $\texttt{subnets}$ si hay redes principales que están $\text{subnetted}$. Si no se especifica una métrica, $\text{OSPF}$ fija un valor por defecto de \textbf{20} al redistribuir rutas de todos los protocolos, excepto $\text{BGP}$, que tiene una métrica de 1.
+  	\item \textbf{Resumen de Rutas ($\text{Summarization}$):} Por defecto, $\text{OSPF}$ \textbf{no realiza la autosumarización}. La sumarización se configura manualmente en los $\text{ABR}$ para rutas Interárea mediante el comando $\texttt{area [area-id] range [dirección] [máscara]}$. La sumarización también ocurre en los $\text{ASBR}$ para rutas externas.
+  	\item \textbf{Verificación:} Los comandos utilizados para la verificación y solución de problemas incluyen $\texttt{show ip protocols}$, $\texttt{show ip route ospf}$, $\texttt{show ip ospf neighbor}$, $\texttt{show ip ospf interface}$ y $\texttt{show ip ospf database}$.
   \end{itemize}
   
   
@@ -2812,49 +2812,49 @@ La siguiente tabla muestra los comandos Cisco más empleados:
 
 \section{Fronteras Comerciales}
 
-El debate sobre la \textbf{Clasificación (Art. 2°)} de las \textbf{Fronteras Comerciales} se desarrolla completamente dentro del marco regulatorio del servicio público de energía eléctrica en Colombia [1], establecido principalmente por la \textbf{Comisión de Regulación de Energía y Gas (CREG)} [1, 2]. La clasificación detallada se encuentra en la \textbf{Resolución 157 de 2011 CREG} [3-5], la cual modificó las normas sobre el registro de fronteras comerciales y contratos de energía de largo plazo [4, 6].
+El debate sobre la \textbf{Clasificación (Art. 2°)} de las \textbf{Fronteras Comerciales} se desarrolla completamente dentro del marco regulatorio del servicio público de energía eléctrica en Colombia, establecido principalmente por la \textbf{Comisión de Regulación de Energía y Gas (CREG)}. La clasificación detallada se encuentra en la \textbf{Resolución 157 de 2011 CREG}, la cual modificó las normas sobre el registro de fronteras comerciales y contratos de energía de largo plazo.
 
 \subsection{Contexto General: La Frontera Comercial}
 
-Una Frontera Comercial es el \textbf{punto de medición} asociado al punto de conexión entre agentes o entre agentes y usuarios conectados a las redes del Sistema de Transmisión Nacional (STN), los Sistemas de Transmisión Regional (STR), o los Sistemas de Distribución Local (SDL) [7]. También puede ser el punto de conexión entre diferentes niveles de tensión de un mismo operador de red [7]. Cada agente en el sistema puede operar con una o más Fronteras Comerciales [7].
+Una Frontera Comercial es el \textbf{punto de medición} asociado al punto de conexión entre agentes o entre agentes y usuarios conectados a las redes del Sistema de Transmisión Nacional (STN), los Sistemas de Transmisión Regional (STR), o los Sistemas de Distribución Local (SDL). También puede ser el punto de conexión entre diferentes niveles de tensión de un mismo operador de red. Cada agente en el sistema puede operar con una o más Fronteras Comerciales.\\\\
 
-La CREG, en ejercicio de sus funciones legales (conferidas por las Leyes 142 y 143 de 1994) [1], estableció estas reglas para regular el funcionamiento del mercado de energía mayorista (MEM) [1], buscando promover que las transacciones y actividades comerciales entre los agentes se realicen de manera más armónica y eficiente [8].
+La CREG, en ejercicio de sus funciones legales (conferidas por las Leyes 142 y 143 de 1994), estableció estas reglas para regular el funcionamiento del mercado de energía mayorista (MEM), buscando promover que las transacciones y actividades comerciales entre los agentes se realicen de manera más armónica y eficiente\\\\.
 
-El registro y la gestión de estas fronteras son funciones asignadas al \textbf{Administrador del Sistema de Intercambios Comerciales (ASIC)} [9]. El ASIC, una dependencia del Centro Nacional de Despacho (CND) [9, 10], es el encargado del registro de fronteras comerciales y de los contratos de energía a largo plazo [9], así como de la liquidación, facturación, cobro y pago de las transacciones resultantes por el intercambio de energía en la bolsa [9]. La publicación de las solicitudes en proceso de registro de fronteras comerciales se realiza diariamente en cumplimiento de la Resolución CREG 157 de 2011 [11].
+El registro y la gestión de estas fronteras son funciones asignadas al \textbf{Administrador del Sistema de Intercambios Comerciales (ASIC)}. El ASIC, una dependencia del Centro Nacional de Despacho (CND), es el encargado del registro de fronteras comerciales y de los contratos de energía a largo plazo, así como de la liquidación, facturación, cobro y pago de las transacciones resultantes por el intercambio de energía en la bolsa [9]. La publicación de las solicitudes en proceso de registro de fronteras comerciales se realiza diariamente en cumplimiento de la Resolución \textbf{CREG 157 de 2011}.
 
 \subsection{Clasificación de las Fronteras Comerciales (Art. 2°)}
 
-El \textbf{Artículo 2°} de la Resolución 157 de 2011 clasifica las Fronteras Comerciales en dos categorías principales [12]:
+El \textbf{Artículo 2°} de la Resolución 157 de 2011 clasifica las Fronteras Comerciales en dos categorías principales:
 
 \subsubsection{Frontera Comercial con reporte al ASIC}
 
-Esta clasificación se refiere a las fronteras a partir de las cuales se determinan las \textbf{transacciones comerciales} entre los diversos agentes que actúan en el Mercado Mayorista de Energía (MEM), y se define la \textbf{responsabilidad por los consumos} [12]. Las fronteras con reporte al ASIC se subclasifican en [12]:
+Esta clasificación se refiere a las fronteras a partir de las cuales se determinan las \textbf{transacciones comerciales} entre los diversos agentes que actúan en el Mercado Mayorista de Energía (MEM), y se define la \textbf{responsabilidad por los consumos}. Las fronteras con reporte al ASIC se subclasifican en:
 
 \begin{enumerate}
-	\item \textbf{Frontera de generación:} Corresponde al punto de medición de una unidad o planta de generación donde la energía neta es entregada por el generador al STN, STR o SDL [13].
-	\item \textbf{Frontera de comercialización:} Mide las transferencias de energía que permiten determinar la demanda de energía de un comercializador [13]. Se dividen en:
+	\item \textbf{Frontera de generación:} Corresponde al punto de medición de una unidad o planta de generación donde la energía neta es entregada por el generador al STN, STR o SDL.
+	\item \textbf{Frontera de comercialización:} Mide las transferencias de energía que permiten determinar la demanda de energía de un comercializador. Se dividen en:
 	\begin{itemize}
-		\item \textit{Frontera de comercialización entre agentes:} Determina la transferencia de energía exclusivamente entre el STN y un comercializador o entre comercializadores. La energía registrada puede emplearse en la liquidación de cargos por uso [14].
-		\item \textit{Frontera de comercialización para agentes y usuarios:} Registra la demanda de un comercializador y, además, registra consumos auxiliares, o la demanda de un usuario final o un grupo de usuarios finales atendidos por el comercializador [14].
+		\item \textit{Frontera de comercialización entre agentes:} Determina la transferencia de energía exclusivamente entre el STN y un comercializador o entre comercializadores. La energía registrada puede emplearse en la liquidación de cargos por uso.
+		\item \textit{Frontera de comercialización para agentes y usuarios:} Registra la demanda de un comercializador y, además, registra consumos auxiliares, o la demanda de un usuario final o un grupo de usuarios finales atendidos por el comercializador.
 	\end{itemize}
-	\item \textbf{Frontera de enlace internacional:} Se utiliza para determinar los intercambios de energía con otros países bajo el esquema de Transacciones Internacionales de Electricidad de corto plazo (TIE) [15].
-	\item \textbf{Frontera de interconexión internacional:} Se utiliza para determinar intercambios de energía con otros países cuando no se realizan en el esquema TIE [15]. Para el enlace Colombia-Panamá, esta frontera puede estar representada por varios agentes [15].
-	\item \textbf{Frontera de distribución:} Permite establecer la energía transferida entre diferentes niveles de tensión de un mismo operador de red [16].
-	\item \textbf{Frontera de demanda desconectable voluntariamente:} Corresponde a la frontera definida en la Resolución CREG 063 de 2010 (o la norma que la modifique) [16, 17].
+	\item \textbf{Frontera de enlace internacional:} Se utiliza para determinar los intercambios de energía con otros países bajo el esquema de Transacciones Internacionales de Electricidad de corto plazo (TIE).
+	\item \textbf{Frontera de interconexión internacional:} Se utiliza para determinar intercambios de energía con otros países cuando no se realizan en el esquema TIE. Para el enlace Colombia-Panamá, esta frontera puede estar representada por varios agentes.
+	\item \textbf{Frontera de distribución:} Permite establecer la energía transferida entre diferentes niveles de tensión de un mismo operador de red.
+	\item \textbf{Frontera de demanda desconectable voluntariamente:} Corresponde a la frontera definida en la Resolución CREG 063 de 2010 (o la norma que la modifique).
 \end{enumerate}
 
 \subsubsection{Frontera Comercial sin reporte al ASIC}
 
-Esta clasificación corresponde al punto de medición del \textbf{consumo de un usuario final} [16]. Crucialmente, \textbf{no se utiliza para determinar las transacciones comerciales} entre los diferentes agentes que actúan en el MEM, por lo cual la información de este consumo no requiere ser reportada al ASIC [16].
+Esta clasificación corresponde al punto de medición del \textbf{consumo de un usuario final} . Crucialmente, \textbf{no se utiliza para determinar las transacciones comerciales} entre los diferentes agentes que actúan en el MEM, por lo cual la información de este consumo no requiere ser reportada al ASIC.
 
 \subsection{Implicaciones de la Clasificación en las Fronteras Comerciales}
 
 La distinción establecida en el Artículo 2° es fundamental para la operación y el comercio en el MEM, ya que afecta directamente la responsabilidad y los procedimientos de control:
 
 \begin{itemize}
-	\item \textbf{Requisitos de Registro y Verificación:} La clasificación impone requisitos de registro diferenciados [18]. Para las fronteras de comercialización o generación, la solicitud debe presentarse ante el ASIC y cumplir con requisitos estrictos, incluyendo no tener obligaciones vencidas con el ASIC o el LAC [19], diligenciar formatos detallados sobre la ubicación, agentes y características técnicas del Sistema de Medida [20], y demostrar la capacidad financiera para las transacciones en el MEM [21].
-	\item \textbf{Liquidación y Facturación:} Solo las Fronteras Comerciales \textbf{con reporte al ASIC} son utilizadas por esta dependencia (el ASIC) para la liquidación, facturación, cobro y pago de las transacciones en la bolsa de energía [9, 22]. Específicamente, el ASIC publica la liquidación de las transacciones diarias y la información de medidores de generación y enlaces internacionales [22], y en la segunda liquidación, publica la información desagregada por Frontera de Comercialización [23].
-	\item \textbf{Modificación y Cancelación:} El registro de una Frontera Comercial puede ser modificado por cambios en las características técnicas del Sistema de Medida o en el tipo de usuario (regulado o no regulado) [24]. La cancelación de fronteras (Art. 11) tiene graves implicaciones [25]. Por ejemplo, si se cancela el registro de una frontera de comercialización para agentes y usuarios por causales específicas (como el no cumplimiento de requisitos o la falla/hurto del Sistema de Medida) [26], \textbf{los usuarios pasarán a ser atendidos por el Prestador de Última Instancia} [27], o por el comercializador integrado con el operador de red mientras se implementa la regulación del Prestador de Última Instancia [27]. La cancelación, modificación y registro de nuevas fronteras se regula a través del Capítulo I de la Resolución 157 de 2011, que incluye los Artículos 2 al 13 [28].
+	\item \textbf{Requisitos de Registro y Verificación:} La clasificación impone requisitos de registro diferenciados [18]. Para las fronteras de comercialización o generación, la solicitud debe presentarse ante el ASIC y cumplir con requisitos estrictos, incluyendo no tener obligaciones vencidas con el ASIC o el LAC, diligenciar formatos detallados sobre la ubicación, agentes y características técnicas del Sistema de Medida [20], y demostrar la capacidad financiera para las transacciones en el MEM.
+	\item \textbf{Liquidación y Facturación:} Solo las Fronteras Comerciales \textbf{con reporte al ASIC} son utilizadas por esta dependencia (el ASIC) para la liquidación, facturación, cobro y pago de las transacciones en la bolsa de energía. Específicamente, el ASIC publica la liquidación de las transacciones diarias y la información de medidores de generación y enlaces internacionales, y en la segunda liquidación, publica la información desagregada por Frontera de Comercialización.
+	\item \textbf{Modificación y Cancelación:} El registro de una Frontera Comercial puede ser modificado por cambios en las características técnicas del Sistema de Medida o en el tipo de usuario (regulado o no regulado) [24]. La cancelación de fronteras (Art. 11) tiene graves implicaciones. Por ejemplo, si se cancela el registro de una frontera de comercialización para agentes y usuarios por causales específicas (como el no cumplimiento de requisitos o la falla/hurto del Sistema de Medida), \textbf{los usuarios pasarán a ser atendidos por el Prestador de Última Instancia}, o por el comercializador integrado con el operador de red mientras se implementa la regulación del Prestador de Última Instancias. La cancelación, modificación y registro de nuevas fronteras se regula a través del Capítulo I de la Resolución 157 de 2011, que incluye los Artículos 2 al 13.
 \end{itemize}
   
   
@@ -3358,6 +3358,7 @@ La Mejorabilidad en su extensión más amplia incluye las siguientes variables:
 %% Local Variables:
 %%% mode: latex
 %%% TeX-master: t
+%% TeX-master: t
 %% TeX-master: t
 %% TeX-master: t
 %% TeX-master: t
