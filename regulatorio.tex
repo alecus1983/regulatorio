@@ -814,7 +814,9 @@ La Ley 143 de 1994, en sus Artículos 34 y 38, establece las responsabilidades d
 \end{tcolorbox}
 \end{center}
 
-  La \textbf{Resolución CREG 080 de 1999} define las responsabilidades del CND y los agentes del SIN en la realización de estudios sobre fallas y emergencias. La \textbf{Resolución CREG 083 de 1999} detalla la información obligatoria que los agentes deben adquirir y suministrar al CND, incluyendo registros cronológicos de eventos con alta resolución temporal y libre acceso a esta información. Las Resoluciones CREG 093 y 094 de 2012 requieren informes detallados para eventos no programados que superen un cierto umbral de \ac{PENS}.\\\\
+  La \textbf{Resolución CREG 080 de 1999} define las responsabilidades del CND y los agentes del SIN en la realización de estudios sobre fallas y emergencias. La \textbf{Resolución CREG 083 de 1999} detalla la información obligatoria que los agentes deben adquirir y suministrar al CND, incluyendo registros cronológicos de eventos con alta resolución temporal y libre acceso a esta información.\\\\ 
+  
+  Las Resoluciones \textbf{CREG 093} ( para el \ac{STN}) y \textbf{094 de 2012} ( para el STR) requieren informes detallados para eventos no programados que superen un cierto umbral de \ac{PENS}.\\\\
 
 \begin{figure}[H]
    \centering
@@ -823,6 +825,64 @@ La Ley 143 de 1994, en sus Artículos 34 y 38, establece las responsabilidades d
    \label{fig:ens}
    \includegraphics[width=\linewidth]{calculo_ens.png}
  \end{figure}
+
+ 
+\subsection*{Ejemplo Numérico Hipotético del Pronóstico Nuevo de Demanda ($PRN_{j,h}$)}
+
+El Pronóstico Nuevo de Demanda ($PRN_{j,h}$) se utiliza en el procedimiento de cálculo de la Energía No Suministrada (ENS) definido en el Capítulo III de la Resolución 94 de 2012 CREG [1, 2].
+
+La fórmula utilizada es:
+\begin{equation}
+	PRN_{j,h} = PR_{j,h} \cdot \left( \frac{DE_{j,a}}{PR_{j,a}} \right)
+\end{equation}
+Donde:
+\begin{itemize}
+	\item $PRN_{j,h}$: Pronóstico Nuevo de Demanda para el periodo horario $h$ [3].
+	\item $PR_{j,h}$: Pronóstico de demanda utilizado en el Despacho Económico para el periodo horario $h$ [3].
+	\item $DE_{j,a}$: Demanda Entregada en el periodo horario $a$ [3].
+	\item $PR_{j,a}$: Pronóstico de demanda utilizado en el Despacho Económico para el periodo horario $a$ [3].
+	\item $h$: Periodo horario en el que se presenta el Evento (o el siguiente, si subsiste) [3].
+	\item $a$: Último periodo horario completo, anterior al Evento, sin efecto en la demanda atendida causado por otros Eventos en el STR [3].
+\end{itemize}
+
+\subsubsection*{Valores Hipotéticos para el Mercado $j$}
+Se asumen los siguientes valores (los cuales no provienen de las fuentes regulatorias):
+\begin{center}
+	\begin{tabular}{|l|l|c|}
+		\hline
+		\textbf{Variable} & \textbf{Definición} & \textbf{Valor Hipotético (MW)} \\
+		\hline
+		$PR_{j,h}$ & Pronóstico de Demanda (Hora $h$) & $650$ \\
+		$PR_{j,a}$ & Pronóstico de Demanda (Hora $a$) & $600$ \\
+		$DE_{j,a}$ & Demanda Entregada (Hora $a$) & $612$ \\
+		\hline
+	\end{tabular}
+\end{center}
+
+\subsection*{Cálculo}
+
+\begin{enumerate}
+	\item \textbf{Cálculo del Factor de Ajuste ($\frac{DE_{j,a}}{PR_{j,a}}$)}
+	Este factor ajusta el pronóstico horario $h$ basándose en la precisión del pronóstico en el periodo $a$.
+	\begin{equation*}
+		\text{Factor de Ajuste} = \frac{612 \, \text{MW}}{600 \, \text{MW}} = 1.02
+	\end{equation*}
+	
+	\item \textbf{Cálculo del Pronóstico Nuevo de Demanda ($PRN_{j,h}$)}
+	Se aplica el factor de ajuste al Pronóstico de Demanda original para el periodo $h$ ($PR_{j,h}$):
+	\begin{align*}
+		PRN_{j,h} &= PR_{j,h} \cdot (\text{Factor de Ajuste}) \\
+		PRN_{j,h} &= 650 \, \text{MW} \cdot 1.02 \\
+		PRN_{j,h} &= \mathbf{663 \, \text{MW}}
+	\end{align*}
+\end{enumerate}
+
+\vspace{0.5cm}
+
+El valor de $\mathbf{PRN_{j,h}} = 663 \, \mathbf{MW}$ es el \textit{Pronóstico Nuevo de Demanda} que se utilizará para calcular la Energía No Suministrada ($ENS_{MHj,h}$) para el periodo horario $h$.\\\\
+
+
+
 
 El Acuerdo 1617 introduce actualizaciones basadas en las Resoluciones \textbf{CREG 015 de 2018}, \textbf{036 de 2019} y \textbf{101023 de 2022}, incluyendo la responsabilidad de reporte de información por parte de los Operadores de Red (OR), los plazos para reportar el valor de la Energía No Suministrada (ENS) al LAC, y la inclusión de eventos no programados en los Sistemas de Almacenamiento de Energía Eléctrica con Baterías (SAEB). Los Anexos 1 y 2 detallan el procedimiento y los formatos específicos para la elaboración de estos informes.
 
@@ -1030,6 +1090,98 @@ Reuniones para redefinir plazos, acuerdo con el CND para plazos adicionales de s
     $PRN_{j,h}$ & Es el pronóstico nuevo de la demanda\\
     $DE_{j,h}$ & Es la demanda de electricidad \\
   \end{tabular}\\
+
+
+    
+  \section*{Metodología y Fórmulas}
+  
+  El CND estima la ENS ($ENSMH_{j,h}$) para cada periodo horario ($h$) y mercado afectado ($j$) como la diferencia entre el Pronóstico Nuevo de Demanda ($PRN_{j,h}$) y la Demanda Entregada ($DE_{j,h}$) [4].
+  
+  \begin{enumerate}
+  	\item \textbf{Energía No Suministrada Horaria ($ENSMH_{j,h}$)}
+  	\begin{equation}
+  		ENSMH_{j,h} = PRN_{j,h} - DE_{j,h} \quad \text{[4]}
+  	\end{equation}
+  	
+  	\item \textbf{Porcentaje de Energía No Suministrada ($PENS_{j,h}$)}
+  	\begin{equation}
+  		PENS_{j,h} = \frac{ENSMH_{j,h}}{PRN_{j,h}} \quad \text{[4]}
+  	\end{equation}
+  	
+  	\item \textbf{Condición del Umbral}
+  	Si $\mathbf{PENS_{j,h} \le 2\%}$, entonces $\mathbf{ENSMH_{j,h} = 0}$ [4].
+  	
+  	\item \textbf{ENS del Mercado ($ENSM_j$)}
+  	Si $PENS_{j,h}$ supera el 2\%, la $ENSM_j$ es el valor máximo entre la $ENSMH_{j,h}$ del periodo del Evento y la del periodo siguiente (si subsiste el Evento) [4].
+  	
+  	\item \textbf{ENS Causal Total ($ENS_q$)}
+  	Es la sumatoria de las energías no suministradas en cada mercado de comercialización afectado ($NM$) [5]:
+  	\begin{equation}
+  		ENS_q = \sum_{j=1}^{NM} ENSM_j \quad \text{[5]}
+  	\end{equation}
+  \end{enumerate}
+  
+  \section*{Valores Hipotéticos para el Ejemplo}
+  
+  Asumamos un Evento no programado en el Mercado de Comercialización $j$ durante el periodo horario $h$:
+  
+  \begin{center}
+  	\begin{tabular}{|l|l|c|}
+  		\hline
+  		\textbf{Variable} & \textbf{Definición} & \textbf{Valor Hipotético (MW)} \\
+  		\hline
+  		$PRN_{j,h}$ & Pronóstico Nuevo de Demanda (Num. 3.3) & $663$ \\
+  		$DE_{j,h}$ & Demanda Entregada en el periodo $h$ & $500$ \\
+  		$NM$ & Número de Mercados Afectados & $1$ \\
+  		\hline
+  	\end{tabular}
+  \end{center}
+  
+  \section*{Cálculo Detallado}
+  
+  \subsection*{Paso 1: Cálculo de la $ENSMH_{j,h}$ (Energía No Suministrada Horaria)}
+  
+  \begin{align*}
+  	ENSMH_{j,h} &= PRN_{j,h} - DE_{j,h} \quad \text{[4]} \\
+  	ENSMH_{j,h} &= 663 \, \text{MW} - 500 \, \text{MW} \\
+  	ENSMH_{j,h} &= \mathbf{163 \, \text{MW}}
+  \end{align*}
+  
+  \subsection*{Paso 2: Cálculo del $PENS_{j,h}$ (Porcentaje de Energía No Suministrada)}
+  
+  \begin{align*}
+  	PENS_{j,h} &= \frac{ENSMH_{j,h}}{PRN_{j,h}} \quad \text{[4]} \\
+  	PENS_{j,h} &= \frac{163 \, \text{MW}}{663 \, \text{MW}} \\
+  	PENS_{j,h} &\approx 0.2458 \quad (\text{o } 24.58\%)
+  \end{align*}
+  
+  \subsection*{Paso 3: Determinación de la ENS del Mercado ($ENSM_j$)}
+  
+  Se verifica la condición del umbral [4]:
+  \begin{itemize}
+  	\item $PENS_{j,h} \approx 24.58\%$.
+  	\item Como $24.58\% > 2\%$, el $ENSMH_{j,h}$ es válido y no se iguala a cero [4].
+  \end{itemize}
+  
+  Asumiendo que este valor es el máximo $ENSMH_{j,h}$ encontrado en el periodo horario del Evento ($h=1e$) y el siguiente ($h=2e$), la ENS para el Mercado $j$ es:
+  \begin{equation*}
+  	ENSM_j = 163 \, \text{MW} \quad \text{[4]}
+  \end{equation*}
+  
+  \subsection*{Paso 4: Cálculo de la ENS Causal Total ($ENS_q$)}
+  
+  Dado que solo se afectó un mercado ($NM=1$):
+  \begin{align*}
+  	ENS_q &= \sum_{j=1}^{NM} ENSM_j \quad \text{[5]} \\
+  	ENS_q &= ENSM_j \\
+  	ENS_q &= \mathbf{163 \, \text{MW}}
+  \end{align*}
+  
+  \section*{Resultado}
+  
+  La Energía No Suministrada ($ENS_q$) causada por el Evento es de $\mathbf{163 \, \text{MW}}$ [5]. Este valor se utiliza en las fórmulas del numeral 11.1.8.2 del anexo general de la Resolución CREG 097 de 2008 para calcular las compensaciones [5]. Adicionalmente, el $PENS_q$ toma el valor del mayor $PENS_{j,h}$ encontrado, que en este caso es 24.58\% [5]. Si este $PENS_q$ supera el 2\%, el CND debe enviar un informe a la SSPD.\\\\
+  
+
 
   
 \hspace{1cm}
@@ -1250,6 +1402,78 @@ En caso de un mantenimiento mayor el cual requiere más horas de las programadas
     \label{fig:mhaia}
     \includegraphics[width=0.6\linewidth]{MHAIA}
   \end{figure}
+
+  
+\section*{Ejemplo Numérico de las MHAI Ajustadas ($MHAI A_{m, gu}$)}
+
+El ajuste de las máximas horas anuales de indisponibilidad se calcula para cada grupo de activos ($gu$) en el mes $m$ [1, 2].
+
+\subsection*{Fórmula de las Máximas Horas Anuales de Indisponibilidad Ajustadas}
+
+La fórmula para el ajuste es la siguiente, según la sección 5.1.6 de la resolución [1, 2]:
+
+\begin{equation}
+	\label{eq:mhaia}
+	MHAI A_{m, gu} = MHAI_{gu} - 0,5 \cdot \left( \sum_{u=1}^{NGU} SCE_{m, u} + \sum_{u=1}^{NGU} CPM_{m, u} + \sum_{u=1}^{NGU} ENR_{m, u} \right)
+\end{equation}
+
+Donde [1, 2]:
+\begin{itemize}
+	\item $MHAI A_{m, gu}$: Máximas horas anuales de indisponibilidad ajustadas, calculadas para el mes $m$.
+	\item $MHAI_{gu}$: Máximas horas anuales de indisponibilidad del grupo de activos $gu$.
+	\item $SCE_{m, u}$: Número acumulado de solicitudes de consignaciones de emergencia (exceptuando las excluidas) para el activo $u$.
+	\item $CPM_{m, u}$: Número acumulado de cambios al programa de mantenimientos (exceptuando los excluidos) para el activo $u$.
+	\item $ENR_{m, u}$: Número de eventos o finalización de maniobras no reportados en los plazos establecidos, para el activo $u$.
+	\item $NGU$: Número de activos que conforman el grupo de activos $gu$.
+\end{itemize}
+
+\subsection*{Datos del Ejemplo}
+
+Seleccionaremos el grupo de activos "Conexión del OR al STN".
+
+\begin{enumerate}
+	\item $MHAI_{gu}$ (Máximas Horas Anuales de Indisponibilidad para "Conexión del OR al STN"): $60$ horas [3, 4].
+	\item $NGU$ (Número de activos en el grupo $gu$): Supongamos $NGU = 3$.
+	\item Valores de ajuste (para una ventana móvil de doce meses que termina en el mes $m$):
+	
+	\begin{center}
+		\begin{tabular}{|c|p{2cm}|p{2cm}|p{2cm}|}
+			\hline
+			Activo ($u$) & $SCE_{m, u}$ (Consignaciones de Emergencia) & $CPM_{m, u}$ (Cambios a Programa de Mantenimientos) & $ENR_{m, u}$ (Eventos No Reportados) \\
+			\hline
+			$u=1$ & $2$ & $1$ & $0$ \\
+			$u=2$ & $0$ & $0$ & $1$ \\
+			$u=3$ & $1$ & $1$ & $0$ \\
+			\hline
+			\textbf{Sumatorias ($\Sigma$)} & \textbf{3} & \textbf{2} & \textbf{1} \\
+			\hline
+		\end{tabular}
+	\end{center}
+\end{enumerate}
+
+\subsection*{Cálculo de $MHAI A_{m, gu}$}
+
+\textbf{Paso 1: Calcular la suma de los eventos de ajuste (término entre paréntesis):}
+
+\begin{align*}
+	\sum_{u=1}^{NGU} SCE_{m, u} &= 2 + 0 + 1 = 3 \\
+	\sum_{u=1}^{NGU} CPM_{m, u} &= 1 + 0 + 1 = 2 \\
+	\sum_{u=1}^{NGU} ENR_{m, u} &= 0 + 1 + 0 = 1
+\end{align*}
+
+Suma total de ajustes: $3 + 2 + 1 = 6$
+
+\textbf{Paso 2: Aplicar el factor de reducción de 0,5:}
+
+$$ 0,5 \cdot \left( 6 \right) = 3 \text{ horas} $$
+
+\textbf{Paso 3: Calcular $MHAI A_{m, gu}$:}
+
+Sustituyendo en la Ecuación \ref{eq:mhaia}:
+$$ MHAI A_{m, gu} = 60 \text{ horas} - 3 \text{ horas} $$
+$$ MHAI A_{m, gu} = 57 \text{ horas} $$
+
+El valor de las Máximas Horas Anuales de Indisponibilidad Ajustadas para el grupo de activos "Conexión del OR al STN" en el mes $m$ es de \textbf{57 horas}.
 
 \subsection{Cálculo de indisponibilidad en el STR}
 Las horas que un activo  se encuentra  in disponible durante un mes, se pueden calcular como \cite{CREG0152018}:
