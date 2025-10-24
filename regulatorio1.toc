@@ -1,0 +1,35 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {chapter}{\numberline {1}ESTRUCTURA DEL SECTOR ELÉCTRICO}{7}{chapter.1}%
+\contentsline {section}{\numberline {1.1}STN: Sistema Transmisión Nacional}{8}{section.1.1}%
+\contentsline {section}{\numberline {1.2}STR: Sistema Transmisión Regional}{9}{section.1.2}%
+\contentsline {section}{\numberline {1.3}SDL: Sistema Distribución Local}{10}{section.1.3}%
+\contentsline {section}{\numberline {1.4}ACTIVOS DE CONEXIÓN}{11}{section.1.4}%
+\contentsline {section}{\numberline {1.5}AREAS DE DISTRIBUCIÓN}{12}{section.1.5}%
+\contentsline {section}{\numberline {1.6}AGENTES DEL SECTOR}{13}{section.1.6}%
+\contentsline {paragraph}{Generadores}{13}{section.1.6}%
+\contentsline {paragraph}{Transmisores}{13}{section.1.6}%
+\contentsline {paragraph}{Distribuidores}{13}{section.1.6}%
+\contentsline {paragraph}{Comercializadores}{13}{section.1.6}%
+\contentsline {chapter}{\numberline {2}PLANEACIÓN Y OPERACIÓN DEL SIN}{15}{chapter.2}%
+\contentsline {section}{\numberline {2.1}PLANEAMIENTO OPERATIVO}{15}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}PLANEAMIENTO ENERGÉTICO}{16}{subsection.2.1.1}%
+\contentsline {section}{\numberline {2.2}DESPACHO ECONÓMICO}{17}{section.2.2}%
+\contentsline {paragraph}{Plantas Centralmente Despachadas}{17}{section.2.2}%
+\contentsline {chapter}{\numberline {3}CONTROL Y ESTABILIDAD DEL SISTEMA}{19}{chapter.3}%
+\contentsline {section}{\numberline {3.1}CONTROL DE TENSIÓN}{19}{section.3.1}%
+\contentsline {section}{\numberline {3.2}CONTROL DE FRECUENCIA}{21}{section.3.2}%
+\contentsline {chapter}{ANEXO A: PERFIL DEL CARGO ESTRUCTURA DE LA CONVOCATORIA}{23}{chapter*.15}%
+\contentsline {section}{\numberline {3.3}Funciones del cargo}{23}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Conocimientos}{25}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}CONOCIMIENTOS COMUNES}{25}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}CONOCIMIENTOS BÁSICOS O ESENCIALES POR NIVEL JERÁRQUICO}{26}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}CONOCIMIENTOS ESPECÍFICOS POR SUBPROCESO Y NIVEL JERÁRQUICO}{27}{subsection.3.4.3}%
+\contentsline {section}{\numberline {3.5}COMPETENCIAS}{27}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}COMPETENCIAS COMPORTAMENTALES}{27}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}COMPETENCIAS FUNCIONALES}{27}{subsection.3.5.2}%
+\contentsline {section}{\numberline {3.6}RESPONSABILIDADES DEL ÁREA}{28}{section.3.6}%
+\contentsline {chapter}{\numberline {4}ANEXO B: LISTA DE NORMAS Y REGLAMENTOS}{31}{chapter.4}%
+\contentsline {chapter}{ANEXO B: LISTA DE NORMAS Y REGLAMENTOS}{31}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Leyes}{32}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Normatividad Calidad del servicio}{32}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Normatividad Reporte de Eventos}{35}{section.4.3}%
