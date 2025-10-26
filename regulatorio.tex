@@ -22,6 +22,7 @@
 \usepackage[table,dvipsnames]{xcolor}
 \usepackage{titling}
 \usepackage{needspace}
+\usepackage{parskip}
 
 \addbibresource{bibliografia.bib}
 
@@ -49,7 +50,6 @@
 { \enspace  \fbox{CAPÍTULO \color{titlegreen}\thechapter} \enspace}
 {1.1em}{\Large\bfseries\filcenter\color{titleblue}}
 
-\usepackage{titlesec}
 \usepackage{xcolor} % Para definir colores, opcional pero recomendado
 
 % --- Definir un color para los títulos (opcional) ---
@@ -118,7 +118,7 @@
 \title{ANÁLISIS REGULATORIO}
 \author{Alejandro Palacios}
 % quita la indentacion de la primera línea  del parrafo.
-\setlength{\parindent}{0cm}
+%\setlength{\parindent}{0cm}
 % estilo de pagina
 %\pagestyle{headings}
 
@@ -137,7 +137,8 @@ labelsep=endash]{caption}
 \maketitle
 
   \begin{acronym}
-  \acro{CND}{Centro Nacional de Despacho}
+    \acro{CND}{Centro Nacional de Despacho}
+    \acro{CNO}{Consejo nacional de operación}
   \acro{COMTRADE}{Registros de falla originales}
   \acro{DNA}{Demanda no atendida}
   \acro{EDAC}{Esquema de Desconexión Automática de Carga}
@@ -145,6 +146,7 @@ labelsep=endash]{caption}
   \acro{FMECA}{Metodología de Análisis de Modos, Efectos de Falla y Criticidad (Failure Mode Effect and Criticality Analysis)}
   \acro{FNCER}{Fuentes no convencionales de energía renovable}
   \acro{LAC}{Liquidación y Administración de Cuentas}
+  \acro{MC}{Mercado de comercialización}
   \acro{OR}{Operador de red}
   \acro{PENS}{Porcentaje de Energía no  Suministrada}
   \acro{RCM}{Mantenimiento Centrado en Confiabilidad}
@@ -170,361 +172,7 @@ labelsep=endash]{caption}
 \label{sec:tabladecontendos}
 \clearpage
 
-\printbibliography
-
-\chapter*{ESTRUCTURA DE LA CONVOCATORIA}
-
-\textit{Coordinar y controlar la operación y mantenimiento de la red de energía de acuerdo con las normas
- técnicas establecidas por la empresa, con el fin de garantizar su funcionamiento permanente.
-}
-
-
- \section{Funciones del cargo}
-
- Las funciones del cargo Ingeniero de Operación y Mantenimiento  son las siguientes:
- 
- \begin{itemize}
- \item  Analizar el funcionamiento del Sistema de Distribución local con el fin de programar y coordinar  las actividades relacionadas con la operación y/o Mantenimiento requeridas para garantizar la calidad del servicio y de la potencia.
-\item  Coordinar y supervisar la ejecución de las diferentes actividades de operación y mantenimiento predictivo,  preventivo y correctivo de la red de servicios.
-\item  Administrar adecuadamente los equipos, materiales Y herramientas requeridas para las actividades a realizar por el personal a su cargo.
-\item  Propender por el cumplimiento de los indicadores de gestión establecidos para el área.
-\item  Formular iniciativas tendientes a la optimización de los procesos y procedimientos de operación y mantenimiento de la red de servicios.
-\item  Coordinar los diferentes grupos de trabajo para efectuar las actividades programadas en  el Sistema de Distribución Local de Energía.
-\item  Elaborar informes de las actividades desarrolladas con la oportunidad y periodicidad requeridas.
-\item  Realizar la supervisión, coordinación y control de las subestaciones, redes eléctricas y sus equipos asociados utilizando las herramientas y
-medios de comunicación disponibles. 9. Participar en la supervision, coordinación, programación y configuración de los equipos de comunicación y/o operación de subestaciones.
-\item  Coordinar oportunamente con el área de comercialización la prestación técnica del servicio de acuerdo con los respectivos contratos de compra
-y venta de energía.
-\item  Supervisar, revisar, verificar y controlar el uso de la infraestructura eléctrica por parte de los prestadores del servicio de Alumbrado Público y
-operadoras de televisión por cable y telecomunicaciones, incluyendo la expansión y cobertura del servicio,
-\item  Participar en la supervisión, coordinación y ajuste de las protecciones eléctricas instaladas en la conexión, la trensformación y el transporte del
-Sistema de Distribución Local.
-\item  Participar en la pianeacién, supervisión, coordinación, ejecución y control de las actividades propias de la medición de las fronteras comerciales de energía, tento a distancia como en el sitio.
-\item  Presentar informes y estadísticas  periódicas de comportamiento del Sistema de Distribución Local con base en mediciones y parámetros establecidos en las normas y la reglamentación vigente.
-\item  Mantener actualizado los manuales operativos del Sistema de Distribución Local.
-\end{itemize}
-
-\section{Conocimientos}
-
-\subsection{CONOCIMIENTOS COMUNES}
-
-\begin{itemize}
-\item Derechos humanos
-\item Gestión ambiental
-\item Gestión de activos
-\item Modelo integrado de pianeación y Gestión MIPG
-\item Sistema de Gestión de calidad
-\item Sistema de Gestion de salud y seguridad en el trabajo SG-SST
-\item Ley anticorrupción
-\item Élica empresarial
-\item Ley de transparencia
-\item Regulación y normetividad de servicios públicos
-\item Ley disciplinaria de servidores públicos
-\item Ley de acoso laboral
-\item Reglamento intemo de trabajo
-\item Modelo de operación por procesos
-\item Portafolio de servicios
-\item Gestión del riesgo
-\end{itemize}
-
-\subsection{CONOCIMIENTOS  BÁSICOS O ESENCIALES  POR NIVEL JERÁRQUICO}
-
-
-\begin{itemize}
-\item Gestión Contractual
-\item  Gestión de Proyectos
-\item Indicedores de Gestión
-\item Formulación de Proyectos Bajo la Metodología General Ajustada (VIGA)
-\end{itemize}
-
-\subsection{CONOCIMIENTOS ESPECÍFICOS POR SUBPROCESO Y NIVEL JERÁRQUICO}
-
-\begin{itemize}
-\item «Reglamento Técnico de Instalaciones Eléctricas RETIE.
-\item Compra de energía en el mercado de generadores.
-\item «Infreestructura del sistema de distribución local de energia SDL.
-\item Operación, funcionamiento y mantenimiento de las redes subterráneas y aéreas.
- su distribucion, protecciones, transformación y equipos.
-\item «Regulación pertinente sobre la distribucién del servicio de energía.
-\end{itemize}
-
-  \section{COMPETENCIAS}
-
-  \subsection{COMPETENCIAS COMPORTAMENTALES}
-
-  \subsection{COMPETENCIAS FUNCIONALES}
-
-  Las siguientes son las competencias funcionales :\\
-  
-  \begin{table}[H]
-    \begin{tabular}{|p{0.5\linewidth}|p{0.5\linewidth}|}
-      \hline
-      \textbf{Actividad} &  \textbf{Competencia} \\\hline
-      \textit{Distribuir energía} & Transportar energía eléctrica a través de las redes de distribución municipales o distitales, asegurando la distribucién conforme a parámetros del sistema eléctrico de energía    y la normativa asociada.\\\hline
-      \textit{Evaluar y controlar la operación del sistema eléctrico de energía} &  Realizar el análiis y evaluación de la operación del sistema eléctico de energía, de acuerdo con parámetros de calidad, criterios técnicos y la normativa asociada. \\\hline
-      \textit{Planificar la operación del sistema eléctrico de energía} & Planear la operación eléctrica de corto plazo de las redes del sistema eléctrico de energía y de los activos de  estas redes, conforme a los pianes definidos y en cumplimiento de la normativa asociada.\\\hline
-    \end{tabular}
-    \end{table}
-
-  \section{RESPONSABILIDADES DEL ÁREA}
-
-  Las siguientes son las responsabilidades del área:\\
-  
-  \begin{enumerate}
-  \item Realizar la programación de las actividades sistemáticas del área funcional que permitan
- el cumplimiento de los objetivos y la implementación de las estrategias identificando su secuencia.
-\item Analizar y aplicar la normatividad asociada a la operación del Sistema Eléctrico de Energía
- del Negocio de Energía.
-\item Realizar el planeamiento de la operación de corto plazo del Sistema Eléctrico  de Energía, de acuerdo con lo definido en el marco regulatorio del sector eléctrico.
-\item Realizar el inventario de la disponibilidad de los activos del Sisterna Eléctrico  de Energía y evaluar su estado para programar su  operación.
-\item Coordinar con las dependencias adscritas a la Subgerencia de Distribución  la programación de los mantenimientos preventivos y correctivos del Sistema Eléctrico de Energía.
-\item Coordinar con el Centro Nacional de Despacho el Estado  Operativo, la programación de mantenimientos preventivos y correctivos, la ejecución de racionamientos en el sistema interconectado del Sistema Eléctrico de Energía.
-\item Coordinar, Analizar y evaluar las maniobras que sean presentadas en la Unidad.
-\item Definir las necesidades de las compras de los elementos y equipos necesarios para ejecutar la operación del Sistema Eléctrico de Energía, estableciendo los parámetros  técnicos y términos de referencia.
-\item Realizar  reportes de operación  de protecciones garantizar la operación  segura y confiable del sistema interconectado nacional.
-\item Establecer los indicadores de gestión.
-\item Calidad de potencia.
-\item Garantizar por la regulación la descarga del sector de eléctrico información cotombiano.  desde los equipos de medición  utilizados para medir la calidad de la potencia en las variables solicitadas existencia.
-\item Asegurar el almacenamiento de las interrupciones  y eventos  de sistema eléctrico.
-\item Responder  por el almacenamiento de datos de la Calidad.
-\item Proponer  soluciones medición.
-\item Administrar  software, garantizando Gestionar su las funcionamiento tecnologías de de Operación manera confiable del Centro  y segura.
-\item  Administrar y gestionar redes de comunicación.
-\item Instalar  y mantener  la comunicación.
-\item Adoptar los requerimientos de seguridad para la protección de activos del \ac{SDL},  que son consideradas críticas.
-\item Realizar las labores de ingeniería necesarias para mantener operativas las aplicaciones  de tiempo real.
-\item 
-    \end{enumerate}
-  
-    \chapter{LISTA DE NORMAS Y REGLAMENTOS}
-
-    \section{Leyes}
-
-\begin{tabular}{|p{0.3\linewidth}|p{0.6\linewidth}|}
-  \hline
-  Legislación & DISPOSICIÓN \\\hline
-  Ley 142 de 1994& Por la cual se establece el régimen de los servicios públicos domiciliarios y se dictan otras disposiciones.\\\hline
-Ley 143 de 1994& Por la cual se establece el régimen para la generación, interconexión, transmisión, distribución y comercialización de electricidad en el territorio nacional– establece el régimen de las actividades del sector eléctrico colombiano\\\hline
-  Resolución 1409 de 2012  & Trabajo seguro en alturas \\\hline
-  Resolución 1348 de 2009 & Reglamento de salud ocupacional
-en los procesos de generación, transmisión y distribución de
-energía eléctrica en las empresas del sector eléctrico \\\hline
-\end{tabular}
-
-\section{Normatividad Calidad del servicio}
-
-Las siguientes son referencias a la regulación con relación a la calidad del servicio  en el \ac{SIN}.\\\\
-
-%% color de lineas
-  \rowcolors{4}{gray!10!}{gray!40}
-\begin{longtable}{|c|p{0.3\linewidth}|p{0.4\linewidth}|}
-
-\caption{Reglamentos referentes a la calidad del servicio}
-  % \label{tab:regcalidadservicio}
-  \\\hline
-   \rowcolor{black}\multicolumn{1}{|c|}{\color{white}\textbf{Resolución}}&\multicolumn{1}{|c|}{\color{white}\textbf{ALCANCE}} &  \multicolumn{1}{|c|}{\color{white}\textbf{DISPOSICIÓN}} \\\hline 
-\endfirsthead
-
-  \hline  \rowcolor{white}\multicolumn{3}{|l|}{\scriptsize \textit{\color{NavyBlue} \tablename\ \thetable{} -- continuación de la página anterior}} \\\hline
-\hline \rowcolor{darkgray} \multicolumn{1}{|c|}{\color{white}\textbf{Resolución}} & \multicolumn{1}{c|}{\color{white}\textbf{ALCANCE}} & \multicolumn{1}{c|}{\color{white}\textbf{DISPOSICIÓN}}  \\\hline 
-\endhead
-\hline \rowcolor{white}\multicolumn{3}{|r|}{{\color{ForestGreen} \scriptsize \textit{\tablename\ \thetable{}\ ... Continua el la siguiente página}}} \\ \hline
-\endfoot
-\hline
-\rowcolor{titleblue}\multicolumn{3}{|r|}{{ {\color{white}\scriptsize\textit fin de tabla}}} \\\hline
-  \endlastfoot
-
-
-  
-  CREG 025 de 1995&  \ac{STN}, \ac{STR} y \ac{SDL} &  Por la cual se establece el \textbf{Código de Redes}, como parte del Reglamento de Operación del Sistema Interconectado Nacional.\\\hline
-
-  CREG 070 de 1998 & \ac{SDL} & Establece reglas sobre la calidad del servicio en la distribución, introduciendo los conceptos de número y duración de las interrupciones. \\\hline
-
-CREG 097 de 2008 &\ac{SDL} & Estableció una metodología integral para la remuneración de los Operadores de Red (OR) mediante establecimiento de los \textbf{cargos por uso} y un esquema de calidad del servicio más robusto. \\\hline
-  
-  CREG 011 de 2009 &  \ac{STN} y \ac{STR} & Estableció la metodología de remuneración de la actividad de transmisión de energía eléctrica, introduciendo un esquema explícito de calidad del servicio.\\\hline
-
-  CREG 024 de 2013 &  \ac{STN} y \ac{STR}  & Modificó y complementó la metodología de remuneración del STN de la CREG 011 de 2009, ajustando aspectos relacionados con los planes de inversión y la valoración de los activos, manteniendo el enfoque de remuneración ligada a la disponibilidad.\\\hline
-
-  CREG 015 de 2018& \ac{STR}  y \ac{SDL} &Por la cual se establece la metodología para la \textbf{remuneración} de la actividad de
-distribución de energía eléctrica en el Sistema Interconectado
-                                           Nacional.\\\hline
-
-  CREG 36 de 2019 & \ac{STR}  y \ac{SDL}  & Es una modificación a la Resolución CREG 015 de 2018, específicamente en el artículo 1, y está relacionada con la regulación económica en el sector de energía y gas.\\\hline
-
-   
-\end{longtable}
-
-
-\section{Normatividad Reporte de Eventos}
-
-Los siguientes son la regulación con relación con relación al reporte de eventos.
-
-
-%% color de lineas
-  \rowcolors{4}{gray!10!}{gray!40}
-\begin{longtable}{|c|p{0.3\linewidth}|p{0.4\linewidth}|}
-
-\caption{Reglamentos referentes al reporte de eventos}
-  % \label{tab:regcalidadservicio}
-  \\\hline
-   \rowcolor{black}\multicolumn{1}{|c|}{\color{white}\textbf{Resolución}}&\multicolumn{1}{|c|}{\color{white}\textbf{ALCANCE}} &  \multicolumn{1}{|c|}{\color{white}\textbf{DISPOSICIÓN}} \\\hline 
-\endfirsthead
-
-  \hline  \rowcolor{white}\multicolumn{3}{|l|}{\scriptsize \textit{\color{NavyBlue} \tablename\ \thetable{} -- continuación de la página anterior}} \\\hline
-\hline \rowcolor{darkgray} \multicolumn{1}{|c|}{\color{white}\textbf{Resolución}} & \multicolumn{1}{c|}{\color{white}\textbf{ALCANCE}} & \multicolumn{1}{c|}{\color{white}\textbf{DISPOSICIÓN}}  \\\hline 
-\endhead
-\hline \rowcolor{white}\multicolumn{3}{|r|}{{\color{ForestGreen} \scriptsize \textit{\tablename\ \thetable{}\ ... Continua el la siguiente página}}} \\ \hline
-\endfoot
-\hline
-\rowcolor{titleblue}\multicolumn{3}{|r|}{{ {\color{white}\scriptsize\textit fin de tabla}}}\\\hline
-  \endlastfoot
-
-
-
-  
-  \end{longtable}
-  
-
-\begin{longtable}{|c|p{0.6\linewidth}|}
-  \caption{Regulación CREG}\\
-\hline \multicolumn{1}{|c|}{\textbf{Resolución}} & \multicolumn{1}{c|}{\textbf{DISPOSICIÓN}} \\ \hline 
-\endfirsthead
-
-\multicolumn{2}{c}
-{\textit{ \tablename\ \thetable{} -- continuación de la página anterior}} \\
-\hline \multicolumn{1}{|c|}{\textbf{Resolución}} & \multicolumn{1}{c|}{\textbf{DISPOSICIÓN}}  \\ \hline 
-\endhead
-\hline \multicolumn{2}{|r|}{{\textit{Continua el la siguiente página}}} \\ \hline
-\endfoot
-\hline
-\multicolumn{2}{|r|}{{ {\scriptsize\textit  fin de tabla}}} \\
-\hline
-\endlastfoot
-
-
-% \textbf{CREG 070 de 1998}& Codigo de Distribución \\\hline
-% CREG 004 de 1999&Por la cual se aclaran y/o modifican las disposiciones establecidas en la Resolución CREG-051 de 1998, en la cual se aprobaron los principios generales y los procedimientos para definir el plan de expansión de referencia del Sistema de Transmisión Nacional y se estableció la metodología para determinar el \textbf{Ingreso Regulado} por concepto del Uso de este Sistema.\\\hline
-
-CREG 039 de 1999& Por la cual se establecen las normas relacionadas
-                  con las \textbf{pérdidas} de referencia en el
-                  Sistema de Transmisión Nacional. \\\hline
-
-CREG 080 de 1999& Por la cual se reglamentan las funciones de planeación, coordinación supervisión y control entre el \textbf{Centro Nacional de Despacho (CND)} y los agentes del SIN.\\\hline
-
-CREG 022 de 2001&
-Por la cual se modifican e incorporan las disposiciones establecidas
-                  en la Resolución  CREG-051 de 1998, modificada por
-                  las Resoluciones CREG-004 y CREG-045 de1999,mediante
-                  las cuales se aprobaron los principios generales y
-                  los procedimientos para definir el \textbf{plan de
-                  expansión de referencia del Sistema de Transmisión
-                  Nacional}, y se estableció la metodología para
-                  determinar el \textbf{Ingreso Regulado} por concepto
-                  del Uso de este Sistema.\\\hline
-  
-CREG 106 de 2006&Por la cual se modifican los procedimientos generales para la
-                  asignación de\textbf{ puntos de conexión de
-                  generadores} a los Sistema de Transmisión Nacional,
-                  Sistemas de Transmisión Regional o Sistemas de
-                  Distribución Local.\\\hline
-  
-% CREG 097 de 2008&  Por la cual se aprueban los principios generales y la metodología para el establecimiento de los \textbf{cargos por uso} de los Sistemas de Transmisión Regional y Distribución Local. \\\hline
-
-% CREG 011 de 2009&Por la cual se establecen la metodología y \textbf{fórmulas tarifarías} para la remuneración de
-% la actividad de transmisión de energía eléctrica en el Sistema de Transmisión
-%                   Nacional.\\\hline
-  
-CREG 128 de 2010& Por la cual se establecen reglas para hacer la transición al nuevo esquema de
-\textbf{calidad del servicio} en el Sistema de Transmisión Nacional adoptado por la
-                  Resolución CREG-011 de 2009\\\hline
-
-\textbf{CREG 156 de 2011}& Codigo de comercialización \\\hline
-  
-CREG 093 de 2012& Por la cual se establecen el reglamento para el \textbf{reporte de Eventos }y el procedimiento
-para el cálculo de la \textbf{Energía No Suministrada}, y se precisan otras disposiciones relacionadas con la calidad del servicio en el Sistema de Transmisión Nacional\\\hline
-  
-CREG 094 de 2012& Por la cual se establecen el reglamento para el \textbf{reporte de Eventos} y el procedimiento para el cálculo de la \textbf{Energía No Suministrada}, y se precisan
-                  otras disposiciones relacionadas con la calidad del servicio en los Sistemas de Transmisión Regional\\\hline
-  
-CREG 038 de 2014& \\\hline  
-CREG 224 de 2016& Por la cual se establecen los criterios de
-                  \textbf{confiabilidad} de la operación aplicables
-                  para contingencias sencillas, como parte del Código
-                  de Operación\\\hline
-
-CREG 015 de 2018& Por la cual se establece la metodología para la \textbf{remuneración} de la actividad de
-distribución de energía eléctrica en el Sistema Interconectado
-                  Nacional.\\\hline
-  
-CREG 030  de 2018 & Por la cual se regulan las actividades de
-                    autogeneración a pequeña escala y de generación
-                    distribuida en el Sistema Interconectado
-                    Nacional\\\hline
-  
-CREG 036 de 2019& Por la cual se modifican algunas disposiciones de la
-                  Resolución CREG 015 de 2018.\\\hline
-  
-CREG 039 de 2019& Por la cual se establecen las normas relacionadas
-                  con las \textbf{pérdidas} de referencia en el
-                  Sistema de Transmisión Nacional.\\\hline
-  
-CREG 073 de 2019& Por la cual se modifica el artículo 2 de la Resolución CREG 224 de 2016 "por la cual
-se establecen los criterios de \textbf{confiabilidad} de la operación aplicables para
-                  contingencias sencillas, como parte del Código de Operación.\\\hline
-  
-CREG 28 del 2020 & Por la cual se aprueban las variables necesarias
-                     para calcular los ingresos y cargos asociados con
-                     la actividad de distribución de energía eléctrica
-                     para el mercado de comercialización atendido por
-                     Empresas Municipales de Cali
-                     E.I.C.E. E.S.P.\\\hline
-  
-CREG 131 del 2020 & Medición AMI \\\hline
-\end{longtable}
-
-
-
-
-\begin{longtable}{|c|p{0.6\linewidth}|}
-  \caption{Regulación CREG}\\
-\hline \multicolumn{1}{|c|}{\textbf{ACUERDO}} & \multicolumn{1}{c|}{\textbf{DISPOSICIÓN}} \\ \hline 
-\endfirsthead
-
-\multicolumn{2}{c}%
-{{\scriptsize\it\bfseries \tablename\ \thetable{} -- continuación de la página anterior}} \\
-\hline \multicolumn{1}{|c|}{\textbf{ACUERDO}} & \multicolumn{1}{c|}{\textbf{DISPOSICIÓN}}  \\ \hline 
-\endhead
-\hline \multicolumn{2}{|r|}{{\scriptsize\it Continua el la siguiente página}} \\ \hline
-\endfoot
-\hline
-\multicolumn{2}{|r|}{{\scriptsize\it fin de tabla}} \\
-\hline
-\endlastfoot
-
-787 &
-Por el cual se establecen las responsabilidades y los procedimientos a los cuales están
-sujetos los agentes Transportadores, Operadores de Red, Generadores del SIN y el Centro
-Nacional de Despacho –CND-, en la realización de informes referentes al \textbf{análisis de eventos}
-que afecten la seguridad y confiabilidad del Sistema Interconectado Nacional –SIN\\\hline
-
-963 & Mantenimientos de emergencia \\\hline
-
-977 & Por el cual se aprueba el procedimiento para la \textbf{coordinación y ejecución} de las maniobras sobre activos de Uso del STN y STR y Conexión al STN \\\hline
-
-1214 & Por el cual se aprueba el \textbf{Procedimiento para la entrada en operación comercial de proyectos de transmisión} que incluyan activos de uso del Sistema de Transmisión Nacional - STN -, del Sistema de Transmisión Regional - STR –, de usuarios conectados directamente al STN y de
-recursos de generación \\\hline
-
-1239 & Por el cual se aprueban las \textbf{Causas Detalladas para el Reporte de Maniobras Operativas}, Eventos y Cambios de Operatividad de activos del Sistema de Transmisión Nacional -STN- y del Sistema de Transmisión Regional -STR \\\hline
-
-1254 & Por el cual se actualiza la definición y los \textbf{formatos de reporte de los parámetros técnicos de las plantas eólicas y solares fotovoltaicas} que se quieran conectar al Sistema de Transmisión Nacional STN, al Sistema de Transmisión Regional STR y al Sistema de Distribución Local
-SDL \\\hline
-
-1303 & Por el cual se actualizan los procedimientos para la \textbf{gestión integral de la demanda} \\\hline
-
-
-\end{longtable}
-
+\part{MARCO GENERAL Y ESTRUCTURA DEL MERCADO}
 
 \chapter{ESTRUCTURA DEL SECTOR ELÉCTRICO}
 
@@ -628,7 +276,7 @@ debe existir un Cargo Único por Nivel de Tensión por cada ADD \cite{CREG133201
 \item Oriente
 \item  Occidente
 \item  Sur 
-                            \item  Centro
+\item  Centro
 \end{itemize}
 
 \section{AGENTES DEL SECTOR}
@@ -647,7 +295,6 @@ Son los encargados de llevar la energía hasta el consumidor final a través de 
 
 Son los encargados de la compra de energía eléctrica en el mercado mayorista y su venta a usuarios finales.
 
-  
 \chapter{PLANEACIÓN DE LA EXPANSIÓN DEL STN, STR Y SDL }
 
 %La entidad encargada de realizar la planeación del \textbf{STN} es la \ac{UPME}.\\\\
@@ -655,44 +302,43 @@ La planeación de la operación se basa en tres ejes de acuerdo a la ley 143 \ci
 
 \chapter{OPERACIÓN DEL SIN}
 
-La operación del \ac{SIN}, comprende las siguientes componentes y esta a cargo del \ac{CND}:
+La operación del \ac{SIN} comprende las siguientes componentes, cuya ejecución está a cargo del \ac{CND}:
 
 \begin{enumerate}
-\item Planeamiento Operativo
-\item Despacho Económico
-\item la coordinación
-\item La supervición y control
+    \item Planeamiento operativo
+    \item Despacho económico
+    \item Coordinación de la operación
+    \item Supervisión y control
 \end{enumerate}
 
 \section{PLANEAMIENTO OPERATIVO}
 
-Se hace de forma integrada, garantizando seguridad, confiabilidad y
-calidad de servicio \cite{CREG0251995}. Se descompone funcionalmente
-como muestra la figura \ref{fig:planeamineto-operativo}\\\\
+El planeamiento operativo del \ac{SIN} se realiza de manera integrada, con el objetivo de garantizar la seguridad, confiabilidad y calidad del servicio eléctrico \cite{CREG0251995}.  
+Este proceso se descompone funcionalmente como se muestra en la Figura~\ref{fig:planeamiento-operativo}.
 
 \begin{figure}[H]
-  \centering
-  \caption{Descomposición funcional y temporal del Planeamiento
-    Operativo}
-  \label{fig:planeamineto-operativo}
-  \includegraphics[width=1\linewidth]{planeamineto-operativo}
+    \centering
+    \includegraphics[width=1\linewidth]{planeamineto-operativo}
+    \caption{Descomposición funcional y temporal del planeamiento operativo}
+    \label{fig:planeamiento-operativo}
 \end{figure}
 
-\subsection{PLANEAMIENTO ENERGÉTICO}
+\subsection{Planeamiento energético}
 
-Consiste en la planeación de la operación de los recurso energéticos,
-hidráulicas y térmicos para la producción de energía eléctrica
-\cite{CREG0251995}.
+El planeamiento energético consiste en programar la operación de los recursos energéticos —hidráulicos y térmicos— destinados a la generación de energía eléctrica, de acuerdo con los lineamientos establecidos en la Resolución CREG~025 de 1995 \cite{CREG0251995}.
 
 \section{DESPACHO ECONÓMICO}
-Proceso mediante el cual se obtiene para un período de 24 horas, el programa horario de generación de los recursos del SIN despachados centralmente. Este despacho se efectúa con el criterio de minimizar el costo de atender la demanda.
 
-En el numeral 1.3 del Código de Operación que hace parte del Código de Redes, adoptado mediante la Resolución CREG 025 de 1995, se definen las plantas despachadas centralmente de la siguiente forma:
+El despacho económico es el proceso mediante el cual se determina, para un período de 24 horas, el programa horario de generación de los recursos del \ac{SIN} despachados centralmente.  
+Este procedimiento se realiza bajo el criterio de \textit{minimizar el costo de atención de la demanda}, garantizando simultáneamente la seguridad y confiabilidad del sistema.
 
-\paragraph{Plantas Centralmente Despachadas}:
+Según el numeral 1.3 del Código de Operación —parte integrante del Código de Redes, adoptado mediante la Resolución CREG~025 de 1995—, se definen las plantas despachadas centralmente de la siguiente manera:
 
- Son todas las plantas de generación con capacidad efectiva mayor que 20 MW y todas aquellas menores o iguales a 20 MW que quieran participar en el Despacho Económico. 
+\paragraph{Plantas despachadas centralmente}
 
+Son todas las plantas de generación con capacidad efectiva superior a 20~MW, así como aquellas con capacidad menor o igual a 20~MW que opten voluntariamente por participar en el despacho económico.
+
+\part{OPERACION DEL STR}
 
 \chapter{CONTROL DE TENSIÓN}
 
@@ -720,7 +366,6 @@ Para reducir la tensión se procederá con los siguientes procesos:
   \includegraphics[width=0.8\linewidth]{reducirtension}
 \end{figure}
 
-  
 
 
 \chapter{CONTROL DE FRECUENCIA}
@@ -765,9 +410,6 @@ las figuras \ref{fig:edac}, \ref{fig:edac1} y \ref{fig:edac2}.
   \includegraphics[width=0.8\linewidth]{EDAC}
 \end{figure}
 
-
-\
-
 \chapter{PRONOSTICO DE LA DEMANDA}
 
 Es un valor \textit{estimado} de la energía demandada en un mercado de
@@ -778,11 +420,8 @@ del OR para su mercado de comercialización de la semana siguente ( de
 lunes a Domingo). Durante la semana se pueden realizar ajustes antes
 de las 7:30 a.m.\\\\
 Para la estimación de la demand real el CND utiliza la siguiente
-ecuación en un mercado de comencialización :\\\\
+ecuación en un mercado de comercialización :\\\\
 \[D_{real} = importacion + generacion - exportacion \]
-
-
-
 
 \chapter{ESTABILIDAD}
  En el análisis de estado estacionario se consideran solo
@@ -803,33 +442,59 @@ ecuación en un mercado de comencialización :\\\\
   los equipos del SIN y como último recurso, limitar las
   transferencias por el sistema de transmisión.\\\\
 
-
   \chapter{EVENTOS}
 
   \section{MARCO REGULATORIO}
 
 \begin{center}
 \begin{tcolorbox}
-La Ley 143 de 1994, en sus Artículos 34 y 38, establece las responsabilidades del Centro Nacional de Despacho (CND) en la coordinación, supervisión, control y análisis de la operación de los recursos del SIN, así como la obligación de las empresas generadoras, distribuidoras y operadoras de redes de suministro de información oportuna y fiel al CND y los CRD's.
+  La Ley 143 de 1994, en sus Artículos 34 y 38, establece las responsabilidades del \textit{Centro Nacional de Despacho}(CND) en la coordinación, supervisión, control y análisis de la operación de los recursos del SIN, así como la obligación de las empresas generadoras, distribuidoras y operadoras de redes de suministro de información oportuna y fiel al \textbf{CND} y los \textbf{CRD's}.
 \end{tcolorbox}
 \end{center}
 
-  La \textbf{Resolución CREG 080 de 1999} define las responsabilidades del CND y los agentes del SIN en la realización de estudios sobre fallas y emergencias. La \textbf{Resolución CREG 083 de 1999} detalla la información obligatoria que los agentes deben adquirir y suministrar al CND, incluyendo registros cronológicos de eventos con alta resolución temporal y libre acceso a esta información.\\\\ 
+La \textbf{Resolución CREG 080 de 1999} define las responsabilidades del CND y los agentes del SIN en la realización de estudios sobre fallas y emergencias. La \textbf{Resolución CREG 083 de 1999} detalla la información obligatoria que los agentes deben adquirir y suministrar al CND, incluyendo registros cronológicos de eventos con alta resolución temporal y libre acceso a esta información.\\\\ 
   
-  Las Resoluciones \textbf{CREG 093} ( para el \ac{STN}) y \textbf{094 de 2012} ( para el STR) requieren informes detallados para eventos no programados que superen un cierto umbral de \ac{PENS}.\\\\
+Las Resoluciones \textbf{CREG 093} ( para el \ac{STN}) y \textbf{094 de 2012} ( para el STR) requieren informes detallados para eventos no programados que superen un cierto umbral de \ac{PENS}.\\\\
 
 \begin{figure}[H]
    \centering
-   \caption{Metodología del calculo del pronostico de la energía no
-     suministrada}
+   \caption{Metodología del calculo del pronostico de la energía no suministrada}
    \label{fig:ens}
    \includegraphics[width=\linewidth]{calculo_ens.png}
  \end{figure}
 
+\section{REPORTE DE EVENTOS Y ENERGÍA NO SUMINISTRADA}
+
+Cuando ocurre un evento no programado (falla), puede generarse la indisponibilidad total o parcial de uno o varios activos del sistema \cite{CREG0942012}.  
+Si dicha indisponibilidad ocasiona una ausencia de tensión en alguna parte de la red y el \ac{PENS} supera el 2\%, el \ac{CND} debe remitir a la Superintendencia de Servicios Públicos Domiciliarios (SSPD) un informe con el análisis detallado del evento ocurrido. De acuerdo con la Resolución \textbf{CREG 015 de 2018}, dicho informe debe contener, como mínimo, la siguiente información \cite{CREG0152018}:
+
+\begin{itemize}
+    \item Número y descripción de los eventos.
+    \item Identificación de los activos causantes de los eventos.
+    \item Valores y memoria de cálculo de las variables empleadas en el cálculo de la \ac{ENS}.
+    \item Para los \ac{MC} afectados, curva de potencia activa correspondiente al período horario del evento.
+    \item Curvas de potencia activa de los doce períodos anteriores y los doce períodos posteriores a la ocurrencia del evento.
+    \item Informe final del evento, conforme a lo establecido en los acuerdos del \ac{CNO}.
+\end{itemize}
+
+El artículo 24 de la Resolución CREG 015 de 2018 adiciona el siguiente párrafo al final del numeral 5.1.14.2 “\textit{Compensaciones por dejar no operativos otros activos o por energía no suministrada}”:  
+
+\begin{quote}
+    “Cuando el valor del \ac{PENS} supere el 2\%, los \ac{OR} tendrán un plazo de dos (2) días, contados a partir de la publicación por parte del \ac{CND} del informe de \ac{ENS}, para reportar el valor de la \ac{ENS} al \ac{LAC}.”
+\end{quote}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{estructura_informe_eventos1617}
+    \caption{Estructura del informe de eventos, acuerdo CNO 1617}
+    \label{fig:estructurainforme}
+\end{figure}
+
+La energía empleada para el cálculo de la \ac{ENS} corresponde a la información reportada por los distintos comercializadores del mercado de comercialización, conforme a los procedimientos establecidos por el \ac{CND}.
 
 \subsection*{Ejemplo Numérico Hipotético del Pronóstico Nuevo de Demanda ($PRN_{j,h}$)}
 
-El Pronóstico Nuevo de Demanda ($PRN_{j,h}$) se utiliza en el procedimiento de cálculo de la Energía No Suministrada (ENS) definido en el Capítulo III de la Resolución 94 de 2012 CREG [1, 2].
+El Pronóstico Nuevo de Demanda ($PRN_{j,h}$) se utiliza en el procedimiento de cálculo de la Energía No Suministrada (ENS) definido en el Capítulo III de la Resolución 94 de 2012 CREG.
 
 La fórmula utilizada es:
 \begin{equation}
@@ -837,18 +502,18 @@ La fórmula utilizada es:
 \end{equation}
 Donde:
 \begin{itemize}
-	\item $PRN_{j,h}$: Pronóstico Nuevo de Demanda para el periodo horario $h$ [3].
-	\item $PR_{j,h}$: Pronóstico de demanda utilizado en el Despacho Económico para el periodo horario $h$ [3].
-	\item $DE_{j,a}$: Demanda Entregada en el periodo horario $a$ [3].
-	\item $PR_{j,a}$: Pronóstico de demanda utilizado en el Despacho Económico para el periodo horario $a$ [3].
-	\item $h$: Periodo horario en el que se presenta el Evento (o el siguiente, si subsiste) [3].
-	\item $a$: Último periodo horario completo, anterior al Evento, sin efecto en la demanda atendida causado por otros Eventos en el STR [3].
+	\item $PRN_{j,h}$: Pronóstico Nuevo de Demanda para el periodo horario $h$.
+	\item $PR_{j,h}$: Pronóstico de demanda utilizado en el Despacho Económico para el periodo horario $h$.
+	\item $DE_{j,a}$: Demanda Entregada en el periodo horario $a$.
+	\item $PR_{j,a}$: Pronóstico de demanda utilizado en el Despacho Económico para el periodo horario $a$.
+	\item $h$: Periodo horario en el que se presenta el Evento (o el siguiente, si subsiste).
+	\item $a$: Último periodo horario completo, anterior al Evento, sin efecto en la demanda atendida causado por otros Eventos en el STR.
 \end{itemize}
 
 \subsubsection*{Valores Hipotéticos para el Mercado $j$}
 Se asumen los siguientes valores (los cuales no provienen de las fuentes regulatorias):
 \begin{center}
-	\begin{tabular}{|l|l|c|}
+	\begin{tabular}{|l|l|p{2cm}|}
 		\hline
 		\textbf{Variable} & \textbf{Definición} & \textbf{Valor Hipotético (MW)} \\
 		\hline
@@ -877,43 +542,13 @@ Se asumen los siguientes valores (los cuales no provienen de las fuentes regulat
 	\end{align*}
 \end{enumerate}
 
-\vspace{0.5cm}
-
 El valor de $\mathbf{PRN_{j,h}} = 663 \, \mathbf{MW}$ es el \textit{Pronóstico Nuevo de Demanda} que se utilizará para calcular la Energía No Suministrada ($ENS_{MHj,h}$) para el periodo horario $h$.\\\\
 
+\section{ANÁLISIS DE EVENTOS}
+
+\vspace{0.5cm}
 
 El Acuerdo 1617 introduce actualizaciones basadas en las Resoluciones \textbf{CREG 015 de 2018}, \textbf{036 de 2019} y \textbf{101023 de 2022}, incluyendo la responsabilidad de reporte de información por parte de los Operadores de Red (OR), los plazos para reportar el valor de la Energía No Suministrada (ENS) al LAC, y la inclusión de eventos no programados en los Sistemas de Almacenamiento de Energía Eléctrica con Baterías (SAEB). Los Anexos 1 y 2 detallan el procedimiento y los formatos específicos para la elaboración de estos informes.
-
-\section{REPORTE DE EVENTOS Y ENERGÍA NO SUMINISTRADA}
-
-Cuando ocurre un evento programado (manenimiento ) o no programado (falla)  tiene como consecuencia la  indisponibilidad total o parcial  de un activo \cite{CREG0942012}. Cuando esta indisponibilidad causa un ausencia de tensión  en parte de la red y el \ac{PENS} supera el 2\% ,  el \ac{CND} envía a la Superintendencia de Servicios Públicos Domiciliarios, SSPD, un informe donde se haga el análisis detallado del Evento ocurrido y contenga como mínimo lo siguiente \cite{CREG0152018}.
-
-
- \begin{itemize}
- \item Número y descripción de los eventos.
- \item Activos causantes de los eventos.
- \item Valores y memoria de cálculo de las variables para cálculo de ENS.
- \item Para los MC afectados, curva de potencia activa del periodo horario del evento.
- \item De los 12 periodos anteriores y de los 12 siguientes a la ocurrencia del mismo.
- \item Informe final del evento previsto en los acuerdos del CNO.
- \end{itemize}
-
-
- ”… Y en su articulo 24, adiciona el siguiente párrafo al final del numeral 5.1.14.2 Compensaciones por dejar no operativos otros activos o por energía no suministrada: “Cuando el valor del PENS supere el 2\%, los OR tendrán un plazo de dos días, contados a partir de la publicación por parte del CND del informe de ENS, para reportar el valor de la ENS al LAC
- 
-\begin{figure}[H]
- 816   \centering
- 817   \caption{Estructura informe de eventos acuerdo CNO 1617}
- 819   \label{fig:estructurainforme}
- 820   \includegraphics[width=\linewidth]{estructura_informe_eventos1617}
- 821 \end{figure}
-
-
-La energía con la que se calcula la \ac{ENS} es la reportada por los distintos comercializadores del mercado de comercialización.
-
-  \section{ANÁLISIS DE EVENTOS}
-
-
 
 \begin{figure}[H]
   \centering
@@ -1178,6 +813,98 @@ Reuniones para redefinir plazos, acuerdo con el CND para plazos adicionales de s
   La Energía No Suministrada ($ENS_q$) causada por el Evento es de $\mathbf{163 \, \text{MW}}$ [5]. Este valor se utiliza en las fórmulas del numeral 11.1.8.2 del anexo general de la Resolución CREG 097 de 2008 para calcular las compensaciones [5]. Adicionalmente, el $PENS_q$ toma el valor del mayor $PENS_{j,h}$ encontrado, que en este caso es 24.58\% [5]. Si este $PENS_q$ supera el 2\%, el CND debe enviar un informe a la SSPD.\\\\
   
 
+
+    
+  \section*{Metodología y Fórmulas}
+  
+  El CND estima la ENS ($ENSMH_{j,h}$) para cada periodo horario ($h$) y mercado afectado ($j$) como la diferencia entre el Pronóstico Nuevo de Demanda ($PRN_{j,h}$) y la Demanda Entregada ($DE_{j,h}$) [4].
+  
+  \begin{enumerate}
+  	\item \textbf{Energía No Suministrada Horaria ($ENSMH_{j,h}$)}
+  	\begin{equation}
+  		ENSMH_{j,h} = PRN_{j,h} - DE_{j,h} \quad \text{[4]}
+  	\end{equation}
+  	
+  	\item \textbf{Porcentaje de Energía No Suministrada ($PENS_{j,h}$)}
+  	\begin{equation}
+  		PENS_{j,h} = \frac{ENSMH_{j,h}}{PRN_{j,h}} \quad \text{[4]}
+  	\end{equation}
+  	
+  	\item \textbf{Condición del Umbral}
+  	Si $\mathbf{PENS_{j,h} \le 2\%}$, entonces $\mathbf{ENSMH_{j,h} = 0}$ [4].
+  	
+  	\item \textbf{ENS del Mercado ($ENSM_j$)}
+  	Si $PENS_{j,h}$ supera el 2\%, la $ENSM_j$ es el valor máximo entre la $ENSMH_{j,h}$ del periodo del Evento y la del periodo siguiente (si subsiste el Evento) [4].
+  	
+  	\item \textbf{ENS Causal Total ($ENS_q$)}
+  	Es la sumatoria de las energías no suministradas en cada mercado de comercialización afectado ($NM$) [5]:
+  	\begin{equation}
+  		ENS_q = \sum_{j=1}^{NM} ENSM_j \quad \text{[5]}
+  	\end{equation}
+  \end{enumerate}
+  
+  \section*{Valores Hipotéticos para el Ejemplo}
+  
+  Asumamos un Evento no programado en el Mercado de Comercialización $j$ durante el periodo horario $h$:
+  
+  \begin{center}
+  	\begin{tabular}{|l|p{6cm}|p{2cm}|}
+  		\hline
+  		\textbf{Variable} & \textbf{Definición} & \textbf{Valor Hipotético (MW)} \\
+  		\hline
+  		$PRN_{j,h}$ & Pronóstico Nuevo de Demanda (Num. 3.3) & $663$ \\
+  		$DE_{j,h}$ & Demanda Entregada en el periodo $h$ & $500$ \\
+  		$NM$ & Número de Mercados Afectados & $1$ \\
+  		\hline
+  	\end{tabular}
+  \end{center}
+  
+  \section*{Cálculo Detallado}
+  
+  \subsection*{Paso 1: Cálculo de la $ENSMH_{j,h}$ (Energía No Suministrada Horaria)}
+  
+  \begin{align*}
+  	ENSMH_{j,h} &= PRN_{j,h} - DE_{j,h} \quad \text{[4]} \\
+  	ENSMH_{j,h} &= 663 \, \text{MW} - 500 \, \text{MW} \\
+  	ENSMH_{j,h} &= \mathbf{163 \, \text{MW}}
+  \end{align*}
+  
+  \subsection*{Paso 2: Cálculo del $PENS_{j,h}$ (Porcentaje de Energía No Suministrada)}
+  
+  \begin{align*}
+  	PENS_{j,h} &= \frac{ENSMH_{j,h}}{PRN_{j,h}} \quad \text{[4]} \\
+  	PENS_{j,h} &= \frac{163 \, \text{MW}}{663 \, \text{MW}} \\
+  	PENS_{j,h} &\approx 0.2458 \quad (\text{o } 24.58\%)
+  \end{align*}
+  
+  \subsection*{Paso 3: Determinación de la ENS del Mercado ($ENSM_j$)}
+  
+  Se verifica la condición del umbral [4]:
+  \begin{itemize}
+  	\item $PENS_{j,h} \approx 24.58\%$.
+  	\item Como $24.58\% > 2\%$, el $ENSMH_{j,h}$ es válido y no se iguala a cero [4].
+  \end{itemize}
+  
+  Asumiendo que este valor es el máximo $ENSMH_{j,h}$ encontrado en el periodo horario del Evento ($h=1e$) y el siguiente ($h=2e$), la ENS para el Mercado $j$ es:
+  \begin{equation*}
+  	ENSM_j = 163 \, \text{MW} \quad \text{[4]}
+  \end{equation*}
+  
+  \subsection*{Paso 4: Cálculo de la ENS Causal Total ($ENS_q$)}
+  
+  Dado que solo se afectó un mercado ($NM=1$):
+  \begin{align*}
+  	ENS_q &= \sum_{j=1}^{NM} ENSM_j \quad \text{[5]} \\
+  	ENS_q &= ENSM_j \\
+  	ENS_q &= \mathbf{163 \, \text{MW}}
+  \end{align*}
+  
+  \section*{Resultado}
+  
+  La Energía No Suministrada ($ENS_q$) causada por el Evento es de $\mathbf{163 \, \text{MW}}$ [5]. Este valor se utiliza en las fórmulas del numeral 11.1.8.2 del anexo general de la Resolución CREG 097 de 2008 para calcular las compensaciones [5]. Adicionalmente, el $PENS_q$ toma el valor del mayor $PENS_{j,h}$ encontrado, que en este caso es 24.58\% [5]. Si este $PENS_q$ supera el 2\%, el CND debe enviar un informe a la SSPD.\\\\
+  
+
+
   
 \hspace{1cm}
   Los datos para el calculo de estos valores son almacenados en la
@@ -1274,6 +1001,8 @@ Cantidad de carga en MW que se desconectaría de las redes del SIN ante la ocurr
 \section{RESTABLECIMIENTO}
 
 Los restablecimientos se desarrollan bajo el acuerdo CNO 1784 del 2013
+
+\part{CALIDAD, EVENTOS Y GESTIÓN DE ACTIVOS}
 
 \chapter{CALIDAD DEL SERVICIO}
 
@@ -1468,7 +1197,6 @@ $$ MHAI A_{m, gu} = 60 \text{ horas} - 3 \text{ horas} $$
 $$ MHAI A_{m, gu} = 57 \text{ horas} $$
 
 El valor de las Máximas Horas Anuales de Indisponibilidad Ajustadas para el grupo de activos "Conexión del OR al STN" en el mes $m$ es de \textbf{57 horas}.
-
 
 \subsection{Cálculo de indisponibilidad en el STR}
 Las horas que un activo  se encuentra  in disponible durante un mes, se pueden calcular como \cite{CREG0152018}:
@@ -1995,6 +1723,8 @@ En el caso de transformadores usados y o reparados éstos deben cumplir con los 
 	\includegraphics[width=0.7\linewidth]{pruebas}
 	\label{fig:pruebas}
 \end{figure}
+
+\part{COMUNICACIONES EN EL STN}
 
 \chapter{COMUNICACIONES Y CONFIGURACIONES}
 
@@ -3011,360 +2741,6 @@ La siguiente tabla muestra los comandos Cisco más empleados:
   \end{itemize}
   
   
-\chapter{FONTERAS COMERCIALES}  
-
-\section{Fronteras Comerciales}
-
-El debate sobre la \textbf{Clasificación (Art. 2°)} de las \textbf{Fronteras Comerciales} se desarrolla completamente dentro del marco regulatorio del servicio público de energía eléctrica en Colombia, establecido principalmente por la \textbf{Comisión de Regulación de Energía y Gas (CREG)}. La clasificación detallada se encuentra en la \textbf{Resolución 157 de 2011 CREG}, la cual modificó las normas sobre el registro de fronteras comerciales y contratos de energía de largo plazo.
-
-\subsection{Contexto General: La Frontera Comercial}
-
-Una Frontera Comercial es el \textbf{punto de medición} asociado al punto de conexión entre agentes o entre agentes y usuarios conectados a las redes del Sistema de Transmisión Nacional (STN), los Sistemas de Transmisión Regional (STR), o los Sistemas de Distribución Local (SDL). También puede ser el punto de conexión entre diferentes niveles de tensión de un mismo operador de red. Cada agente en el sistema puede operar con una o más Fronteras Comerciales.\\\\
-
-La CREG, en ejercicio de sus funciones legales (conferidas por las Leyes 142 y 143 de 1994), estableció estas reglas para regular el funcionamiento del mercado de energía mayorista (MEM), buscando promover que las transacciones y actividades comerciales entre los agentes se realicen de manera más armónica y eficiente\\\\.
-
-El registro y la gestión de estas fronteras son funciones asignadas al \textbf{Administrador del Sistema de Intercambios Comerciales (ASIC)}. El ASIC, una dependencia del Centro Nacional de Despacho (CND), es el encargado del registro de fronteras comerciales y de los contratos de energía a largo plazo, así como de la liquidación, facturación, cobro y pago de las transacciones resultantes por el intercambio de energía en la bolsa [9]. La publicación de las solicitudes en proceso de registro de fronteras comerciales se realiza diariamente en cumplimiento de la Resolución \textbf{CREG 157 de 2011}.
-
-\subsection{Clasificación de las Fronteras Comerciales (Art. 2°)}
-
-El \textbf{Artículo 2°} de la Resolución 157 de 2011 clasifica las Fronteras Comerciales en dos categorías principales:
-
-\subsubsection{Frontera Comercial con reporte al ASIC}
-
-Esta clasificación se refiere a las fronteras a partir de las cuales se determinan las \textbf{transacciones comerciales} entre los diversos agentes que actúan en el Mercado Mayorista de Energía (MEM), y se define la \textbf{responsabilidad por los consumos}. Las fronteras con reporte al ASIC se subclasifican en:
-
-\begin{enumerate}
-	\item \textbf{Frontera de generación:} Corresponde al punto de medición de una unidad o planta de generación donde la energía neta es entregada por el generador al STN, STR o SDL.
-	\item \textbf{Frontera de comercialización:} Mide las transferencias de energía que permiten determinar la demanda de energía de un comercializador. Se dividen en:
-	\begin{itemize}
-		\item \textit{Frontera de comercialización entre agentes:} Determina la transferencia de energía exclusivamente entre el STN y un comercializador o entre comercializadores. La energía registrada puede emplearse en la liquidación de cargos por uso.
-		\item \textit{Frontera de comercialización para agentes y usuarios:} Registra la demanda de un comercializador y, además, registra consumos auxiliares, o la demanda de un usuario final o un grupo de usuarios finales atendidos por el comercializador.
-	\end{itemize}
-	\item \textbf{Frontera de enlace internacional:} Se utiliza para determinar los intercambios de energía con otros países bajo el esquema de Transacciones Internacionales de Electricidad de corto plazo (TIE).
-	\item \textbf{Frontera de interconexión internacional:} Se utiliza para determinar intercambios de energía con otros países cuando no se realizan en el esquema TIE. Para el enlace Colombia-Panamá, esta frontera puede estar representada por varios agentes.
-	\item \textbf{Frontera de distribución:} Permite establecer la energía transferida entre diferentes niveles de tensión de un mismo operador de red.
-	\item \textbf{Frontera de demanda desconectable voluntariamente:} Corresponde a la frontera definida en la Resolución CREG 063 de 2010 (o la norma que la modifique).
-\end{enumerate}
-
-\subsubsection{Frontera Comercial sin reporte al ASIC}
-
-Esta clasificación corresponde al punto de medición del \textbf{consumo de un usuario final} . Crucialmente, \textbf{no se utiliza para determinar las transacciones comerciales} entre los diferentes agentes que actúan en el MEM, por lo cual la información de este consumo no requiere ser reportada al ASIC.
-
-\subsection{Implicaciones de la Clasificación en las Fronteras Comerciales}
-
-La distinción establecida en el Artículo 2° es fundamental para la operación y el comercio en el MEM, ya que afecta directamente la responsabilidad y los procedimientos de control:
-
-\begin{itemize}
-	\item \textbf{Requisitos de Registro y Verificación:} La clasificación impone requisitos de registro diferenciados [18]. Para las fronteras de comercialización o generación, la solicitud debe presentarse ante el ASIC y cumplir con requisitos estrictos, incluyendo no tener obligaciones vencidas con el ASIC o el LAC, diligenciar formatos detallados sobre la ubicación, agentes y características técnicas del Sistema de Medida [20], y demostrar la capacidad financiera para las transacciones en el MEM.
-	\item \textbf{Liquidación y Facturación:} Solo las Fronteras Comerciales \textbf{con reporte al ASIC} son utilizadas por esta dependencia (el ASIC) para la liquidación, facturación, cobro y pago de las transacciones en la bolsa de energía. Específicamente, el ASIC publica la liquidación de las transacciones diarias y la información de medidores de generación y enlaces internacionales, y en la segunda liquidación, publica la información desagregada por Frontera de Comercialización.
-	\item \textbf{Modificación y Cancelación:} El registro de una Frontera Comercial puede ser modificado por cambios en las características técnicas del Sistema de Medida o en el tipo de usuario (regulado o no regulado) [24]. La cancelación de fronteras (Art. 11) tiene graves implicaciones. Por ejemplo, si se cancela el registro de una frontera de comercialización para agentes y usuarios por causales específicas (como el no cumplimiento de requisitos o la falla/hurto del Sistema de Medida), \textbf{los usuarios pasarán a ser atendidos por el Prestador de Última Instancia}, o por el comercializador integrado con el operador de red mientras se implementa la regulación del Prestador de Última Instancias. La cancelación, modificación y registro de nuevas fronteras se regula a través del Capítulo I de la Resolución 157 de 2011, que incluye los Artículos 2 al 13.
-\end{itemize}
-  
-  
-  \section{Registro}
-  
-  El **Proceso de Registro de Fronteras Comerciales** es el eje central del marco regulatorio establecido por la \textbf{Resolución 157 de 2011 CREG} [1-3], la cual modificó las normas previas sobre el registro de estas fronteras y los contratos de energía de largo plazo [3]. Este proceso es gestionado por el \textbf{Administrador del Sistema de Intercambios Comerciales (ASIC)} [4], una dependencia del Centro Nacional de Despacho (CND) [5], y su objetivo fundamental es determinar formalmente qué puntos de medición (\textit{Fronteras Comerciales} [6]) pueden participar y ser responsables de las transacciones en el Mercado Mayorista de Energía (MEM) [7]. Los procedimientos específicos se detallan en el Capítulo I de la resolución [8].
-  
-  \subsection{La Solicitud: Rigurosidad Comercial y Técnica (Art. 4\textdegree)}
-  
-  El proceso formal de registro se inicia con la solicitud presentada por el agente interesado (generador o comercializador) ante el ASIC [9]. Esta etapa funciona como un filtro riguroso para asegurar la solvencia y el cumplimiento técnico de los agentes y sus sistemas de medición [9]. El ASIC es el responsable de verificar el cumplimiento de los requisitos antes de dar inicio al trámite [10].
-  
-  \subsubsection*{A. Filtro Comercial y Financiero}
-  Para las fronteras de comercialización o generación, la solicitud debe presentarse a más tardar el \textbf{quinto día calendario anterior} a la fecha de cálculo de los mecanismos de cubrimiento (sean estos mensuales o semanales) [9]. Los requisitos de solvencia incluyen:
-  \begin{enumerate}
-  	\item No tener obligaciones vencidas que resulten de la facturación efectuada por el ASIC y el Liquidador y Administrador de Cuentas (LAC) [11, 12].
-  	\item No encontrarse incurso en alguna de las causales de retiro del mercado o de limitación de suministro establecidas en la regulación [11].
-  	\item Demostrar la capacidad financiera para realizar las transacciones que requiera en el MEM como consecuencia de la nueva Frontera Comercial [13].
-  \end{enumerate}
-  
-  \subsubsection*{B. Filtro Técnico y de Cumplimiento Normativo}
-  La solicitud debe asegurar que el \textbf{Sistema de Medida} (el conjunto de dispositivos destinados a la medición y/o registro de las transferencias de energía [14]) cumpla con el \textbf{Código de Medida} (Resolución CREG 025 de 1995 y Resolución CREG 070 de 1998) [15-17]:
-  \begin{itemize}
-  	\item Se requiere diligenciar los formatos del ASIC con la ubicación de la Frontera Comercial, los agentes participantes, las características técnicas del Sistema de Medida y la información sobre el tipo de usuario (regulado o no regulado) [17].
-  	\item El representante legal debe presentar una certificación de que el Sistema de Medida cumple con el Código de Medida [17]. Alternativamente, puede presentar el informe de la auditoría voluntaria al Sistema de Medida [18].
-  	\item Se debe remitir copia de los certificados de calibración del Equipo de Medida, expedidos por un laboratorio acreditado (solo para instalaciones nuevas o cambios de equipo), los cuales el ASIC debe hacer públicos [13, 18].
-  \end{itemize}
-  
-  \subsection{Estudio, Publicación y Mecanismo de Debate (Arts. 5\textdegree, 6\textdegree{} y 7\textdegree)}
-  
-  Una vez que el agente solicitante cumple con los requisitos iniciales, el proceso avanza a una fase de revisión y transparencia pública [19]:
-  
-  \begin{itemize}
-  	\item \textbf{Estudio y Aclaraciones (Art. 5\textdegree):} El ASIC dispone de dos (2) días calendario siguientes a la presentación para estudiar la solicitud y pedir aclaraciones. Si el agente no da una respuesta satisfactoria a las aclaraciones requeridas antes de las 5:00 p.m. del cuarto día calendario posterior a la solicitud, se entiende que ha desistido [20].
-  	\item \textbf{Publicación (Art. 6\textdegree):} Si los requisitos se cumplen, el ASIC está obligado a \textbf{publicar la información} de la Frontera Comercial en un medio electrónico que pueda ser consultado por los interesados (como lo hace XM diariamente en cumplimiento de la Resolución CREG 157 de 2011 [19, 21]) dentro de los cinco (5) días calendario siguientes a la presentación de la solicitud [19].
-  	\item \textbf{Observaciones y Objeciones (Art. 7\textdegree):} Los terceros interesados tienen un plazo de \textbf{cuatro (4) días calendario} posteriores a la publicación para presentar y sustentar sus observaciones u objeciones al registro [22].
-  \end{itemize}
-  
-  Ciertas objeciones activan un mecanismo de verificación técnica obligatoria [23]:
-  
-  \begin{itemize}
-  	\item Si las objeciones se relacionan con que el Sistema de Medida tiene especificaciones inferiores a las requeridas en el Código de Medida, que el sistema instalado no corresponde a lo reportado, o que existe un incumplimiento en la normativa de comercialización (Art. 14 del Reglamento de Comercialización) [23, 24], el ASIC \textbf{contratará a un tercero} para verificar la veracidad de la objeción en un plazo de siete (7) días calendario [24].
-  	\item Si el tercero confirma la objeción, el ASIC \textbf{negará la solicitud} y facturará el costo de la verificación al agente solicitante. Si la objeción no es válida, el ASIC facturará el costo al tercero objetor y procederá con el registro [24].
-  \end{itemize}
-  Otras observaciones que no activen este mecanismo serán trasladadas por el ASIC a la Superintendencia de Servicios Públicos Domiciliarios [25].
-  
-  \subsection{Registro Final y Consecuencias Operacionales (Arts. 8\textdegree{} y 9\textdegree)}
-  
-  El ASIC procederá al registro de la Frontera Comercial (Art. 8\textdegree) una vez se haya cumplido con los artículos 4\textdegree{} a 7\textdegree{} y el agente solicitante cumpla tres requisitos de cumplimiento continuo [26]:
-  \begin{enumerate}
-  	\item No tener obligaciones vencidas con el ASIC y el LAC [26].
-  	\item No encontrarse incurso en causales de retiro del mercado o limitación de suministro [26].
-  	\item Haber obtenido la \textbf{aprobación de los mecanismos de cubrimiento} para las transacciones en el MEM por parte del ASIC [27].
-  \end{enumerate}
-  
-  La \textbf{Fecha de registro de la Frontera Comercial} (Art. 9\textdegree) se define como la última entre [28]:
-  \begin{enumerate}
-  	\item El día calendario anterior a la fecha en que se inicia la cobertura de los mecanismos de cubrimiento para las transacciones en el MEM.
-  	\item La fecha específica solicitada por el agente.
-  \end{enumerate}
-  Esta fecha de registro se considera la \textbf{fecha de entrada en operación comercial} de la frontera, a partir de las veinticuatro (24:00) horas del mismo día. Desde esta fecha, el agente participa con la Frontera Comercial en las liquidaciones de las transacciones comerciales del MEM [29].
-  
-  \subsection{Modificación y Cancelación: Control Post-Registro (Arts. 10 y 11)}
-  
-  El registro es un proceso dinámico que permite modificaciones o cancelaciones posteriores:
-  
-  \begin{itemize}
-  	\item \textbf{Modificación (Art. 10):} Solo procede si hay un cambio en las \textbf{características técnicas del Sistema de Medida} o en el \textbf{tipo de usuario} (regulado o no regulado) [29]. El agente debe gestionar la modificación dando aplicación al proceso de registro inicial (Art. 3\textdegree) [9, 29]. La modificación no da lugar a reliquidaciones por parte del ASIC [29].
-  	\item \textbf{Cancelación (Art. 11):} El ASIC cancelará el registro si ocurren eventos graves, como la \textbf{falla o hurto del Sistema de Medida} (cuando la reparación supere el tiempo regulado), o si el Sistema de Medida no cumple con los requisitos del Código de Medida que ameritan la cancelación [30, 31]. La cancelación también procede por solicitud del agente, como la desconexión definitiva del servicio [32].
-  \end{itemize}
-  
-  Una consecuencia regulatoria importante es que, si la cancelación de una frontera de comercialización para agentes y usuarios ocurre por las causales graves (Numeral 1 del Art. 11), \textbf{los usuarios pasarán a ser atendidos por el Prestador de Última Instancia} [33]. En este caso, se cancela la frontera y simultáneamente se registra una nueva Frontera Comercial a nombre del Prestador de Última Instancia, siguiendo las reglas especiales del Artículo 13 [33].
-  
-  \subsection{Casos Especiales: Agilidad ante la Crisis (Art. 13)}
-  
-  El marco normativo prevé un proceso de registro con reglas especiales para el \textbf{registro de Fronteras Comerciales de usuarios cuyo comercializador se encuentre incurso en un procedimiento de limitación de suministro o de retiro del mercado} [34]. Para el nuevo comercializador, el proceso puede ser más ágil si cumple con requisitos específicos, incluyendo [34, 35]:
-  \begin{enumerate}
-  	\item Hacer la solicitud de registro a más tardar el \textbf{quinto día calendario anterior} a la fecha estimada de registro.
-  	\item Entregar una declaración de que \textbf{no tiene vinculación económica} con el comercializador saliente [35].
-  	\item Demostrar que los mecanismos de cubrimiento ya aprobados son suficientes para respaldar la nueva demanda, o entregar una garantía que cubra el riesgo financiero [35].
-  \end{enumerate}
-  
-  
-  
-  \section{Cancelacion de Fronteras}
-  
-  El **Artículo 11** de la \textbf{Resolución 157 de 2011 CREG} establece los eventos específicos bajo los cuales el **Administrador del Sistema de Intercambios Comerciales (ASIC)** debe proceder a la **cancelación del registro** de una Frontera Comercial [1-3]. Esta cancelación implica la \textbf{salida de operación comercial} de la frontera [4, 5], siendo un mecanismo crucial para mantener la integridad técnica y financiera del Mercado Mayorista de Energía (MEM) [6, 7].
-  
-  \subsection{Causales Obligatorias: Falla, Incumplimiento y Registro Ilegal (Numeral 1)}
-  
-  El ASIC debe cancelar el registro de una Frontera Comercial cuando, a solicitud de un agente, se verifique la ocurrencia de eventos graves relacionados con la medición o el registro ilegal [3]:
-  
-  \begin{enumerate}
-  	\item \textbf{Falla o Hurto del Sistema de Medida:} La cancelación procede si la falla o el hurto del Sistema de Medida, o de alguno de sus componentes, \textbf{supera el tiempo establecido en la regulación vigente} para su reparación o reemplazo [3].
-  	\item \textbf{Incumplimiento del Código de Medida:} Si el Sistema de Medida no cumple alguno de los requisitos cuya omisión, según el \textbf{Código de Medida} (Resolución CREG 025 de 1995 y disposiciones de la Resolución CREG 070 de 1998 [8-10]), da lugar a cancelar la frontera [10].
-  	\item \textbf{Registro de Comercialización Ilegal:} Cuando una frontera de comercialización para agentes y usuarios se registró \textbf{desconociendo lo establecido en el Artículo 14} del Reglamento de Comercialización del servicio público de energía eléctrica [10].
-  \end{enumerate}
-  
-  \subsubsection{Mecanismo de Verificación y Costos}
-  
-  Para las causales del Numeral 1, la verificación es obligatoria y se realiza mediante un tercero contratado por el ASIC [3, 11]. Este proceso de arbitraje técnico es crucial [11]:
-  
-  \begin{itemize}
-  	\item El tercero contratado por el ASIC tiene un plazo de \textbf{siete (7) días calendario} para emitir su concepto [10].
-  	\item El ASIC acoge el \textbf{concepto definitivo} del tercero encargado de la verificación para determinar si procede la cancelación [4, 11].
-  	\item \textbf{Responsabilidad Financiera:} Si la cancelación procede por las causales del Numeral 1, el agente que representa la Frontera Comercial debe pagar al ASIC el costo de la verificación [12]. Si la objeción resulta inválida, el costo lo pagará quien solicitó la verificación [12].
-  \end{itemize}
-  
-  \subsection{Consecuencias Drásticas y Protección al Usuario (Parágrafo 2)}
-  
-  La cancelación del registro tiene consecuencias directas sobre la prestación del servicio y la responsabilidad del agente:
-  
-  \begin{itemize}
-  	\item \textbf{Transferencia al Prestador de Última Instancia (PUI):} Si la cancelación de una frontera de comercialización para agentes y usuarios ocurre por las causales del Numeral 1, los usuarios afectados \textbf{pasarán a ser atendidos por el Prestador de Última Instancia} (PUI) [13, 14].
-  	\item \textbf{Registro Simultáneo:} En este caso, el ASIC cancelará la Frontera Comercial y, \textbf{en forma simultánea}, registrará una nueva Frontera Comercial a nombre del PUI, siguiendo las reglas especiales de registro establecidas en el Artículo 13 de la misma resolución [14, 15].
-  	\item \textbf{Régimen Transitorio:} Mientras se implementa la regulación del PUI, los usuarios pasarán a ser atendidos por el comercializador integrado con el operador de red al que se encuentren conectados [14].
-  	\item \textbf{Responsabilidad por Daños:} Los daños y perjuicios ocasionados a usuarios y terceros por la cancelación son \textbf{responsabilidad exclusiva} del agente que, por acción u omisión, haya incurrido en la causal de cancelación [4].
-  \end{itemize}
-  
-  \subsection{Causales Voluntarias y Otras Circunstancias (Numerales 2 y 3)}
-  
-  El agente que representa la Frontera Comercial puede solicitar la cancelación por escrito en casos de cese de operaciones o cambios en la conexión [4]:
-  
-  \begin{itemize}
-  	\item \textbf{Desconexión Definitiva:} Cuando se trate de una frontera de comercialización para agentes y usuarios y haya desconexión definitiva del servicio [16].
-  	\item \textbf{Retiro de Generación:} Cuando se trate de una Frontera de Generación y se haya terminado el procedimiento de retiro del respectivo recurso de generación, conforme a la Resolución CREG 071 de 2006 [16].
-  	\item \textbf{Corte por Comercializador:} Cuando se trate de una frontera de comercialización para agentes y usuarios y el operador de red haya atendido la solicitud de corte presentada por el comercializador [16].
-  	\item \textbf{Cambios Topológicos:} Cuando la Frontera Comercial no siga en operación comercial por cambios topológicos en las redes que conforman el SIN [5].
-  	\item \textbf{Pérdida de Cogeneración:} La cancelación también procede cuando se pierde la calidad de cogeneración del proceso, según lo establecido en el Artículo 7, Parágrafo 2 de la Resolución CREG 005 de 2010 [12].
-  \end{itemize}
-  
-  \subsection{Excepción para Fronteras de Comercialización Entre Agentes (Parágrafo 4)}
-  
-  Existe una excepción crucial en la aplicación de las causales de cancelación (falla o incumplimiento del Código de Medida) [17]:
-  
-  \begin{itemize}
-  	\item Si la verificación de la falla o el incumplimiento ocurre en una \textbf{frontera de comercialización entre agentes}, \textbf{no habrá lugar a la cancelación} [17].
-  	\item En este caso, el agente que exporta la energía está obligado a tomar las medidas necesarias para reparar o reemplazar el Sistema de Medida, o para garantizar su cumplimiento con el Código de Medida. Los costos en que se incurra serán pagados por el representante de la frontera comercial [17].
-  \end{itemize}
-  
-  
-  \chapter{CONTRATO DE ENERGÍA A LARGO PLAZO}
-  
-  
-  \section{Registro de Contratos de Energía de Largo Plazo}
-  
-  El debate sobre los \textbf{Contratos de Energía de Largo Plazo (CELP)} se establece dentro del marco de la \textbf{Resolución 157 de 2011 CREG}, la cual modifica las normas sobre el registro de estos contratos y las fronteras comerciales [1-3]. La \textbf{Comisión de Regulación de Energía y Gas (CREG)}, en ejercicio de sus funciones constitucionales y legales (Leyes 142 y 143 de 1994), adoptó esta regulación buscando promover que las transacciones y actividades comerciales entre los agentes se realicen de manera más \textbf{armónica y eficiente} [4, 5].
-  
-  La regulación específica de los CELP se encuentra en el \textbf{Capítulo II} de la Resolución 157 de 2011, que abarca los Artículos 14 al 20 [6, 7].
-  
-  \subsection{Marco Institucional y Fundamento Regulatorio}
-  
-  La gestión y registro de los Contratos de Energía de Largo Plazo es responsabilidad del \textbf{Administrador del Sistema de Intercambios Comerciales (ASIC)} [8], dependencia del Centro Nacional de Despacho (CND) [8, 9]. El ASIC también está encargado de la liquidación, facturación, cobro y pago de las transacciones resultantes del intercambio de energía en la bolsa, así como de la aprobación y administración de garantías [8].
-  
-  El requisito de registro de CELP no se origina en la Resolución 157 de 2011, sino que se basa en normas previas:
-  \begin{itemize}
-  	\item La \textbf{Resolución CREG 024 de 1995} ya establecía la obligación de registro, contenido, cesión y terminación de los contratos de energía a largo plazo en el mercado mayorista [10].
-  	\item La \textbf{Resolución CREG 135 de 1997} hizo obligatorio el registro ante el ASIC de la información relacionada con todos los contratos de compraventa de energía celebrados entre comercializadores y \textbf{usuarios no regulados} [11].
-  \end{itemize}
-  
-  \subsection{Proceso de Solicitud y Requisitos para el Registro (Art. 15)}
-  
-  El proceso formal de registro del CELP es riguroso, requiriendo que la solicitud sea presentada por cualquiera de las partes ante el ASIC [12].
-  
-  \subsubsection*{A. Plazo de Solicitud}
-  La solicitud debe presentarse a más tardar el \textbf{quinto día calendario anterior} a la fecha de cálculo de los mecanismos de cubrimiento (garantías) que el comercializador deba constituir, sean estos mensuales o semanales [12].
-  
-  \subsubsection*{B. Requisitos de Inicio del Trámite}
-  Para que el ASIC inicie el trámite de registro, debe verificar que las partes intervinientes cumplan los siguientes requisitos (Art. 15):
-  \begin{enumerate}
-  	\item No tener obligaciones vencidas que resulten de la facturación que efectúen el ASIC y el Liquidador y Administrador de Cuentas (LAC) [13].
-  	\item No encontrarse incurso en alguna de las causales de retiro del mercado o de limitación de suministro establecidas en la regulación [13].
-  	\item Diligenciar los formatos definidos por el ASIC para el registro de contratos de largo plazo [13].
-  	\item Presentar un contrato que contenga \textbf{reglas claras} para determinar \textbf{hora a hora}, durante la vigencia del contrato, las cantidades de energía exigibles y el precio respectivo [13].
-  \end{enumerate}
-  Si el agente solicitante no cumple uno o varios de estos requisitos, el ASIC \textbf{no dará inicio} al trámite de registro [14].
-  
-  \subsection{Estudio y Registro Final (Art. 16, 17 y 18)}
-  
-  La resolución establece plazos definidos para el estudio de la solicitud y su registro final:
-  
-  \begin{itemize}
-  	\item \textbf{Estudio y Aclaraciones (Art. 16):} El ASIC tiene \textbf{tres (3) días calendario} para estudiar la solicitud y requerir aclaraciones. Si el agente no responde satisfactoriamente antes de las 5:00 p.m. del séptimo día calendario posterior a la solicitud, se entiende que ha desistido [14].
-  	\item \textbf{Registro (Art. 17):} El ASIC registra el contrato una vez se haya cumplido lo dispuesto en los Artículos 15 y 16, y el agente solicitante cumpla con la aprobación de los mecanismos de cubrimiento (garantías) para las transacciones en el MEM, además de no tener obligaciones vencidas ni estar en causales de retiro [15, 16].
-  	\item \textbf{Fecha de Registro (Art. 18):} La fecha de registro (y de entrada en operación comercial a partir de las 24:00 horas) será la fecha señalada por el solicitante, siempre que el ASIC haya verificado el cumplimiento de los requisitos y aprobado los mecanismos de cubrimiento [16].
-  \end{itemize}
-  
-  \subsection{Coordinación Regulatoria y Transparencia}
-  
-  La regulación de los CELP se coordina directamente con las Fronteras Comerciales y obliga a la publicación de información:
-  
-  \begin{itemize}
-  	\item \textbf{Relación Frontera-Contrato (Parágrafo Art. 14):} El registro de un contrato de energía de largo plazo \textbf{no exime} del registro de Fronteras Comerciales, en el caso de que el contrato implique cambios en el registro de una Frontera Comercial asociada [7].
-  	\item \textbf{Modificación de Contratos (Art. 20):} Cualquier modificación a un contrato, ya sea antes o después de su registro, requiere que se gestione un \textbf{nuevo registro} ante el ASIC. Las nuevas condiciones sustituyen a las iniciales. No obstante, el nuevo registro \textbf{no da lugar a reliquidaciones} por parte del ASIC [17, 18].
-  	\item \textbf{Transparencia (Parágrafo Art. 15):} El ASIC debe publicar \textbf{estadísticas} con la información contenida en las solicitudes de registro de contratos el último día calendario de cada mes [14]. Además, para los contratos de usuarios no regulados, se deben publicar los datos básicos y las cantidades reales de consumo y precios actualizados en un medio electrónico [19].
-  \end{itemize}
-  
-  
-  
-  \section{Registro ante ASIC (Art. 14) de Contratos de Energía de Largo Plazo}
-  
-  El debate sobre el \textbf{Registro ante el ASIC (Administrador del Sistema de Intercambios Comerciales)} para los \textbf{Contratos de Energía de Largo Plazo (CELP)}, según el \textbf{Artículo 14} de la \textbf{Resolución 157 de 2011 CREG}, establece el marco formal que integra las transacciones contractuales con la estructura operativa del Mercado Mayorista de Energía (MEM) en Colombia. La CREG, en ejercicio de sus atribuciones constitucionales y legales (Leyes 142 y 143 de 1994), modificó las normas existentes para promover que las actividades comerciales entre los agentes se realizaran de manera más armónica y eficiente [1-4]. La regulación de los CELP se encuentra detallada en el \textbf{Capítulo II} de la resolución, que abarca los Artículos 14 al 20 [5].
-  
-  \subsection{El Mandato del Registro ante el ASIC (Art. 14)}
-  
-  El Artículo 14 establece la obligación específica de registrar los CELP ante el ASIC [6].
-  
-  \begin{itemize}
-  	\item \textbf{Obligación Regulatoria:} El registro se refiere a los contratos mencionados en la \textbf{Resolución CREG 024 de 1995} o aquellas normas que la modifiquen o sustituyan [6, 7]. La obligatoriedad de registro de contratos de compraventa de energía entre comercializadores y \textbf{usuarios no regulados} ya había sido establecida por la \textbf{Resolución CREG 135 de 1997} [8].
-  	\item \textbf{Procedimiento y Medios:} El registro se debe realizar utilizando los medios que determine el ASIC y cumpliendo lo señalado en los artículos 15 a 17 de la Resolución 157 de 2011 [6].
-  	\item \textbf{Función del ASIC:} El \textbf{ASIC} es la dependencia del Centro Nacional de Despacho (CND) encargada del registro de estos contratos, además de la liquidación, facturación, cobro y pago de las transacciones resultantes por el intercambio de energía en la bolsa [9].
-  \end{itemize}
-  
-  \subsection{Coordinación Regulatoria: Contratos vs. Fronteras (Parágrafo Art. 14)}
-  
-  Un punto crucial de la Resolución 157 de 2011 es la coordinación entre el registro de contratos y el registro de Fronteras Comerciales, establecida en el Parágrafo del Artículo 14:
-  
-  \begin{itemize}
-  	\item \textbf{No Exención de Registro de Fronteras:} El registro de un CELP \textbf{no obvia el registro de Fronteras Comerciales} [6].
-  	\item \textbf{Interdependencia:} Esta regla aplica cuando el registro de un contrato \textbf{involucre cambios en el registro de una Frontera Comercial asociada} a dicho contrato [6].
-  	
-  	Esta interdependencia asegura que cualquier acuerdo de largo plazo que modifique las condiciones operativas de un punto de medición debe estar respaldado por la validación técnica y regulatoria de la Frontera Comercial.
-  \end{itemize}
-  
-  \subsection{Rigurosidad en la Solicitud del Contrato (Art. 15)}
-  
-  El ASIC verifica que se cumplan requisitos estrictos antes de iniciar el trámite de registro, garantizando la viabilidad de la liquidación comercial de la transacción (Art. 15):
-  
-  \begin{enumerate}
-  	\item \textbf{Plazo Estricto:} La solicitud debe presentarse a más tardar el \textbf{quinto día calendario anterior} a la fecha de cálculo de los mecanismos de cubrimiento (garantías) que el comercializador deba constituir, sean estos mensuales o semanales [10].
-  	\item \textbf{Solvencia y Cumplimiento Regulatorio:} Las partes del contrato deben certificar [11, 12]:
-  	\begin{itemize}
-  		\item No tener obligaciones vencidas resultantes de la facturación del ASIC y el Liquidador y Administrador de Cuentas (LAC) [11].
-  		\item No estar incursos en causales de retiro del mercado o de limitación de suministro [11].
-  	\end{itemize}
-  	\item \textbf{Claridad Contractual:} El contrato debe presentarse con \textbf{reglas claras} para determinar \textbf{hora a hora}, durante su vigencia, las cantidades de energía exigibles y el precio respectivo [11].
-  \end{enumerate}
-  
-  Si el agente solicitante no cumple uno o varios de estos requisitos, el ASIC \textbf{no dará inicio al trámite} de registro [13].
-  
-  \subsection{Transparencia y Consecuencias del Registro}
-  
-  El registro ante el ASIC no solo es un requisito de fondo, sino un mecanismo de transparencia del mercado:
-  
-  \begin{itemize}
-  	\item \textbf{Publicación de Estadísticas:} El ASIC debe publicar \textbf{estadísticas} con la información contenida en las solicitudes de registro de contratos el último día calendario de cada mes [13].
-  	\item \textbf{Información Pública de Usuarios No Regulados:} La regulación requiere la publicación de la información básica de los contratos de \textbf{usuarios no regulados} en un medio electrónico, incluyendo las cantidades reales de consumo y los precios actualizados [8, 14].
-  	\item \textbf{Fecha de Operación:} La fecha de registro se considera la \textbf{fecha de entrada en operación comercial} del contrato, a partir de las 24:00 horas del mismo día, siempre que se hayan aprobado los mecanismos de cubrimiento [15]. A partir de esta fecha, el contrato tiene efectos en la liquidación de las transacciones comerciales del MEM [15].
-  	\item \textbf{Modificaciones:} Cualquier modificación a un contrato registrado requiere que se gestione un \textbf{nuevo registro}, el cual sustituirá las condiciones iniciales, sin dar lugar a reliquidaciones por parte del ASIC [16].
-  \end{itemize}
-  
-  
-  \section{liquidacion y facturacion}
-  
-  La **Liquidación y Facturación** en el contexto de las regulaciones de la \textbf{CREG} sobre Fronteras Comerciales y Contratos de Energía es el proceso central que cierra el ciclo comercial en el \textbf{Mercado de Energía Mayorista (MEM)} [1, 2]. Este proceso está definido en la **Resolución 157 de 2011 CREG** [3-5], la cual modifica las normas sobre el registro de fronteras comerciales y contratos de energía de largo plazo [3, 5]. El marco de liquidación y facturación se detalla rígidamente en los \textbf{Capítulos III} (Liquidación y Facturación de Transacciones en el MEM) y \textbf{IV} (Liquidación y Facturación de Cargos por Uso) de dicha resolución [6].
-  
-  El proceso se divide entre dos actores principales: el \textbf{ASIC} (Administrador del Sistema de Intercambios Comerciales) [2] y el \textbf{LAC} (Liquidador y Administrador de Cuentas) [7]. La promoción de transacciones comerciales más armónicas y eficientes [8] depende de que la liquidación y facturación se basen en la información registrada en las Fronteras Comerciales [9] y en los Contratos de Energía de Largo Plazo (CELP) [10].
-  
-  \subsection{Liquidación y Facturación de Transacciones en el MEM (ASIC)}
-  
-  El \textbf{ASIC} [2], dependencia del Centro Nacional de Despacho (CND) [11], está encargado de la liquidación, facturación, cobro y pago del valor de los actos, contratos y transacciones que resulten del intercambio de energía en la bolsa [2].
-  
-  \subsubsection*{A. Proceso de Liquidación Diaria (Art. 21)}
-  El ASIC realiza la liquidación del MEM en fases diarias [12]:
-  
-  \begin{enumerate}
-  	\item \textbf{Primera Liquidación y Publicación Operativa:} El ASIC debe realizar y publicar la liquidación de las transacciones diarias como máximo el \textbf{segundo día calendario siguiente a la operación} [12]. Esta publicación utiliza la información disponible e incluye lecturas de medidores de generación y de los enlaces internacionales [12].
-  	\item \textbf{Observaciones Iniciales:} Los agentes pueden solicitar la modificación de los datos que afectan las liquidaciones (diferentes a la lectura de medidores) hasta el \textbf{tercer día calendario después de la operación} [13].
-  	\item \textbf{Segunda Liquidación y Publicación:} El ASIC realiza y publica una segunda liquidación a más tardar a las \textbf{once (11:00) horas del quinto día calendario después de la operación} [14]. Esta liquidación incluye todas las variables, se publica en forma agregada por comercializador y de forma detallada, \textbf{desagregada por Frontera de Comercialización} [14].
-  	\item \textbf{Observaciones Secundarias:} Los agentes pueden solicitar la modificación de los datos de la segunda liquidación (distintos a la información operativa inicial o lecturas de medidores) dentro de los \textbf{seis (6) días calendario siguientes a la operación} [14].
-  \end{enumerate}
-  
-  \subsubsection*{B. Facturación Mensual y Pagos (Art. 23 y 24)}
-  El ASIC emite la Facturación Mensual correspondiente a las transacciones en el MEM a más tardar el \textbf{noveno día calendario del mes siguiente al de consumo} [15].
-  \begin{itemize}
-  	\item \textbf{Vencimiento:} El vencimiento de las facturas emitidas por el ASIC es el \textbf{quinto día hábil posterior a la emisión} de la Facturación Mensual [16].
-  	\item \textbf{Mora:} El no pago en la fecha señalada da lugar a que el ASIC aplique el \textbf{máximo interés moratorio permitido por la ley} sobre los saldos pendientes [17]. Los pagos se aplican primero a los intereses de mora y luego al valor del capital, considerando la antigüedad de los vencimientos [18].
-  \end{itemize}
-  
-  \subsection{Liquidación y Facturación de Cargos por Uso (LAC)}
-  
-  El \textbf{LAC} (Liquidador y Administrador de Cuentas) [7], dependencia del CND, se encarga de la liquidación y administración de cuentas por los \textbf{Cargos por Uso} de las redes del SIN (STN, STR y SDL) [7, 19].
-  
-  \subsubsection*{A. Alcance y Fechas (Art. 25)}
-  El LAC emitirá la Facturación Mensual correspondiente a los cargos por uso a más tardar el \textbf{noveno día calendario del Mes siguiente al que deba facturar} [20].
-  \begin{itemize}
-  	\item \textbf{Estructura de la Factura:} El LAC debe emitir una factura comercial por cada mes vencido, \textbf{diferenciando los cargos} para cada uno de los sistemas que liquida y factura (STN, STR, SDL) [21].
-  	\item \textbf{Información de Base:} Para la liquidación, el LAC utiliza la información de la demanda mensual de energía de cada comercializador por períodos de carga (máxima, media y mínima), calculada por el ASIC y referida al nivel del STN (sin incluir las pérdidas del STN) [22].
-  \end{itemize}
-  
-  \subsubsection*{B. Administración de Garantías y Pagos (Art. 26 y 29)}
-  El LAC también tiene funciones en la gestión de garantías asociadas a los cargos por uso:
-  \begin{itemize}
-  	\item \textbf{Garantías:} Las actividades del LAC incluyen el cálculo, publicación y administración de los mecanismos de cubrimiento (garantías) para el pago de los Cargos por Uso del STR y del SDL [23-25]. El LAC debe revisar y aprobar estas garantías [25].
-  	\item \textbf{Vencimiento:} El vencimiento de las facturas emitidas por el LAC también es el \textbf{quinto día hábil posterior a la emisión} de la Facturación Mensual [26], aplicando el máximo interés moratorio permitido por la ley en caso de incumplimiento [27].
-  \end{itemize}
-  
-  \subsection{Control e Integración en el Proceso}
-  
-  El sistema de liquidación articula las Fronteras Comerciales y los Contratos de Largo Plazo para garantizar la exactitud de los cobros:
-  
-  \begin{itemize}
-  	\item \textbf{Dependencia de la Frontera Comercial:} Solo las Fronteras Comerciales \textbf{con reporte al ASIC} [28] se utilizan como fuente de datos para la liquidación [14]. La energía registrada en las fronteras de comercialización entre agentes también podrá ser empleada en la liquidación de cargos por uso [29].
-  	\item \textbf{Control y Reclamaciones:} Contra las liquidaciones diarias del ASIC solo proceden observaciones o solicitudes de modificación en los plazos establecidos [30]. Contra la \textbf{Facturación Mensual}, solo procede una \textbf{Reclamación a la Facturación Mensual} [31] cuando las observaciones o solicitudes de modificación diarias presentadas por el agente no hayan sido tenidas en cuenta por el ASIC en la liquidación soporte de la factura [30].
-  	\item \textbf{Integración Contrato-Liquidación:} Una vez que un CELP inicia su operación comercial, los agentes involucrados deben reportar las inconsistencias encontradas en la liquidación del ASIC conforme a los plazos diarios [32]. Esto refuerza la exigencia de que los contratos contengan \textbf{reglas claras para determinar cantidades y precios hora a hora} [33].
-  \end{itemize}
-  
-  
   
 \chapter{PROCESO DE CONEXIÓN}
 
@@ -3553,6 +2929,718 @@ La Mejorabilidad en su extensión más amplia incluye las siguientes variables:
 \chapter{CIBERSEGURIDAD}
 
 \section{Acuerdo CNO 1960}
+
+\part{FRONTERAS COMERCIALES}
+
+\chapter{FONTERAS COMERCIALES}  
+
+\section{Fronteras Comerciales}
+
+El debate sobre la \textbf{Clasificación (Art. 2°)} de las \textbf{Fronteras Comerciales} se desarrolla completamente dentro del marco regulatorio del servicio público de energía eléctrica en Colombia, establecido principalmente por la \textbf{Comisión de Regulación de Energía y Gas (CREG)}. La clasificación detallada se encuentra en la \textbf{Resolución 157 de 2011 CREG}, la cual modificó las normas sobre el registro de fronteras comerciales y contratos de energía de largo plazo.
+
+\subsection{Contexto General: La Frontera Comercial}
+
+Una Frontera Comercial es el \textbf{punto de medición} asociado al punto de conexión entre agentes o entre agentes y usuarios conectados a las redes del Sistema de Transmisión Nacional (STN), los Sistemas de Transmisión Regional (STR), o los Sistemas de Distribución Local (SDL). También puede ser el punto de conexión entre diferentes niveles de tensión de un mismo operador de red. Cada agente en el sistema puede operar con una o más Fronteras Comerciales.\\\\
+
+La CREG, en ejercicio de sus funciones legales (conferidas por las Leyes 142 y 143 de 1994), estableció estas reglas para regular el funcionamiento del mercado de energía mayorista (MEM), buscando promover que las transacciones y actividades comerciales entre los agentes se realicen de manera más armónica y eficiente\\\\.
+
+El registro y la gestión de estas fronteras son funciones asignadas al \textbf{Administrador del Sistema de Intercambios Comerciales (ASIC)}. El ASIC, una dependencia del Centro Nacional de Despacho (CND), es el encargado del registro de fronteras comerciales y de los contratos de energía a largo plazo, así como de la liquidación, facturación, cobro y pago de las transacciones resultantes por el intercambio de energía en la bolsa [9]. La publicación de las solicitudes en proceso de registro de fronteras comerciales se realiza diariamente en cumplimiento de la Resolución \textbf{CREG 157 de 2011}.
+
+\subsection{Clasificación de las Fronteras Comerciales (Art. 2°)}
+
+El \textbf{Artículo 2°} de la Resolución 157 de 2011 clasifica las Fronteras Comerciales en dos categorías principales:
+
+\subsubsection{Frontera Comercial con reporte al ASIC}
+
+Esta clasificación se refiere a las fronteras a partir de las cuales se determinan las \textbf{transacciones comerciales} entre los diversos agentes que actúan en el Mercado Mayorista de Energía (MEM), y se define la \textbf{responsabilidad por los consumos}. Las fronteras con reporte al ASIC se subclasifican en:
+
+\begin{enumerate}
+	\item \textbf{Frontera de generación:} Corresponde al punto de medición de una unidad o planta de generación donde la energía neta es entregada por el generador al STN, STR o SDL.
+	\item \textbf{Frontera de comercialización:} Mide las transferencias de energía que permiten determinar la demanda de energía de un comercializador. Se dividen en:
+	\begin{itemize}
+		\item \textit{Frontera de comercialización entre agentes:} Determina la transferencia de energía exclusivamente entre el STN y un comercializador o entre comercializadores. La energía registrada puede emplearse en la liquidación de cargos por uso.
+		\item \textit{Frontera de comercialización para agentes y usuarios:} Registra la demanda de un comercializador y, además, registra consumos auxiliares, o la demanda de un usuario final o un grupo de usuarios finales atendidos por el comercializador.
+	\end{itemize}
+	\item \textbf{Frontera de enlace internacional:} Se utiliza para determinar los intercambios de energía con otros países bajo el esquema de Transacciones Internacionales de Electricidad de corto plazo (TIE).
+	\item \textbf{Frontera de interconexión internacional:} Se utiliza para determinar intercambios de energía con otros países cuando no se realizan en el esquema TIE. Para el enlace Colombia-Panamá, esta frontera puede estar representada por varios agentes.
+	\item \textbf{Frontera de distribución:} Permite establecer la energía transferida entre diferentes niveles de tensión de un mismo operador de red.
+	\item \textbf{Frontera de demanda desconectable voluntariamente:} Corresponde a la frontera definida en la Resolución CREG 063 de 2010 (o la norma que la modifique).
+\end{enumerate}
+
+\subsubsection{Frontera Comercial sin reporte al ASIC}
+
+Esta clasificación corresponde al punto de medición del \textbf{consumo de un usuario final} . Crucialmente, \textbf{no se utiliza para determinar las transacciones comerciales} entre los diferentes agentes que actúan en el MEM, por lo cual la información de este consumo no requiere ser reportada al ASIC.
+
+\subsection{Implicaciones de la Clasificación en las Fronteras Comerciales}
+
+La distinción establecida en el Artículo 2° es fundamental para la operación y el comercio en el MEM, ya que afecta directamente la responsabilidad y los procedimientos de control:
+
+\begin{itemize}
+	\item \textbf{Requisitos de Registro y Verificación:} La clasificación impone requisitos de registro diferenciados [18]. Para las fronteras de comercialización o generación, la solicitud debe presentarse ante el ASIC y cumplir con requisitos estrictos, incluyendo no tener obligaciones vencidas con el ASIC o el LAC, diligenciar formatos detallados sobre la ubicación, agentes y características técnicas del Sistema de Medida [20], y demostrar la capacidad financiera para las transacciones en el MEM.
+	\item \textbf{Liquidación y Facturación:} Solo las Fronteras Comerciales \textbf{con reporte al ASIC} son utilizadas por esta dependencia (el ASIC) para la liquidación, facturación, cobro y pago de las transacciones en la bolsa de energía. Específicamente, el ASIC publica la liquidación de las transacciones diarias y la información de medidores de generación y enlaces internacionales, y en la segunda liquidación, publica la información desagregada por Frontera de Comercialización.
+	\item \textbf{Modificación y Cancelación:} El registro de una Frontera Comercial puede ser modificado por cambios en las características técnicas del Sistema de Medida o en el tipo de usuario (regulado o no regulado) [24]. La cancelación de fronteras (Art. 11) tiene graves implicaciones. Por ejemplo, si se cancela el registro de una frontera de comercialización para agentes y usuarios por causales específicas (como el no cumplimiento de requisitos o la falla/hurto del Sistema de Medida), \textbf{los usuarios pasarán a ser atendidos por el Prestador de Última Instancia}, o por el comercializador integrado con el operador de red mientras se implementa la regulación del Prestador de Última Instancias. La cancelación, modificación y registro de nuevas fronteras se regula a través del Capítulo I de la Resolución 157 de 2011, que incluye los Artículos 2 al 13.
+\end{itemize}
+
+
+\section{Registro}
+
+El **Proceso de Registro de Fronteras Comerciales** es el eje central del marco regulatorio establecido por la \textbf{Resolución 157 de 2011 CREG} [1-3], la cual modificó las normas previas sobre el registro de estas fronteras y los contratos de energía de largo plazo [3]. Este proceso es gestionado por el \textbf{Administrador del Sistema de Intercambios Comerciales (ASIC)} [4], una dependencia del Centro Nacional de Despacho (CND) [5], y su objetivo fundamental es determinar formalmente qué puntos de medición (\textit{Fronteras Comerciales} [6]) pueden participar y ser responsables de las transacciones en el Mercado Mayorista de Energía (MEM) [7]. Los procedimientos específicos se detallan en el Capítulo I de la resolución [8].
+
+\subsection{La Solicitud: Rigurosidad Comercial y Técnica (Art. 4\textdegree)}
+
+El proceso formal de registro se inicia con la solicitud presentada por el agente interesado (generador o comercializador) ante el ASIC [9]. Esta etapa funciona como un filtro riguroso para asegurar la solvencia y el cumplimiento técnico de los agentes y sus sistemas de medición [9]. El ASIC es el responsable de verificar el cumplimiento de los requisitos antes de dar inicio al trámite [10].
+
+\subsubsection*{A. Filtro Comercial y Financiero}
+Para las fronteras de comercialización o generación, la solicitud debe presentarse a más tardar el \textbf{quinto día calendario anterior} a la fecha de cálculo de los mecanismos de cubrimiento (sean estos mensuales o semanales) [9]. Los requisitos de solvencia incluyen:
+\begin{enumerate}
+	\item No tener obligaciones vencidas que resulten de la facturación efectuada por el ASIC y el Liquidador y Administrador de Cuentas (LAC) [11, 12].
+	\item No encontrarse incurso en alguna de las causales de retiro del mercado o de limitación de suministro establecidas en la regulación [11].
+	\item Demostrar la capacidad financiera para realizar las transacciones que requiera en el MEM como consecuencia de la nueva Frontera Comercial [13].
+\end{enumerate}
+
+\subsubsection*{B. Filtro Técnico y de Cumplimiento Normativo}
+La solicitud debe asegurar que el \textbf{Sistema de Medida} (el conjunto de dispositivos destinados a la medición y/o registro de las transferencias de energía [14]) cumpla con el \textbf{Código de Medida} (Resolución CREG 025 de 1995 y Resolución CREG 070 de 1998) [15-17]:
+\begin{itemize}
+	\item Se requiere diligenciar los formatos del ASIC con la ubicación de la Frontera Comercial, los agentes participantes, las características técnicas del Sistema de Medida y la información sobre el tipo de usuario (regulado o no regulado) [17].
+	\item El representante legal debe presentar una certificación de que el Sistema de Medida cumple con el Código de Medida [17]. Alternativamente, puede presentar el informe de la auditoría voluntaria al Sistema de Medida [18].
+	\item Se debe remitir copia de los certificados de calibración del Equipo de Medida, expedidos por un laboratorio acreditado (solo para instalaciones nuevas o cambios de equipo), los cuales el ASIC debe hacer públicos [13, 18].
+\end{itemize}
+
+\subsection{Estudio, Publicación y Mecanismo de Debate (Arts. 5\textdegree, 6\textdegree{} y 7\textdegree)}
+
+Una vez que el agente solicitante cumple con los requisitos iniciales, el proceso avanza a una fase de revisión y transparencia pública [19]:
+
+\begin{itemize}
+	\item \textbf{Estudio y Aclaraciones (Art. 5\textdegree):} El ASIC dispone de dos (2) días calendario siguientes a la presentación para estudiar la solicitud y pedir aclaraciones. Si el agente no da una respuesta satisfactoria a las aclaraciones requeridas antes de las 5:00 p.m. del cuarto día calendario posterior a la solicitud, se entiende que ha desistido [20].
+	\item \textbf{Publicación (Art. 6\textdegree):} Si los requisitos se cumplen, el ASIC está obligado a \textbf{publicar la información} de la Frontera Comercial en un medio electrónico que pueda ser consultado por los interesados (como lo hace XM diariamente en cumplimiento de la Resolución CREG 157 de 2011 [19, 21]) dentro de los cinco (5) días calendario siguientes a la presentación de la solicitud [19].
+	\item \textbf{Observaciones y Objeciones (Art. 7\textdegree):} Los terceros interesados tienen un plazo de \textbf{cuatro (4) días calendario} posteriores a la publicación para presentar y sustentar sus observaciones u objeciones al registro [22].
+\end{itemize}
+
+Ciertas objeciones activan un mecanismo de verificación técnica obligatoria [23]:
+
+\begin{itemize}
+	\item Si las objeciones se relacionan con que el Sistema de Medida tiene especificaciones inferiores a las requeridas en el Código de Medida, que el sistema instalado no corresponde a lo reportado, o que existe un incumplimiento en la normativa de comercialización (Art. 14 del Reglamento de Comercialización) [23, 24], el ASIC \textbf{contratará a un tercero} para verificar la veracidad de la objeción en un plazo de siete (7) días calendario [24].
+	\item Si el tercero confirma la objeción, el ASIC \textbf{negará la solicitud} y facturará el costo de la verificación al agente solicitante. Si la objeción no es válida, el ASIC facturará el costo al tercero objetor y procederá con el registro [24].
+\end{itemize}
+Otras observaciones que no activen este mecanismo serán trasladadas por el ASIC a la Superintendencia de Servicios Públicos Domiciliarios [25].
+
+\subsection{Registro Final y Consecuencias Operacionales (Arts. 8\textdegree{} y 9\textdegree)}
+
+El ASIC procederá al registro de la Frontera Comercial (Art. 8\textdegree) una vez se haya cumplido con los artículos 4\textdegree{} a 7\textdegree{} y el agente solicitante cumpla tres requisitos de cumplimiento continuo [26]:
+\begin{enumerate}
+	\item No tener obligaciones vencidas con el ASIC y el LAC [26].
+	\item No encontrarse incurso en causales de retiro del mercado o limitación de suministro [26].
+	\item Haber obtenido la \textbf{aprobación de los mecanismos de cubrimiento} para las transacciones en el MEM por parte del ASIC [27].
+\end{enumerate}
+
+La \textbf{Fecha de registro de la Frontera Comercial} (Art. 9\textdegree) se define como la última entre [28]:
+\begin{enumerate}
+	\item El día calendario anterior a la fecha en que se inicia la cobertura de los mecanismos de cubrimiento para las transacciones en el MEM.
+	\item La fecha específica solicitada por el agente.
+\end{enumerate}
+Esta fecha de registro se considera la \textbf{fecha de entrada en operación comercial} de la frontera, a partir de las veinticuatro (24:00) horas del mismo día. Desde esta fecha, el agente participa con la Frontera Comercial en las liquidaciones de las transacciones comerciales del MEM [29].
+
+\subsection{Modificación y Cancelación: Control Post-Registro (Arts. 10 y 11)}
+
+El registro es un proceso dinámico que permite modificaciones o cancelaciones posteriores:
+
+\begin{itemize}
+	\item \textbf{Modificación (Art. 10):} Solo procede si hay un cambio en las \textbf{características técnicas del Sistema de Medida} o en el \textbf{tipo de usuario} (regulado o no regulado) [29]. El agente debe gestionar la modificación dando aplicación al proceso de registro inicial (Art. 3\textdegree) [9, 29]. La modificación no da lugar a reliquidaciones por parte del ASIC [29].
+	\item \textbf{Cancelación (Art. 11):} El ASIC cancelará el registro si ocurren eventos graves, como la \textbf{falla o hurto del Sistema de Medida} (cuando la reparación supere el tiempo regulado), o si el Sistema de Medida no cumple con los requisitos del Código de Medida que ameritan la cancelación [30, 31]. La cancelación también procede por solicitud del agente, como la desconexión definitiva del servicio [32].
+\end{itemize}
+
+Una consecuencia regulatoria importante es que, si la cancelación de una frontera de comercialización para agentes y usuarios ocurre por las causales graves (Numeral 1 del Art. 11), \textbf{los usuarios pasarán a ser atendidos por el Prestador de Última Instancia} [33]. En este caso, se cancela la frontera y simultáneamente se registra una nueva Frontera Comercial a nombre del Prestador de Última Instancia, siguiendo las reglas especiales del Artículo 13 [33].
+
+\subsection{Casos Especiales: Agilidad ante la Crisis (Art. 13)}
+
+El marco normativo prevé un proceso de registro con reglas especiales para el \textbf{registro de Fronteras Comerciales de usuarios cuyo comercializador se encuentre incurso en un procedimiento de limitación de suministro o de retiro del mercado} [34]. Para el nuevo comercializador, el proceso puede ser más ágil si cumple con requisitos específicos, incluyendo [34, 35]:
+\begin{enumerate}
+	\item Hacer la solicitud de registro a más tardar el \textbf{quinto día calendario anterior} a la fecha estimada de registro.
+	\item Entregar una declaración de que \textbf{no tiene vinculación económica} con el comercializador saliente [35].
+	\item Demostrar que los mecanismos de cubrimiento ya aprobados son suficientes para respaldar la nueva demanda, o entregar una garantía que cubra el riesgo financiero [35].
+\end{enumerate}
+
+
+
+\section{Cancelacion de Fronteras}
+
+El **Artículo 11** de la \textbf{Resolución 157 de 2011 CREG} establece los eventos específicos bajo los cuales el **Administrador del Sistema de Intercambios Comerciales (ASIC)** debe proceder a la **cancelación del registro** de una Frontera Comercial [1-3]. Esta cancelación implica la \textbf{salida de operación comercial} de la frontera [4, 5], siendo un mecanismo crucial para mantener la integridad técnica y financiera del Mercado Mayorista de Energía (MEM) [6, 7].
+
+\subsection{Causales Obligatorias: Falla, Incumplimiento y Registro Ilegal (Numeral 1)}
+
+El ASIC debe cancelar el registro de una Frontera Comercial cuando, a solicitud de un agente, se verifique la ocurrencia de eventos graves relacionados con la medición o el registro ilegal [3]:
+
+\begin{enumerate}
+	\item \textbf{Falla o Hurto del Sistema de Medida:} La cancelación procede si la falla o el hurto del Sistema de Medida, o de alguno de sus componentes, \textbf{supera el tiempo establecido en la regulación vigente} para su reparación o reemplazo [3].
+	\item \textbf{Incumplimiento del Código de Medida:} Si el Sistema de Medida no cumple alguno de los requisitos cuya omisión, según el \textbf{Código de Medida} (Resolución CREG 025 de 1995 y disposiciones de la Resolución CREG 070 de 1998 [8-10]), da lugar a cancelar la frontera [10].
+	\item \textbf{Registro de Comercialización Ilegal:} Cuando una frontera de comercialización para agentes y usuarios se registró \textbf{desconociendo lo establecido en el Artículo 14} del Reglamento de Comercialización del servicio público de energía eléctrica [10].
+\end{enumerate}
+
+\subsubsection{Mecanismo de Verificación y Costos}
+
+Para las causales del Numeral 1, la verificación es obligatoria y se realiza mediante un tercero contratado por el ASIC [3, 11]. Este proceso de arbitraje técnico es crucial [11]:
+
+\begin{itemize}
+	\item El tercero contratado por el ASIC tiene un plazo de \textbf{siete (7) días calendario} para emitir su concepto [10].
+	\item El ASIC acoge el \textbf{concepto definitivo} del tercero encargado de la verificación para determinar si procede la cancelación [4, 11].
+	\item \textbf{Responsabilidad Financiera:} Si la cancelación procede por las causales del Numeral 1, el agente que representa la Frontera Comercial debe pagar al ASIC el costo de la verificación [12]. Si la objeción resulta inválida, el costo lo pagará quien solicitó la verificación [12].
+\end{itemize}
+
+\subsection{Consecuencias Drásticas y Protección al Usuario (Parágrafo 2)}
+
+La cancelación del registro tiene consecuencias directas sobre la prestación del servicio y la responsabilidad del agente:
+
+\begin{itemize}
+	\item \textbf{Transferencia al Prestador de Última Instancia (PUI):} Si la cancelación de una frontera de comercialización para agentes y usuarios ocurre por las causales del Numeral 1, los usuarios afectados \textbf{pasarán a ser atendidos por el Prestador de Última Instancia} (PUI) [13, 14].
+	\item \textbf{Registro Simultáneo:} En este caso, el ASIC cancelará la Frontera Comercial y, \textbf{en forma simultánea}, registrará una nueva Frontera Comercial a nombre del PUI, siguiendo las reglas especiales de registro establecidas en el Artículo 13 de la misma resolución [14, 15].
+	\item \textbf{Régimen Transitorio:} Mientras se implementa la regulación del PUI, los usuarios pasarán a ser atendidos por el comercializador integrado con el operador de red al que se encuentren conectados [14].
+	\item \textbf{Responsabilidad por Daños:} Los daños y perjuicios ocasionados a usuarios y terceros por la cancelación son \textbf{responsabilidad exclusiva} del agente que, por acción u omisión, haya incurrido en la causal de cancelación [4].
+\end{itemize}
+
+\subsection{Causales Voluntarias y Otras Circunstancias (Numerales 2 y 3)}
+
+El agente que representa la Frontera Comercial puede solicitar la cancelación por escrito en casos de cese de operaciones o cambios en la conexión [4]:
+
+\begin{itemize}
+	\item \textbf{Desconexión Definitiva:} Cuando se trate de una frontera de comercialización para agentes y usuarios y haya desconexión definitiva del servicio [16].
+	\item \textbf{Retiro de Generación:} Cuando se trate de una Frontera de Generación y se haya terminado el procedimiento de retiro del respectivo recurso de generación, conforme a la Resolución CREG 071 de 2006 [16].
+	\item \textbf{Corte por Comercializador:} Cuando se trate de una frontera de comercialización para agentes y usuarios y el operador de red haya atendido la solicitud de corte presentada por el comercializador [16].
+	\item \textbf{Cambios Topológicos:} Cuando la Frontera Comercial no siga en operación comercial por cambios topológicos en las redes que conforman el SIN [5].
+	\item \textbf{Pérdida de Cogeneración:} La cancelación también procede cuando se pierde la calidad de cogeneración del proceso, según lo establecido en el Artículo 7, Parágrafo 2 de la Resolución CREG 005 de 2010 [12].
+\end{itemize}
+
+\subsection{Excepción para Fronteras de Comercialización Entre Agentes (Parágrafo 4)}
+
+Existe una excepción crucial en la aplicación de las causales de cancelación (falla o incumplimiento del Código de Medida) [17]:
+
+\begin{itemize}
+	\item Si la verificación de la falla o el incumplimiento ocurre en una \textbf{frontera de comercialización entre agentes}, \textbf{no habrá lugar a la cancelación} [17].
+	\item En este caso, el agente que exporta la energía está obligado a tomar las medidas necesarias para reparar o reemplazar el Sistema de Medida, o para garantizar su cumplimiento con el Código de Medida. Los costos en que se incurra serán pagados por el representante de la frontera comercial [17].
+\end{itemize}
+
+
+\chapter{CONTRATO DE ENERGÍA A LARGO PLAZO}
+
+
+\section{Registro de Contratos de Energía de Largo Plazo}
+
+El debate sobre los \textbf{Contratos de Energía de Largo Plazo (CELP)} se establece dentro del marco de la \textbf{Resolución 157 de 2011 CREG}, la cual modifica las normas sobre el registro de estos contratos y las fronteras comerciales [1-3]. La \textbf{Comisión de Regulación de Energía y Gas (CREG)}, en ejercicio de sus funciones constitucionales y legales (Leyes 142 y 143 de 1994), adoptó esta regulación buscando promover que las transacciones y actividades comerciales entre los agentes se realicen de manera más \textbf{armónica y eficiente} [4, 5].
+
+La regulación específica de los CELP se encuentra en el \textbf{Capítulo II} de la Resolución 157 de 2011, que abarca los Artículos 14 al 20 [6, 7].
+
+\subsection{Marco Institucional y Fundamento Regulatorio}
+
+La gestión y registro de los Contratos de Energía de Largo Plazo es responsabilidad del \textbf{Administrador del Sistema de Intercambios Comerciales (ASIC)} [8], dependencia del Centro Nacional de Despacho (CND) [8, 9]. El ASIC también está encargado de la liquidación, facturación, cobro y pago de las transacciones resultantes del intercambio de energía en la bolsa, así como de la aprobación y administración de garantías [8].
+
+El requisito de registro de CELP no se origina en la Resolución 157 de 2011, sino que se basa en normas previas:
+\begin{itemize}
+	\item La \textbf{Resolución CREG 024 de 1995} ya establecía la obligación de registro, contenido, cesión y terminación de los contratos de energía a largo plazo en el mercado mayorista [10].
+	\item La \textbf{Resolución CREG 135 de 1997} hizo obligatorio el registro ante el ASIC de la información relacionada con todos los contratos de compraventa de energía celebrados entre comercializadores y \textbf{usuarios no regulados} [11].
+\end{itemize}
+
+\subsection{Proceso de Solicitud y Requisitos para el Registro (Art. 15)}
+
+El proceso formal de registro del CELP es riguroso, requiriendo que la solicitud sea presentada por cualquiera de las partes ante el ASIC [12].
+
+\subsubsection*{A. Plazo de Solicitud}
+La solicitud debe presentarse a más tardar el \textbf{quinto día calendario anterior} a la fecha de cálculo de los mecanismos de cubrimiento (garantías) que el comercializador deba constituir, sean estos mensuales o semanales [12].
+
+\subsubsection*{B. Requisitos de Inicio del Trámite}
+Para que el ASIC inicie el trámite de registro, debe verificar que las partes intervinientes cumplan los siguientes requisitos (Art. 15):
+\begin{enumerate}
+	\item No tener obligaciones vencidas que resulten de la facturación que efectúen el ASIC y el Liquidador y Administrador de Cuentas (LAC) [13].
+	\item No encontrarse incurso en alguna de las causales de retiro del mercado o de limitación de suministro establecidas en la regulación [13].
+	\item Diligenciar los formatos definidos por el ASIC para el registro de contratos de largo plazo [13].
+	\item Presentar un contrato que contenga \textbf{reglas claras} para determinar \textbf{hora a hora}, durante la vigencia del contrato, las cantidades de energía exigibles y el precio respectivo [13].
+\end{enumerate}
+Si el agente solicitante no cumple uno o varios de estos requisitos, el ASIC \textbf{no dará inicio} al trámite de registro [14].
+
+\subsection{Estudio y Registro Final (Art. 16, 17 y 18)}
+
+La resolución establece plazos definidos para el estudio de la solicitud y su registro final:
+
+\begin{itemize}
+	\item \textbf{Estudio y Aclaraciones (Art. 16):} El ASIC tiene \textbf{tres (3) días calendario} para estudiar la solicitud y requerir aclaraciones. Si el agente no responde satisfactoriamente antes de las 5:00 p.m. del séptimo día calendario posterior a la solicitud, se entiende que ha desistido [14].
+	\item \textbf{Registro (Art. 17):} El ASIC registra el contrato una vez se haya cumplido lo dispuesto en los Artículos 15 y 16, y el agente solicitante cumpla con la aprobación de los mecanismos de cubrimiento (garantías) para las transacciones en el MEM, además de no tener obligaciones vencidas ni estar en causales de retiro [15, 16].
+	\item \textbf{Fecha de Registro (Art. 18):} La fecha de registro (y de entrada en operación comercial a partir de las 24:00 horas) será la fecha señalada por el solicitante, siempre que el ASIC haya verificado el cumplimiento de los requisitos y aprobado los mecanismos de cubrimiento [16].
+\end{itemize}
+
+\subsection{Coordinación Regulatoria y Transparencia}
+
+La regulación de los CELP se coordina directamente con las Fronteras Comerciales y obliga a la publicación de información:
+
+\begin{itemize}
+	\item \textbf{Relación Frontera-Contrato (Parágrafo Art. 14):} El registro de un contrato de energía de largo plazo \textbf{no exime} del registro de Fronteras Comerciales, en el caso de que el contrato implique cambios en el registro de una Frontera Comercial asociada [7].
+	\item \textbf{Modificación de Contratos (Art. 20):} Cualquier modificación a un contrato, ya sea antes o después de su registro, requiere que se gestione un \textbf{nuevo registro} ante el ASIC. Las nuevas condiciones sustituyen a las iniciales. No obstante, el nuevo registro \textbf{no da lugar a reliquidaciones} por parte del ASIC [17, 18].
+	\item \textbf{Transparencia (Parágrafo Art. 15):} El ASIC debe publicar \textbf{estadísticas} con la información contenida en las solicitudes de registro de contratos el último día calendario de cada mes [14]. Además, para los contratos de usuarios no regulados, se deben publicar los datos básicos y las cantidades reales de consumo y precios actualizados en un medio electrónico [19].
+\end{itemize}
+
+
+
+\section{Registro ante ASIC (Art. 14) de Contratos de Energía de Largo Plazo}
+
+El debate sobre el \textbf{Registro ante el ASIC (Administrador del Sistema de Intercambios Comerciales)} para los \textbf{Contratos de Energía de Largo Plazo (CELP)}, según el \textbf{Artículo 14} de la \textbf{Resolución 157 de 2011 CREG}, establece el marco formal que integra las transacciones contractuales con la estructura operativa del Mercado Mayorista de Energía (MEM) en Colombia. La CREG, en ejercicio de sus atribuciones constitucionales y legales (Leyes 142 y 143 de 1994), modificó las normas existentes para promover que las actividades comerciales entre los agentes se realizaran de manera más armónica y eficiente [1-4]. La regulación de los CELP se encuentra detallada en el \textbf{Capítulo II} de la resolución, que abarca los Artículos 14 al 20 [5].
+
+\subsection{El Mandato del Registro ante el ASIC (Art. 14)}
+
+El Artículo 14 establece la obligación específica de registrar los CELP ante el ASIC [6].
+
+\begin{itemize}
+	\item \textbf{Obligación Regulatoria:} El registro se refiere a los contratos mencionados en la \textbf{Resolución CREG 024 de 1995} o aquellas normas que la modifiquen o sustituyan [6, 7]. La obligatoriedad de registro de contratos de compraventa de energía entre comercializadores y \textbf{usuarios no regulados} ya había sido establecida por la \textbf{Resolución CREG 135 de 1997} [8].
+	\item \textbf{Procedimiento y Medios:} El registro se debe realizar utilizando los medios que determine el ASIC y cumpliendo lo señalado en los artículos 15 a 17 de la Resolución 157 de 2011 [6].
+	\item \textbf{Función del ASIC:} El \textbf{ASIC} es la dependencia del Centro Nacional de Despacho (CND) encargada del registro de estos contratos, además de la liquidación, facturación, cobro y pago de las transacciones resultantes por el intercambio de energía en la bolsa [9].
+\end{itemize}
+
+\subsection{Coordinación Regulatoria: Contratos vs. Fronteras (Parágrafo Art. 14)}
+
+Un punto crucial de la Resolución 157 de 2011 es la coordinación entre el registro de contratos y el registro de Fronteras Comerciales, establecida en el Parágrafo del Artículo 14:
+
+\begin{itemize}
+	\item \textbf{No Exención de Registro de Fronteras:} El registro de un CELP \textbf{no obvia el registro de Fronteras Comerciales} [6].
+	\item \textbf{Interdependencia:} Esta regla aplica cuando el registro de un contrato \textbf{involucre cambios en el registro de una Frontera Comercial asociada} a dicho contrato [6].
+	
+	Esta interdependencia asegura que cualquier acuerdo de largo plazo que modifique las condiciones operativas de un punto de medición debe estar respaldado por la validación técnica y regulatoria de la Frontera Comercial.
+\end{itemize}
+
+\subsection{Rigurosidad en la Solicitud del Contrato (Art. 15)}
+
+El ASIC verifica que se cumplan requisitos estrictos antes de iniciar el trámite de registro, garantizando la viabilidad de la liquidación comercial de la transacción (Art. 15):
+
+\begin{enumerate}
+	\item \textbf{Plazo Estricto:} La solicitud debe presentarse a más tardar el \textbf{quinto día calendario anterior} a la fecha de cálculo de los mecanismos de cubrimiento (garantías) que el comercializador deba constituir, sean estos mensuales o semanales [10].
+	\item \textbf{Solvencia y Cumplimiento Regulatorio:} Las partes del contrato deben certificar [11, 12]:
+	\begin{itemize}
+		\item No tener obligaciones vencidas resultantes de la facturación del ASIC y el Liquidador y Administrador de Cuentas (LAC) [11].
+		\item No estar incursos en causales de retiro del mercado o de limitación de suministro [11].
+	\end{itemize}
+	\item \textbf{Claridad Contractual:} El contrato debe presentarse con \textbf{reglas claras} para determinar \textbf{hora a hora}, durante su vigencia, las cantidades de energía exigibles y el precio respectivo [11].
+\end{enumerate}
+
+Si el agente solicitante no cumple uno o varios de estos requisitos, el ASIC \textbf{no dará inicio al trámite} de registro [13].
+
+\subsection{Transparencia y Consecuencias del Registro}
+
+El registro ante el \textbf{ASIC} no solo es un requisito de fondo, sino un mecanismo de transparencia del mercado:
+
+\begin{itemize}
+	\item \textbf{Publicación de Estadísticas:} El ASIC debe publicar \textbf{estadísticas} con la información contenida en las solicitudes de registro de contratos el último día calendario de cada mes [13].
+	\item \textbf{Información Pública de Usuarios No Regulados:} La regulación requiere la publicación de la información básica de los contratos de \textbf{usuarios no regulados} en un medio electrónico, incluyendo las cantidades reales de consumo y los precios actualizados [8, 14].
+	\item \textbf{Fecha de Operación:} La fecha de registro se considera la \textbf{fecha de entrada en operación comercial} del contrato, a partir de las 24:00 horas del mismo día, siempre que se hayan aprobado los mecanismos de cubrimiento [15]. A partir de esta fecha, el contrato tiene efectos en la liquidación de las transacciones comerciales del MEM [15].
+	\item \textbf{Modificaciones:} Cualquier modificación a un contrato registrado requiere que se gestione un \textbf{nuevo registro}, el cual sustituirá las condiciones iniciales, sin dar lugar a reliquidaciones por parte del ASIC [16].
+\end{itemize}
+
+
+\section{liquidacion y facturacion}
+
+La **Liquidación y Facturación** en el contexto de las regulaciones de la \textbf{CREG} sobre Fronteras Comerciales y Contratos de Energía es el proceso central que cierra el ciclo comercial en el \textbf{Mercado de Energía Mayorista (MEM)} [1, 2]. Este proceso está definido en la **Resolución 157 de 2011 CREG** [3-5], la cual modifica las normas sobre el registro de fronteras comerciales y contratos de energía de largo plazo [3, 5]. El marco de liquidación y facturación se detalla rígidamente en los \textbf{Capítulos III} (Liquidación y Facturación de Transacciones en el MEM) y \textbf{IV} (Liquidación y Facturación de Cargos por Uso) de dicha resolución [6].
+
+El proceso se divide entre dos actores principales: el \textbf{ASIC} (Administrador del Sistema de Intercambios Comerciales) [2] y el \textbf{LAC} (Liquidador y Administrador de Cuentas) [7]. La promoción de transacciones comerciales más armónicas y eficientes [8] depende de que la liquidación y facturación se basen en la información registrada en las Fronteras Comerciales [9] y en los Contratos de Energía de Largo Plazo (CELP) [10].
+
+\subsection{Liquidación y Facturación de Transacciones en el MEM (ASIC)}
+
+El \textbf{ASIC} [2], dependencia del Centro Nacional de Despacho (CND) [11], está encargado de la liquidación, facturación, cobro y pago del valor de los actos, contratos y transacciones que resulten del intercambio de energía en la bolsa [2].
+
+\subsubsection*{A. Proceso de Liquidación Diaria (Art. 21)}
+El ASIC realiza la liquidación del MEM en fases diarias [12]:
+
+\begin{enumerate}
+	\item \textbf{Primera Liquidación y Publicación Operativa:} El ASIC debe realizar y publicar la liquidación de las transacciones diarias como máximo el \textbf{segundo día calendario siguiente a la operación} [12]. Esta publicación utiliza la información disponible e incluye lecturas de medidores de generación y de los enlaces internacionales [12].
+	\item \textbf{Observaciones Iniciales:} Los agentes pueden solicitar la modificación de los datos que afectan las liquidaciones (diferentes a la lectura de medidores) hasta el \textbf{tercer día calendario después de la operación} [13].
+	\item \textbf{Segunda Liquidación y Publicación:} El ASIC realiza y publica una segunda liquidación a más tardar a las \textbf{once (11:00) horas del quinto día calendario después de la operación} [14]. Esta liquidación incluye todas las variables, se publica en forma agregada por comercializador y de forma detallada, \textbf{desagregada por Frontera de Comercialización} [14].
+	\item \textbf{Observaciones Secundarias:} Los agentes pueden solicitar la modificación de los datos de la segunda liquidación (distintos a la información operativa inicial o lecturas de medidores) dentro de los \textbf{seis (6) días calendario siguientes a la operación} [14].
+\end{enumerate}
+
+\subsubsection*{B. Facturación Mensual y Pagos (Art. 23 y 24)}
+El ASIC emite la Facturación Mensual correspondiente a las transacciones en el MEM a más tardar el \textbf{noveno día calendario del mes siguiente al de consumo} [15].
+\begin{itemize}
+	\item \textbf{Vencimiento:} El vencimiento de las facturas emitidas por el ASIC es el \textbf{quinto día hábil posterior a la emisión} de la Facturación Mensual [16].
+	\item \textbf{Mora:} El no pago en la fecha señalada da lugar a que el ASIC aplique el \textbf{máximo interés moratorio permitido por la ley} sobre los saldos pendientes [17]. Los pagos se aplican primero a los intereses de mora y luego al valor del capital, considerando la antigüedad de los vencimientos [18].
+\end{itemize}
+
+\subsection{Liquidación y Facturación de Cargos por Uso (LAC)}
+
+El \textbf{LAC} (Liquidador y Administrador de Cuentas) [7], dependencia del CND, se encarga de la liquidación y administración de cuentas por los \textbf{Cargos por Uso} de las redes del SIN (STN, STR y SDL) [7, 19].
+
+\subsubsection*{A. Alcance y Fechas (Art. 25)}
+El LAC emitirá la Facturación Mensual correspondiente a los cargos por uso a más tardar el \textbf{noveno día calendario del Mes siguiente al que deba facturar} [20].
+\begin{itemize}
+	\item \textbf{Estructura de la Factura:} El LAC debe emitir una factura comercial por cada mes vencido, \textbf{diferenciando los cargos} para cada uno de los sistemas que liquida y factura (STN, STR, SDL) [21].
+	\item \textbf{Información de Base:} Para la liquidación, el LAC utiliza la información de la demanda mensual de energía de cada comercializador por períodos de carga (máxima, media y mínima), calculada por el ASIC y referida al nivel del STN (sin incluir las pérdidas del STN) [22].
+\end{itemize}
+
+\subsubsection*{B. Administración de Garantías y Pagos (Art. 26 y 29)}
+El LAC también tiene funciones en la gestión de garantías asociadas a los cargos por uso:
+\begin{itemize}
+	\item \textbf{Garantías:} Las actividades del LAC incluyen el cálculo, publicación y administración de los mecanismos de cubrimiento (garantías) para el pago de los Cargos por Uso del STR y del SDL [23-25]. El LAC debe revisar y aprobar estas garantías [25].
+	\item \textbf{Vencimiento:} El vencimiento de las facturas emitidas por el LAC también es el \textbf{quinto día hábil posterior a la emisión} de la Facturación Mensual [26], aplicando el máximo interés moratorio permitido por la ley en caso de incumplimiento [27].
+\end{itemize}
+
+\subsection{Control e Integración en el Proceso}
+
+El sistema de liquidación articula las Fronteras Comerciales y los Contratos de Largo Plazo para garantizar la exactitud de los cobros:
+
+\begin{itemize}
+	\item \textbf{Dependencia de la Frontera Comercial:} Solo las Fronteras Comerciales \textbf{con reporte al ASIC} [28] se utilizan como fuente de datos para la liquidación [14]. La energía registrada en las fronteras de comercialización entre agentes también podrá ser empleada en la liquidación de cargos por uso [29].
+	\item \textbf{Control y Reclamaciones:} Contra las liquidaciones diarias del ASIC solo proceden observaciones o solicitudes de modificación en los plazos establecidos [30]. Contra la \textbf{Facturación Mensual}, solo procede una \textbf{Reclamación a la Facturación Mensual} [31] cuando las observaciones o solicitudes de modificación diarias presentadas por el agente no hayan sido tenidas en cuenta por el ASIC en la liquidación soporte de la factura [30].
+	\item \textbf{Integración Contrato-Liquidación:} Una vez que un CELP inicia su operación comercial, los agentes involucrados deben reportar las inconsistencias encontradas en la liquidación del ASIC conforme a los plazos diarios [32]. Esto refuerza la exigencia de que los contratos contengan \textbf{reglas claras para determinar cantidades y precios hora a hora} [33].
+\end{itemize}
+
+\part{ANEXOS}
+
+\chapter*{ESTRUCTURA DE LA CONVOCATORIA}
+
+\textit{Coordinar y controlar la operación y mantenimiento de la red de energía de acuerdo con las normas
+	técnicas establecidas por la empresa, con el fin de garantizar su funcionamiento permanente.
+}
+
+
+\section{Funciones del cargo}
+
+Las funciones del cargo Ingeniero de Operación y Mantenimiento  son las siguientes:
+
+\begin{itemize}
+	\item  Analizar el funcionamiento del Sistema de Distribución local con el fin de programar y coordinar  las actividades relacionadas con la operación y/o Mantenimiento requeridas para garantizar la calidad del servicio y de la potencia.
+	\item  Coordinar y supervisar la ejecución de las diferentes actividades de operación y mantenimiento predictivo,  preventivo y correctivo de la red de servicios.
+	\item  Administrar adecuadamente los equipos, materiales Y herramientas requeridas para las actividades a realizar por el personal a su cargo.
+	\item  Propender por el cumplimiento de los indicadores de gestión establecidos para el área.
+	\item  Formular iniciativas tendientes a la optimización de los procesos y procedimientos de operación y mantenimiento de la red de servicios.
+	\item  Coordinar los diferentes grupos de trabajo para efectuar las actividades programadas en  el Sistema de Distribución Local de Energía.
+	\item  Elaborar informes de las actividades desarrolladas con la oportunidad y periodicidad requeridas.
+	\item  Realizar la supervisión, coordinación y control de las subestaciones, redes eléctricas y sus equipos asociados utilizando las herramientas y
+	medios de comunicación disponibles. 9. Participar en la supervision, coordinación, programación y configuración de los equipos de comunicación y/o operación de subestaciones.
+	\item  Coordinar oportunamente con el área de comercialización la prestación técnica del servicio de acuerdo con los respectivos contratos de compra
+	y venta de energía.
+	\item  Supervisar, revisar, verificar y controlar el uso de la infraestructura eléctrica por parte de los prestadores del servicio de Alumbrado Público y
+	operadoras de televisión por cable y telecomunicaciones, incluyendo la expansión y cobertura del servicio,
+	\item  Participar en la supervisión, coordinación y ajuste de las protecciones eléctricas instaladas en la conexión, la trensformación y el transporte del
+	Sistema de Distribución Local.
+	\item  Participar en la pianeacién, supervisión, coordinación, ejecución y control de las actividades propias de la medición de las fronteras comerciales de energía, tento a distancia como en el sitio.
+	\item  Presentar informes y estadísticas  periódicas de comportamiento del Sistema de Distribución Local con base en mediciones y parámetros establecidos en las normas y la reglamentación vigente.
+	\item  Mantener actualizado los manuales operativos del Sistema de Distribución Local.
+\end{itemize}
+
+\section{Conocimientos}
+
+\subsection{CONOCIMIENTOS COMUNES}
+
+\begin{itemize}
+	\item Derechos humanos
+	\item Gestión ambiental
+	\item Gestión de activos
+	\item Modelo integrado de pianeación y Gestión MIPG
+	\item Sistema de Gestión de calidad
+	\item Sistema de Gestion de salud y seguridad en el trabajo SG-SST
+	\item Ley anticorrupción
+	\item Élica empresarial
+	\item Ley de transparencia
+	\item Regulación y normetividad de servicios públicos
+	\item Ley disciplinaria de servidores públicos
+	\item Ley de acoso laboral
+	\item Reglamento intemo de trabajo
+	\item Modelo de operación por procesos
+	\item Portafolio de servicios
+	\item Gestión del riesgo
+\end{itemize}
+
+\subsection{CONOCIMIENTOS  BÁSICOS O ESENCIALES  POR NIVEL JERÁRQUICO}
+
+
+\begin{itemize}
+	\item Gestión Contractual
+	\item  Gestión de Proyectos
+	\item Indicedores de Gestión
+	\item Formulación de Proyectos Bajo la Metodología General Ajustada (VIGA)
+\end{itemize}
+
+\subsection{CONOCIMIENTOS ESPECÍFICOS POR SUBPROCESO Y NIVEL JERÁRQUICO}
+
+\begin{itemize}
+	\item «Reglamento Técnico de Instalaciones Eléctricas RETIE.
+	\item Compra de energía en el mercado de generadores.
+	\item «Infreestructura del sistema de distribución local de energia SDL.
+	\item Operación, funcionamiento y mantenimiento de las redes subterráneas y aéreas.
+	su distribucion, protecciones, transformación y equipos.
+	\item «Regulación pertinente sobre la distribucién del servicio de energía.
+\end{itemize}
+
+\section{COMPETENCIAS}
+
+\subsection{COMPETENCIAS COMPORTAMENTALES}
+
+\subsection{COMPETENCIAS FUNCIONALES}
+
+Las siguientes son las competencias funcionales :\\
+
+\begin{table}[H]
+	\begin{tabular}{|p{0.5\linewidth}|p{0.5\linewidth}|}
+		\hline
+		\textbf{Actividad} &  \textbf{Competencia} \\\hline
+		\textit{Distribuir energía} & Transportar energía eléctrica a través de las redes de distribución municipales o distitales, asegurando la distribucién conforme a parámetros del sistema eléctrico de energía    y la normativa asociada.\\\hline
+		\textit{Evaluar y controlar la operación del sistema eléctrico de energía} &  Realizar el análiis y evaluación de la operación del sistema eléctico de energía, de acuerdo con parámetros de calidad, criterios técnicos y la normativa asociada. \\\hline
+		\textit{Planificar la operación del sistema eléctrico de energía} & Planear la operación eléctrica de corto plazo de las redes del sistema eléctrico de energía y de los activos de  estas redes, conforme a los pianes definidos y en cumplimiento de la normativa asociada.\\\hline
+	\end{tabular}
+\end{table}
+
+\section{RESPONSABILIDADES DEL ÁREA}
+
+Las siguientes son las responsabilidades del área:\\
+
+\begin{enumerate}
+	\item Realizar la programación de las actividades sistemáticas del área funcional que permitan
+	el cumplimiento de los objetivos y la implementación de las estrategias identificando su secuencia.
+	\item Analizar y aplicar la normatividad asociada a la operación del Sistema Eléctrico de Energía
+	del Negocio de Energía.
+	\item Realizar el planeamiento de la operación de corto plazo del Sistema Eléctrico  de Energía, de acuerdo con lo definido en el marco regulatorio del sector eléctrico.
+	\item Realizar el inventario de la disponibilidad de los activos del Sisterna Eléctrico  de Energía y evaluar su estado para programar su  operación.
+	\item Coordinar con las dependencias adscritas a la Subgerencia de Distribución  la programación de los mantenimientos preventivos y correctivos del Sistema Eléctrico de Energía.
+	\item Coordinar con el Centro Nacional de Despacho el Estado  Operativo, la programación de mantenimientos preventivos y correctivos, la ejecución de racionamientos en el sistema interconectado del Sistema Eléctrico de Energía.
+	\item Coordinar, Analizar y evaluar las maniobras que sean presentadas en la Unidad.
+	\item Definir las necesidades de las compras de los elementos y equipos necesarios para ejecutar la operación del Sistema Eléctrico de Energía, estableciendo los parámetros  técnicos y términos de referencia.
+	\item Realizar  reportes de operación  de protecciones garantizar la operación  segura y confiable del sistema interconectado nacional.
+	\item Establecer los indicadores de gestión.
+	\item Calidad de potencia.
+	\item Garantizar por la regulación la descarga del sector de eléctrico información cotombiano.  desde los equipos de medición  utilizados para medir la calidad de la potencia en las variables solicitadas existencia.
+	\item Asegurar el almacenamiento de las interrupciones  y eventos  de sistema eléctrico.
+	\item Responder  por el almacenamiento de datos de la Calidad.
+	\item Proponer  soluciones medición.
+	\item Administrar  software, garantizando Gestionar su las funcionamiento tecnologías de de Operación manera confiable del Centro  y segura.
+	\item  Administrar y gestionar redes de comunicación.
+	\item Instalar  y mantener  la comunicación.
+	\item Adoptar los requerimientos de seguridad para la protección de activos del \ac{SDL},  que son consideradas críticas.
+	\item Realizar las labores de ingeniería necesarias para mantener operativas las aplicaciones  de tiempo real.
+	\item 
+\end{enumerate}
+
+
+    \chapter{LISTA DE NORMAS Y REGLAMENTOS}
+
+\section{Leyes}
+
+\begin{tabular}{|p{0.3\linewidth}|p{0.6\linewidth}|}
+	\hline
+	Legislación & DISPOSICIÓN \\\hline
+	Ley 142 de 1994& Por la cual se establece el régimen de los servicios públicos domiciliarios y se dictan otras disposiciones.\\\hline
+	Ley 143 de 1994& Por la cual se establece el régimen para la generación, interconexión, transmisión, distribución y comercialización de electricidad en el territorio nacional– establece el régimen de las actividades del sector eléctrico colombiano\\\hline
+	Resolución 1409 de 2012  & Trabajo seguro en alturas \\\hline
+	Resolución 1348 de 2009 & Reglamento de salud ocupacional
+	en los procesos de generación, transmisión y distribución de
+	energía eléctrica en las empresas del sector eléctrico \\\hline
+\end{tabular}
+
+\section{Normatividad Calidad del servicio}
+
+Las siguientes son referencias a la regulación con relación a la calidad del servicio  en el \ac{SIN}.\\\\
+
+%% color de lineas
+\rowcolors{4}{gray!10!}{gray!40}
+\begin{longtable}{|c|p{0.3\linewidth}|p{0.4\linewidth}|}
+	
+	\caption{Reglamentos referentes a la calidad del servicio}
+	% \label{tab:regcalidadservicio}
+	\\\hline
+	\rowcolor{black}\multicolumn{1}{|c|}{\color{white}\textbf{Resolución}}&\multicolumn{1}{|c|}{\color{white}\textbf{ALCANCE}} &  \multicolumn{1}{|c|}{\color{white}\textbf{DISPOSICIÓN}} \\\hline 
+	\endfirsthead
+	
+	\hline  \rowcolor{white}\multicolumn{3}{|l|}{\scriptsize \textit{\color{NavyBlue} \tablename\ \thetable{} -- continuación de la página anterior}} \\\hline
+	\hline \rowcolor{darkgray} \multicolumn{1}{|c|}{\color{white}\textbf{Resolución}} & \multicolumn{1}{c|}{\color{white}\textbf{ALCANCE}} & \multicolumn{1}{c|}{\color{white}\textbf{DISPOSICIÓN}}  \\\hline 
+	\endhead
+	\hline \rowcolor{white}\multicolumn{3}{|r|}{{\color{ForestGreen} \scriptsize \textit{\tablename\ \thetable{}\ ... Continua el la siguiente página}}} \\ \hline
+	\endfoot
+	\hline
+	\rowcolor{titleblue}\multicolumn{3}{|r|}{{ {\color{white}\scriptsize\textit fin de tabla}}} \\\hline
+	\endlastfoot
+	
+	
+	
+	CREG 025 de 1995&  \ac{STN}, \ac{STR} y \ac{SDL} &  Por la cual se establece el \textbf{Código de Redes}, como parte del Reglamento de Operación del Sistema Interconectado Nacional.\\\hline
+	
+	CREG 070 de 1998 & \ac{SDL} & Establece reglas sobre la calidad del servicio en la distribución, introduciendo los conceptos de número y duración de las interrupciones. \\\hline
+	
+	CREG 097 de 2008 &\ac{SDL} & Estableció una metodología integral para la remuneración de los Operadores de Red (OR) mediante establecimiento de los \textbf{cargos por uso} y un esquema de calidad del servicio más robusto. \\\hline
+	
+	CREG 011 de 2009 &  \ac{STN} y \ac{STR} & Estableció la metodología de remuneración de la actividad de transmisión de energía eléctrica, introduciendo un esquema explícito de calidad del servicio.\\\hline
+	
+	CREG 024 de 2013 &  \ac{STN} y \ac{STR}  & Modificó y complementó la metodología de remuneración del STN de la CREG 011 de 2009, ajustando aspectos relacionados con los planes de inversión y la valoración de los activos, manteniendo el enfoque de remuneración ligada a la disponibilidad.\\\hline
+	
+	CREG 015 de 2018& \ac{STR}  y \ac{SDL} &Por la cual se establece la metodología para la \textbf{remuneración} de la actividad de
+	distribución de energía eléctrica en el Sistema Interconectado
+	Nacional.\\\hline
+	
+	CREG 36 de 2019 & \ac{STR}  y \ac{SDL}  & Es una modificación a la Resolución CREG 015 de 2018, específicamente en el artículo 1, y está relacionada con la regulación económica en el sector de energía y gas.\\\hline
+	
+	
+\end{longtable}
+
+
+\section{Normatividad Reporte de Eventos}
+
+Los siguientes son la regulación con relación con relación al reporte de eventos.
+
+
+%% color de lineas
+\rowcolors{4}{gray!10!}{gray!40}
+\begin{longtable}{|c|p{0.3\linewidth}|p{0.4\linewidth}|}
+	
+	\caption{Reglamentos referentes al reporte de eventos}
+	% \label{tab:regcalidadservicio}
+	\\\hline
+	\rowcolor{black}\multicolumn{1}{|c|}{\color{white}\textbf{Resolución}}&\multicolumn{1}{|c|}{\color{white}\textbf{ALCANCE}} &  \multicolumn{1}{|c|}{\color{white}\textbf{DISPOSICIÓN}} \\\hline 
+	\endfirsthead
+	
+	\hline  \rowcolor{white}\multicolumn{3}{|l|}{\scriptsize \textit{\color{NavyBlue} \tablename\ \thetable{} -- continuación de la página anterior}} \\\hline
+	\hline \rowcolor{darkgray} \multicolumn{1}{|c|}{\color{white}\textbf{Resolución}} & \multicolumn{1}{c|}{\color{white}\textbf{ALCANCE}} & \multicolumn{1}{c|}{\color{white}\textbf{DISPOSICIÓN}}  \\\hline 
+	\endhead
+	\hline \rowcolor{white}\multicolumn{3}{|r|}{{\color{ForestGreen} \scriptsize \textit{\tablename\ \thetable{}\ ... Continua el la siguiente página}}} \\ \hline
+	\endfoot
+	\hline
+	\rowcolor{titleblue}\multicolumn{3}{|r|}{{ {\color{white}\scriptsize\textit fin de tabla}}}\\\hline
+	\endlastfoot
+	
+	
+	
+	
+\end{longtable}
+
+
+\begin{longtable}{|c|p{0.6\linewidth}|}
+	\caption{Regulación CREG}\\
+	\hline \multicolumn{1}{|c|}{\textbf{Resolución}} & \multicolumn{1}{c|}{\textbf{DISPOSICIÓN}} \\ \hline 
+	\endfirsthead
+	
+	\multicolumn{2}{c}
+	{\textit{ \tablename\ \thetable{} -- continuación de la página anterior}} \\
+	\hline \multicolumn{1}{|c|}{\textbf{Resolución}} & \multicolumn{1}{c|}{\textbf{DISPOSICIÓN}}  \\ \hline 
+	\endhead
+	\hline \multicolumn{2}{|r|}{{\textit{Continua el la siguiente página}}} \\ \hline
+	\endfoot
+	\hline
+	\multicolumn{2}{|r|}{{ {\scriptsize\textit  fin de tabla}}} \\
+	\hline
+	\endlastfoot
+	
+	
+	% \textbf{CREG 070 de 1998}& Codigo de Distribución \\\hline
+	% CREG 004 de 1999&Por la cual se aclaran y/o modifican las disposiciones establecidas en la Resolución CREG-051 de 1998, en la cual se aprobaron los principios generales y los procedimientos para definir el plan de expansión de referencia del Sistema de Transmisión Nacional y se estableció la metodología para determinar el \textbf{Ingreso Regulado} por concepto del Uso de este Sistema.\\\hline
+	
+	CREG 039 de 1999& Por la cual se establecen las normas relacionadas
+	con las \textbf{pérdidas} de referencia en el
+	Sistema de Transmisión Nacional. \\\hline
+	
+	CREG 080 de 1999& Por la cual se reglamentan las funciones de planeación, coordinación supervisión y control entre el \textbf{Centro Nacional de Despacho (CND)} y los agentes del SIN.\\\hline
+	
+	CREG 022 de 2001&
+	Por la cual se modifican e incorporan las disposiciones establecidas
+	en la Resolución  CREG-051 de 1998, modificada por
+	las Resoluciones CREG-004 y CREG-045 de1999,mediante
+	las cuales se aprobaron los principios generales y
+	los procedimientos para definir el \textbf{plan de
+		expansión de referencia del Sistema de Transmisión
+		Nacional}, y se estableció la metodología para
+	determinar el \textbf{Ingreso Regulado} por concepto
+	del Uso de este Sistema.\\\hline
+	
+	CREG 106 de 2006&Por la cual se modifican los procedimientos generales para la
+	asignación de\textbf{ puntos de conexión de
+		generadores} a los Sistema de Transmisión Nacional,
+	Sistemas de Transmisión Regional o Sistemas de
+	Distribución Local.\\\hline
+	
+	% CREG 097 de 2008&  Por la cual se aprueban los principios generales y la metodología para el establecimiento de los \textbf{cargos por uso} de los Sistemas de Transmisión Regional y Distribución Local. \\\hline
+	
+	% CREG 011 de 2009&Por la cual se establecen la metodología y \textbf{fórmulas tarifarías} para la remuneración de
+	% la actividad de transmisión de energía eléctrica en el Sistema de Transmisión
+	%                   Nacional.\\\hline
+	
+	CREG 128 de 2010& Por la cual se establecen reglas para hacer la transición al nuevo esquema de
+	\textbf{calidad del servicio} en el Sistema de Transmisión Nacional adoptado por la
+	Resolución CREG-011 de 2009\\\hline
+	
+	\textbf{CREG 156 de 2011}& Codigo de comercialización \\\hline
+	
+	CREG 093 de 2012& Por la cual se establecen el reglamento para el \textbf{reporte de Eventos }y el procedimiento
+	para el cálculo de la \textbf{Energía No Suministrada}, y se precisan otras disposiciones relacionadas con la calidad del servicio en el Sistema de Transmisión Nacional\\\hline
+	
+	CREG 094 de 2012& Por la cual se establecen el reglamento para el \textbf{reporte de Eventos} y el procedimiento para el cálculo de la \textbf{Energía No Suministrada}, y se precisan
+	otras disposiciones relacionadas con la calidad del servicio en los Sistemas de Transmisión Regional\\\hline
+	
+	CREG 038 de 2014& \\\hline  
+	CREG 224 de 2016& Por la cual se establecen los criterios de
+	\textbf{confiabilidad} de la operación aplicables
+	para contingencias sencillas, como parte del Código
+	de Operación\\\hline
+	
+	CREG 015 de 2018& Por la cual se establece la metodología para la \textbf{remuneración} de la actividad de
+	distribución de energía eléctrica en el Sistema Interconectado
+	Nacional.\\\hline
+	
+	CREG 030  de 2018 & Por la cual se regulan las actividades de
+	autogeneración a pequeña escala y de generación
+	distribuida en el Sistema Interconectado
+	Nacional\\\hline
+	
+	CREG 036 de 2019& Por la cual se modifican algunas disposiciones de la
+	Resolución CREG 015 de 2018.\\\hline
+	
+	CREG 039 de 2019& Por la cual se establecen las normas relacionadas
+	con las \textbf{pérdidas} de referencia en el
+	Sistema de Transmisión Nacional.\\\hline
+	
+	CREG 073 de 2019& Por la cual se modifica el artículo 2 de la Resolución CREG 224 de 2016 "por la cual
+	se establecen los criterios de \textbf{confiabilidad} de la operación aplicables para
+	contingencias sencillas, como parte del Código de Operación.\\\hline
+	
+	CREG 28 del 2020 & Por la cual se aprueban las variables necesarias
+	para calcular los ingresos y cargos asociados con
+	la actividad de distribución de energía eléctrica
+	para el mercado de comercialización atendido por
+	Empresas Municipales de Cali
+	E.I.C.E. E.S.P.\\\hline
+	
+	CREG 131 del 2020 & Medición AMI \\\hline
+\end{longtable}
+
+
+
+
+\begin{longtable}{|c|p{0.6\linewidth}|}
+	\caption{Regulación CREG}\\
+	\hline \multicolumn{1}{|c|}{\textbf{ACUERDO}} & \multicolumn{1}{c|}{\textbf{DISPOSICIÓN}} \\ \hline 
+	\endfirsthead
+	
+	\multicolumn{2}{c}%
+	{{\scriptsize\it\bfseries \tablename\ \thetable{} -- continuación de la página anterior}} \\
+	\hline \multicolumn{1}{|c|}{\textbf{ACUERDO}} & \multicolumn{1}{c|}{\textbf{DISPOSICIÓN}}  \\ \hline 
+	\endhead
+	\hline \multicolumn{2}{|r|}{{\scriptsize\it Continua el la siguiente página}} \\ \hline
+	\endfoot
+	\hline
+	\multicolumn{2}{|r|}{{\scriptsize\it fin de tabla}} \\
+	\hline
+	\endlastfoot
+	
+	787 &
+	Por el cual se establecen las responsabilidades y los procedimientos a los cuales están
+	sujetos los agentes Transportadores, Operadores de Red, Generadores del SIN y el Centro
+	Nacional de Despacho –CND-, en la realización de informes referentes al \textbf{análisis de eventos}
+	que afecten la seguridad y confiabilidad del Sistema Interconectado Nacional –SIN\\\hline
+	
+	963 & Mantenimientos de emergencia \\\hline
+	
+	977 & Por el cual se aprueba el procedimiento para la \textbf{coordinación y ejecución} de las maniobras sobre activos de Uso del STN y STR y Conexión al STN \\\hline
+	
+	1214 & Por el cual se aprueba el \textbf{Procedimiento para la entrada en operación comercial de proyectos de transmisión} que incluyan activos de uso del Sistema de Transmisión Nacional - STN -, del Sistema de Transmisión Regional - STR –, de usuarios conectados directamente al STN y de
+	recursos de generación \\\hline
+	
+	1239 & Por el cual se aprueban las \textbf{Causas Detalladas para el Reporte de Maniobras Operativas}, Eventos y Cambios de Operatividad de activos del Sistema de Transmisión Nacional -STN- y del Sistema de Transmisión Regional -STR \\\hline
+	
+	1254 & Por el cual se actualiza la definición y los \textbf{formatos de reporte de los parámetros técnicos de las plantas eólicas y solares fotovoltaicas} que se quieran conectar al Sistema de Transmisión Nacional STN, al Sistema de Transmisión Regional STR y al Sistema de Distribución Local
+	SDL \\\hline
+	
+	1303 & Por el cual se actualizan los procedimientos para la \textbf{gestión integral de la demanda} \\\hline
+	
+	
+\end{longtable}
+
 
 %\bibliographystyle{apalike}
 %\bibliography{bibliografia.bib}

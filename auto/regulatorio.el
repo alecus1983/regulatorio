@@ -5,12 +5,12 @@
                      '(("book" "a5paper")))
    (TeX-add-to-alist 'LaTeX-provided-package-options
                      '(("geometry" "paperwidth=15cm" "paperheight=20cm") ("inputenc" "utf8") ("fontenc" "T1") ("babel" "spanish" "es-tabla") ("biblatex" "backend=biber" "style=numeric" "hyperref=true") ("xcolor" "table" "dvipsnames") ("caption" "font=small" "labelfont=bf" "labelsep=endash")))
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "path")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "href")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "path")
    (add-to-list 'LaTeX-verbatim-macros-with-delims-local "path")
    (TeX-run-style-hooks
     "latex2e"
@@ -38,6 +38,7 @@
     "xcolor"
     "titling"
     "needspace"
+    "parskip"
     "hyperref"
     "tcolorbox"
     "empheq"
@@ -49,7 +50,7 @@
    (LaTeX-add-labels
     "sec:tabladecontendos"
     "fig:activosdeuso"
-    "fig:planeamineto-operativo"
+    "fig:planeamiento-operativo"
     "fig:aumentotension"
     "fig:reducciontension"
     "fig:edac"
@@ -65,6 +66,7 @@
     "fig:mayor"
     "fig:reportes_transmision"
     "fig:mhaia"
+    "eq:mhaia"
     "fig:capacidad"
     "fig:esquema"
     "fig:excluidos"
@@ -123,6 +125,7 @@
     "bibliografia")
    (LaTeX-add-acronyms
     "CND"
+    "CNO"
     "COMTRADE"
     "DNA"
     "EDAC"
@@ -130,6 +133,7 @@
     "FMECA"
     "FNCER"
     "LAC"
+    "MC"
     "OR"
     "PENS"
     "RCM"
