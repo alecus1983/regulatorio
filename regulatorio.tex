@@ -531,6 +531,14 @@ El valor de $\mathbf{PRN_{j,h}} = 663 \, \mathbf{MW}$ es el \textit{Pronóstico 
 
 \section{ANÁLISIS DE EVENTOS}
 
+\begin{figure}[H]
+	\centering
+	\caption{Pasos para el analisis de eventos}
+	\label{fig:analisiseventosxm}
+	\includegraphics[width=0.9\linewidth]{analisis_eventos_xm}
+\end{figure}
+
+
 \vspace{0.5cm}
 
 El Acuerdo 1617 introduce actualizaciones basadas en las Resoluciones \textbf{CREG 015 de 2018}, \textbf{036 de 2019} y \textbf{101023 de 2022}, incluyendo la responsabilidad de reporte de información por parte de los Operadores de Red (OR), los plazos para reportar el valor de la Energía No Suministrada (ENS) al LAC, y la inclusión de eventos no programados en los Sistemas de Almacenamiento de Energía Eléctrica con Baterías (SAEB). Los Anexos 1 y 2 detallan el procedimiento y los formatos específicos para la elaboración de estos informes.
@@ -987,6 +995,153 @@ Cantidad de carga en MW que se desconectaría de las redes del SIN ante la ocurr
 
 Los restablecimientos se desarrollan bajo el acuerdo CNO 1784 del 2013
 
+    \chapter{PROTECCIONES ELÉCTRICAS}
+    
+    \section{Normatividad aplicable a las protecciones}
+    
+    \begin{figure}[H]
+    	\centering
+    	\caption{Regulación aplicable a las protecciones eléctricas}
+    	\label{fig:regulacionprotecciones}
+    	\includegraphics[width=0.9\linewidth]{regulacion_protecciones}
+    \end{figure}
+    
+    \section{Acuerdos aplicables a las protecciones eléctricas}
+    
+    Los siguientes son los acuerdos aplicables a las protecciones eléctricas 
+    
+    \begin{itemize}
+    	\item Acuerdo 1862: Requisitos de protecciones para la conexión de sistemas de generación al SIN.
+    	\item Acuerdo 1937: Procedimiento para la elaboración  y aprobación  del \textbf{EACP} para los nuevos proyectos.
+    	\item  Acuerdo 1617 Procedimiento para el análisis de eventos.
+    \end{itemize}
+    
+\section{Características de las protecciones}
+Las siguientes son las características generales de las protecciones eléctricas:\\\\
+\begin{itemize}
+	\item Alta Confiabilidad: Probabilidad de no omitir disparos
+	\item Alta Seguridad: Probabilidad de no tener disparos indeseados
+	\item Selectividad: Desconectar sólo lo fallado, evitando trasladar los efectos de las fallas a otros lugares del STN. 
+	\item Rapidez: El tiempo de operación debe ser lo suficientemente corto de modo que garantice mantenerla estabilidad del sistema
+\end{itemize}
+
+En los sistemas eléctricos de los distribuidores, grandes consumidores y transportadores, el tiempo máximo de despeje de falla de la protección principal, desde el inicio de la falla hasta la extinción del arco en el interruptor de potencia, no debe
+ser mayor que 150 milisegundos.\\\\
+
+Los tipos de relés de sobre corriente se pueden clasificar como se muestra en la figura:
+
+\begin{figure}[H]
+	\centering
+	
+	\caption{tipos de relés en función al tipo de operación}
+	\label{fig:tiporele}
+	\includegraphics[width=\linewidth]{tipos_rele}
+\end{figure}
+
+
+
+\section{PROTECCIONES DEL TRANSFORMADOR}
+
+\begin{figure}[H]
+	\centering  
+	\caption{Protecciones del transformador de potencia}
+	\label{fig:proteccionestrafo}
+	\includegraphics[width=\linewidth]{proteccion_trafo}
+\end{figure}
+
+\begin{figure}[H]
+	\centering  
+	\caption{diagrama protecciones del  transformador de potencia}
+	\label{fig:diagramatrafo}
+	\includegraphics[width=\linewidth]{diagramapttrafo}
+\end{figure}
+
+\begin{figure}[H]
+	\centering  
+	\caption{diagrama protecciones del  transformador de potencia}
+	\label{fig:diagramatrafo1}
+	\includegraphics[width=\linewidth]{proteccion_trafo_1}
+\end{figure}
+
+En la figura \ref{fig:zonas_diferencial},  se puestra el traslape de
+zonas en la protección diferencial.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{diferencial_tranformador}
+	\caption{solapamiento de las zonas de protección diferencial}
+	\label{fig:zonas_diferencial}
+\end{figure}
+
+
+
+
+\begin{longtable}{|c|p{0.8\linewidth}|}
+	\caption{Señales del transformador}\\
+	\hline \multicolumn{1}{|c|}{\textbf{Señal}} & \multicolumn{1}{c|}{\textbf{DESCRIPCIÓN}} \\ \hline 
+	\endfirsthead
+	
+	\multicolumn{2}{c}%
+	{{\it \tablename\ \thetable{} -- continuación de la página anterior}} \\
+	\hline \multicolumn{1}{|c|}{\textbf{Señal}} & \multicolumn{1}{c|}{\textbf{DESCRIPCIÓN}}  \\ \hline 
+	\endhead
+	\hline \multicolumn{2}{|r|}{{\textit{Continua el la siguiente página}}} \\ \hline
+	\endfoot
+	\hline
+	\multicolumn{2}{|r|}{{ {\scriptsize\textit  fin de tabla}}} \\
+	\hline
+	\endlastfoot
+	
+	\small
+	24 & Sobreexitación \\\hline
+	23 & Temperatura \\\hline
+	27 & Sub tensión \\\hline
+	32 & Potencia direccional \\\hline
+	46 & secuencia negativa\\\hline
+	49 & Térmico\\\hline
+	50P & Sobre corriente instantánea de fase \\\hline
+	50 & Sobre corriente \\\hline
+	50BF & Fallo en breaker \\\hline
+	50Q & Sobre corriente istantánea de secuencia negativa\\\hline
+	51 & Sobre corriente de tiempo inverso \\\hline
+	51Q & Sobre corriente inversa de secuencia negativa \\\hline
+	50N & Sobrecorriente instantánea de neutro\\\hline
+	50G & Sobre  corriente instantánea de de tierra \\\hline
+	50FA& Sobre corriente con frenado de armónicos \\\hline
+	55 & Factor de potencia \\\hline
+	67 & Sobre corriente direccional\\\hline
+	79 & recierre de CA \\\hline
+	81M & Sobrefrecuencia \\\hline
+	81m & Subfrecuencia \\\hline
+	87N & falla restringida \\\hline
+	86 & Rele de bloqueo \\\hline
+	89 & interruptor de linea \\\hline
+\end{longtable}
+
+En el eje de las x es la corriente promedio de los devanados primario y secundario referida al primario. Indica la corriente de restricción llamada \textbf{Corriente de polarización}, Ib, mientras que la diferencia correspondiente en el eje Y representa la \textbf{corriente diferencial}. El relé de protección diferencial se activará si la magnitud de la corriente diferencial \textit{es superior a un porcentaje fijo de la corriente de restricción}.\\\\
+
+\begin{figure}[H]
+	\centering  
+	\caption{Curva del relé diferencial porcentual}
+	\label{fig:proteccionestrafo}
+	\includegraphics[width=\linewidth]{Proteccion-Diferencial-Porcentual}
+\end{figure}
+
+
+
+\section{FUSIBLES}
+
+La figura \ref{fig:tiposfusibles} muestra  los principales tipos de fusibles empleados en las redes de distribución.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{tipos_fusibles}
+	\caption{Tipos de fusibles empleados en media tensión}
+	\label{fig:tiposfusibles}
+\end{figure}
+
+
+
 \part{CALIDAD, EVENTOS Y GESTIÓN DE ACTIVOS}
 
 \chapter{CALIDAD DEL SERVICIO}
@@ -1284,131 +1439,6 @@ Las horas que un activo  se encuentra  in disponible durante un mes, se pueden c
     \[ MAIFI = \dfrac{\sum_{i=1}^{n}NU }{UT}\]
     
     
-
-    \chapter{PROTECCIONES ELÉCTRICAS}
-
-    Las siguientes son las características generales de las protecciones eléctricas:\\\\
-\begin{itemize}
-	\item Alta Confiabilidad: Probabilidad de no omitir disparos
-	\item Alta Seguridad: Probabilidad de no tener disparos indeseados
-	\item Selectividad: Desconectar sólo lo fallado, evitando trasladar los efectos de las fallas a otros lugares del STN. 
-	\item Rapidez: El tiempo de operación debe ser lo suficientemente corto de modo que garantice mantenerla estabilidad del sistema
-        \end{itemize}
-
-        En los sistemas eléctricos de los distribuidores, grandes consumidores y transportadores, el tiempo máximo de despeje de falla de la protección principal, desde el inicio de la falla hasta la extinción del arco en el interruptor de potencia, no debe
-        ser mayor que 150 milisegundos.\\\\
-
-        Los tipos de relés de sobre corriente se pueden clasificar como se muestra en la figura:
-
-\begin{figure}[H]
-      \centering
-      
-      \caption{tipos de relés en función al tipo de operación}
-      \label{fig:tiporele}
-      \includegraphics[width=\linewidth]{tipos_rele}
-    \end{figure}
-
-
-
-    \section{PROTECCIONES DEL TRANSFORMADOR}
-
-    \begin{figure}[H]
-      \centering  
-      \caption{Protecciones del transformador de potencia}
-      \label{fig:proteccionestrafo}
-      \includegraphics[width=\linewidth]{proteccion_trafo}
-    \end{figure}
-
-        \begin{figure}[H]
-      \centering  
-      \caption{diagrama protecciones del  transformador de potencia}
-      \label{fig:diagramatrafo}
-      \includegraphics[width=\linewidth]{diagramapttrafo}
-    \end{figure}
-
-           \begin{figure}[H]
-      \centering  
-      \caption{diagrama protecciones del  transformador de potencia}
-      \label{fig:diagramatrafo1}
-      \includegraphics[width=\linewidth]{proteccion_trafo_1}
-    \end{figure}
-
-En la figura \ref{fig:zonas_diferencial},  se puestra el traslape de
-zonas en la protección diferencial.
-    
-    \begin{figure}[H]
-      \centering
-      \includegraphics[width=\linewidth]{diferencial_tranformador}
-      \caption{solapamiento de las zonas de protección diferencial}
-      \label{fig:zonas_diferencial}
-    \end{figure}
-    
-
-
-
-\begin{longtable}{|c|p{0.8\linewidth}|}
-  \caption{Señales del transformador}\\
-\hline \multicolumn{1}{|c|}{\textbf{Señal}} & \multicolumn{1}{c|}{\textbf{DESCRIPCIÓN}} \\ \hline 
-\endfirsthead
-
-\multicolumn{2}{c}%
-{{\it \tablename\ \thetable{} -- continuación de la página anterior}} \\
-\hline \multicolumn{1}{|c|}{\textbf{Señal}} & \multicolumn{1}{c|}{\textbf{DESCRIPCIÓN}}  \\ \hline 
-\endhead
-\hline \multicolumn{2}{|r|}{{\textit{Continua el la siguiente página}}} \\ \hline
-\endfoot
-\hline
-\multicolumn{2}{|r|}{{ {\scriptsize\textit  fin de tabla}}} \\
-\hline
-\endlastfoot
-
-  \small
-  24 & Sobreexitación \\\hline
-  23 & Temperatura \\\hline
-  27 & Sub tensión \\\hline
-  32 & Potencia direccional \\\hline
-46 & secuencia negativa\\\hline
-  49 & Térmico\\\hline
-  50P & Sobre corriente instantánea de fase \\\hline
-  50 & Sobre corriente \\\hline
-  50BF & Fallo en breaker \\\hline
-  50Q & Sobre corriente istantánea de secuencia negativa\\\hline
-  51 & Sobre corriente de tiempo inverso \\\hline
-  51Q & Sobre corriente inversa de secuencia negativa \\\hline
-  50N & Sobrecorriente instantánea de neutro\\\hline
-  50G & Sobre  corriente instantánea de de tierra \\\hline
-  50FA& Sobre corriente con frenado de armónicos \\\hline
-  55 & Factor de potencia \\\hline
-  67 & Sobre corriente direccional\\\hline
-  79 & recierre de CA \\\hline
-  81M & Sobrefrecuencia \\\hline
-  81m & Subfrecuencia \\\hline
-  87N & falla restringida \\\hline
-  86 & Rele de bloqueo \\\hline
-  89 & interruptor de linea \\\hline
-\end{longtable}
-
-En el eje de las x es la corriente promedio de los devanados primario y secundario referida al primario. Indica la corriente de restricción llamada \textbf{Corriente de polarización}, Ib, mientras que la diferencia correspondiente en el eje Y representa la \textbf{corriente diferencial}. El relé de protección diferencial se activará si la magnitud de la corriente diferencial \textit{es superior a un porcentaje fijo de la corriente de restricción}.\\\\
-  
-    \begin{figure}[H]
-      \centering  
-      \caption{Curva del relé diferencial porcentual}
-      \label{fig:proteccionestrafo}
-      \includegraphics[width=\linewidth]{Proteccion-Diferencial-Porcentual}
-    \end{figure}
-
-    
-
-\section{FUSIBLES}
-
-La figura \ref{fig:tiposfusibles} muestra  los principales tipos de fusibles empleados en las redes de distribución.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.7\linewidth]{tipos_fusibles}
-	\caption{Tipos de fusibles empleados en media tensión}
-	\label{fig:tiposfusibles}
-\end{figure}
 
 
 \chapter{MANTENIMIENTO}
