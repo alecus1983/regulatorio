@@ -5,12 +5,12 @@
                      '(("book" "a5paper")))
    (TeX-add-to-alist 'LaTeX-provided-package-options
                      '(("geometry" "paperwidth=15cm" "paperheight=20cm") ("inputenc" "utf8") ("fontenc" "T1") ("babel" "spanish" "es-tabla") ("biblatex" "backend=biber" "style=numeric" "hyperref=true") ("xcolor" "table" "dvipsnames") ("caption" "font=small" "labelfont=bf" "labelsep=endash")))
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "href")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "path")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "href")
    (add-to-list 'LaTeX-verbatim-macros-with-delims-local "path")
    (TeX-run-style-hooks
     "latex2e"
@@ -51,17 +51,27 @@
     "sec:tabladecontendos"
     "fig:activosdeuso"
     "fig:planeamiento-operativo"
+    "eq:1"
+    "fig:lineaat"
+    "fig:caso1"
+    "fig:caso2"
+    "fig:caso3"
+    "fig:fasores"
+    "fig:fasores2"
     "fig:aumentotension"
     "fig:reducciontension"
     "fig:edac"
     "fig:edac1"
     "fig:edac2"
-    "fig:ens"
-    "fig:estructurainforme"
-    "fig:insumoseventos"
-    "fig:plazo1617"
     "fig:capacidad_conductores_emcali"
     "fig:ampacidad"
+    "fig:regulacionprotecciones"
+    "fig:tiporele"
+    "fig:proteccionestrafo"
+    "fig:diagramatrafo"
+    "fig:diagramatrafo1"
+    "fig:zonas_diferencial"
+    "fig:tiposfusibles"
     "fig:eventogranmagnitud"
     "fig:mayor"
     "fig:reportes_transmision"
@@ -72,19 +82,12 @@
     "fig:excluidos"
     "fig:gruposcalidad"
     "fig:valoressaidi"
-    "fig:tiporele"
-    "fig:proteccionestrafo"
-    "fig:diagramatrafo"
-    "fig:diagramatrafo1"
-    "fig:zonas_diferencial"
-    "fig:tiposfusibles"
+    "fig:ens"
+    "fig:estructurainforme"
+    "fig:analisiseventosxm"
+    "fig:insumoseventos"
+    "fig:plazo1617"
     "fig:prueba"
-    "eq:1"
-    "fig:lineaat"
-    "fig:caso1"
-    "fig:caso2"
-    "fig:caso3"
-    "fig:fasores"
     "fig:gd"
     "fig:polaridadtransformadores"
     "fig:paralelo"
