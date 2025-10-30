@@ -22,3 +22,6 @@ easyReview.tex
 easyReview.toc
 #bibliografia.bib#
 #.gitignore#
+auto/regulatorio.el
+#regulatorio.tex#
+.#regulatorio.tex

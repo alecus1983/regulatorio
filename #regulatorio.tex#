@@ -2005,7 +2005,7 @@ Los protocolos de comunicaciones empleados en los sistemas eléctricos son los q
 \section{PROTOCOLOS DE ANILLAMIENTO}
 \subsection{RSPT}
 
-El protocolo RSTP se emplea para prevenir anillamiento en redes enmalladas.
+El protocolo RSTP se emplea para prevenir anillamiento en redes enmalladas. Emplea los mensajes \textbf{BPDU} para determinar el estado de la red.
 
 \begin{figure}[H]
   \caption{Protocolo de comunicación RSTP}
