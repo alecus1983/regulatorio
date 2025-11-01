@@ -24,3 +24,7 @@ easyReview.toc
 #.gitignore
 auto/regulatorio.el
 regulatorio.synctex.gz
+#.gitignore#
+auto/regulatorio.el
+#regulatorio.tex#
+.#regulatorio.tex

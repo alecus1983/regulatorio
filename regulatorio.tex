@@ -323,7 +323,197 @@ Según el numeral 1.3 del Código de Operación —parte integrante del Código 
 
 Son todas las plantas de generación con capacidad efectiva superior a 20~MW, así como aquellas con capacidad menor o igual a 20~MW que opten voluntariamente por participar en el despacho económico.
 
-\part{OPERACION DEL STR}
+\part{ANÁLISIS DE SISTEMAS DE POTENCIA}
+
+\chapter{SISTEMAS DE  POTENCIA}
+
+\section{FLUJO DE CARGA}
+La potencia activa transmitida por una línea esta dada por la ecuación \ref{eq:1}:
+
+\begin{equation}
+	\label{eq:1}
+	P=\dfrac{E_{1} \cdot E_{2} \cdot sen\delta } {X}
+\end{equation}
+
+En la figura \ref{fig:lineaat} se muestra una línea de transporte de alta tensión donde la impedancia de la línea \textit{$X$} se considera totalmente reactiva y los fasores de tensión  \textbf{$E_{1}$ }y \textbf{$E_{2}$} son las tensiones en la barra del transmisor y del receptor.\\\\
+
+\begin{figure}[H]
+	\centering
+	
+	\caption{Línea de transporte de alta tensión}
+	\label{fig:lineaat}
+	\includegraphics[width=\linewidth]{linea_transporte_AT}
+\end{figure}
+
+Entonces se puede obtener los flujos de potencia activa y reactiva
+para los siguientes casos \cite{trashorras2015subestaciones}:
+
+\begin{tabular}[H]{|p{0.2\linewidth}|p{0.35\linewidth}|p{0.35\linewidth}|}
+	\hline
+	CASO & Potencia \textbf{activa} & Potencia \textbf{reactiva}\\\hline
+	Distintas magnitud de tensiones  y desfasadas. figura \ref{fig:caso1}  & El flujo de potencia activa siempre es de la tensión adelantada a la  retrasada& La linea absorve reactiva de ambos extremos\\\hline
+	Distintas tensiones pero en fase. figura \ref{fig:caso2} & cero&la potencia fluye del nodo  de mayor tensión al de menor tensión y la línea absorve potencia reactiva  \\\hline
+	Iguales tensiones pero desfasadas. figura \ref{fig:caso3}  &la línea transporta potencia activa proporcional a las perdidas &la línea absorve potencia reactiva de ambos extremos\\\hline
+\end{tabular}
+
+\subsection{Distintas magnitud de tensiones  y desfasadas}
+La figura \ref{fig:caso1}  , el flujo de potencia activa siempre es de la tensión adelantada a la  retrasada, La linea absorbe reactiva de ambos extremos.
+
+
+\begin{figure}[H]
+	\centering
+	\caption{Caso 1: esquema de flujo de potencia con tensiones distintas
+		desfasadas.}
+	\includegraphics[width=\linewidth]{caso1}
+	\label{fig:caso1}
+\end{figure}
+
+\[
+E_{1} = 230~kV, \quad E_{2} = 220~kV, \quad X = 50~\Omega, \quad \delta = 25^\circ
+\]
+
+La potencia activa transmitida se obtiene con la ecuación \ref{eq:1}:
+
+\[
+P = \dfrac{E_{1} \cdot E_{2} \cdot \sin(\delta)}{X}
+\]
+
+Reemplazando valores:
+
+\[
+P = \dfrac{(230 \times 10^{3}) (220 \times 10^{3}) \sin(25^\circ)}{50} = 4.29 \times 10^{8}~W = 429~MW
+\]
+
+\textbf{Interpretación:}  
+La potencia activa fluye desde la barra de mayor tensión (230~kV) hacia la de menor tensión (220~kV), es decir, desde el transmisor al receptor.  
+La línea absorbe potencia reactiva de ambos extremos debido a su naturaleza inductiva.
+
+
+
+\subsection{Distintas tensiones pero en fase}
+
+La figura \ref{fig:caso2} muestra que no hay flujo de potencia activa, la potencia fluye del nodo  de mayor tensión al de menor tensión y la línea absorve potencia reactiva.
+
+\begin{figure}[H]
+	\centering
+	\caption{Caso 2: esquema de flujo de potencia con tensiones distintas en
+		fase.}
+	\includegraphics[width=\linewidth]{tensiones_distintas_igual_fase}
+	\label{fig:caso2}
+\end{figure}
+
+\[
+E_{1} = 230~kV, \quad E_{2} = 210~kV, \quad X = 40~\Omega, \quad \delta = 0^\circ
+\]
+
+En este caso, las tensiones están en fase, por lo que:
+
+\[
+P = \dfrac{E_{1} \cdot E_{2} \cdot \sin(0)}{X} = 0
+\]
+
+\textbf{Interpretación:}  
+No hay flujo de potencia activa, pero sí un flujo de potencia \textbf{reactiva} desde la barra de mayor tensión (230~kV) hacia la de menor tensión (210~kV), siendo absorbida por la línea.  
+El flujo reactivo puede estimarse mediante:
+
+\[
+Q = \dfrac{E_{1}^{2} - E_{1}E_{2}}{X}
+\]
+
+\[
+Q = \dfrac{(230 \times 10^{3})^{2} - (230 \times 10^{3})(210 \times 10^{3})}{40} = 2.3 \times 10^{8}~VAr = 230~MVAr
+\]
+
+
+\subsection{Iguales tensiones pero desfasadas}
+La figura \ref{fig:caso3},  muestra que la línea transporta potencia activa proporcional a las perdidas , mientras absorbe potencia reactiva de ambos extremos
+
+\begin{figure}[H]
+	\centering
+	\caption{Caso 3: esquema de flujo de potencia con iguales tensiones
+		desfasadas.}
+	\includegraphics[width=\linewidth]{tensionesigualesdesfasadas}
+	\label{fig:caso3}
+\end{figure}
+
+
+\[
+E_{1} = E_{2} = 230~kV, \quad X = 60~\Omega, \quad \delta = 20^\circ
+\]
+
+La potencia activa transmitida será:
+
+\[
+P = \dfrac{E_{1} \cdot E_{2} \cdot \sin(\delta)}{X}
+\]
+
+\[
+P = \dfrac{(230 \times 10^{3})^{2} \sin(20^\circ)}{60} = 5.04 \times 10^{8}~W = 504~MW
+\]
+
+\textbf{Interpretación:}  
+La línea transporta potencia activa debido al desfase de 20°, y además absorbe potencia reactiva de ambos extremos, ya que su reactancia es inductiva.
+
+---
+
+\textbf{Conclusión:}  
+Los ejemplos anteriores ilustran cómo la diferencia de magnitud y ángulo de las tensiones determina el flujo de potencia activa y reactiva, y cómo un cortocircuito provoca un flujo de corriente muy elevado limitado únicamente por la impedancia del sistema.
+
+
+
+
+\subsection{Caso 2: Tensiones distintas pero en fase}
+
+Datos:
+
+
+\subsection{Caso 3: Iguales tensiones pero desfasadas}
+
+Datos:
+
+
+\section{CORTOCIRCUITO}
+
+\begin{figure}[H]
+	\centering
+	\caption{fasores ante un corto circuito hacia adelante y hacia atraz}
+	\label{fig:fasores}
+	\includegraphics[width=\linewidth]{cortcircuito}
+\end{figure}
+
+
+\section{EJEMPLO NUMÉRICO DE CORTOCIRCUITO}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{cortcircuito}
+	\caption{Fasores ante un corto circuito hacia adelante y hacia atrás}
+	\label{fig:fasores2}
+\end{figure}
+
+Consideremos una línea de transmisión con los siguientes parámetros:
+
+\[
+E_{1} = 230~kV, \quad X_{eq} = 10~\Omega
+\]
+
+Ante un cortocircuito trifásico en el extremo receptor (\textbf{corto hacia adelante}), la corriente de falla es:
+
+\[
+I_{cc} = \dfrac{E_{1}}{X_{eq}} = \dfrac{230 \times 10^{3}}{10} = 23~kA
+\]
+
+\textbf{Potencia de cortocircuito:}
+
+\[
+S_{cc} = \sqrt{3} \, E_{1} \, I_{cc} = \sqrt{3} (230 \times 10^{3})(23 \times 10^{3}) = 9.17 \times 10^{9}~VA = 9170~MVA
+\]
+
+\textbf{Interpretación:}  
+Durante un cortocircuito, el ángulo de la tensión se colapsa y la corriente aumenta drásticamente.  
+Si el cortocircuito se produce hacia atrás (cerca del generador), la corriente será aún mayor debido a la menor impedancia vista desde la fuente.
+
+\part{OPERACIÓN DEL STR}
 
 \chapter{CONTROL DE TENSIÓN}
 
@@ -427,483 +617,6 @@ ecuación en un mercado de comercialización :\\\\
   los equipos del SIN y como último recurso, limitar las
   transferencias por el sistema de transmisión.\\\\
 
-  \chapter{EVENTOS}
-
-  \section{MARCO REGULATORIO}
-
-\begin{center}
-\begin{tcolorbox}
-  La Ley 143 de 1994, en sus Artículos 34 y 38, establece las responsabilidades del \textit{Centro Nacional de Despacho}(CND) en la coordinación, supervisión, control y análisis de la operación de los recursos del SIN, así como la obligación de las empresas generadoras, distribuidoras y operadoras de redes de suministro de información oportuna y fiel al \textbf{CND} y los \textbf{CRD's}.
-\end{tcolorbox}
-\end{center}
-
-La \textbf{Resolución CREG 080 de 1999} define las responsabilidades del CND y los agentes del SIN en la realización de estudios sobre fallas y emergencias. La \textbf{Resolución CREG 083 de 1999} detalla la información obligatoria que los agentes deben adquirir y suministrar al CND, incluyendo registros cronológicos de eventos con alta resolución temporal y libre acceso a esta información.\\\\ 
-  
-Las Resoluciones \textbf{CREG 093} ( para el \ac{STN}) y \textbf{094 de 2012} ( para el STR) requieren informes detallados para eventos no programados que superen un cierto umbral de \ac{PENS}.\\\\
-
-\begin{figure}[H]
-   \centering
-   \caption{Metodología del calculo del pronostico de la energía no suministrada}
-   \label{fig:ens}
-   \includegraphics[width=\linewidth]{calculo_ens.png}
- \end{figure}
-
-\section{REPORTE DE EVENTOS Y ENERGÍA NO SUMINISTRADA}
-
-Cuando ocurre un evento no programado (falla), puede generarse la indisponibilidad total o parcial de uno o varios activos del sistema \cite{CREG0942012}.  
-Si dicha indisponibilidad ocasiona una ausencia de tensión en alguna parte de la red y el \ac{PENS} supera el 2\%, el \ac{CND} debe remitir a la Superintendencia de Servicios Públicos Domiciliarios (SSPD) un informe con el análisis detallado del evento ocurrido. De acuerdo con la Resolución \textbf{CREG 015 de 2018}, dicho informe debe contener, como mínimo, la siguiente información \cite{CREG0152018}:
-
-\begin{itemize}
-    \item Número y descripción de los eventos.
-    \item Identificación de los activos causantes de los eventos.
-    \item Valores y memoria de cálculo de las variables empleadas en el cálculo de la \ac{ENS}.
-    \item Para los \ac{MC} afectados, curva de potencia activa correspondiente al período horario del evento.
-    \item Curvas de potencia activa de los doce períodos anteriores y los doce períodos posteriores a la ocurrencia del evento.
-    \item Informe final del evento, conforme a lo establecido en los acuerdos del \ac{CNO}.
-\end{itemize}
-
-El artículo 24 de la Resolución CREG 015 de 2018 adiciona el siguiente párrafo al final del numeral 5.1.14.2 “\textit{Compensaciones por dejar no operativos otros activos o por energía no suministrada}”:  
-
-\begin{quote}
-    “Cuando el valor del \ac{PENS} supere el 2\%, los \ac{OR} tendrán un plazo de dos (2) días, contados a partir de la publicación por parte del \ac{CND} del informe de \ac{ENS}, para reportar el valor de la \ac{ENS} al \ac{LAC}.”
-\end{quote}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\linewidth]{estructura_informe_eventos1617}
-    \caption{Estructura del informe de eventos, acuerdo CNO 1617}
-    \label{fig:estructurainforme}
-\end{figure}
-
-La energía empleada para el cálculo de la \ac{ENS} corresponde a la información reportada por los distintos comercializadores del mercado de comercialización, conforme a los procedimientos establecidos por el \ac{CND}.
-
-\subsection*{Ejemplo Numérico Hipotético del Pronóstico Nuevo de Demanda ($PRN_{j,h}$)}
-
-El Pronóstico Nuevo de Demanda ($PRN_{j,h}$) se utiliza en el procedimiento de cálculo de la Energía No Suministrada (ENS) definido en el Capítulo III de la Resolución 94 de 2012 CREG.
-
-La fórmula utilizada es:
-\begin{equation}
-	PRN_{j,h} = PR_{j,h} \cdot \left( \frac{DE_{j,a}}{PR_{j,a}} \right)
-\end{equation}
-Donde:
-\begin{itemize}
-	\item $PRN_{j,h}$: Pronóstico Nuevo de Demanda para el periodo horario $h$.
-	\item $PR_{j,h}$: Pronóstico de demanda utilizado en el Despacho Económico para el periodo horario $h$.
-	\item $DE_{j,a}$: Demanda Entregada en el periodo horario $a$.
-	\item $PR_{j,a}$: Pronóstico de demanda utilizado en el Despacho Económico para el periodo horario $a$.
-	\item $h$: Periodo horario en el que se presenta el Evento (o el siguiente, si subsiste).
-	\item $a$: Último periodo horario completo, anterior al Evento, sin efecto en la demanda atendida causado por otros Eventos en el STR.
-\end{itemize}
-
-\subsubsection*{Valores Hipotéticos para el Mercado $j$}
-Se asumen los siguientes valores (los cuales no provienen de las fuentes regulatorias):
-\begin{center}
-	\begin{tabular}{|l|l|p{2cm}|}
-		\hline
-		\textbf{Variable} & \textbf{Definición} & \textbf{Valor Hipotético (MW)} \\
-		\hline
-		$PR_{j,h}$ & Pronóstico de Demanda (Hora $h$) & $650$ \\
-		$PR_{j,a}$ & Pronóstico de Demanda (Hora $a$) & $600$ \\
-		$DE_{j,a}$ & Demanda Entregada (Hora $a$) & $612$ \\
-		\hline
-	\end{tabular}
-\end{center}
-
-\subsection*{Cálculo}
-
-\begin{enumerate}
-	\item \textbf{Cálculo del Factor de Ajuste ($\frac{DE_{j,a}}{PR_{j,a}}$)}
-	Este factor ajusta el pronóstico horario $h$ basándose en la precisión del pronóstico en el periodo $a$.
-	\begin{equation*}
-		\text{Factor de Ajuste} = \frac{612 \, \text{MW}}{600 \, \text{MW}} = 1.02
-	\end{equation*}
-	
-	\item \textbf{Cálculo del Pronóstico Nuevo de Demanda ($PRN_{j,h}$)}
-	Se aplica el factor de ajuste al Pronóstico de Demanda original para el periodo $h$ ($PR_{j,h}$):
-	\begin{align*}
-		PRN_{j,h} &= PR_{j,h} \cdot (\text{Factor de Ajuste}) \\
-		PRN_{j,h} &= 650 \, \text{MW} \cdot 1.02 \\
-		PRN_{j,h} &= \mathbf{663 \, \text{MW}}
-	\end{align*}
-\end{enumerate}
-
-El valor de $\mathbf{PRN_{j,h}} = 663 \, \mathbf{MW}$ es el \textit{Pronóstico Nuevo de Demanda} que se utilizará para calcular la Energía No Suministrada ($ENS_{MHj,h}$) para el periodo horario $h$.\\\\
-
-\section{ANÁLISIS DE EVENTOS}
-
-\begin{figure}[H]
-	\centering
-	\caption{Pasos para el analisis de eventos}
-	\label{fig:analisiseventosxm}
-	\includegraphics[width=0.9\linewidth]{analisis_eventos_xm}
-\end{figure}
-
-
-\vspace{0.5cm}
-
-El Acuerdo 1617 introduce actualizaciones basadas en las Resoluciones \textbf{CREG 015 de 2018}, \textbf{036 de 2019} y \textbf{101023 de 2022}, incluyendo la responsabilidad de reporte de información por parte de los Operadores de Red (OR), los plazos para reportar el valor de la Energía No Suministrada (ENS) al LAC, y la inclusión de eventos no programados en los Sistemas de Almacenamiento de Energía Eléctrica con Baterías (SAEB). Los Anexos 1 y 2 detallan el procedimiento y los formatos específicos para la elaboración de estos informes.
-
-\begin{figure}[H]
-  \centering
-  \caption{insumos para el análisis de eventos}
-  \label{fig:insumoseventos}
-  \includegraphics[width=0.8\linewidth]{insumos_eventos}
-\end{figure}
-
-\subsubsection{Responsables de los análisis y elaboración de informes}
-
-\begin{itemize}
-  
-\item CND: Eventos en Activos de Uso del STN, Activos de Conexión al STN, Interconexiones Internacionales de nivel IV o superior, y otros que ameriten análisis.
-    
-  \item Transportadores de energía eléctrica en el \ac{STN} y/o Servicio de Conexión al \ac{STN}: Eventos en sus activos del \ac{STN}, incluyendo Interconexiones Internacionales con tensión igual o superior a 220 kV y Activos de Conexión al \ac{STN}.
-  
-  \item Operadores de Red (OR's): Eventos en los activos bajo su supervisión. Los OR son los responsables de la recolección y el reporte de la información de eventos y la requerida para la aplicación de las disposiciones de calidad del servicio. Cuando el OR no opere los activos directamente, la información será reportada por quien los opera, y en el respectivo contrato de operación podrán precisarse los mecanismos para que el OR conozca la información reportada al CND. En todo caso, el responsable de la calidad y la oportunidad de la información reportada, a través del sistema dispuesto por el CND para este fin, es el agente a quien se le están remunerando los activos.
-    
-  \item Generadores: Deben suministrar información de plantas de generación si el \ac{CND} la requiere para sus análisis.
-
-\end{itemize}
-
-
-
-\subsection{Eventos a los que aplica el procedimiento de análisis}
-
-\begin{itemize}
-\item\textit{ Eventos no programados} que requieran análisis según Resoluciones CREG 093/2012, 094/2012 (Capítulo 3) y 015/2018.
-\item Eventos en conexión internacional que originen \textit{separación de ambos sistemas eléctricos}.
-    
-\item Eventos que ocasionen la desconexión de \textit{2 o más} activos del STN (STN > N - 1).
-    
-\item Eventos en nivel de tensión IV o superior que generen la \textit{desconexión de todos los elementos} asociados a una barra o sección de barra.
-    
-\item Eventos que apliquen para análisis por \ac{SAEB}, cuando se cumplan los requerimientos regulatorios (\textbf{Resolución CREG 101023 de 2022}).
-    
-\item Eventos en el SIN que el CND considere que requieren análisis.
-    
-\item Eventos para los cuales los agentes soliciten análisis, previo acuerdo con el CND.
-
-\end{itemize}
-    
-\subsection{Información a reportar por parte de los agentes}
-
- Identificación del activo, fecha y hora del evento, \ac{SOE} en formato editable, registros de falla originales (COMTRADE), ajustes de protecciones involucradas (si no están actualizados en la base de datos del CND), y cualquier información adicional pertinente.\\\\
-Un informe detallado y completo del evento, siguiendo la estructura establecida en el Anexo 1.
-
-\subsection{Estructura de los informes}
-
-    Informe de Agentes: Resumen general, antecedentes (cuando aplique), análisis, causa (incluyendo activo causante y causas de desconexiones adicionales), operación de sistemas de protección, conclusiones (descripción del evento, operación de protecciones, DNA, ausencia de tensión, actuación EDAC/ESP/ESPS, otros hallazgos), acciones (ejecutadas y por ejecutar), recomendaciones, anexos.\\\\
-    Informe del CND: Integra la información de los agentes, e incluye además: excursión de frecuencia en el resumen, recurrencia de inconvenientes en antecedentes, variación de frecuencia y cumplimiento de reglamentación en conclusiones, acciones y recomendaciones adicionales, referencias, y anexos opcionales (topología, secuencia del evento, condiciones operativas, otra información).\\\\
-    Informes de Casos Especiales (Anexo 2): Aplicable a eventos específicos (retraso en consignación, disparo de generador, omisión de cierre, apertura manual no programada, SAEB, evento N-1 con PENS > 2\%). Tienen una estructura simplificada y no requieren revisión de agentes a menos que el CND identifique modificaciones necesarias.
-
-\subsection{Plazos definidos para cada etapa del proceso (días hábiles a partir del día cero)}
-
-Los plazos para la presentación del informe pueden agilizarse o prolongarse de acuerdo al los acuerdos con los agentes.
-
-\begin{figure}[H]
-  \caption{Plazo acuerdo CNO 1617 de 2022}
-  \label{fig:plazo1617}
-  \includegraphics[width=\linewidth]{plazo16172022}
- \end{figure}
-
-Suministro de SOE en el mínimo tiempo posible, RDF en 48-72 horas.\\\\
-Reuniones para redefinir plazos, acuerdo con el CND para plazos adicionales de suministro de información con justificación escrita. El CND informará al CNO sobre estas prolongaciones.
-
-\subsection{Seguimiento de Acciones}
-
-    Responsabilidad de los agentes es informar al CND la fecha de ejecución de acciones, número de consignación nacional y soportes técnicos.\\\\
-    El CND mantendrá disponible el estado de las acciones, enviará trimestralmente un seguimiento al subcomité de protecciones y lo presentará en comités del CNO.\\\\
-    Las acciones solo se podrán reprogramar con un \textit{plan de acción}, fechas específicas y justificación.
-
-\section{Preguntas de Quiz (10 preguntas de respuesta corta)}
-
-\begin{enumerate}
-\item ¿Cuál es la fecha de expedición y de entrada en vigencia del Acuerdo CNO 1617, y a qué acuerdo sustituye?
-\item Según el Artículo 34 de la Ley 143 de 1994, ¿cuál es una función clave del CND?
-\item ¿Qué tipo de información específica es obligatoria para los agentes del \ac{SIN} según la Resolución CREG 083 de 1999 para el análisis de eventos?
-\item ¿Qué umbral de \ac{PENS} hace necesario un informe final detallado según las resoluciones CREG 093 y 094 de 2012, y quién es el responsable de publicarlo?
-\item ¿Quiénes son los responsables de la recolección y el reporte de la información de eventos y de la calidad del servicio según la Resolución \textbf{CREG 036 de 2019}?
-\item ¿Cuál es el objetivo principal del procedimiento establecido en el \textbf{Anexo 1} del Acuerdo 1617?
-    Mencione tres tipos de eventos a los que aplica el procedimiento de análisis de eventos del Acuerdo \textbf{CNO 1617}.
-  \item Además de la identificación del activo y la fecha/hora, ¿qué otros dos tipos de información técnica mínima deben suministrar los agentes al \ac{CND} para el análisis consolidado de eventos?
-  \item ¿Cuál es la diferencia en el "día cero" para eventos relacionados con \ac{ENS}/\ac{PENS} y para otros eventos no programados según los plazos definidos?
-  \item ¿Qué deben hacer los agentes si identifican que la información inicialmente reportada sobre el activo causante de un evento difiere del análisis detallado?
-  \end{enumerate}
-  
-  \subsection{Clave de Respuestas del Quiz}
-
-  \begin{itemize}
-
-  \item El Acuerdo CNO 1617 fue expedido el 06 de Octubre de 2022 y entró en vigencia el 06 de Noviembre de 2022. Sustituye al Acuerdo 03/09/2015, Acuerdo 787.
-  \item Según el literal b. del Artículo 34 de la Ley 143 de 1994, es función del CND "ejercer la coordinación, supervisión, control y análisis de la operación de los recursos de generación, interconexión y transmisión incluyendo las interconexiones internacionales".
-  \item La Resolución CREG 083 de 1999 establece como obligatoria la remisión de: a) Registro sobre la secuencia cronológica de eventos (SOE) y b) Por cada evento, fecha y hora con resolución de un (1) ms, identificación del elemento que cambió de estado y el estado final del dispositivo.
-  \item Un informe final detallado es necesario cuando el \textbf{PENS} supere el \textbf{2\%}. El CND es el responsable de elaborar y publicar este informe sobre \ac{ENS}.
-  \item Los Operadores de Red (OR) son los responsables de la recolección y el reporte de la información de eventos y la requerida para la aplicación de las disposiciones de calidad del servicio. En todo caso, el responsable de la calidad y oportunidad de la información es el agente a quien se le remuneran los activos.
-  \item El objetivo principal es establecer un procedimiento para la elaboración de los informes de análisis de eventos en el Sistema Interconectado Nacional (SIN) por parte del CND y los agentes del SIN.
-  \item Tres tipos de eventos a los que aplica son: a) Eventos no programados que requieran análisis según Resoluciones CREG 093/2012, 094/2012 (Capítulo 3) y 015/2018; b) Eventos en conexión internacional que originen separación de ambos sistemas eléctricos; c) Eventos que ocasionen la desconexión de 2 o más activos del STN (STN > N - 1); d) Eventos en nivel de tensión IV o superior, que generen la desconexión de todos los elementos asociados a una barra o sección de barra; e) Eventos que apliquen para análisis por SAEB. (Cualquiera de estas tres son válidas).
-  \item Los agentes deben suministrar el SOE (Sequence Of Events) en formato editable y los registros de falla originales (sin editar), en formato COMTRADE o estándar sustituto.
-    Para eventos que deban ser analizados según ENS/PENS (numeral 'a'), el día cero (0) es la fecha en la cual el CND publica el cálculo de Energía No Suministrada (ENS). Para los demás criterios (numerales 'c', 'd', 'f', 'g'), el día cero es el día de ocurrencia del evento.
-  \item Si el activo que dio origen al evento difiere de la información inicialmente reportada, los agentes son responsables de solicitar al CND las modificaciones de la información correspondiente en dicho reporte de eventos, en caso de que aplique.
-    \end{itemize}
-
-\subsection{Preguntas de Formato Ensayo}
-\begin{itemize}
-\item Compare y contraste las responsabilidades del CND y de los Agentes del SIN en la elaboración y suministro de información para los informes de análisis de eventos, detallando cómo se complementan sus roles según el Acuerdo 1617.
-   
-\item  Analice la importancia de los plazos establecidos en el Acuerdo 1617 para la eficiencia y la efectividad del proceso de análisis de eventos. Discuta las "Consideraciones para agilizar los plazos" y "Consideraciones para prolongar los plazos", y cómo estas buscan equilibrar la celeridad con la profundidad del análisis.
-    
-\item Describa la evolución de la regulación del sector eléctrico que ha llevado a la expedición del Acuerdo 1617, haciendo referencia a al menos cuatro resoluciones CREG mencionadas y explicando cómo cada una contribuye al marco regulatorio actual del análisis de eventos.
-\item Explique en detalle la estructura requerida para un informe de análisis de eventos elaborado por los agentes del SIN, tal como se describe en el numeral 3.2 del Anexo 1. Incluya los componentes obligatorios y su propósito en la identificación de la causa raíz y las acciones correctivas.
-\item Discuta el rol de los "Casos Especiales" en el procedimiento de análisis de eventos, tal como se definen en el numeral 3.4 y el Anexo 2. Explique por qué ciertos eventos se clasifican como especiales y cómo su tratamiento difiere del procedimiento estándar para eventos más complejos.
-\end{itemize}
-\subsection{Glosario de Términos Clave}
-
-\texttt{\begin{itemize}
-  \item Acuerdo CNO 1617: Documento que actualiza el procedimiento para la elaboración de informes de análisis de eventos en el Sistema Interconectado Nacional (SIN).
-  \item Activo: Se refiere a cualquier elemento o componente del Sistema Interconectado Nacional, según las definiciones de las Resoluciones CREG 011 de 2009 y CREG 015 de 2018.
-  \item Agente Generador: Empresa encargada de la producción de energía eléctrica dentro del SIN.
-  \item Agentes del SIN: Las empresas generadoras de electricidad, las distribuidoras y las que operan redes de interconexión y transmisión dentro del Sistema Interconectado Nacional.
-  \item CND (Centro Nacional de Despacho): Entidad central en el SIN responsable de la coordinación, supervisión, control y análisis de la operación del sistema, incluyendo la gestión de información de eventos.
-  \item CNO (Consejo Nacional de Operación): Órgano que aprueba acuerdos y procedimientos relacionados con la operación del SIN.
-  \item COMTRADE: Estándar para el intercambio de datos de registros de falla, utilizado para los registros oscilográficos en el análisis de eventos.
-  \item Consignación Nacional: Proceso formal de autorización para retirar activos del SIN de operación por mantenimiento u otras razones programadas.
-  \item CRD’s (Centros Regionales de Despacho): Entidades regionales que apoyan al CND en la coordinación y operación del SIN.
-  \item CREG (Comisión de Regulación de Energía y Gas): Organismo regulador que emite resoluciones y normativas para el sector eléctrico en Colombia.
-  \item Demanda No Atendida (DNA): Cantidad de energía que la demanda requirió pero no pudo ser suministrada debido a una interrupción o limitación del sistema.
-  \item Día Cero (0): El punto de inicio para el conteo de plazos en el procedimiento de análisis de eventos, cuya definición varía según la clasificación del evento.
-  \item Disturbio: Evento no planeado que produce una condición anormal en el SIN, como una perturbación o un cambio inesperado en el Error de Control de Área (ACE).
-  \item EDAC (Esquema de Desconexión Automática de Carga): Mecanismo de control automático que desconecta bloques de carga para preservar la estabilidad del SIN ante perturbaciones significativas.
-  \item ENS (Energía No Suministrada): Energía que no pudo ser entregada a los usuarios finales debido a interrupciones o fallas en el sistema, medida en unidades de energía (e.g., MWh).
-  \item Evento: Condición anormal o perturbación en el SIN que requiere análisis, según las Resoluciones CREG 093 de 2012 y CREG 015 de 2018.
-  \item ESP/ESPS (Esquemas de Protección / Esquemas de Protección Especiales): Conjuntos de protecciones diseñados para operar ante condiciones específicas del sistema, más allá de la protección básica de los equipos.
-  \item Falla: Un evento en el SIN que implica un cortocircuito, una interrupción o una condición de operación anormal de un activo.
-  \item Interconexiones Internacionales: Conexiones eléctricas que permiten el intercambio de energía entre el SIN de Colombia y sistemas eléctricos de países vecinos.
-  \item Interruptor: Dispositivo de conmutación capaz de interrumpir y establecer corrientes en condiciones normales y anormales del circuito.
-  \item LAC (Liquidación y Administración de Cuentas): Se refiere al proceso o entidad encargada de la compensación por energía no suministrada o por otros aspectos económicos del mercado eléctrico.
-  \item Ley 143 de 1994: Ley Marco Eléctrica de Colombia que establece los principios generales y las regulaciones del sector energético.
-  \item Operador de Red (OR): Empresas encargadas de la operación y el mantenimiento de las redes de transmisión regional (STR) y distribución local (SDL).
-  \item PENS (Potencia Equivalente No Suministrada): Una medida de la potencia no entregada a los usuarios, utilizada para clasificar la severidad de los eventos y determinar la necesidad de informes detallados.
-  \item Protecciones: Conjunto de dispositivos y sistemas diseñados para detectar fallas o condiciones anormales en el sistema eléctrico y operar equipos (como interruptores) para aislar la falla y proteger la integridad del sistema y los activos.
-  \item Registros Oscilográficos: Grabaciones de alta velocidad de las magnitudes eléctricas (corrientes, tensiones) durante un evento, cruciales para el análisis de fallas.
-  \item SAEB (Sistemas de Almacenamiento de Energía Eléctrica con Baterías): Tecnologías de almacenamiento de energía que utilizan baterías para gestionar el suministro y la demanda en el SIN.
-  \item Seccionador: Dispositivo de conmutación utilizado para aislar eléctricamente una parte del circuito para mantenimiento o seguridad, no diseñado para interrumpir corrientes de falla.
-  \item SEP (Sistema Eléctrico de Potencia): Conjunto de elementos interconectados (generación, transmisión, distribución y consumo) que conforman el sistema eléctrico.
-  \item SIN (Sistema Interconectado Nacional): La red eléctrica principal de Colombia que conecta las diferentes regiones y fuentes de generación con los centros de consumo.
-  \item SOE (Sequence Of Events): Un registro cronológico y detallado de la operación de equipos y protecciones durante un evento, crucial para reconstruir la secuencia de los hechos.
-  \item SSPD (Superintendencia de Servicios Públicos Domiciliarios): Organismo que supervisa y controla la prestación de los servicios públicos, incluyendo la energía eléctrica.
-  \item STN (Sistema de Transmisión Nacional): La parte de la red de transmisión de energía eléctrica que opera a las tensiones más altas (iguales o superiores a 220 kV), gestionada por los transportadores.
-  \item STR (Sistema de Transmisión Regional): La parte de la red de transmisión de energía eléctrica que opera a tensiones intermedias (menores de 220 kV y no parte del SDL), gestionada por los Operadores de Red (OR).
-  \item Subcomité de Protecciones: Un comité técnico dentro del CNO que se encarga de analizar y dar concepto favorable a las actualizaciones relacionadas con los sistemas de protección.
-  \end{itemize}}
-
-
-  \section{DEMANDA NO ATENDIDA}
-
-  Es un valor \textit{estimado} de la energía no entregada a la carga
-  debido a eventos programados o no programados. Para ello se emplean
-  los eventos diarios reportados en ENERGIS.\\\\
-
-  \section{ENERGÍA NO SUMINISTRADA}
-
-  La energía no suministrada es la dejada de entregar a partir de la
-  ocurrencia de un evento en el \ac{STR} \cite{CREG0152018}. Esta se
-  puede calcular de acuerdo a la siguiente expresión: \cite{CREG0942012}\\\\
-
-  \[ ENSMH_{j,h} = PRN_{j,h} - DE_{j,h} \]
-
-  \begin{tabular}{p{0.2\linewidth} p{0.7\linewidth}}
-    Donde :\\\\& \\
-    $ENSMH_{j,h}$& Es la energía no suministrada en  un mercado de comercialización a una hora dada \\
-    $PRN_{j,h}$ & Es el pronóstico nuevo de la demanda\\
-    $DE_{j,h}$ & Es la demanda de electricidad \\
-  \end{tabular}\\
-  
-  \section*{Metodología y Fórmulas}
-  
-  El CND estima la ENS ($ENSMH_{j,h}$) para cada periodo horario ($h$) y mercado afectado ($j$) como la diferencia entre el Pronóstico Nuevo de Demanda ($PRN_{j,h}$) y la Demanda Entregada ($DE_{j,h}$) [4].
-  
-  \begin{enumerate}
-  	\item \textbf{Energía No Suministrada Horaria ($ENSMH_{j,h}$)}
-  	\begin{equation}
-  		ENSMH_{j,h} = PRN_{j,h} - DE_{j,h} \quad \text{[4]}
-  	\end{equation}
-  	
-  	\item \textbf{Porcentaje de Energía No Suministrada ($PENS_{j,h}$)}
-  	\begin{equation}
-  		PENS_{j,h} = \frac{ENSMH_{j,h}}{PRN_{j,h}} \quad \text{[4]}
-  	\end{equation}
-  	
-  	\item \textbf{Condición del Umbral}
-  	Si $\mathbf{PENS_{j,h} \le 2\%}$, entonces $\mathbf{ENSMH_{j,h} = 0}$ [4].
-  	
-  	\item \textbf{ENS del Mercado ($ENSM_j$)}
-  	Si $PENS_{j,h}$ supera el 2\%, la $ENSM_j$ es el valor máximo entre la $ENSMH_{j,h}$ del periodo del Evento y la del periodo siguiente (si subsiste el Evento) [4].
-  	
-  	\item \textbf{ENS Causal Total ($ENS_q$)}
-  	Es la sumatoria de las energías no suministradas en cada mercado de comercialización afectado ($NM$) [5]:
-  	\begin{equation}
-  		ENS_q = \sum_{j=1}^{NM} ENSM_j \quad \text{[5]}
-  	\end{equation}
-  \end{enumerate}
-  
-  \section*{Valores Hipotéticos para el Ejemplo}
-  
-  Asumamos un Evento no programado en el Mercado de Comercialización $j$ durante el periodo horario $h$:
-  
-  \begin{center}
-  	\begin{tabular}{|l|l|c|}
-  		\hline
-  		\textbf{Variable} & \textbf{Definición} & \textbf{Valor Hipotético (MW)} \\
-  		\hline
-  		$PRN_{j,h}$ & Pronóstico Nuevo de Demanda (Num. 3.3) & $663$ \\
-  		$DE_{j,h}$ & Demanda Entregada en el periodo $h$ & $500$ \\
-  		$NM$ & Número de Mercados Afectados & $1$ \\
-  		\hline
-  	\end{tabular}
-  \end{center}
-  
-  \section*{Cálculo Detallado}
-  
-  \subsection*{Paso 1: Cálculo de la $ENSMH_{j,h}$ (Energía No Suministrada Horaria)}
-  
-  \begin{align*}
-  	ENSMH_{j,h} &= PRN_{j,h} - DE_{j,h} \quad \text{[4]} \\
-  	ENSMH_{j,h} &= 663 \, \text{MW} - 500 \, \text{MW} \\
-  	ENSMH_{j,h} &= \mathbf{163 \, \text{MW}}
-  \end{align*}
-  
-  \subsection*{Paso 2: Cálculo del $PENS_{j,h}$ (Porcentaje de Energía No Suministrada)}
-  
-  \begin{align*}
-  	PENS_{j,h} &= \frac{ENSMH_{j,h}}{PRN_{j,h}} \quad \text{[4]} \\
-  	PENS_{j,h} &= \frac{163 \, \text{MW}}{663 \, \text{MW}} \\
-  	PENS_{j,h} &\approx 0.2458 \quad (\text{o } 24.58\%)
-  \end{align*}
-  
-  \subsection*{Paso 3: Determinación de la ENS del Mercado ($ENSM_j$)}
-  
-  Se verifica la condición del umbral [4]:
-  \begin{itemize}
-  	\item $PENS_{j,h} \approx 24.58\%$.
-  	\item Como $24.58\% > 2\%$, el $ENSMH_{j,h}$ es válido y no se iguala a cero [4].
-  \end{itemize}
-  
-  Asumiendo que este valor es el máximo $ENSMH_{j,h}$ encontrado en el periodo horario del Evento ($h=1e$) y el siguiente ($h=2e$), la ENS para el Mercado $j$ es:
-  \begin{equation*}
-  	ENSM_j = 163 \, \text{MW} \quad \text{[4]}
-  \end{equation*}
-  
-  \subsection*{Paso 4: Cálculo de la ENS Causal Total ($ENS_q$)}
-  
-  Dado que solo se afectó un mercado ($NM=1$):
-  \begin{align*}
-  	ENS_q &= \sum_{j=1}^{NM} ENSM_j \quad \text{[5]} \\
-  	ENS_q &= ENSM_j \\
-  	ENS_q &= \mathbf{163 \, \text{MW}}
-  \end{align*}
-  
-  \section*{Resultado}
-  
-  La Energía No Suministrada ($ENS_q$) causada por el Evento es de $\mathbf{163 \, \text{MW}}$ [5]. Este valor se utiliza en las fórmulas del numeral 11.1.8.2 del anexo general de la Resolución CREG 097 de 2008 para calcular las compensaciones [5]. Adicionalmente, el $PENS_q$ toma el valor del mayor $PENS_{j,h}$ encontrado, que en este caso es 24.58\% [5]. Si este $PENS_q$ supera el 2\%, el CND debe enviar un informe a la SSPD.\\\\
-  
-
-
-    
-  \section*{Metodología y Fórmulas}
-  
-  El CND estima la ENS ($ENSMH_{j,h}$) para cada periodo horario ($h$) y mercado afectado ($j$) como la diferencia entre el Pronóstico Nuevo de Demanda ($PRN_{j,h}$) y la Demanda Entregada ($DE_{j,h}$) [4].
-  
-  \begin{enumerate}
-  	\item \textbf{Energía No Suministrada Horaria ($ENSMH_{j,h}$)}
-  	\begin{equation}
-  		ENSMH_{j,h} = PRN_{j,h} - DE_{j,h} \quad \text{[4]}
-  	\end{equation}
-  	
-  	\item \textbf{Porcentaje de Energía No Suministrada ($PENS_{j,h}$)}
-  	\begin{equation}
-  		PENS_{j,h} = \frac{ENSMH_{j,h}}{PRN_{j,h}} \quad \text{[4]}
-  	\end{equation}
-  	
-  	\item \textbf{Condición del Umbral}
-  	Si $\mathbf{PENS_{j,h} \le 2\%}$, entonces $\mathbf{ENSMH_{j,h} = 0}$ [4].
-  	
-  	\item \textbf{ENS del Mercado ($ENSM_j$)}
-  	Si $PENS_{j,h}$ supera el 2\%, la $ENSM_j$ es el valor máximo entre la $ENSMH_{j,h}$ del periodo del Evento y la del periodo siguiente (si subsiste el Evento) [4].
-  	
-  	\item \textbf{ENS Causal Total ($ENS_q$)}
-  	Es la sumatoria de las energías no suministradas en cada mercado de comercialización afectado ($NM$) [5]:
-  	\begin{equation}
-  		ENS_q = \sum_{j=1}^{NM} ENSM_j \quad \text{[5]}
-  	\end{equation}
-  \end{enumerate}
-  
-  \section*{Valores Hipotéticos para el Ejemplo}
-  
-  Asumamos un Evento no programado en el Mercado de Comercialización $j$ durante el periodo horario $h$:
-  
-  \begin{center}
-  	\begin{tabular}{|l|p{6cm}|p{2cm}|}
-  		\hline
-  		\textbf{Variable} & \textbf{Definición} & \textbf{Valor Hipotético (MW)} \\
-  		\hline
-  		$PRN_{j,h}$ & Pronóstico Nuevo de Demanda (Num. 3.3) & $663$ \\
-  		$DE_{j,h}$ & Demanda Entregada en el periodo $h$ & $500$ \\
-  		$NM$ & Número de Mercados Afectados & $1$ \\
-  		\hline
-  	\end{tabular}
-  \end{center}
-  
-  \section*{Cálculo Detallado}
-  
-  \subsection*{Paso 1: Cálculo de la $ENSMH_{j,h}$ (Energía No Suministrada Horaria)}
-  
-  \begin{align*}
-  	ENSMH_{j,h} &= PRN_{j,h} - DE_{j,h} \quad \text{[4]} \\
-  	ENSMH_{j,h} &= 663 \, \text{MW} - 500 \, \text{MW} \\
-  	ENSMH_{j,h} &= \mathbf{163 \, \text{MW}}
-  \end{align*}
-  
-  \subsection*{Paso 2: Cálculo del $PENS_{j,h}$ (Porcentaje de Energía No Suministrada)}
-  
-  \begin{align*}
-  	PENS_{j,h} &= \frac{ENSMH_{j,h}}{PRN_{j,h}} \quad \text{[4]} \\
-  	PENS_{j,h} &= \frac{163 \, \text{MW}}{663 \, \text{MW}} \\
-  	PENS_{j,h} &\approx 0.2458 \quad (\text{o } 24.58\%)
-  \end{align*}
-  
-  \subsection*{Paso 3: Determinación de la ENS del Mercado ($ENSM_j$)}
-  
-  Se verifica la condición del umbral [4]:
-  \begin{itemize}
-  	\item $PENS_{j,h} \approx 24.58\%$.
-  	\item Como $24.58\% > 2\%$, el $ENSMH_{j,h}$ es válido y no se iguala a cero [4].
-  \end{itemize}
-  
-  Asumiendo que este valor es el máximo $ENSMH_{j,h}$ encontrado en el periodo horario del Evento ($h=1e$) y el siguiente ($h=2e$), la ENS para el Mercado $j$ es:
-  \begin{equation*}
-  	ENSM_j = 163 \, \text{MW} \quad \text{[4]}
-  \end{equation*}
-  
-  \subsection*{Paso 4: Cálculo de la ENS Causal Total ($ENS_q$)}
-  
-  Dado que solo se afectó un mercado ($NM=1$):
-  \begin{align*}
-  	ENS_q &= \sum_{j=1}^{NM} ENSM_j \quad \text{[5]} \\
-  	ENS_q &= ENSM_j \\
-  	ENS_q &= \mathbf{163 \, \text{MW}}
-  \end{align*}
-  
-  \section*{Resultado}
-  
-  La Energía No Suministrada ($ENS_q$) causada por el Evento es de $\mathbf{163 \, \text{MW}}$ [5]. Este valor se utiliza en las fórmulas del numeral 11.1.8.2 del anexo general de la Resolución CREG 097 de 2008 para calcular las compensaciones [5]. Adicionalmente, el $PENS_q$ toma el valor del mayor $PENS_{j,h}$ encontrado, que en este caso es 24.58\% [5]. Si este $PENS_q$ supera el 2\%, el CND debe enviar un informe a la SSPD.\\\\
-  
-
-
-  
-\hspace{1cm}
-  Los datos para el calculo de estos valores son almacenados en la
-  base de datos del CND por un tiempo máximo de cinco años en el
-  aplicativo HEROPE. Es resposabilidad del OR reportar esta
-  información\\\\
   
 \chapter{CARGABILIDAD}
 \section{CARGABILIDAD DE CIRCUITOS}
@@ -1438,7 +1151,579 @@ Las horas que un activo  se encuentra  in disponible durante un mes, se pueden c
     Para los eventos momentáneos (nenores a 3 min) se debe reportar el \textbf{MAIFI} el cual se calcula como:
     \[ MAIFI = \dfrac{\sum_{i=1}^{n}NU }{UT}\]
     
+    \section*{Ejemplo Numérico de Cálculo de Indicadores de Calidad}
     
+    El presente ejemplo ilustra el cálculo de los indicadores de calidad media (SAIDI y SAIFI) e individual (DIU y FIU) para un Operador de Red (OR) $j$, basándose en 10 interrupciones simuladas.
+    
+    \subsection*{Datos Hipotéticos de Entrada}
+    Asumimos un período anual $t$ y un solo mes $m$ para la simplificación de la notación.
+    
+    \begin{itemize}
+    	\item \textbf{Total de Usuarios Conectados ($UT$):} $UT = 100,000$ usuarios.
+    	\item \textbf{Número de Eventos Totales ($n$):} 10 interrupciones.
+    \end{itemize}
+    
+    \begin{table}[h]
+    	\centering
+    	\caption{Tabla de Eventos (Simulación de 10 Interrupciones)}
+    	\begin{tabular}{|p{0.25\linewidth}|p{0.25\linewidth}|p{0.25\linewidth}|p{0.25\linewidth}|}
+    		\hline
+    		\textbf{Evento ($i$)} & \textbf{Usuarios Afectados ($NU_i$)} & \textbf{Duración ($D_i$)} (minutos) & \textbf{$D_i \times NU_i$} (Usuario-minutos) \\
+    		\hline
+    		1 & $5$ & $45$ & $225$ \\
+    		2 & $10$ & $60$ & $600$ \\
+    		3 & $2$ & $120$ & $240$ \\
+    		4 & $8$ & $30$ & $240$ \\
+    		5 & $15$ & $15$ & $225$ \\
+    		6 & $4$ & $90$ & $360$ \\
+    		7 & $6$ & $30$ & $180$ \\
+    		8 & $1$ & $240$ & $240$ \\
+    		9 & $7$ & $60$ & $420$ \\
+    		10 & $3$ & $15$ & $45$ \\\hline
+    		\textbf{Suma Total ($\sum$)} & $\mathbf{61,000}$ & N/A & $\mathbf{2,775}$ \\\hline
+    		\end{tabular}
+    \end{table}
+    
+    \subsection*{II. Indicadores de Calidad Media (SAIDI y SAIFI)}
+    
+    Los indicadores de calidad media anual del sistema miden la duración (SAIDI) y frecuencia (SAIFI) de los eventos [1, 2].
+    
+    \subsubsection*{A. SAIDI (Indicador de Duración Promedio por Usuario)}
+    
+    El SAIDI se calcula como la duración total en horas de los eventos que en promedio percibe cada usuario [1, 2].
+    
+    Fórmula establecida en las fuentes:
+    $$\text{SAIDI}_{j,t} = \sum_{m=1}^{12} \sum_{i=1}^{n} \frac{(D_{i,u,m} \cdot NU_{i,u,m})}{UT_{j,m}} / 60 \quad \text{[1, 2]}$$
+    
+    \textbf{Cálculo Numérico:}
+    $$\text{SAIDI} = \frac{2,775,000 \text{ usuario-minutos}}{100,000 \text{ usuarios}} / 60$$
+    $$\text{SAIDI} = \frac{27.75 \text{ minutos}}{\text{usuario}} / 60$$
+    $$\mathbf{\text{SAIDI} = 0.4625 \text{ horas/usuario al año}}$$
+    
+    \subsubsection*{B. SAIFI (Indicador de Frecuencia Promedio por Usuario)}
+    
+    El SAIFI representa la cantidad total de eventos que en promedio perciben todos los usuarios [1, 2].
+    
+    Fórmula establecida en las fuentes:
+    $$\text{SAIFI}_{j,t} = \sum_{m=1}^{12} \sum_{i=1}^{n} \frac{NU_{i,u,m}}{UT_{j,m}} \quad \text{[1, 2]}$$
+    
+    \textbf{Cálculo Numérico:}
+    $$\text{SAIFI} = \frac{\sum NU_{i}}{UT}$$
+    $$\text{SAIFI} = \frac{61,000 \text{ usuarios afectados}}{100,000 \text{ usuarios totales}}$$
+    $$\mathbf{\text{SAIFI} = 0.61 \text{ eventos/usuario al año}}$$
+    
+    \subsection*{III. Indicadores de Calidad Individual (DIU y FIU)}
+    
+    Estos indicadores se establecen a nivel de usuario $u$, conectado al nivel de tensión $n$ y perteneciente al grupo de calidad $q$ [3, 4].
+    
+    \textbf{Supuesto Individual:}
+    Asumimos que el Usuario $u$ fue afectado únicamente por los Eventos 1, 3, 6 y 8 (4 interrupciones).
+    \begin{itemize}
+    	\item Duración total de eventos percibidos: $45 + 120 + 90 + 240 = 495$ minutos.
+    	\item Frecuencia de eventos percibidos: 4 eventos.
+    \end{itemize}
+    
+    \subsubsection*{C. DIU (Duración Individual por Usuario)}
+    
+    El DIU representa la duración total de eventos percibida por el usuario $u$ en un período anual [3, 4].
+    
+    Fórmula establecida en las fuentes:
+    $$\text{DIU}_{u,n,q,m} = \sum_{ma=m-11}^{m} \text{DIUM}_{u,n,q,ma} \quad \text{[3, 4]}$$
+    Donde $\text{DIUM}$ es la duración en horas de todos los eventos percibidos por el usuario $u$ en el mes $m$.
+    
+    \textbf{Cálculo Numérico:}
+    1. Conversión a horas: $495 \text{ minutos} / 60 = 8.25 \text{ horas}$.
+    2. Asumiendo que todos ocurrieron en el mes $m$:
+    $$\mathbf{\text{DIU}_{u,n,q,m} = 8.25 \text{ horas/usuario al año}}$$
+    
+    \subsubsection*{D. FIU (Frecuencia Individual por Usuario)}
+    
+    El FIU representa la cantidad total de eventos percibidos por el usuario $u$ en un período anual [3, 4].
+    
+    Fórmula establecida en las fuentes:
+    $$\text{FIU}_{u,n,q,m} = \sum_{ma=m-11}^{m} \text{FIUM}_{u,n,q,ma} \quad \text{[3, 4]}$$
+    Donde $\text{FIUM}$ es el número total de eventos percibidos por el usuario $u$ en el mes $m$.
+    
+    \textbf{Cálculo Numérico:}
+    1. Total de eventos percibidos: 4 eventos.
+    2. Asumiendo que todos ocurrieron en el mes $m$:
+   $$\mathbf{\text{FIU}_{u,n,q,m} = 4 \text{ eventos/usuario al año}}$$
+    
+    
+  \chapter{EVENTOS}
+
+\section{MARCO REGULATORIO}
+
+\begin{center}
+	\begin{tcolorbox}
+		La Ley 143 de 1994, en sus Artículos 34 y 38, establece las responsabilidades del \textit{Centro Nacional de Despacho}(CND) en la coordinación, supervisión, control y análisis de la operación de los recursos del SIN, así como la obligación de las empresas generadoras, distribuidoras y operadoras de redes de suministro de información oportuna y fiel al \textbf{CND} y los \textbf{CRD's}.
+	\end{tcolorbox}
+\end{center}
+
+La \textbf{Resolución CREG 080 de 1999} define las responsabilidades del CND y los agentes del SIN en la realización de estudios sobre fallas y emergencias. La \textbf{Resolución CREG 083 de 1999} detalla la información obligatoria que los agentes deben adquirir y suministrar al CND, incluyendo registros cronológicos de eventos con alta resolución temporal y libre acceso a esta información.\\\\ 
+
+Las Resoluciones \textbf{CREG 093} ( para el \ac{STN}) y \textbf{094 de 2012} ( para el STR) requieren informes detallados para eventos no programados que superen un cierto umbral de \ac{PENS}.\\\\
+
+\begin{figure}[H]
+	\centering
+	\caption{Metodología del calculo del pronostico de la energía no suministrada}
+	\label{fig:ens}
+	\includegraphics[width=\linewidth]{calculo_ens.png}
+\end{figure}
+
+\section{REPORTE DE EVENTOS Y ENERGÍA NO SUMINISTRADA}
+
+Cuando ocurre un evento no programado (falla), puede generarse la indisponibilidad total o parcial de uno o varios activos del sistema \cite{CREG0942012}.  
+Si dicha indisponibilidad ocasiona una ausencia de tensión en alguna parte de la red y el \ac{PENS} supera el 2\%, el \ac{CND} debe remitir a la Superintendencia de Servicios Públicos Domiciliarios (SSPD) un informe con el análisis detallado del evento ocurrido. De acuerdo con la Resolución \textbf{CREG 015 de 2018}, dicho informe debe contener, como mínimo, la siguiente información \cite{CREG0152018}:
+
+\begin{itemize}
+	\item Número y descripción de los eventos.
+	\item Identificación de los activos causantes de los eventos.
+	\item Valores y memoria de cálculo de las variables empleadas en el cálculo de la \ac{ENS}.
+	\item Para los \ac{MC} afectados, curva de potencia activa correspondiente al período horario del evento.
+	\item Curvas de potencia activa de los doce períodos anteriores y los doce períodos posteriores a la ocurrencia del evento.
+	\item Informe final del evento, conforme a lo establecido en los acuerdos del \ac{CNO}.
+\end{itemize}
+
+El artículo 24 de la Resolución CREG 015 de 2018 adiciona el siguiente párrafo al final del numeral 5.1.14.2 “\textit{Compensaciones por dejar no operativos otros activos o por energía no suministrada}”:  
+
+\begin{quote}
+	“Cuando el valor del \ac{PENS} supere el 2\%, los \ac{OR} tendrán un plazo de dos (2) días, contados a partir de la publicación por parte del \ac{CND} del informe de \ac{ENS}, para reportar el valor de la \ac{ENS} al \ac{LAC}.”
+\end{quote}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{estructura_informe_eventos1617}
+	\caption{Estructura del informe de eventos, acuerdo CNO 1617}
+	\label{fig:estructurainforme}
+\end{figure}
+
+La energía empleada para el cálculo de la \ac{ENS} corresponde a la información reportada por los distintos comercializadores del mercado de comercialización, conforme a los procedimientos establecidos por el \ac{CND}.
+
+\subsection*{Ejemplo Numérico Hipotético del Pronóstico Nuevo de Demanda ($PRN_{j,h}$)}
+
+El Pronóstico Nuevo de Demanda ($PRN_{j,h}$) se utiliza en el procedimiento de cálculo de la Energía No Suministrada (ENS) definido en el Capítulo III de la Resolución 94 de 2012 CREG.
+
+La fórmula utilizada es:
+\begin{equation}
+	PRN_{j,h} = PR_{j,h} \cdot \left( \frac{DE_{j,a}}{PR_{j,a}} \right)
+\end{equation}
+Donde:
+\begin{itemize}
+	\item $PRN_{j,h}$: Pronóstico Nuevo de Demanda para el periodo horario $h$.
+	\item $PR_{j,h}$: Pronóstico de demanda utilizado en el Despacho Económico para el periodo horario $h$.
+	\item $DE_{j,a}$: Demanda Entregada en el periodo horario $a$.
+	\item $PR_{j,a}$: Pronóstico de demanda utilizado en el Despacho Económico para el periodo horario $a$.
+	\item $h$: Periodo horario en el que se presenta el Evento (o el siguiente, si subsiste).
+	\item $a$: Último periodo horario completo, anterior al Evento, sin efecto en la demanda atendida causado por otros Eventos en el STR.
+\end{itemize}
+
+\subsubsection*{Valores Hipotéticos para el Mercado $j$}
+Se asumen los siguientes valores (los cuales no provienen de las fuentes regulatorias):
+\begin{center}
+	\begin{tabular}{|l|l|p{2cm}|}
+		\hline
+		\textbf{Variable} & \textbf{Definición} & \textbf{Valor Hipotético (MW)} \\
+		\hline
+		$PR_{j,h}$ & Pronóstico de Demanda (Hora $h$) & $650$ \\
+		$PR_{j,a}$ & Pronóstico de Demanda (Hora $a$) & $600$ \\
+		$DE_{j,a}$ & Demanda Entregada (Hora $a$) & $612$ \\
+		\hline
+	\end{tabular}
+\end{center}
+
+\subsection*{Cálculo}
+
+\begin{enumerate}
+	\item \textbf{Cálculo del Factor de Ajuste ($\frac{DE_{j,a}}{PR_{j,a}}$)}
+	Este factor ajusta el pronóstico horario $h$ basándose en la precisión del pronóstico en el periodo $a$.
+	\begin{equation*}
+		\text{Factor de Ajuste} = \frac{612 \, \text{MW}}{600 \, \text{MW}} = 1.02
+	\end{equation*}
+	
+	\item \textbf{Cálculo del Pronóstico Nuevo de Demanda ($PRN_{j,h}$)}
+	Se aplica el factor de ajuste al Pronóstico de Demanda original para el periodo $h$ ($PR_{j,h}$):
+	\begin{align*}
+		PRN_{j,h} &= PR_{j,h} \cdot (\text{Factor de Ajuste}) \\
+		PRN_{j,h} &= 650 \, \text{MW} \cdot 1.02 \\
+		PRN_{j,h} &= \mathbf{663 \, \text{MW}}
+	\end{align*}
+\end{enumerate}
+
+El valor de $\mathbf{PRN_{j,h}} = 663 \, \mathbf{MW}$ es el \textit{Pronóstico Nuevo de Demanda} que se utilizará para calcular la Energía No Suministrada ($ENS_{MHj,h}$) para el periodo horario $h$.\\\\
+
+\section{ANÁLISIS DE EVENTOS}
+
+\begin{figure}[H]
+	\centering
+	\caption{Pasos para el analisis de eventos}
+	\label{fig:analisiseventosxm}
+	\includegraphics[width=0.9\linewidth]{analisis_eventos_xm}
+\end{figure}
+
+
+\vspace{0.5cm}
+
+El Acuerdo 1617 introduce actualizaciones basadas en las Resoluciones \textbf{CREG 015 de 2018}, \textbf{036 de 2019} y \textbf{101023 de 2022}, incluyendo la responsabilidad de reporte de información por parte de los Operadores de Red (OR), los plazos para reportar el valor de la Energía No Suministrada (ENS) al LAC, y la inclusión de eventos no programados en los Sistemas de Almacenamiento de Energía Eléctrica con Baterías (SAEB). Los Anexos 1 y 2 detallan el procedimiento y los formatos específicos para la elaboración de estos informes.
+
+\begin{figure}[H]
+	\centering
+	\caption{insumos para el análisis de eventos}
+	\label{fig:insumoseventos}
+	\includegraphics[width=0.8\linewidth]{insumos_eventos}
+\end{figure}
+
+\subsubsection{Responsables de los análisis y elaboración de informes}
+
+\begin{itemize}
+	
+	\item CND: Eventos en Activos de Uso del STN, Activos de Conexión al STN, Interconexiones Internacionales de nivel IV o superior, y otros que ameriten análisis.
+	
+	\item Transportadores de energía eléctrica en el \ac{STN} y/o Servicio de Conexión al \ac{STN}: Eventos en sus activos del \ac{STN}, incluyendo Interconexiones Internacionales con tensión igual o superior a 220 kV y Activos de Conexión al \ac{STN}.
+	
+	\item Operadores de Red (OR's): Eventos en los activos bajo su supervisión. Los OR son los responsables de la recolección y el reporte de la información de eventos y la requerida para la aplicación de las disposiciones de calidad del servicio. Cuando el OR no opere los activos directamente, la información será reportada por quien los opera, y en el respectivo contrato de operación podrán precisarse los mecanismos para que el OR conozca la información reportada al CND. En todo caso, el responsable de la calidad y la oportunidad de la información reportada, a través del sistema dispuesto por el CND para este fin, es el agente a quien se le están remunerando los activos.
+	
+	\item Generadores: Deben suministrar información de plantas de generación si el \ac{CND} la requiere para sus análisis.
+	
+\end{itemize}
+
+
+
+\subsection{Eventos a los que aplica el procedimiento de análisis}
+
+\begin{itemize}
+	\item\textit{ Eventos no programados} que requieran análisis según Resoluciones CREG 093/2012, 094/2012 (Capítulo 3) y 015/2018.
+	\item Eventos en conexión internacional que originen \textit{separación de ambos sistemas eléctricos}.
+	
+	\item Eventos que ocasionen la desconexión de \textit{2 o más} activos del STN (STN > N - 1).
+	
+	\item Eventos en nivel de tensión IV o superior que generen la \textit{desconexión de todos los elementos} asociados a una barra o sección de barra.
+	
+	\item Eventos que apliquen para análisis por \ac{SAEB}, cuando se cumplan los requerimientos regulatorios (\textbf{Resolución CREG 101023 de 2022}).
+	
+	\item Eventos en el SIN que el CND considere que requieren análisis.
+	
+	\item Eventos para los cuales los agentes soliciten análisis, previo acuerdo con el CND.
+	
+\end{itemize}
+
+\subsection{Información a reportar por parte de los agentes}
+
+Identificación del activo, fecha y hora del evento, \ac{SOE} en formato editable, registros de falla originales (COMTRADE), ajustes de protecciones involucradas (si no están actualizados en la base de datos del CND), y cualquier información adicional pertinente.\\\\
+Un informe detallado y completo del evento, siguiendo la estructura establecida en el Anexo 1.
+
+\subsection{Estructura de los informes}
+
+Informe de Agentes: Resumen general, antecedentes (cuando aplique), análisis, causa (incluyendo activo causante y causas de desconexiones adicionales), operación de sistemas de protección, conclusiones (descripción del evento, operación de protecciones, DNA, ausencia de tensión, actuación EDAC/ESP/ESPS, otros hallazgos), acciones (ejecutadas y por ejecutar), recomendaciones, anexos.\\\\
+Informe del CND: Integra la información de los agentes, e incluye además: excursión de frecuencia en el resumen, recurrencia de inconvenientes en antecedentes, variación de frecuencia y cumplimiento de reglamentación en conclusiones, acciones y recomendaciones adicionales, referencias, y anexos opcionales (topología, secuencia del evento, condiciones operativas, otra información).\\\\
+Informes de Casos Especiales (Anexo 2): Aplicable a eventos específicos (retraso en consignación, disparo de generador, omisión de cierre, apertura manual no programada, SAEB, evento N-1 con PENS > 2\%). Tienen una estructura simplificada y no requieren revisión de agentes a menos que el CND identifique modificaciones necesarias.
+
+\subsection{Plazos definidos para cada etapa del proceso (días hábiles a partir del día cero)}
+
+Los plazos para la presentación del informe pueden agilizarse o prolongarse de acuerdo al los acuerdos con los agentes.
+
+\begin{figure}[H]
+	\caption{Plazo acuerdo CNO 1617 de 2022}
+	\label{fig:plazo1617}
+	\includegraphics[width=\linewidth]{plazo16172022}
+\end{figure}
+
+Suministro de SOE en el mínimo tiempo posible, RDF en 48-72 horas.\\\\
+Reuniones para redefinir plazos, acuerdo con el CND para plazos adicionales de suministro de información con justificación escrita. El CND informará al CNO sobre estas prolongaciones.
+
+\subsection{Seguimiento de Acciones}
+
+Responsabilidad de los agentes es informar al CND la fecha de ejecución de acciones, número de consignación nacional y soportes técnicos.\\\\
+El CND mantendrá disponible el estado de las acciones, enviará trimestralmente un seguimiento al subcomité de protecciones y lo presentará en comités del CNO.\\\\
+Las acciones solo se podrán reprogramar con un \textit{plan de acción}, fechas específicas y justificación.
+
+\section{Preguntas de Quiz (10 preguntas de respuesta corta)}
+
+\begin{enumerate}
+	\item ¿Cuál es la fecha de expedición y de entrada en vigencia del Acuerdo CNO 1617, y a qué acuerdo sustituye?
+	\item Según el Artículo 34 de la Ley 143 de 1994, ¿cuál es una función clave del CND?
+	\item ¿Qué tipo de información específica es obligatoria para los agentes del \ac{SIN} según la Resolución CREG 083 de 1999 para el análisis de eventos?
+	\item ¿Qué umbral de \ac{PENS} hace necesario un informe final detallado según las resoluciones CREG 093 y 094 de 2012, y quién es el responsable de publicarlo?
+	\item ¿Quiénes son los responsables de la recolección y el reporte de la información de eventos y de la calidad del servicio según la Resolución \textbf{CREG 036 de 2019}?
+	\item ¿Cuál es el objetivo principal del procedimiento establecido en el \textbf{Anexo 1} del Acuerdo 1617?
+	Mencione tres tipos de eventos a los que aplica el procedimiento de análisis de eventos del Acuerdo \textbf{CNO 1617}.
+	\item Además de la identificación del activo y la fecha/hora, ¿qué otros dos tipos de información técnica mínima deben suministrar los agentes al \ac{CND} para el análisis consolidado de eventos?
+	\item ¿Cuál es la diferencia en el "día cero" para eventos relacionados con \ac{ENS}/\ac{PENS} y para otros eventos no programados según los plazos definidos?
+	\item ¿Qué deben hacer los agentes si identifican que la información inicialmente reportada sobre el activo causante de un evento difiere del análisis detallado?
+\end{enumerate}
+
+\subsection{Clave de Respuestas del Quiz}
+
+\begin{itemize}
+	
+	\item El Acuerdo CNO 1617 fue expedido el 06 de Octubre de 2022 y entró en vigencia el 06 de Noviembre de 2022. Sustituye al Acuerdo 03/09/2015, Acuerdo 787.
+	\item Según el literal b. del Artículo 34 de la Ley 143 de 1994, es función del CND "ejercer la coordinación, supervisión, control y análisis de la operación de los recursos de generación, interconexión y transmisión incluyendo las interconexiones internacionales".
+	\item La Resolución CREG 083 de 1999 establece como obligatoria la remisión de: a) Registro sobre la secuencia cronológica de eventos (SOE) y b) Por cada evento, fecha y hora con resolución de un (1) ms, identificación del elemento que cambió de estado y el estado final del dispositivo.
+	\item Un informe final detallado es necesario cuando el \textbf{PENS} supere el \textbf{2\%}. El CND es el responsable de elaborar y publicar este informe sobre \ac{ENS}.
+	\item Los Operadores de Red (OR) son los responsables de la recolección y el reporte de la información de eventos y la requerida para la aplicación de las disposiciones de calidad del servicio. En todo caso, el responsable de la calidad y oportunidad de la información es el agente a quien se le remuneran los activos.
+	\item El objetivo principal es establecer un procedimiento para la elaboración de los informes de análisis de eventos en el Sistema Interconectado Nacional (SIN) por parte del CND y los agentes del SIN.
+	\item Tres tipos de eventos a los que aplica son: a) Eventos no programados que requieran análisis según Resoluciones CREG 093/2012, 094/2012 (Capítulo 3) y 015/2018; b) Eventos en conexión internacional que originen separación de ambos sistemas eléctricos; c) Eventos que ocasionen la desconexión de 2 o más activos del STN (STN > N - 1); d) Eventos en nivel de tensión IV o superior, que generen la desconexión de todos los elementos asociados a una barra o sección de barra; e) Eventos que apliquen para análisis por SAEB. (Cualquiera de estas tres son válidas).
+	\item Los agentes deben suministrar el SOE (Sequence Of Events) en formato editable y los registros de falla originales (sin editar), en formato COMTRADE o estándar sustituto.
+	Para eventos que deban ser analizados según ENS/PENS (numeral 'a'), el día cero (0) es la fecha en la cual el CND publica el cálculo de Energía No Suministrada (ENS). Para los demás criterios (numerales 'c', 'd', 'f', 'g'), el día cero es el día de ocurrencia del evento.
+	\item Si el activo que dio origen al evento difiere de la información inicialmente reportada, los agentes son responsables de solicitar al CND las modificaciones de la información correspondiente en dicho reporte de eventos, en caso de que aplique.
+\end{itemize}
+
+\subsection{Preguntas de Formato Ensayo}
+\begin{itemize}
+	\item Compare y contraste las responsabilidades del CND y de los Agentes del SIN en la elaboración y suministro de información para los informes de análisis de eventos, detallando cómo se complementan sus roles según el Acuerdo 1617.
+	
+	\item  Analice la importancia de los plazos establecidos en el Acuerdo 1617 para la eficiencia y la efectividad del proceso de análisis de eventos. Discuta las "Consideraciones para agilizar los plazos" y "Consideraciones para prolongar los plazos", y cómo estas buscan equilibrar la celeridad con la profundidad del análisis.
+	
+	\item Describa la evolución de la regulación del sector eléctrico que ha llevado a la expedición del Acuerdo 1617, haciendo referencia a al menos cuatro resoluciones CREG mencionadas y explicando cómo cada una contribuye al marco regulatorio actual del análisis de eventos.
+	\item Explique en detalle la estructura requerida para un informe de análisis de eventos elaborado por los agentes del SIN, tal como se describe en el numeral 3.2 del Anexo 1. Incluya los componentes obligatorios y su propósito en la identificación de la causa raíz y las acciones correctivas.
+	\item Discuta el rol de los "Casos Especiales" en el procedimiento de análisis de eventos, tal como se definen en el numeral 3.4 y el Anexo 2. Explique por qué ciertos eventos se clasifican como especiales y cómo su tratamiento difiere del procedimiento estándar para eventos más complejos.
+\end{itemize}
+\subsection{Glosario de Términos Clave}
+
+\texttt{\begin{itemize}
+		\item Acuerdo CNO 1617: Documento que actualiza el procedimiento para la elaboración de informes de análisis de eventos en el Sistema Interconectado Nacional (SIN).
+		\item Activo: Se refiere a cualquier elemento o componente del Sistema Interconectado Nacional, según las definiciones de las Resoluciones CREG 011 de 2009 y CREG 015 de 2018.
+		\item Agente Generador: Empresa encargada de la producción de energía eléctrica dentro del SIN.
+		\item Agentes del SIN: Las empresas generadoras de electricidad, las distribuidoras y las que operan redes de interconexión y transmisión dentro del Sistema Interconectado Nacional.
+		\item CND (Centro Nacional de Despacho): Entidad central en el SIN responsable de la coordinación, supervisión, control y análisis de la operación del sistema, incluyendo la gestión de información de eventos.
+		\item CNO (Consejo Nacional de Operación): Órgano que aprueba acuerdos y procedimientos relacionados con la operación del SIN.
+		\item COMTRADE: Estándar para el intercambio de datos de registros de falla, utilizado para los registros oscilográficos en el análisis de eventos.
+		\item Consignación Nacional: Proceso formal de autorización para retirar activos del SIN de operación por mantenimiento u otras razones programadas.
+		\item CRD’s (Centros Regionales de Despacho): Entidades regionales que apoyan al CND en la coordinación y operación del SIN.
+		\item CREG (Comisión de Regulación de Energía y Gas): Organismo regulador que emite resoluciones y normativas para el sector eléctrico en Colombia.
+		\item Demanda No Atendida (DNA): Cantidad de energía que la demanda requirió pero no pudo ser suministrada debido a una interrupción o limitación del sistema.
+		\item Día Cero (0): El punto de inicio para el conteo de plazos en el procedimiento de análisis de eventos, cuya definición varía según la clasificación del evento.
+		\item Disturbio: Evento no planeado que produce una condición anormal en el SIN, como una perturbación o un cambio inesperado en el Error de Control de Área (ACE).
+		\item EDAC (Esquema de Desconexión Automática de Carga): Mecanismo de control automático que desconecta bloques de carga para preservar la estabilidad del SIN ante perturbaciones significativas.
+		\item ENS (Energía No Suministrada): Energía que no pudo ser entregada a los usuarios finales debido a interrupciones o fallas en el sistema, medida en unidades de energía (e.g., MWh).
+		\item Evento: Condición anormal o perturbación en el SIN que requiere análisis, según las Resoluciones CREG 093 de 2012 y CREG 015 de 2018.
+		\item ESP/ESPS (Esquemas de Protección / Esquemas de Protección Especiales): Conjuntos de protecciones diseñados para operar ante condiciones específicas del sistema, más allá de la protección básica de los equipos.
+		\item Falla: Un evento en el SIN que implica un cortocircuito, una interrupción o una condición de operación anormal de un activo.
+		\item Interconexiones Internacionales: Conexiones eléctricas que permiten el intercambio de energía entre el SIN de Colombia y sistemas eléctricos de países vecinos.
+		\item Interruptor: Dispositivo de conmutación capaz de interrumpir y establecer corrientes en condiciones normales y anormales del circuito.
+		\item LAC (Liquidación y Administración de Cuentas): Se refiere al proceso o entidad encargada de la compensación por energía no suministrada o por otros aspectos económicos del mercado eléctrico.
+		\item Ley 143 de 1994: Ley Marco Eléctrica de Colombia que establece los principios generales y las regulaciones del sector energético.
+		\item Operador de Red (OR): Empresas encargadas de la operación y el mantenimiento de las redes de transmisión regional (STR) y distribución local (SDL).
+		\item PENS (Potencia Equivalente No Suministrada): Una medida de la potencia no entregada a los usuarios, utilizada para clasificar la severidad de los eventos y determinar la necesidad de informes detallados.
+		\item Protecciones: Conjunto de dispositivos y sistemas diseñados para detectar fallas o condiciones anormales en el sistema eléctrico y operar equipos (como interruptores) para aislar la falla y proteger la integridad del sistema y los activos.
+		\item Registros Oscilográficos: Grabaciones de alta velocidad de las magnitudes eléctricas (corrientes, tensiones) durante un evento, cruciales para el análisis de fallas.
+		\item SAEB (Sistemas de Almacenamiento de Energía Eléctrica con Baterías): Tecnologías de almacenamiento de energía que utilizan baterías para gestionar el suministro y la demanda en el SIN.
+		\item Seccionador: Dispositivo de conmutación utilizado para aislar eléctricamente una parte del circuito para mantenimiento o seguridad, no diseñado para interrumpir corrientes de falla.
+		\item SEP (Sistema Eléctrico de Potencia): Conjunto de elementos interconectados (generación, transmisión, distribución y consumo) que conforman el sistema eléctrico.
+		\item SIN (Sistema Interconectado Nacional): La red eléctrica principal de Colombia que conecta las diferentes regiones y fuentes de generación con los centros de consumo.
+		\item SOE (Sequence Of Events): Un registro cronológico y detallado de la operación de equipos y protecciones durante un evento, crucial para reconstruir la secuencia de los hechos.
+		\item SSPD (Superintendencia de Servicios Públicos Domiciliarios): Organismo que supervisa y controla la prestación de los servicios públicos, incluyendo la energía eléctrica.
+		\item STN (Sistema de Transmisión Nacional): La parte de la red de transmisión de energía eléctrica que opera a las tensiones más altas (iguales o superiores a 220 kV), gestionada por los transportadores.
+		\item STR (Sistema de Transmisión Regional): La parte de la red de transmisión de energía eléctrica que opera a tensiones intermedias (menores de 220 kV y no parte del SDL), gestionada por los Operadores de Red (OR).
+		\item Subcomité de Protecciones: Un comité técnico dentro del CNO que se encarga de analizar y dar concepto favorable a las actualizaciones relacionadas con los sistemas de protección.
+\end{itemize}}
+
+
+\section{DEMANDA NO ATENDIDA}
+
+Es un valor \textit{estimado} de la energía no entregada a la carga
+debido a eventos programados o no programados. Para ello se emplean
+los eventos diarios reportados en ENERGIS.\\\\
+
+\section{ENERGÍA NO SUMINISTRADA}
+
+La energía no suministrada es la dejada de entregar a partir de la
+ocurrencia de un evento en el \ac{STR} \cite{CREG0152018}. Esta se
+puede calcular de acuerdo a la siguiente expresión: \cite{CREG0942012}\\\\
+
+\[ ENSMH_{j,h} = PRN_{j,h} - DE_{j,h} \]
+
+\begin{tabular}{p{0.2\linewidth} p{0.7\linewidth}}
+	Donde :\\\\& \\
+	$ENSMH_{j,h}$& Es la energía no suministrada en  un mercado de comercialización a una hora dada \\
+	$PRN_{j,h}$ & Es el pronóstico nuevo de la demanda\\
+	$DE_{j,h}$ & Es la demanda de electricidad \\
+\end{tabular}\\
+
+\section*{Metodología y Fórmulas}
+
+El CND estima la ENS ($ENSMH_{j,h}$) para cada periodo horario ($h$) y mercado afectado ($j$) como la diferencia entre el Pronóstico Nuevo de Demanda ($PRN_{j,h}$) y la Demanda Entregada ($DE_{j,h}$) [4].
+
+\begin{enumerate}
+	\item \textbf{Energía No Suministrada Horaria ($ENSMH_{j,h}$)}
+	\begin{equation}
+		ENSMH_{j,h} = PRN_{j,h} - DE_{j,h} \quad \text{[4]}
+	\end{equation}
+	
+	\item \textbf{Porcentaje de Energía No Suministrada ($PENS_{j,h}$)}
+	\begin{equation}
+		PENS_{j,h} = \frac{ENSMH_{j,h}}{PRN_{j,h}} \quad \text{[4]}
+	\end{equation}
+	
+	\item \textbf{Condición del Umbral}
+	Si $\mathbf{PENS_{j,h} \le 2\%}$, entonces $\mathbf{ENSMH_{j,h} = 0}$ [4].
+	
+	\item \textbf{ENS del Mercado ($ENSM_j$)}
+	Si $PENS_{j,h}$ supera el 2\%, la $ENSM_j$ es el valor máximo entre la $ENSMH_{j,h}$ del periodo del Evento y la del periodo siguiente (si subsiste el Evento) [4].
+	
+	\item \textbf{ENS Causal Total ($ENS_q$)}
+	Es la sumatoria de las energías no suministradas en cada mercado de comercialización afectado ($NM$) [5]:
+	\begin{equation}
+		ENS_q = \sum_{j=1}^{NM} ENSM_j \quad \text{[5]}
+	\end{equation}
+\end{enumerate}
+
+\section*{Valores Hipotéticos para el Ejemplo}
+
+Asumamos un Evento no programado en el Mercado de Comercialización $j$ durante el periodo horario $h$:
+
+\begin{center}
+	\begin{tabular}{|l|l|c|}
+		\hline
+		\textbf{Variable} & \textbf{Definición} & \textbf{Valor Hipotético (MW)} \\
+		\hline
+		$PRN_{j,h}$ & Pronóstico Nuevo de Demanda (Num. 3.3) & $663$ \\
+		$DE_{j,h}$ & Demanda Entregada en el periodo $h$ & $500$ \\
+		$NM$ & Número de Mercados Afectados & $1$ \\
+		\hline
+	\end{tabular}
+\end{center}
+
+\section*{Cálculo Detallado}
+
+\subsection*{Paso 1: Cálculo de la $ENSMH_{j,h}$ (Energía No Suministrada Horaria)}
+
+\begin{align*}
+	ENSMH_{j,h} &= PRN_{j,h} - DE_{j,h} \quad \text{[4]} \\
+	ENSMH_{j,h} &= 663 \, \text{MW} - 500 \, \text{MW} \\
+	ENSMH_{j,h} &= \mathbf{163 \, \text{MW}}
+\end{align*}
+
+\subsection*{Paso 2: Cálculo del $PENS_{j,h}$ (Porcentaje de Energía No Suministrada)}
+
+\begin{align*}
+	PENS_{j,h} &= \frac{ENSMH_{j,h}}{PRN_{j,h}} \quad \text{[4]} \\
+	PENS_{j,h} &= \frac{163 \, \text{MW}}{663 \, \text{MW}} \\
+	PENS_{j,h} &\approx 0.2458 \quad (\text{o } 24.58\%)
+\end{align*}
+
+\subsection*{Paso 3: Determinación de la ENS del Mercado ($ENSM_j$)}
+
+Se verifica la condición del umbral [4]:
+\begin{itemize}
+	\item $PENS_{j,h} \approx 24.58\%$.
+	\item Como $24.58\% > 2\%$, el $ENSMH_{j,h}$ es válido y no se iguala a cero [4].
+\end{itemize}
+
+Asumiendo que este valor es el máximo $ENSMH_{j,h}$ encontrado en el periodo horario del Evento ($h=1e$) y el siguiente ($h=2e$), la ENS para el Mercado $j$ es:
+\begin{equation*}
+	ENSM_j = 163 \, \text{MW} \quad \text{[4]}
+\end{equation*}
+
+\subsection*{Paso 4: Cálculo de la ENS Causal Total ($ENS_q$)}
+
+Dado que solo se afectó un mercado ($NM=1$):
+\begin{align*}
+	ENS_q &= \sum_{j=1}^{NM} ENSM_j \quad \text{[5]} \\
+	ENS_q &= ENSM_j \\
+	ENS_q &= \mathbf{163 \, \text{MW}}
+\end{align*}
+
+\section*{Resultado}
+
+La Energía No Suministrada ($ENS_q$) causada por el Evento es de $\mathbf{163 \, \text{MW}}$ [5]. Este valor se utiliza en las fórmulas del numeral 11.1.8.2 del anexo general de la Resolución CREG 097 de 2008 para calcular las compensaciones [5]. Adicionalmente, el $PENS_q$ toma el valor del mayor $PENS_{j,h}$ encontrado, que en este caso es 24.58\% [5]. Si este $PENS_q$ supera el 2\%, el CND debe enviar un informe a la SSPD.\\\\
+
+
+
+
+\section*{Metodología y Fórmulas}
+
+El CND estima la ENS ($ENSMH_{j,h}$) para cada periodo horario ($h$) y mercado afectado ($j$) como la diferencia entre el Pronóstico Nuevo de Demanda ($PRN_{j,h}$) y la Demanda Entregada ($DE_{j,h}$) [4].
+
+\begin{enumerate}
+	\item \textbf{Energía No Suministrada Horaria ($ENSMH_{j,h}$)}
+	\begin{equation}
+		ENSMH_{j,h} = PRN_{j,h} - DE_{j,h} \quad \text{[4]}
+	\end{equation}
+	
+	\item \textbf{Porcentaje de Energía No Suministrada ($PENS_{j,h}$)}
+	\begin{equation}
+		PENS_{j,h} = \frac{ENSMH_{j,h}}{PRN_{j,h}} \quad \text{[4]}
+	\end{equation}
+	
+	\item \textbf{Condición del Umbral}
+	Si $\mathbf{PENS_{j,h} \le 2\%}$, entonces $\mathbf{ENSMH_{j,h} = 0}$ [4].
+	
+	\item \textbf{ENS del Mercado ($ENSM_j$)}
+	Si $PENS_{j,h}$ supera el 2\%, la $ENSM_j$ es el valor máximo entre la $ENSMH_{j,h}$ del periodo del Evento y la del periodo siguiente (si subsiste el Evento) [4].
+	
+	\item \textbf{ENS Causal Total ($ENS_q$)}
+	Es la sumatoria de las energías no suministradas en cada mercado de comercialización afectado ($NM$) [5]:
+	\begin{equation}
+		ENS_q = \sum_{j=1}^{NM} ENSM_j \quad \text{[5]}
+	\end{equation}
+\end{enumerate}
+
+\section*{Valores Hipotéticos para el Ejemplo}
+
+Asumamos un Evento no programado en el Mercado de Comercialización $j$ durante el periodo horario $h$:
+
+\begin{center}
+	\begin{tabular}{|l|p{6cm}|p{2cm}|}
+		\hline
+		\textbf{Variable} & \textbf{Definición} & \textbf{Valor Hipotético (MW)} \\
+		\hline
+		$PRN_{j,h}$ & Pronóstico Nuevo de Demanda (Num. 3.3) & $663$ \\
+		$DE_{j,h}$ & Demanda Entregada en el periodo $h$ & $500$ \\
+		$NM$ & Número de Mercados Afectados & $1$ \\
+		\hline
+	\end{tabular}
+\end{center}
+
+\section*{Cálculo Detallado}
+
+\subsection*{Paso 1: Cálculo de la $ENSMH_{j,h}$ (Energía No Suministrada Horaria)}
+
+\begin{align*}
+	ENSMH_{j,h} &= PRN_{j,h} - DE_{j,h} \quad \text{[4]} \\
+	ENSMH_{j,h} &= 663 \, \text{MW} - 500 \, \text{MW} \\
+	ENSMH_{j,h} &= \mathbf{163 \, \text{MW}}
+\end{align*}
+
+\subsection*{Paso 2: Cálculo del $PENS_{j,h}$ (Porcentaje de Energía No Suministrada)}
+
+\begin{align*}
+	PENS_{j,h} &= \frac{ENSMH_{j,h}}{PRN_{j,h}} \quad \text{[4]} \\
+	PENS_{j,h} &= \frac{163 \, \text{MW}}{663 \, \text{MW}} \\
+	PENS_{j,h} &\approx 0.2458 \quad (\text{o } 24.58\%)
+\end{align*}
+
+\subsection*{Paso 3: Determinación de la ENS del Mercado ($ENSM_j$)}
+
+Se verifica la condición del umbral [4]:
+\begin{itemize}
+	\item $PENS_{j,h} \approx 24.58\%$.
+	\item Como $24.58\% > 2\%$, el $ENSMH_{j,h}$ es válido y no se iguala a cero [4].
+\end{itemize}
+
+Asumiendo que este valor es el máximo $ENSMH_{j,h}$ encontrado en el periodo horario del Evento ($h=1e$) y el siguiente ($h=2e$), la ENS para el Mercado $j$ es:
+\begin{equation*}
+	ENSM_j = 163 \, \text{MW} \quad \text{[4]}
+\end{equation*}
+
+\subsection*{Paso 4: Cálculo de la ENS Causal Total ($ENS_q$)}
+
+Dado que solo se afectó un mercado ($NM=1$):
+\begin{align*}
+	ENS_q &= \sum_{j=1}^{NM} ENSM_j \quad \text{[5]} \\
+	ENS_q &= ENSM_j \\
+	ENS_q &= \mathbf{163 \, \text{MW}}
+\end{align*}
+
+\section*{Resultado}
+
+La Energía No Suministrada ($ENS_q$) causada por el Evento es de $\mathbf{163 \, \text{MW}}$ [5]. Este valor se utiliza en las fórmulas del numeral 11.1.8.2 del anexo general de la Resolución CREG 097 de 2008 para calcular las compensaciones [5]. Adicionalmente, el $PENS_q$ toma el valor del mayor $PENS_{j,h}$ encontrado, que en este caso es 24.58\% [5]. Si este $PENS_q$ supera el 2\%, el CND debe enviar un informe a la SSPD.\\\\
+
+\hspace{1cm}
+Los datos para el calculo de estos valores son almacenados en la
+base de datos del CND por un tiempo máximo de cinco años en el
+aplicativo HEROPE. Es resposabilidad del OR reportar esta
+información\\\\
 
 
 \chapter{MANTENIMIENTO}
@@ -1451,71 +1736,6 @@ Las horas que un activo  se encuentra  in disponible durante un mes, se pueden c
   \label{fig:prueba}
 \end{figure}
 
-\chapter{SISTEMAS DE  POTENCIA}
-
-\section{FLUJO DE CARGA}
-La potencia activa transmitida por una línea esta dada por la ecuación \ref{eq:1}:
-
-\begin{equation}
-  \label{eq:1}
-  P=\dfrac{E_{1} \cdot E_{2} \cdot sen\delta } {X}
-\end{equation}
-
-En la figura \ref{fig:lineaat} se muestra una línea de transporte de alta tensión donde la impedancia de la línea \textit{$X$} se considera totalmente reactiva y los fasores de tensión  \textbf{$E_{1}$ }y \textbf{$E_{2}$} son las tensiones en la barra del transmisor y del receptor.\\\\
-
-\begin{figure}[H]
-  \centering
-  
-  \caption{Línea de transporte de alta tensión}
-  \label{fig:lineaat}
-  \includegraphics[width=\linewidth]{linea_transporte_AT}
-\end{figure}
-
-Entonces se puede obtener los flujos de potencia activa y reactiva
-para los siguientes casos \cite{trashorras2015subestaciones}:
-
-\begin{tabular}[H]{|p{0.2\linewidth}|p{0.35\linewidth}|p{0.35\linewidth}|}
-  \hline
-  CASO & Potencia \textbf{activa} & Potencia \textbf{reactiva}\\\hline
-  Distintas magnitud de tensiones  y desfasadas. figura \ref{fig:caso1}  & El flujo de potencia activa siempre es de la tensión adelantada a la  retrasada& La linea absorve reactiva de ambos extremos\\\hline
-  Distintas tensiones pero en fase. figura \ref{fig:caso2} & cero&la potencia fluye del nodo  de mayor tensión al de menor tensión y la línea absorve potencia reactiva  \\\hline
-  Iguales tensiones pero desfasadas. figura \ref{fig:caso3}  &la línea transporta potencia activa proporcional a las perdidas &la línea absorve potencia reactiva de ambos extremos\\\hline
-\end{tabular}
-
-
-\begin{figure}[H]
-  \centering
-  \caption{Caso 1: esquema de flujo de potencia con tensiones distintas
-    desfasadas.}
-  \includegraphics[width=\linewidth]{caso1}
-  \label{fig:caso1}
-\end{figure}
-
-
-\begin{figure}[H]
-  \centering
-  \caption{Caso 2: esquema de flujo de potencia con tensiones distintas en
-    fase.}
-  \includegraphics[width=\linewidth]{tensiones_distintas_igual_fase}
-  \label{fig:caso2}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \caption{Caso 3: esquema de flujo de potencia con iguales tensiones
-    desfasadas.}
-  \includegraphics[width=\linewidth]{tensionesigualesdesfasadas}
-  \label{fig:caso3}
-\end{figure}
-
-\section{CORTOCIRCUITO}
-
-\begin{figure}[H]
-  \centering
-  \caption{fasores ante un corto circuito hacia adelante y hacia atraz}
-  \label{fig:fasores}
-  \includegraphics[width=\linewidth]{cortcircuito}
-  \end{figure}
 
 \chapter{PLANTAS FOTOVOLTAICAS}
 
@@ -1781,6 +2001,18 @@ Los protocolos de comunicaciones empleados en los sistemas eléctricos son los q
   \label{fig:protocoloscomunicacion}
   \includegraphics[width=0.5\linewidth]{protocolos_comunicacion}
 \end{figure}
+
+\section{PROTOCOLOS DE ANILLAMIENTO}
+\subsection{RSPT}
+
+El protocolo RSTP se emplea para prevenir anillamiento en redes enmalladas. Emplea los mensajes \textbf{BPDU} para determinar el estado de la red.
+
+\begin{figure}[H]
+  \caption{Protocolo de comunicación RSTP}
+  \label{fig:rsptp}
+  \includegraphics[width=\linewidth]{rstp}
+\end{figure}
+
 
 \section{ICCP}
 
@@ -2755,11 +2987,25 @@ La siguiente tabla muestra los comandos Cisco más empleados:
   	\item \textbf{Verificación:} Los comandos utilizados para la verificación y solución de problemas incluyen $\texttt{show ip protocols}$, $\texttt{show ip route ospf}$, $\texttt{show ip ospf neighbor}$, $\texttt{show ip ospf interface}$ y $\texttt{show ip ospf database}$.
   \end{itemize}
   
-  
+
+  \chapter{CIBERSEGURIDAD}
+
+  \section{Acuerdo CNO 1960}
+
+  De acuerdo al \ac{CNO} los ciberactivos críticos de un \ac{SDL} son :
+
+  \begin{itemize}
+    
+  \item 
+
+ \end{itemize}
+
+\begin{itemize}
+\item 
+
+\end{itemize}
   
 \chapter{PROCESO DE CONEXIÓN}
-
-
 
 \section{Conexión de usuarios}
 
@@ -2940,10 +3186,6 @@ La Mejorabilidad en su extensión más amplia incluye las siguientes variables:
 
 \section{MANTENIMIENTO BASADO EN LA CONFIABILIDAD}
 
-
-\chapter{CIBERSEGURIDAD}
-
-\section{Acuerdo CNO 1960}
 
 \part{GESTIÓN COMERCIAL Y DE MEDIDAS}
 
