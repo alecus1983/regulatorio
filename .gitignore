@@ -21,4 +21,6 @@ easyReview.synctex.gz
 easyReview.tex
 easyReview.toc
 #bibliografia.bib#
-#.gitignore#
+#.gitignore
+auto/regulatorio.el
+regulatorio.synctex.gz
