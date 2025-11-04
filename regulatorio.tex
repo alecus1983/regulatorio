@@ -26,13 +26,13 @@
 
 \addbibresource{bibliografia.bib}
 
-\definecolor{enlace}{rgb}{0.6, 0.3, 0.6} % Un verde oscuro
+\definecolor{enlace}{rgb}{0.21, 0.71, 0.51} % Un verde oscuro
 
 \usepackage{hyperref}
 \hypersetup{
     colorlinks=true,
     linkcolor=enlace,
-    filecolor=magenta,      
+    filecolor=red,      
     urlcolor=red,
     citecolor=blue,
     pdftitle={analisis regulatorio}}
@@ -1005,10 +1005,10 @@ Donde [1, 2]:
 
 \subsection*{Datos del Ejemplo}
 
-Seleccionaremos el grupo de activos "Conexión del OR al STN".
+Seleccionaremos el grupo de activos \textit{Conexión del OR al STN}.
 
 \begin{enumerate}
-	\item $MHAI_{gu}$ (Máximas Horas Anuales de Indisponibilidad para "Conexión del OR al STN"): $60$ horas [3, 4].
+	\item $MHAI_{gu}$ (Máximas Horas Anuales de Indisponibilidad para "Conexión del OR al STN"): $60$ horas.
 	\item $NGU$ (Número de activos en el grupo $gu$): Supongamos $NGU = 3$.
 	\item Valores de ajuste (para una ventana móvil de doce meses que termina en el mes $m$):
 	
@@ -1049,7 +1049,7 @@ Sustituyendo en la Ecuación \ref{eq:mhaia}:
 $$ MHAI A_{m, gu} = 60 \text{ horas} - 3 \text{ horas} $$
 $$ MHAI A_{m, gu} = 57 \text{ horas} $$
 
-El valor de las Máximas Horas Anuales de Indisponibilidad Ajustadas para el grupo de activos "Conexión del OR al STN" en el mes $m$ es de \textbf{57 horas}.
+El valor de las Máximas Horas Anuales de Indisponibilidad Ajustadas para el grupo de activos \textit{Conexión del OR al STN} en el mes $m$ es de \textbf{57 horas}.
 
 \subsection{Cálculo de indisponibilidad en el STR}
 Las horas que un activo  se encuentra  in disponible durante un mes, se pueden calcular como \cite{CREG0152018}:
@@ -1058,19 +1058,73 @@ Las horas que un activo  se encuentra  in disponible durante un mes, se pueden c
 
 \subsection{Capacidad de los activos tras un evento en el STR}
 
-    La \textbf{capacidad de los activos} tras suceder un evento queda establecido  como se muestra en la figura \ref{fig:capacidad} \cite{CREG0152018}:
+La \textbf{capacidad de los activos} tras suceder un evento queda establecido  como se muestra en la figura \ref{fig:capacidad} \cite{CREG0152018}:
 
-    \begin{figure}[H]
-      \centering
-      \caption[capacidad]{Capacidad de los activos tras ocurrir un evento}
-      \label{fig:capacidad}
-      \includegraphics[width=\linewidth]{capacidad_eventos}
-    \end{figure}
+\begin{figure}[H]
+  \centering
+  \caption[capacidad]{Capacidad de los activos tras ocurrir un evento}
+  \label{fig:capacidad}
+  \includegraphics[width=\linewidth]{capacidad_eventos}
+\end{figure}
 
+El debate sobre la Compensación $\text{CNE}$ (Compensación por $\mathbf{E}$nergía $\mathbf{N}$o Suministrada o por dejar no operativos otros activos) se desarrolla totalmente dentro del numeral 5.1.14.2, \textit{Compensaciones por dejar no operativos otros activos o por energía no suministrada}, y representa el mecanismo punitivo de la regulación ante fallas operativas con impacto directo en el suministro o la capacidad de la red.
 
+Esta compensación es una parte integral de la suma total de compensaciones ($\text{CSTR}_{j,m}$) que el Liquidador y Administrador de Cuentas ($\text{LAC}$) calculará mensualmente al Operador de Red ($\text{OR}$).
 
+\section{Contexto y Naturaleza de la Compensación $\text{CNE}$}
 
-    \section{CALIDAD DEL SERVICIO EN EL SDL}
+Un evento en un activo ($u$) puede tener un doble impacto regulatorio:
+\begin{enumerate}
+    \item Generar $\mathbf{E}$nergía $\mathbf{N}$o $\mathbf{S}$uministrada ($\text{ENS}$), afectando directamente al usuario o la demanda.
+    \item Dejar otros activos no operativos, los cuales, de acuerdo con lo previsto en el numeral 5.1.4.2, deberían estar disponibles pero no pueden operar debido a la indisponibilidad del activo principal.
+\end{enumerate}
+
+La compensación $\text{CNE}$ del activo $u$ ($\text{CNE}_{m,u}$) se calcula por energía no suministrada y/o por dejar no operativos otros activos. Esta compensación deberá ser asumida por el $\text{OR}$ responsable de la operación y mantenimiento de los activos cuya indisponibilidad ocasione estos efectos.
+
+\section{Condiciones para la Aplicación de la Compensación $\text{CNE}$}
+
+Para determinar si la compensación $\text{CNE}_{m,u}$ aplica (es decir, si su valor es mayor a cero), la regulación establece tres condiciones que dependen de la indisponibilidad acumulada del grupo de activos ($\text{HIDA}_{m,gu}$) y del impacto del evento medido por el porcentaje de energía no suministrada ($\text{PENS}_{i,h}$).
+
+\subsection{Condición de No Compensación ($\text{PENS}$ inferior al umbral)}
+En los siguientes dos escenarios, la compensación $\text{CNE}$ para la indisponibilidad $i$ es igual a cero:
+\begin{enumerate}
+    \item Si el grupo de activos $gu$ al que pertenece el activo $u$ tiene un registro de indisponibilidad acumulada ($\text{HIDA}_{m,gu}$) menor o igual a las máximas horas de indisponibilidad ajustadas ($\text{MHAIA}_{m,gu}$) y el porcentaje de energía no suministrada ($\text{PENS}_{i,h}$) es inferior al porcentaje definido en el numeral 3.4 de la Resolución $\text{CREG}$ 094 de 2012.
+    \item Si el grupo de activos $gu$ tiene un registro de indisponibilidad acumulada ($\text{HIDA}_{m,gu}$) mayor que las máximas horas ajustadas ($\text{MHAIA}_{m,gu}$) y el porcentaje de energía no suministrada ($\text{PENS}_{i,h}$) es inferior al porcentaje definido en el numeral 3.4 de la Resolución $\text{CREG}$ 094 de 2012.
+\end{enumerate}
+
+\noindent \textbf{Debate:} Estas condiciones implican que, aunque un $\text{OR}$ pueda haber excedido sus metas de horas de indisponibilidad ($\text{MHAI}$), no pagará compensación $\text{CNE}$ si el evento que causó la indisponibilidad no resultó en un impacto de $\text{ENS}$ significativo, es decir, si el $\text{PENS}$ no superó el umbral regulatorio.
+
+\subsection{Condición de Cálculo de Compensación ($\text{PENS}$ superior al umbral)}
+La compensación $\text{CNE}$ se activa y se calcula si, durante la indisponibilidad $i$, el porcentaje de energía no suministrada ($\text{PENS}_{i,h}$) es mayor que el porcentaje definido en el numeral 3.4 de la Resolución $\text{CREG}$ 094 de 2012.
+
+\section{Cálculo de la Compensación $\text{CNE}$ (Costo de $\text{ENS}$ vs. Activos Inoperativos)}
+
+Cuando se cumple la Condición B, el valor de la compensación $\text{CNE}$ para la indisponibilidad $i$ ($\text{CNE}_{i,u}$) se obtiene mediante una fórmula que selecciona el valor máximo entre dos costos, garantizando que se penalice la consecuencia económica más grave del evento:
+
+\begin{equation}
+\label{eq:CNE_calculo}
+\text{CNE}_{i,u} = \max \left( (\text{ENS}_i \cdot \text{CRO}); \sum_{r=1}^{n} (\text{VHRC}_{r,j} \cdot \text{H}_{i,r}) \right)
+\end{equation}
+
+Esta fórmula refleja directamente la doble naturaleza de la compensación:
+\begin{enumerate}
+    \item \textbf{Costo por $\text{ENS}$ ($\text{ENS}_i \cdot \text{CRO}$):} Se refiere al valor de la energía no suministrada ($\text{ENS}_i$) multiplicada por el Costo operativo de reemplazo de energía ($\text{CRO}$).
+    \item \textbf{Costo por Dejar No Operativos Otros Activos ($\sum \text{VHRC}_{r,j} \cdot \text{H}_{i,r}$):} Esta parte suma el producto del Valor Horario de Referencia ($\text{VHRC}_{r,j}$) del activo $r$ que quedó no operativo, multiplicado por el número de horas de no operatividad ($\text{H}_{i,r}$) causadas por la indisponibilidad $i$ del activo $u$.
+\end{enumerate}
+
+\noindent \textbf{Debate:} La estructura $\max(A;B)$ obliga al $\text{OR}$ a compensar el impacto económico más alto, ya sea el costo de la energía que no se entregó ($\text{ENS}$) o el costo asociado a la pérdida de funcionalidad de la red (otros activos no operativos).
+
+\section{Resumen del Contexto 5.1.14.2}
+
+El numeral 5.1.14.2 establece que la Compensación $\text{CNE}$ es la herramienta regulatoria para sancionar el incumplimiento en términos de \textbf{impacto}. A diferencia de la Compensación por Incumplimiento de Metas ($\text{CIM}$), que mide la indisponibilidad temporal acumulada, la $\text{CNE}$ solo se aplica cuando la falla operativa es lo suficientemente grave como para que el porcentaje de energía no suministrada ($\text{PENS}$) supere un umbral mínimo, y cuantifica el valor del daño usando el costo máximo entre el $\text{ENS}$ y la inoperatividad de activos subsiguientes.
+
+\noindent \textbf{Analogía:} Si el sistema de calidad fuera un control de tráfico:
+\begin{itemize}
+    \item La compensación por metas ($\text{CIM}$) sería la multa por exceso de velocidad (independientemente del accidente).
+    \item La Compensación $\text{CNE}$ (5.1.14.2) sería la multa por causar un \textbf{accidente grave} (superar el umbral $\text{PENS}$), donde la sanción se calcula en base al mayor de los daños: el costo del combustible perdido ($\text{ENS}$) o el costo de los vehículos que quedaron atascados en la vía (activos no operativos).
+    \end{itemize}
+    
+\section{CALIDAD DEL SERVICIO EN EL SDL}
 
     \begin{figure}[H]
   \centering
