@@ -23,6 +23,9 @@
 \usepackage{titling}
 \usepackage{needspace}
 \usepackage{parskip}
+\usepackage{booktabs} % mprescindible para las líneas horizontales gruesas (\toprule, \midrule, \bottomrule)
+\usepackage{siunitx} % Se utiliza para formatear las columnas numéricas
+
 
 \addbibresource{bibliografia.bib}
 
@@ -628,22 +631,78 @@ ecuación en un mercado de comercialización :\\\\
 
   La operación del sistema dentro de los límites de carga
   determinados , exceptuando la sobrecarga de
-  transformadores, se consideran como operación normal. Fuera de ellos
-  el sistema se considera que está en estado de alerta o de
-  emergencia.\\\\
+  transformadores, se consideran como operación normal. Fuera de ellos el sistema se considera que está en estado de alerta o de
+  emergencia.\cite{CREG0251995}\\\\
   
 Para los circuitos se tendrá como criterio de carga máxima, la
-permitida por el conductor en caso de realimentaciones. En condiciones
-óptimas  no se debe superar el 70 \% de la capacidad térmica del
-conductor \cite{MANOPEMCALI}. En la figura \ref{fig:capacidad_conductores_emcali} se
-muestra la capacidad de los conductores empleados en EMCALI.
+permitida por el conductor en caso de realimentaciones. En condiciones óptimas  no se debe superar el 70 \% de la capacidad térmica del conductor \cite{MANOPEMCALI}. En las tablas  se
+muestra la capacidad de los conductores empleados en EMCALI, para redes subterráneas en cobre y aéreas en conductores semi-aislados.
 
-\begin{figure}[H]
-  \centering
-  \caption{Capacidad de conductores EMCALI}
-  \label{fig:capacidad_conductores_emcali}
-  \includegraphics[width=\linewidth]{aereos_emcali}
-\end{figure}
+
+\begin{table}[h!]
+	\centering
+	\caption{Resistencia Eléctrica c.a. y Reactancia Inductiva para Cables de Media Tensión 35 kV XLPE \textit{Cu} de Cobre a 60 Hz y 90$^\circ$C. Tres Conductores Dispuestos en Forma Triangular Equidistante}
+	\label{tab:cables_mt}
+	%\sisetup{group-separator={,}, table-format=3.2, table-align-text-pre=S, table-align-text-post=S} % Configuración para números
+	
+	\begin{tabular}{
+			c % Clibre
+			S[table-format=3.2] % Área en mm2
+			S[table-format=1.4] % Resistencia a Corriente Alterna R
+			S[table-format=1.4] % Zef
+			S[table-format=3.0] % Corriente Nominal
+		}
+			
+		
+		\textbf{Calibre} & 
+		\textbf{Área $m^{2}$} & 
+		\textbf{$X_{L}$} & 
+		\textbf{R} &
+		\textbf{Corriente}  \\\midrule
+		
+		1/0 & 53.50 & 0.1760 &  0.4625 & 200 \\
+		2/0 & 67.44 & 0.1700 &  0.3804 & 230 \\
+		3/0 & 85.03 & 0.1630 &  0.3142 & 260 \\
+		4/0 & 107.21 & 0.1570 & 0.2616 & 295 \\
+		250 & 126.67 & 0.1520 & 0.2300 & 325 \\
+		350 & 177.34 & 0.1440 & 0.1804 & 390 \\
+		500 & 253.35 & 0.1390 & 0.1436 & 465 \\
+		750 & 380.00 & 0.1300 & 0.1132 & 585 \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+%\begin{figure}[H]
+%  \centering
+%  \caption{Capacidad de conductores EMCALI}
+%  \label{fig:capacidad_conductores_emcali}
+%  \includegraphics[width=\linewidth]{aereos_emcali}
+%\end{figure}
+
+\begin{table}[h!]
+	\centering
+	\caption{Capacidad de corriente para una red semi-aislada}
+	\label{tab:datos_adicionales}
+	%\sisetup{group-separator={,}, table-align-text-pre=S, table-align-text-post=S}
+	
+	\begin{tabular}
+		{
+			S[table-format=3.1] % Clmna 1
+			S[table-format=3.2] % Columna 2
+			S[table-format=2.2] % Columna 3
+			}
+		
+		% Puedes añadir encabezados aquí si los tienes. Por ejemplo:
+		\textbf{Calibre} & \textbf{área ($m^{2}$)} & \textbf{Corriente}  \\\midrule
+		2 & 33.74 & 184.0 \\
+		1.0 & 53.68 & 241.0\\
+		4.0 & 107.69 & 355.0 \\
+		266.8 & 135.1& 458.0\\
+		336.4 & 170.30 & 530.0\\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
 
 \begin{figure}[H]
   \centering
