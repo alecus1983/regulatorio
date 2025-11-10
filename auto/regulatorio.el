@@ -78,6 +78,7 @@
     "fig:mhaia"
     "eq:mhaia"
     "fig:capacidad"
+    "eq:CNE_calculo"
     "fig:esquema"
     "fig:excluidos"
     "fig:gruposcalidad"
