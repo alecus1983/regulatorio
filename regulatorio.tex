@@ -351,12 +351,12 @@ En la figura \ref{fig:lineaat} se muestra una línea de transporte de alta tensi
 Entonces se puede obtener los flujos de potencia activa y reactiva
 para los siguientes casos \cite{trashorras2015subestaciones}:
 
-\begin{tabular}[H]{|p{0.2\linewidth}|p{0.2\linewidth}|p{0.2\linewidth}|p{0.35\linewidth}|p{0.35\linewidth}|}
+\begin{tabular}[H]{|p{0.12\linewidth}|p{0.12\linewidth}|p{0.18\linewidth}|p{0.30\linewidth}|p{0.30\linewidth}|}
 	\hline
 Iguales tensiones & en fase &	CASO & Potencia \textbf{activa} & Potencia \textbf{reactiva}\\\hline
-	NO  & NO &Distintas magnitud de tensiones  y desfasadas. figura \ref{fig:caso1}  & El flujo de potencia activa siempre es de la tensión adelantada a la  retrasada& La linea absorve reactiva de ambos extremos\\\hline
-	NO & Si & Distintas tensiones pero en fase. figura \ref{fig:caso2} & cero&la potencia fluye del nodo  de mayor tensión al de menor tensión y la línea absorve potencia reactiva  \\\hline
-	SI & NO &Iguales tensiones pero desfasadas. figura \ref{fig:caso3}  &la línea transporta potencia activa proporcional a las perdidas &la línea absorve potencia reactiva de ambos extremos\\\hline
+	NO  & NO & figura \ref{fig:caso1}  & El flujo de potencia activa siempre es de la tensión adelantada a la  retrasada& La linea absorve reactiva de ambos extremos\\\hline
+	NO & Si & figura \ref{fig:caso2} & cero&la potencia fluye del nodo  de mayor tensión al de menor tensión y la línea absorve potencia reactiva  \\\hline
+	SI & NO &figura \ref{fig:caso3}  &la línea transporta potencia activa proporcional a las perdidas &la línea absorve potencia reactiva de ambos extremos\\\hline
 \end{tabular}
 
 \subsection{Distintas magnitud de tensiones  y desfasadas}
@@ -462,19 +462,6 @@ La línea transporta potencia activa debido al desfase de 20°, y además absorb
 \textbf{Conclusión:}  
 Los ejemplos anteriores ilustran cómo la diferencia de magnitud y ángulo de las tensiones determina el flujo de potencia activa y reactiva, y cómo un cortocircuito provoca un flujo de corriente muy elevado limitado únicamente por la impedancia del sistema.
 
-
-
-
-\subsection{Tensiones distintas pero en fase}
-
-Datos:
-
-
-\subsection{Iguales tensiones pero desfasadas}
-
-Datos:
-
-
 \section{CORTOCIRCUITO}
 
 \begin{figure}[H]
@@ -485,7 +472,7 @@ Datos:
 \end{figure}
 
 
-\section{EJEMPLO NUMÉRICO DE CORTOCIRCUITO}
+\subsection{EJEMPLO NUMÉRICO DE CORTOCIRCUITO}
 
 \begin{figure}[H]
 	\centering
@@ -515,6 +502,75 @@ S_{cc} = \sqrt{3} \, E_{1} \, I_{cc} = \sqrt{3} (230 \times 10^{3})(23 \times 10
 \textbf{Interpretación:}  
 Durante un cortocircuito, el ángulo de la tensión se colapsa y la corriente aumenta drásticamente.  
 Si el cortocircuito se produce hacia atrás (cerca del generador), la corriente será aún mayor debido a la menor impedancia vista desde la fuente.
+
+\paragraph{EJEMPLO MONOFASICO}
+
+\begin{itemize}
+	\item Potencia Nominal del Transformador ($S_{\text{base}}$): \SI{2}{MVA}
+	\item Tensión Primaria ($V_{\text{base}}$): \SI{115}{kV}
+	\item Potencia de Cortocircuito de la Fuente ($S_{\text{cc, fuente}}$): \SI{1000}{MVA}
+	\item Conexión: Delta (Primario) - Y (Secundario)
+	\item Impedancia Asumida del Transformador (\%Z): \SI{6}{\%} ó \SI{0.06}{p.u.}
+\end{itemize}
+
+\subsection*{Paso 1: Cálculo de las Impedancias en Por Unidad (p.u.)}
+
+Se establece una base común de $S_{\text{base}} = \SI{2}{MVA}$.
+
+\subsubsection*{Impedancia de la Fuente:}
+$$
+Z_{\text{fuente, p.u.}} = \frac{S_{\text{base}}}{S_{\text{cc, fuente}}} = \frac{\SI{2}{MVA}}{\SI{1000}{MVA}} = \mathbf{0.002}\text{ p.u.}
+$$
+Para fallas monofásicas, asumimos $Z_{1, \text{fuente}} = Z_{2, \text{fuente}} = Z_{0, \text{fuente}} = 0.002$ p.u.
+
+\subsubsection*{Impedancia del Transformador:}
+Asumimos $Z_{1, \text{transf}} = Z_{2, \text{transf}} = Z_{0, \text{transf}} = \mathbf{0.06}\text{ p.u.}$, dada la conexión Delta-Y.
+
+\subsection*{Paso 2: Cálculo de la Corriente de Falla en el Secundario (p.u.)}
+
+La impedancia total de la falla monofásica (conexión en serie de las redes de secuencia) es:
+
+$$
+Z_{\text{total, p.u.}} = (Z_{1, \text{fuente}} + Z_{1, \text{transf}}) + (Z_{2, \text{fuente}} + Z_{2, \text{transf}}) + (Z_{0, \text{fuente}} + Z_{0, \text{transf}})
+$$
+$$
+Z_{\text{total, p.u.}} = (0.002 + 0.06) + (0.002 + 0.06) + (0.002 + 0.06)
+$$
+$$
+Z_{\text{total, p.u.}} = 0.062 + 0.062 + 0.062 = \mathbf{0.186}\text{ p.u.}
+$$
+
+La corriente de falla en el secundario, en p.u., es:
+$$
+I_{\text{falla, p.u.}} = \frac{3 \times V_{\text{p.u.}}}{Z_{\text{total, p.u.}}} = \frac{3 \times 1\text{ p.u.}}{0.186} \approx \mathbf{16.13}\text{ p.u.}
+$$
+
+\subsection*{Paso 3: Cálculo de la Corriente de Falla en el Primario (p.u.)}
+
+Debido a la conexión Delta en el primario, la corriente de secuencia cero no fluye. La corriente total de falla en p.u. en el primario es la suma vectorial (o en magnitud en p.u.) de las componentes de secuencia positiva y negativa:
+
+$$
+I_{\text{cc, primario, p.u.}} = I_1 + I_2 = \frac{1\text{ p.u.}}{Z_{\text{total, p.u.}}} + \frac{1\text{ p.u.}}{Z_{\text{total, p.u.}}} = \frac{2}{0.186} \approx \mathbf{10.75}\text{ p.u.}
+$$
+
+\subsection*{Paso 4: Conversión a Valores Reales}
+
+Calculamos la corriente base del primario:
+$$
+I_{\text{base, primario}} = \frac{S_{\text{base}}}{\sqrt{3} \times V_{\text{base}}} = \frac{2 \times 10^6\text{ VA}}{\sqrt{3} \times 115 \times 10^3\text{ V}} \approx \mathbf{10.04}\text{ A}
+$$
+
+Finalmente, la corriente de cortocircuito real en el primario:
+$$
+I_{\text{cc, primario}} = I_{\text{cc, primario, p.u.}} \times I_{\text{base, primario}}
+$$
+$$
+I_{\text{cc, primario}} = 10.75\text{ p.u.} \times 10.04\text{ A} \approx \mathbf{107.93\text{ A}}
+$$
+
+\section*{Respuesta:}
+La corriente de cortocircuito monofásica en el primario, para una falla en el secundario y con una impedancia de transformador asumida del $6\%$, es aproximadamente \textbf{\SI{107.93}{A}}.
+
 
 \part{OPERACIÓN DEL STR}
 
@@ -1029,6 +1085,34 @@ En caso de un mantenimiento mayor el cual requiere más horas de las programadas
   \label{fig:reportes_transmision}
   \includegraphics[width=\linewidth ]{reportes_transmision}
 \end{figure}
+
+
+\begin{longtable}{|p{2cm}|p{2cm}|p{2cm}|p{3.5cm}|}
+	\caption{Reportes y Destinatarios en el Sistema de Transmisión Regional (STR)} \\\hline
+	\textbf{Tipo de Reporte} & \textbf{Agente Responsable} & \textbf{Destinatario} & \textbf{Observaciones} \\
+	\hline
+	\hline
+	\endhead
+	
+	% Contenido de la tabla
+	
+	Reporte de eventos (Generales) & El \textbf{OR} (Responsable de la recolección y el reporte). Si el OR no opera directamente, lo realiza quien opera, pero el OR debe garantizar la información [1, 2]. & \textbf{CND}  & Para activos nuevos, el reporte debe realizarse en la \textbf{fecha de entrada en operación comercial} [1-3]. La responsabilidad por la calidad y oportunidad de la información recae en el agente que recibe la remuneración [1, 2]. \\
+	\hline
+	Declaración oficial de la ocurrencia del evento & \textbf{OR} & \textbf{CND} & Debe hacerse \textbf{inmediatamente} y por escrito. Debe anexar la información de los activos afectados y la manifestación de que cumplió con las demás reglas [4, 5]. \\
+	\hline
+	Entrega del plazo de puesta en operación de los activos & \textbf{OR} afectado por el evento & \textbf{CND} & Debe entregar el cronograma y los respectivos informes de avance (o a quien delegue el CNO) [4, 5]. \\
+	\hline
+	Declaración de indisponibilidad debido a catástrofes naturales o actos de terrorismo & \textbf{OR} & \textbf{CND} & Debe declarar oficialmente y anexar el informe que documente y soporte esta situación [4, 5]. Esto aplica a indisponibilidades originadas en catástrofes naturales, terremotos, etc. [6, 7]. \\
+	\hline
+	Cambios en la duración prevista de indisponibilidad & \textbf{OR} & \textbf{CND} & Debe informar los cambios y anexar la certificación correspondiente [4, 5]. \\
+	\hline
+	Reporte de eventos del STR (Supervisión en tiempo real) & \textbf{OR} & \textbf{CND} & Debe hacerse con supervisión en tiempo real, mediante un sistema de secuencia de eventos (SOE), un enlace principal y otro de respaldo de comunicación, y el protocolo acordado con el CND [8, 9]. \\
+	\hline
+	Reporte de responsabilidad por PENS ($\boldsymbol{PENS_{h,i}}$ supera el 2\%) & \textbf{OR} & \textbf{LAC} (Liquidador y Administrador de Cuentas) & Se presenta para ajustar errores, la regulación vigente o la \textbf{demanda no atendida} (DNA) [10, 11]. \\
+	\hline
+	Reporte de valor ENS diferente al calculado por el CND & \textbf{OR} & \textbf{LAC} & El OR subirá un reporte o plataforma elaborada por el LAC. Debe informar al LAC la causa del valor diferente de Energía No Suministrada (ENS) [10, 11]. \\
+	\hline
+\end{longtable}
   
    Las máximas horas anuales de indisponibilidad  se reducen en 0.5 h cuando se presenten unas de las siguientes situaciones:
   
