@@ -2667,11 +2667,11 @@ Estan definidos principalmente por el fabricante más que por la norma IEC 61850
 
 Es el elementos clave para modelar los elementos que componen los sistemas de comunicación, protecciones y automatización (ej. el elemento de la protección de distancia, interfaz a un seccionador).\\\\
 
-Los nombres son estandarizados con cuatro caracteres. El primer carácter indica el grupo  (ej. P para protección, X para los equipos de maniobra). Los nodos se agrupan en grupos funcionales:
+Los nombres son estandarizados con cuatro caracteres. El primer carácter indica el grupo  (ej. P para protección, X para los equipos de maniobra). Los nodos se agrupan en grupos funcionales, como se muestra en la tabla \ref{tab:Ejemplos de nodos Lógicos}.
 
 \begin{table}[H]
   \centering
-  \label{Ejemplos de nodos Lógicos}
+  \label{tab:Ejemplos de nodos Lógicos}
 
   \small
   \begin{tabular}{|p{0.2\linewidth} | p{0.2\linewidth}|p{0.5\linewidth}|}
@@ -2719,20 +2719,21 @@ Ejemplo: INS es una CDC para información de estado de enteros; DPC es una CDC p
 
 \subsubsection{Objeto de Datos (Data Object - DO)}
 
-Componente de un Nodo Lógico. La Clase de Datos Común (CDC) define la estructura y atributos de los data objects.Un objeto de datos (DO) puede tener múltiples \textit{atributos}. También puede contener sub-objetos de datos (que a su vez son de otras Clases de Datos Comunes).\\\\
-Ejemplo:\\
-El objeto de datos POS (posición de un interruptor) es de la Clase de Datos Común DPC (Double Point Control).\\\\
-    Especificación: Definidos en las partes 7-4, 7-410 y 7-420 del estándar junto con los Nodos Lógicos. Incluyen un nombre, referencia a la CDC, explicación corta e indicación de obligatoriedad/opcionalidad.
+Componente de un Nodo Lógico. La Clase de Datos Común (CDC) define la \textit{estructura} y \textit{atributos} de los \textbf{data objects}.Un objeto de datos (DO) puede tener múltiples \textit{atributos}. También puede contener sub-objetos de datos (que a su vez son de otras Clases de Datos Comunes).\\\\
+Ejemplo:\\\\
+
+El objeto de datos POS (\textit{posición de un interruptor}) es de la Clase de Datos Común DPC (Double Point Control).\\\\
+    Especificación: Definidos en las partes 7-4, 7-410 y 7-420 del estándar junto con los Nodos Lógicos. Incluyen un nombre, referencia a la \textbf{CDC}, explicación corta e indicación de obligatoriedad/opcionalidad.
 
 
 
-\subsubsection{Atributo de Datos (Data Attribute - DA)}
+\subsubsection{(Data Attribute - DA)}
 
-    Definición: Las hojas de la jerarquía del modelo de datos donde se encuentran los valores.\\\\
+   Es el lugar donde se encuentran los valores,ej. entero de 32 bits sin signo, punto flotante). Definidos en la parte 7-2.\\\\
     
-    Tipos:Tipo Básico (Basic Type): Tipos de datos fundamentales (ej. entero de 32 bits sin signo, punto flotante). Definidos en la parte 7-2.\\\\
-    Clase de Atributo Construida (Constructed Attribute Class - CAC): Atributos de datos que tienen una estructura interna, es decir, están compuestos por otros sub-atributos de datos (ej. Quality, Vector, AnalogValue, Timestamp).
-    Restricciones de Función (Function Constraints - FC): Utilizadas para clasificar los atributos de datos según su propósito. Ejemplos:\\\\
+    
+    (Constructed Attribute Class - CAC): Atributos de datos que tienen una estructura interna, es decir, están compuestos por otros sub-atributos de datos (ej. Quality, Vector, AnalogValue, Timestamp).\\\\
+    (Function Constraints - FC): Utilizadas para clasificar los atributos de datos según su propósito. Ejemplos:\\\\
     
     \begin{itemize}
     	\item	ST: Atributos de estado.
@@ -2741,6 +2742,8 @@ El objeto de datos POS (posición de un interruptor) es de la Clase de Datos Com
     	\item SP: Atributos de punto de ajuste (settings).
     	\item Contenido: Los atributos de datos pueden ser de un tipo básico o tener niveles jerárquicos adicionales a través de Clases de Atributo Construidas hasta llegar a los componentes primitivos.
 	\end{itemize}
+	
+	
     \subsubsection{Clase de Atributo Construida (Constructed Attribute Class - CAC)}
     
 
