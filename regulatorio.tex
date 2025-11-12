@@ -839,72 +839,70 @@ Los restablecimientos se desarrollan bajo el acuerdo CNO 1784 del 2013
     Los siguientes son los acuerdos aplicables a las protecciones eléctricas 
     
     \begin{itemize}
-    	\item Acuerdo 1862: Requisitos de protecciones para la conexión de sistemas de generación al SIN.
-    	\item Acuerdo 1937: Procedimiento para la elaboración  y aprobación  del \textbf{EACP} para los nuevos proyectos.
-    	\item  Acuerdo 1617 Procedimiento para el análisis de eventos.
+    \item  Acuerdo 1617 Procedimiento para el análisis de eventos.
+    \item Acuerdo 1862: Requisitos de protecciones para la conexión de sistemas de generación al SIN.  
+    \item Acuerdo 1932: Esquema de Deslastre Automático de Carga \textbf{EDAC}.
+    \item Acuerdo 1937: procedimiento para la declaración de entrada en operación comercial de ciertos proyectos, como los que se conectan al Sistema de Transmisión Nacional (STN) o al Sistema de Transmisión Regional (STR).
     \end{itemize}
     
-\section{Características de las protecciones}
-Las siguientes son las características generales de las protecciones eléctricas:\\\\
-\begin{itemize}
-	\item Alta Confiabilidad: Probabilidad de no omitir disparos
-	\item Alta Seguridad: Probabilidad de no tener disparos indeseados
-	\item Selectividad: Desconectar sólo lo fallado, evitando trasladar los efectos de las fallas a otros lugares del STN. 
-	\item Rapidez: El tiempo de operación debe ser lo suficientemente corto de modo que garantice mantenerla estabilidad del sistema
-\end{itemize}
+    \section{Características de las protecciones}
+    
+    Las siguientes son las características generales de las protecciones eléctricas:\\\\
+    \begin{itemize}
+    \item Alta Confiabilidad: Probabilidad de no omitir disparos
+    \item Alta Seguridad: Probabilidad de no tener disparos indeseados
+    \item Selectividad: Desconectar sólo lo fallado, evitando trasladar los efectos de las fallas a otros lugares del STN. 
+    \item Rapidez: El tiempo de operación debe ser lo suficientemente corto de modo que garantice mantenerla estabilidad del sistema
+    \end{itemize}
+    
+    En los sistemas eléctricos de los distribuidores, grandes consumidores y transportadores, el tiempo máximo de despeje de falla de la protección principal, desde el inicio de la falla hasta la extinción del arco en el interruptor de potencia, no debe
+    ser mayor que 150 milisegundos.\\\\
 
-En los sistemas eléctricos de los distribuidores, grandes consumidores y transportadores, el tiempo máximo de despeje de falla de la protección principal, desde el inicio de la falla hasta la extinción del arco en el interruptor de potencia, no debe
-ser mayor que 150 milisegundos.\\\\
+    Los tipos de relés de sobre corriente se pueden clasificar como se muestra en la figura:
 
-Los tipos de relés de sobre corriente se pueden clasificar como se muestra en la figura:
+    \begin{figure}[H]
+      \centering
+      
+      \caption{tipos de relés de sobre corriente  en función la característica de operación}
+      \label{fig:tiporele}
+      \includegraphics[width=0.5\linewidth]{tipos_rele}
+    \end{figure}
+       
 
-\begin{figure}[H]
-	\centering
-	
-	\caption{tipos de relés en función al tipo de operación}
-	\label{fig:tiporele}
-	\includegraphics[width=\linewidth]{tipos_rele}
-\end{figure}
-
-
-
-\section{PROTECCIONES DEL TRANSFORMADOR}
-
-\begin{figure}[H]
-	\centering  
-	\caption{Protecciones del transformador de potencia}
-	\label{fig:proteccionestrafo}
-	\includegraphics[width=\linewidth]{proteccion_trafo}
-\end{figure}
-
-\begin{figure}[H]
-	\centering  
-	\caption{diagrama protecciones del  transformador de potencia}
-	\label{fig:diagramatrafo}
-	\includegraphics[width=\linewidth]{diagramapttrafo}
-\end{figure}
-
-\begin{figure}[H]
-	\centering  
-	\caption{diagrama protecciones del  transformador de potencia}
+    \section{PROTECCIONES DEL TRANSFORMADOR}
+    
+    \begin{figure}[H]
+      \centering  
+      \caption{Protecciones del transformador de potencia}
+      \label{fig:proteccionestrafo}
+      \includegraphics[width=\linewidth]{proteccion_trafo}
+    \end{figure}
+    
+    \begin{figure}[H]
+      \centering  
+      \caption{diagrama protecciones del  transformador de potencia}
+      \label{fig:diagramatrafo}
+      \includegraphics[width=\linewidth]{diagramapttrafo}
+    \end{figure}
+    
+    \begin{figure}[H]
+      \centering  
+      \caption{diagrama protecciones del  transformador de potencia}
 	\label{fig:diagramatrafo1}
 	\includegraphics[width=\linewidth]{proteccion_trafo_1}
-\end{figure}
-
-En la figura \ref{fig:zonas_diferencial},  se puestra el traslape de
-zonas en la protección diferencial.
-
-\begin{figure}[H]
+      \end{figure}
+      
+      En la figura \ref{fig:zonas_diferencial},  se puestra el traslape de
+      zonas en la protección diferencial.
+      
+      \begin{figure}[H]
 	\centering
 	\includegraphics[width=\linewidth]{diferencial_tranformador}
 	\caption{solapamiento de las zonas de protección diferencial}
 	\label{fig:zonas_diferencial}
-\end{figure}
+      \end{figure}
 
-
-
-
-\begin{longtable}{|c|p{0.8\linewidth}|}
+      \begin{longtable}{|c|p{0.8\linewidth}|}
 	\caption{Señales del transformador}\\
 	\hline \multicolumn{1}{|c|}{\textbf{Señal}} & \multicolumn{1}{c|}{\textbf{DESCRIPCIÓN}} \\ \hline 
 	\endfirsthead
@@ -1971,6 +1969,66 @@ La generación distribuida  y la auto generación es tratada en la resolución C
 
 \chapter{ELEMENTOS DE UNA SUBESTACIÓN}
 
+\section{CONFIGURACIÓN DE BARRAJES}
+
+Los arreglos de barras e interruptores en subestaciones son esenciales para asegurar la continuidad del servicio y facilitar el mantenimiento. La elección del arreglo depende de la tensión de operación (media, alta o extra alta) y de los requisitos de confiabilidad, seguridad y costo.
+
+\section{Tipos de Arreglos Comunes}
+
+A continuación, se describen los tipos de configuraciones más comunes en subestaciones:
+
+\begin{itemize}
+    \item \textbf{Barra Sencilla:} Un solo conjunto de barras. Es el más económico pero el menos confiable.
+    \item \textbf{Barra Sencilla con Barra de Transferencia:} Permite el mantenimiento de un interruptor sin interrumpir el servicio.
+    \item \textbf{Doble Barra:} Dos barras principales. Ofrece mayor flexibilidad y permite la separación de circuitos.
+    \item \textbf{Anillo (Lazo):} Los interruptores forman un circuito cerrado (anillo). La pérdida de un interruptor no interrumpe el servicio.
+    \item \textbf{Interruptor y Medio:} Tres interruptores por cada dos salidas. Alta flexibilidad y seguridad; una falla de barra no afecta a ningún circuito.
+    \item \textbf{Doble Barra con Doble Interruptor:} Cada circuito tiene su propio par de interruptores y puede operar en cualquiera de las dos barras. Ofrece la máxima confiabilidad.
+\end{itemize}
+
+\section{Clasificación por Criterios Operativos}
+
+La siguiente tabla clasifica los principales arreglos de subestaciones de acuerdo con criterios clave de desempeño, utilizando ponderaciones relativas de \textbf{Alto}, \textbf{Medio} o \textbf{Bajo}.
+
+\tiny
+\begin{longtable}{|p{2cm}|c|c|c|c|}
+\caption{Clasificación de Arreglos de Subestaciones}
+\label{tab:clasificacion} \\
+\hline
+\textbf{Arreglo} & \textbf{Confiabilidad} & \textbf{Rapidez} & \textbf{Seguridad} & \textbf{Selectividad} \\
+\textbf{de Barras/Int.} & \textbf{(Continuidad)} & \textbf{(Operación/Rest.)} & \textbf{(Falla en Barra/Int.)} & \textbf{(Aislamiento de Fallas)} \\
+\hline
+\endhead
+\hline
+\multicolumn{5}{|r|}{Continúa en la siguiente página...} \\
+\hline
+\endfoot
+\hline
+\endlastfoot
+Barra Sencilla & Bajo & Alto & Bajo & Medio \\
+\hline
+Barra Sencilla c/ Transferencia & Medio & Medio & Bajo & Medio \\
+\hline
+Doble Barra & Medio & Medio & Bajo/Medio & Medio \\
+\hline
+Anillo & Medio/Alto & Medio & Medio & Alto \\
+\hline
+Interruptor y Medio & Alto & Alto & Alto & Alto \\
+\hline
+Doble Barra c/ Doble Interruptor & Muy Alto & Alto & Muy Alto & Muy Alto \\
+\hline
+\end{longtable}
+\normalsize
+
+\section{Definición de Criterios}
+
+\begin{itemize}
+    \item \textbf{Confiabilidad:} Capacidad de mantener el suministro ante fallas o mantenimiento.
+    \item \textbf{Rapidez:} Velocidad de operación y tiempo de restablecimiento del servicio.
+    \item \textbf{Seguridad:} Capacidad de mantener el suministro a pesar de una falla interna en barras o interruptores.
+    \item \textbf{Selectividad:} Capacidad de los sistemas de protección para aislar \textit{solamente} la sección con falla.
+\end{itemize}
+
 \section{TRANSFORMADORES}
 \subsubsection{POLARIDAD}
 
@@ -2183,7 +2241,7 @@ los acuerdos vigentes con relación a las comunicaciones son :
 \item 1612: Puesta en operación de proyectos de transmisión que incluyan activos de uso del STN, STR, SDL y recursos de Generación
   \end{itemize}
 
-\section{Informe de superación y enlaces CND}
+\section{Informe de supervición y enlaces CND}
 
   En cada punto a supervisar el valor será de 100\% si está supervisado, o 0\% si no está supervisado. Porcentaje de tiempo en que el Punto a Supervisar llega al sistema SCADA del CND. La meta CNO: 95\%, pero la meta del la CREG es 97 \%,  con periodicidad semanal. Para realizar este reporte se utiliza la plataforma GAO.
 
@@ -2670,36 +2728,47 @@ El objeto de datos POS (posición de un interruptor) es de la Clase de Datos Com
 
 \subsubsection{Atributo de Datos (Data Attribute - DA)}
 
-    Definición: Las hojas de la jerarquía del modelo de datos donde se encuentran los valores.
-    Tipos:Tipo Básico (Basic Type): Tipos de datos fundamentales (ej. entero de 32 bits sin signo, punto flotante). Definidos en la parte 7-2.
+    Definición: Las hojas de la jerarquía del modelo de datos donde se encuentran los valores.\\\\
+    
+    Tipos:Tipo Básico (Basic Type): Tipos de datos fundamentales (ej. entero de 32 bits sin signo, punto flotante). Definidos en la parte 7-2.\\\\
     Clase de Atributo Construida (Constructed Attribute Class - CAC): Atributos de datos que tienen una estructura interna, es decir, están compuestos por otros sub-atributos de datos (ej. Quality, Vector, AnalogValue, Timestamp).
-    Restricciones de Función (Function Constraints - FC): Utilizadas para clasificar los atributos de datos según su propósito. Ejemplos:
-    ST: Atributos de estado.
-    CF: Atributos de configuración.
-    SV: Atributos relacionados con sustitución.
-    SP: Atributos de punto de ajuste (settings).
-    Contenido: Los atributos de datos pueden ser de un tipo básico o tener niveles jerárquicos adicionales a través de Clases de Atributo Construidas hasta llegar a los componentes primitivos.
-
+    Restricciones de Función (Function Constraints - FC): Utilizadas para clasificar los atributos de datos según su propósito. Ejemplos:\\\\
+    
+    \begin{itemize}
+    	\item	ST: Atributos de estado.
+    	\item CF: Atributos de configuración.
+    	\item SV: Atributos relacionados con sustitución.
+    	\item SP: Atributos de punto de ajuste (settings).
+    	\item Contenido: Los atributos de datos pueden ser de un tipo básico o tener niveles jerárquicos adicionales a través de Clases de Atributo Construidas hasta llegar a los componentes primitivos.
+	\end{itemize}
     \subsubsection{Clase de Atributo Construida (Constructed Attribute Class - CAC)}
     
 
     Definición: Un tipo de atributo de datos que posee una estructura interna, es decir, se compone de otros sub-atributos.
     Ejemplos: Quality (calidad de la información), Timestamp (marca de tiempo), Vector (magnitud y ángulo).
-    Especificación: Definidas en la parte 7-3 del estándar.
+    Especificación: Definidas en la parte 7-3 del estándar.\\\\
 
 Relación entre los Elementos y las Partes del Estándar
 
-    Parte 7-4 / 7-410 / 7-420: Definen las clases de Nodos Lógicos, su semántica y la estructura en términos de Objetos de Datos, incluyendo nombres, descripciones semánticas y tipos.
+    P4 / 7-41arte 7-0 / 7-420: Definen las clases de Nodos Lógicos, su semántica y la estructura en términos de Objetos de Datos, incluyendo nombres, descripciones semánticas y tipos.
     Parte 7-3: Define todas las Clases de Datos Comunes (CDCs) con su estructura en términos de Atributos de Datos (nombres, semántica, tipo). También define las Clases de Atributo Construidas (CACs).
-    Parte 7-2: Especifica los tipos básicos y los tipos ACSI comunes.
+    Parte 7-2: Especifica los tipos básicos y los tipos ACSI comunes.\\\\
 
 
-    La configuración en el estándar IEC 61850 se basa en el uso de **archivos XML** a través del **Lenguaje de Descripción de Configuración de Subestaciones (SCL)**, definido en la parte 6 de la norma [1-6]. El SCL es la parte más importante de la serie IEC 61850 para el diseño de sistemas, ya que todo el proceso de ingeniería se puede apoyar en este lenguaje [2].
+    La configuración en el estándar IEC 61850 se basa en el uso de **archivos XML** a través del **Lenguaje de Descripción de Configuración de Subestaciones (SCL)**, definido en la parte 6 de la norma [1-6]. El SCL es la parte más importante de la serie IEC 61850 para el diseño de sistemas, ya que todo el proceso de ingeniería se puede apoyar en este lenguaje [2].\\\\
 
-Los archivos SCL contienen información crítica del sistema y son fundamentales para el proceso de ingeniería, desde la especificación hasta el despliegue del sistema [3, 5, 7]. Se utilizan para describir las capacidades de los IEDs, el diseño del sistema y la configuración de la comunicación [3, 5, 8-11].
+Los archivos \textbf{SCL} contienen información crítica del sistema y son fundamentales para el proceso de ingeniería, desde la especificación hasta el despliegue del sistema. Se utilizan para describir las capacidades de los \textbf{IEDs}, el diseño del sistema y la configuración de la comunicación.\\\\
 
 
 \subsection{Tipos de archivos }
+
+\begin{figure}
+	\centering
+	\caption{Tipos de archivo SCL para la configuración de la comunicacion en la subestación.}
+	\label{fig:tiposarchivoscl}
+	\includegraphics[width=0.7\linewidth]{tipos_archivo_scl}
+\end{figure}
+
 
 Los principales tipos de archivo SCL empleados en la configuración de 61850 son:
 
@@ -4121,6 +4190,7 @@ Los siguientes son la regulación con relación con relación al reporte de even
 %% Local Variables:
 %%% mode: latex
 %%% TeX-master: t
+%% TeX-master: t
 %% TeX-master: t
 %% TeX-master: t
 %% TeX-master: t

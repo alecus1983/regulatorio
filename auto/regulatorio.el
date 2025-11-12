@@ -5,12 +5,12 @@
                      '(("book" "a5paper")))
    (TeX-add-to-alist 'LaTeX-provided-package-options
                      '(("geometry" "paperwidth=15cm" "paperheight=20cm") ("inputenc" "utf8") ("fontenc" "T1") ("babel" "spanish" "es-tabla") ("biblatex" "backend=biber" "style=numeric" "hyperref=true") ("xcolor" "table" "dvipsnames") ("caption" "font=small" "labelfont=bf" "labelsep=endash")))
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "path")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "href")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "path")
    (add-to-list 'LaTeX-verbatim-macros-with-delims-local "path")
    (TeX-run-style-hooks
     "latex2e"
@@ -39,6 +39,8 @@
     "titling"
     "needspace"
     "parskip"
+    "booktabs"
+    "siunitx"
     "hyperref"
     "tcolorbox"
     "empheq"
@@ -63,7 +65,8 @@
     "fig:edac"
     "fig:edac1"
     "fig:edac2"
-    "fig:capacidad_conductores_emcali"
+    "tab:cables_mt"
+    "tab:datos_adicionales"
     "fig:ampacidad"
     "fig:regulacionprotecciones"
     "fig:tiporele"
@@ -90,6 +93,7 @@
     "fig:plazo1617"
     "fig:prueba"
     "fig:gd"
+    "tab:clasificacion"
     "fig:polaridadtransformadores"
     "fig:paralelo"
     "tab:valorestierraretie"
