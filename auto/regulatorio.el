@@ -5,12 +5,12 @@
                      '(("book" "a5paper")))
    (TeX-add-to-alist 'LaTeX-provided-package-options
                      '(("geometry" "paperwidth=15cm" "paperheight=20cm") ("inputenc" "utf8") ("fontenc" "T1") ("babel" "spanish" "es-tabla") ("biblatex" "backend=biber" "style=numeric" "hyperref=true") ("xcolor" "table" "dvipsnames") ("caption" "font=small" "labelfont=bf" "labelsep=endash")))
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "href")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
-   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "path")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "href")
    (add-to-list 'LaTeX-verbatim-macros-with-delims-local "path")
    (TeX-run-style-hooks
     "latex2e"
@@ -41,6 +41,8 @@
     "parskip"
     "booktabs"
     "siunitx"
+    "pgf-umlsd"
+    "amsfonts"
     "hyperref"
     "tcolorbox"
     "empheq"
@@ -107,15 +109,17 @@
     "fig:cabecera104"
     "fig:tramas104"
     "fig:formatoasdu"
+    "tab:iec104_timers"
     "fig:secuenciadeinterrogacion"
     "fig:comandos104"
     "fig:reco104diagrama"
     "fig:reco104"
     "fig:iec61850"
     "fig:iec61850_ln"
-    "Ejemplos de nodos Lógicos"
+    "tab:Ejemplos de nodos Lógicos"
     "fig:ln_example"
     "fig:iec61850resticcion"
+    "fig:tiposarchivoscl"
     "fig:protocolosiec61850"
     "fig:arquitecturasubestacion"
     "fig:hsr"

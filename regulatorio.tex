@@ -25,7 +25,9 @@
 \usepackage{parskip}
 \usepackage{booktabs} % mprescindible para las líneas horizontales gruesas (\toprule, \midrule, \bottomrule)
 \usepackage{siunitx} % Se utiliza para formatear las columnas numéricas
-
+\usepackage{pgf-umlsd}
+\usepackage{amsmath} % Para usar t_1, t_3, etc. en formato matemático
+\usepackage{amsfonts}
 
 \addbibresource{bibliografia.bib}
 
@@ -2335,7 +2337,6 @@ En la figura \ref{fig:tramas104} se discrimina los \texttt{control fiel} para tr
 	\label{fig:tramas104}
 	\includegraphics[width=0.7\linewidth]{tramas_104_}
 \end{figure}
-  
 
 \begin{enumerate}
 \item Tramas de Formato Tipo I (Información):
@@ -2371,7 +2372,6 @@ En la figura \ref{fig:tramas104} se discrimina los \texttt{control fiel} para tr
 	\includegraphics[width=0.7\linewidth]{formato_ASDU}
 \end{figure}
 
-
 Cuando la trama contiene datos de aplicación (Formato Tipo I), esta incluye una \textit{ASDU}. La \textit{ASDU} se compone de una \textit{unidad de identificación} (\textbf{data unit identifier}) y un \textit{objeto de información} (\textbf{objeto de identificacion}),  como muestra la figura \ref{fig:formatoasdu}.\\\\
 
 La estructura simplificada de la \textbf{ASDU} es la siguiente:
@@ -2379,7 +2379,7 @@ La estructura simplificada de la \textbf{ASDU} es la siguiente:
 \begin{enumerate}
 \item Identificador de tipo \textit{type indentification} (1 BYTE): Determina la función de aplicación y la estructura del ASDU.
 \item Cualificador de estructura variable (1 octeto): Generalmente vale 1.
-\item Causa de Transmisión \textbf{cause of trasmission (CDT)} \ref{fig:formatoasdu} (1 byte): Indica por qué se transmite el mensaje (e.g., "solicitada", "activación", "confirmación").
+\item Causa de Transmisión \textbf{cause of trasmission (CDT)}, como muestra la figura  \ref{fig:formatoasdu} (1 byte): Indica por qué se transmite el mensaje (e.g., \textit{solicitada}, \textit{activación}, \textit{confirmación}).
 \item Dirección Común del \textbf{ASDU} (2 byte): Identifica la estación terminal (ET) con la que se intercambia la información
 \item Dirección del Objeto de Información (1 octeto): A menudo vale 0 en ciertas aplicaciones.
 \item Datos de Información: Contiene los datos específicos de la aplicación (comandos, medidas analógicas, etc.)
@@ -2392,11 +2392,9 @@ Para garantizar una comunicación confiable, el protocolo utiliza mecanismos de 
 
 \begin{itemize}
 \item Tiempos de Supervisión (\textit{T1, T2, T3, T0}): Estos tiempos controlan el flujo de datos y la actividad del canal.
-\item \textit{Tiempo T3} (Tiempo de envío de trama de prueba): Si no se envía ningún mensaje durante el tiempo T3, se envía una trama de prueba (TESTFR) para verificar que el canal está activo
-\item\textit{ Tiempo T2} (Tiempo de confirmación): Define cuánto tiempo debe esperar un receptor antes de enviar una trama Tipo S para confirmar mensajes recibidos
-.
-\item \textit{Tiempo T1} (Tiempo de espera de confirmación): Si se envía un mensaje Tipo I y no se recibe la confirmación (mediante una trama Tipo I o Tipo S que contenga el N(R) esperado) antes de que expire T1, se puede cerrar el canal o reintentar la comunicación
-.
+\item \textit{Tiempo T3} (Tiempo de envío de trama de prueba): Si no se envía ningún mensaje durante el tiempo T3, se envía una trama de prueba (TESTFR) para verificar que el canal está activo.
+\item\textit{ Tiempo T2} (Tiempo de confirmación): Define cuánto tiempo debe esperar un receptor antes de enviar una trama Tipo S para confirmar mensajes recibidos.
+\item \textit{Tiempo T1} (Tiempo de espera de confirmación): Si se envía un mensaje Tipo I y no se recibe la confirmación (mediante una trama Tipo I o Tipo S que contenga el N(R) esperado) antes de que expire T1, se puede cerrar el canal o reintentar la comunicación.
 \end{itemize}
 
 Estos mecanismos de control y temporización permiten que el protocolo 104 mejore el uso del ancho de banda al permitir el envío de múltiples mensajes de información (Tipo I) antes de requerir una confirmación explícita (Tipo S), a diferencia de comunicaciones seriales más antiguas.\\\\
@@ -2405,7 +2403,7 @@ Estos mecanismos de control y temporización permiten que el protocolo 104 mejor
 
 El envío de un datos entre una RTU y el SCADA utilizando el protocolo IEC 60870-5-104 se realiza a través de (ASDUs) contenidas en tramas de Formato Tipo I.\\\\
 
-La unidad de datos que intercambian el nivel de aplicación de una RTU y una SCADA se denomina ASDU (\textit{Aplication Service Data Unit}). Hay por lo menos un ASDU definido por cada tipo de \textit{punto de información} que se puede manejar con el protocolo. La identificación de un punto de información en este protocolo es por una dirección del punto \textit{IOA} (\textit{Information Objet Address}) más una dirección de común al \textbf{ASDU}, CAA (Common Address of ASDU).\\\\
+%La unidad de datos que intercambian el nivel de aplicación de una RTU y una SCADA se denomina ASDU (\textit{Aplication Service Data Unit}). Hay por lo menos un ASDU definido por cada tipo de \textit{punto de información} que se puede manejar con el protocolo. La identificación de un punto de información en este protocolo es por una dirección del punto \textit{IOA} (\textit{Information Objet Address}) más una dirección de común al \textbf{ASDU}, CAA (Common Address of ASDU).\\\\
 
 
 Una conexión es un \textit{enlace TCP} con la estación controlada. A cada servidor se le pueden asociar varias conexiones que se pueden mantener conectadas. Así una conexión puede estar 
@@ -2413,38 +2411,103 @@ Una conexión es un \textit{enlace TCP} con la estación controlada. A cada serv
 
 A continuación, se describe este intercambio en ambas direcciones, basándose en el flujo de información en sistemas que utilizan este protocolo, como se ilustra en un sistema de pasarela de comunicación:
 
-\subsubsection{Desde la RTU hacia el \textbf{SCADA} (Dirección Monitor)}
-En esta dirección, el equipo (RTU) envía datos a la estación controladora (SCADA). Para un estado digital, la información se reporta como una indicación o evento. El flujo de información se inicia generalmente por un cambio de valor en el dispositivo de campo que debe ser reportado al centro de control:
+\begin{figure}[h!]
+    \centering
+    \begin{sequencediagram}
+    % Definición de participantes (objetos)
+    \newthread{Cra}{Controladora (Maestra)}
+    \newthread{Cda}{Controlada (Esclava)}
 
-\begin{enumerate}
-\item \textit{Lectura del Estado Digital}: En arquitecturas de mediación como la pasarela 104, un componente llamado Control Maestro realiza un proceso periódico de lectura o "escaneo" (polling).
-\item \textit{Detección de Evento} : Cuando el valor de una variable (p. ej., un bit) cambia en el dispositivo de campo (RTU), el Control Maestro consulta la Base de Datos de Intercambio, para determinar si el valor debe ser actualizado
-\item \textit{Si el valor ha cambiado}, se considera que se ha generado un evento.
-\item Mapeo del Metadato: La información actualizada se almacena en el Metadato, que contiene datos como el valor (True/False), la calidad (ej. Óptima) y, opcionalmente, una estampa de tiempo (time tag) asociada al momento exacto en que ocurrió el cambio.
-\item \textit{Generación de la Trama IEC 60870-5-104}: El componente Control Esclavo (encargado de la comunicación IEC 104) mapea el Metadato a una trama IEC 60870-5-104 específica para el Centro de Control.
-\item Si se trata de una indicación de 1 bit, se utiliza un tipo de dato como 	\textit{Single Indication} [1 Bit] with quality (o con estampa de tiempo). Si es una indicación de 2 bits, se utiliza \textit{Double Indication} [2 bit].
-\item La trama contendrá un Identificador de tipo que indica que se transmite un objeto de información single (por ejemplo, 01h).
-\item La Causa de Transmisión (CDT) indica que se ha generado un evento (p. ej., CDT = 03h).
-\item Transmisión y Confirmación: La trama se envía al Centro de Control. El Centro de Control debe reconocer la recepción de la información.
-\end{enumerate}
+    %
+    % Fase 1: Establecimiento de Conexión
+    %
+   % \mess{Cra}{STARTDT\_ACT (Trama U)}{Cda}
+    % --- CORRECCIÓN AQUÍ: Uso de \sdcall para acciones internas ---
+    \begin{sdcall}{Cda}{\textbf{Inicia Temporizador $t3$}}{Cda}
+    \end{sdcall}
+    % -----------------------------------------------------------
+    \mess{Cda}{STARTDT\_CON (Trama U)}{Cra}
 
-\subsubsection{Desde el Centro de Control hacia la RTU/Subestación (Dirección Control)}
+    %
+    % Fase 2: Interrogación General (Transferencia de Datos)
+    %
+    \mess{Cra}{Trama I (Interrogación General $N(S)=0, N(R)=0$)}{Cda}
+    % --- CORRECCIÓN AQUÍ ---
+    \begin{sdcall}{Cra}{\textbf{Inicia $t1$}}{Cra}
+    \end{sdcall}
+    % -----------------------
+    \mess{Cda}{Trama I (ACK de Solicitud $N(S)=0, N(R)=1$)}{Cra}
+    % --- CORRECCIÓN AQUÍ ---
+    \begin{sdcall}{Cra}{\textbf{Detiene/Reinicia $t1$}}{Cra}
+    \end{sdcall}
+    % -----------------------
+    \mess{Cda}{Trama I (Datos 1 $N(S)=1, N(R)=1$)}{Cra}
+    \mess{Cda}{Trama I (Fin de Interrogación $N(S)=2, N(R)=1$)}{Cra}
+    % --- CORRECCIÓN AQUÍ ---
+    \begin{sdcall}{Cra}{\textbf{Inicia $t2$}}{Cra}
+    \end{sdcall}
+    % -----------------------
 
+    %
+    % Fase 3: ACK Explícito (Trama S)
+    %
+    \begin{note}{Cda}{La Cda debe confirmar la recepción de las 3 Tramas I recibidas (0, 1, 2) antes de que $t2$ expire en la Controladora.}
+    \end{note}
+    \mess{Cra}{Trama S ($N(R)=3$)}{Cda} % $N(R)=3$ confirma Tramas I con N(S)=0, 1, 2
+    % --- CORRECCIÓN AQUÍ ---
+    \begin{sdcall}{Cda}{\textbf{Detiene/Reinicia $t2$}}{Cda}
+    \end{sdcall}
+    % -----------------------
 
-En esta dirección, la estación controladora (SCADA) envía comandos para cambiar el estado de un dispositivo en la RTU.
+    %
+    % Fase 4: Mantenimiento de la Conexión (Keep-Alive)
+    %
+    \begin{note}{Cra}{No hay tráfico I/S. El temporizador $t3$ de la Controladora expira.}
+    \end{note}
+    % --- CORRECCIÓN AQUÍ ---
+    \begin{sdcall}{Cra}{\textbf{Expira $t3$}}{Cra}
+    \end{sdcall}
+    % -----------------------
+    \mess{Cra}{TESTFR\_ACT (Trama U)}{Cda}
+    % --- CORRECCIÓN AQUÍ ---
+    \begin{sdcall}{Cra}{\textbf{Inicia $t1$}}{Cra}
+    \end{sdcall}
+    % -----------------------
+    \mess{Cda}{TESTFR\_CON (Trama U)}{Cra}
+    % --- CORRECCIÓN AQUÍ ---
+    \begin{sdcall}{Cra}{\textbf{Detiene $t1$}}{Cra}
+    \end{sdcall}
+    \begin{sdcall}{Cra}{\textbf{Reinicia $t3$}}{Cra}
+    \end{sdcall}
+    \begin{sdcall}{Cda}{\textbf{Reinicia $t3$}}{Cda}
+    \end{sdcall}
+    % -----------------------
 
-\begin{enumerate}
-\item \textbf{Envío de la Orden de Control (SCADA)}: El SCADA envía una trama IEC 60870-5-104 que contiene un comando para modificar el estado digital (p. ej., abrir o cerrar un interruptor). Para esto, se puede utilizar un \textit{Single Command} o \textit{Double Command}.
-  
-\item \textbf{Recepción y Decodificación (Control Esclavo)}: La RTU recibe y desempaqueta la información enviada por el SCADA.
-  
-\item \textbf {Búsqueda y Actualización de Metadato}: La RTU utiliza la \textit{dirección del objeto de información} (en la trama IEC 104) para buscar el \textit{Metadato} asociado en la Base de Datos de Intercambio. Este \textit{Metadato}, que puede tener asociado un comando (comando Modbus, por ejemplo), es actualizado con el nuevo valor de la orden de control.
-  
-\item \textbf {Procesamiento y Envío del Comando (Control Maestro)}: El Control Maestro toma el Metadato actualizado y lo procesa, encargándose de encapsular la información en el protocolo de la subestación (p. ej., IEC61850)
-\item \textbf{Ejecución en el Dispositivo (IDE)}: El comando, ahora en el formato de protocolo local , es enviado al dispositivo de campo (RTU) indicado para su ejecución.
-\item \textbf{Reconocimiento}: El dispositivo RTU retorna un reconocimiento de la escritura de la variable, que es gestionado internamente por el sistema (Control Maestro) y potencialmente notificado de vuelta al SCADA. Las tramas utilizadas para la transferencia de información del usuario, como los comandos y las indicaciones de estado digital, son de Formato Tipo I (Información), que contienen secuencias de transmisión y recepción.
-\end{enumerate}
+    %
+    % Fase 5: Finalización (Opcional)
+    %
+    \mess{Cra}{STOPDT\_ACT (Trama U)}{Cda}
+    \mess{Cda}{STOPDT\_CON (Trama U)}{Cra}
 
+    \end{sequencediagram}
+    \caption{Comportamiento de Tramas (I, S, U) y Temporizadores ($t1, t2, t3$) en IEC 60870-5-104.}
+\end{figure}
+
+\tiny
+\begin{table}[h!]
+    \centering
+    \caption{Temporizadores del Protocolo IEC 60870-5-104}
+    \label{tab:iec104_timers}
+    \begin{tabular}{|c|c|p{2cm}|p{2cm}|}
+        \hline
+        \textbf{Temporizador} & \textbf{Valor Típico} & \textbf{Función} & \textbf{Trama Asociada} \\\hline
+        $t0$ & 30 segundos & \begin{tabular}[c]{@{}l@{}}\textbf{Establecimiento de Conexión.} Mide el tiempo de espera\\ para la aceptación de la conexión TCP.\end{tabular} & Conexión TCP \\\hline
+        $t1$ & 15 segundos & \begin{tabular}[c]{@{}l@{}}\textbf{Confirmación de Tramas I.} Mide el tiempo de espera\\ por un \textbf{ACK} (Trama S o Trama I con $N(R)$)\\ después de enviar una Trama I. (Retransmisión)\end{tabular} & Tramas \textbf{I} y \textbf{S} \\\hline
+        $t2$ & 10 segundos & \begin{tabular}[c]{@{}l@{}}\textbf{Envío de Trama S (ACK).} Mide el tiempo máximo\\ que una estación puede esperar antes de enviar\\ una Trama S explícita. ($t2 < t1$)\end{tabular} & Trama \textbf{S} \\\hline
+        $t3$ & 20 segundos & \begin{tabular}[c]{@{}l@{}}\textbf{Supervisión/Keep-Alive.} Mide el tiempo máximo\\ de inactividad antes de enviar una Trama U \\ (TESTFR\_ACT) para verificar la conexión.\end{tabular} & Trama \textbf{U} (TESTFR) \\\hline
+    \end{tabular}
+\end{table}
+\normalsize
 
 \subsubsection{Tipos de Datos}
 
@@ -4196,6 +4259,7 @@ Los siguientes son la regulación con relación con relación al reporte de even
 %% Local Variables:
 %%% mode: latex
 %%% TeX-master: t
+%% TeX-master: t
 %% TeX-master: t
 %% TeX-master: t
 %% TeX-master: t
