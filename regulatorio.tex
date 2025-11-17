@@ -3,7 +3,7 @@
 \usepackage[paperwidth=15cm, paperheight=20cm]{geometry}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[spanish, es-tabla]{babel}
+\usepackage[spanish, es-tabla, es-noshorthands]{babel}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{graphicx}
@@ -28,6 +28,10 @@
 \usepackage{pgf-umlsd}
 \usepackage{amsmath} % Para usar t_1, t_3, etc. en formato matemático
 \usepackage{amsfonts}
+\usepackage{tikz}
+\usetikzlibrary{arrows,shadows,positioning}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning}
 
 \addbibresource{bibliografia.bib}
 
@@ -2383,10 +2387,12 @@ La estructura simplificada de la \textbf{ASDU} es la siguiente:
 \item Dirección Común del \textbf{ASDU} (2 byte): Identifica la estación terminal (ET) con la que se intercambia la información
 \item Dirección del Objeto de Información (1 octeto): A menudo vale 0 en ciertas aplicaciones.
 \item Datos de Información: Contiene los datos específicos de la aplicación (comandos, medidas analógicas, etc.)
-\item El estándar IEC 60870-5-104 soporta una amplia variedad de datos en ambas direcciones (dirección monitor, desde la estación controlada hacia la controladora; y dirección control, desde la controladora hacia la controlada)
+\item El estándar IEC 60870-5-104 soporta una amplia variedad de datos en ambas direcciones (\textit{dirección monitor, desde la estación controlada hacia la controladora; y dirección control, desde la controladora hacia la controlada})
 \item Mecanismos de Temporización y Control.
 
 \end{enumerate}
+
+\subsection{Mecanismos de temporización}
 
 Para garantizar una comunicación confiable, el protocolo utiliza mecanismos de temporización clave:
 
@@ -2399,115 +2405,48 @@ Para garantizar una comunicación confiable, el protocolo utiliza mecanismos de 
 
 Estos mecanismos de control y temporización permiten que el protocolo 104 mejore el uso del ancho de banda al permitir el envío de múltiples mensajes de información (Tipo I) antes de requerir una confirmación explícita (Tipo S), a diferencia de comunicaciones seriales más antiguas.\\\\
 
-\subsection{Intercambio de Estados Digitales IEC 60870-5-104}
-
-El envío de un datos entre una RTU y el SCADA utilizando el protocolo IEC 60870-5-104 se realiza a través de (ASDUs) contenidas en tramas de Formato Tipo I.\\\\
-
-%La unidad de datos que intercambian el nivel de aplicación de una RTU y una SCADA se denomina ASDU (\textit{Aplication Service Data Unit}). Hay por lo menos un ASDU definido por cada tipo de \textit{punto de información} que se puede manejar con el protocolo. La identificación de un punto de información en este protocolo es por una dirección del punto \textit{IOA} (\textit{Information Objet Address}) más una dirección de común al \textbf{ASDU}, CAA (Common Address of ASDU).\\\\
-
-
-Una conexión es un \textit{enlace TCP} con la estación controlada. A cada servidor se le pueden asociar varias conexiones que se pueden mantener conectadas. Así una conexión puede estar 
-	\textbf{desconectada}, \textbf{conectada} y \textbf{activa}. Se considera activa cuando (estando conectada) la estación controladora habilita transferencia de datos para esa conexión. Todos los intercambios de ASDU son por la conexión activa. Dado que todas las conexiones se establecen por un mismo puerto TCP (2404) que establece la norma, la única forma de identificación de un servidor es por la dirección IP de la estación controlada. El que un servidor tenga más de una conexión se debe a la existencia de varios dispositivos de red o bien redundancia de equipo en el servidor.\\\\
-
-A continuación, se describe este intercambio en ambas direcciones, basándose en el flujo de información en sistemas que utilizan este protocolo, como se ilustra en un sistema de pasarela de comunicación:
-
-\begin{figure}[h!]
-    \centering
-    \begin{sequencediagram}
-    % Definición de participantes (objetos)
-    \newthread{Cra}{Controladora (Maestra)}
-    \newthread{Cda}{Controlada (Esclava)}
-
-    %
-    % Fase 1: Establecimiento de Conexión
-    %
-   % \mess{Cra}{STARTDT\_ACT (Trama U)}{Cda}
-    % --- CORRECCIÓN AQUÍ: Uso de \sdcall para acciones internas ---
-    \begin{sdcall}{Cda}{\textbf{Inicia Temporizador $t3$}}{Cda}
-    \end{sdcall}
-    % -----------------------------------------------------------
-    \mess{Cda}{STARTDT\_CON (Trama U)}{Cra}
-
-    %
-    % Fase 2: Interrogación General (Transferencia de Datos)
-    %
-    \mess{Cra}{Trama I (Interrogación General $N(S)=0, N(R)=0$)}{Cda}
-    % --- CORRECCIÓN AQUÍ ---
-    \begin{sdcall}{Cra}{\textbf{Inicia $t1$}}{Cra}
-    \end{sdcall}
-    % -----------------------
-    \mess{Cda}{Trama I (ACK de Solicitud $N(S)=0, N(R)=1$)}{Cra}
-    % --- CORRECCIÓN AQUÍ ---
-    \begin{sdcall}{Cra}{\textbf{Detiene/Reinicia $t1$}}{Cra}
-    \end{sdcall}
-    % -----------------------
-    \mess{Cda}{Trama I (Datos 1 $N(S)=1, N(R)=1$)}{Cra}
-    \mess{Cda}{Trama I (Fin de Interrogación $N(S)=2, N(R)=1$)}{Cra}
-    % --- CORRECCIÓN AQUÍ ---
-    \begin{sdcall}{Cra}{\textbf{Inicia $t2$}}{Cra}
-    \end{sdcall}
-    % -----------------------
-
-    %
-    % Fase 3: ACK Explícito (Trama S)
-    %
-    \begin{note}{Cda}{La Cda debe confirmar la recepción de las 3 Tramas I recibidas (0, 1, 2) antes de que $t2$ expire en la Controladora.}
-    \end{note}
-    \mess{Cra}{Trama S ($N(R)=3$)}{Cda} % $N(R)=3$ confirma Tramas I con N(S)=0, 1, 2
-    % --- CORRECCIÓN AQUÍ ---
-    \begin{sdcall}{Cda}{\textbf{Detiene/Reinicia $t2$}}{Cda}
-    \end{sdcall}
-    % -----------------------
-
-    %
-    % Fase 4: Mantenimiento de la Conexión (Keep-Alive)
-    %
-    \begin{note}{Cra}{No hay tráfico I/S. El temporizador $t3$ de la Controladora expira.}
-    \end{note}
-    % --- CORRECCIÓN AQUÍ ---
-    \begin{sdcall}{Cra}{\textbf{Expira $t3$}}{Cra}
-    \end{sdcall}
-    % -----------------------
-    \mess{Cra}{TESTFR\_ACT (Trama U)}{Cda}
-    % --- CORRECCIÓN AQUÍ ---
-    \begin{sdcall}{Cra}{\textbf{Inicia $t1$}}{Cra}
-    \end{sdcall}
-    % -----------------------
-    \mess{Cda}{TESTFR\_CON (Trama U)}{Cra}
-    % --- CORRECCIÓN AQUÍ ---
-    \begin{sdcall}{Cra}{\textbf{Detiene $t1$}}{Cra}
-    \end{sdcall}
-    \begin{sdcall}{Cra}{\textbf{Reinicia $t3$}}{Cra}
-    \end{sdcall}
-    \begin{sdcall}{Cda}{\textbf{Reinicia $t3$}}{Cda}
-    \end{sdcall}
-    % -----------------------
-
-    %
-    % Fase 5: Finalización (Opcional)
-    %
-    \mess{Cra}{STOPDT\_ACT (Trama U)}{Cda}
-    \mess{Cda}{STOPDT\_CON (Trama U)}{Cra}
-
-    \end{sequencediagram}
-    \caption{Comportamiento de Tramas (I, S, U) y Temporizadores ($t1, t2, t3$) en IEC 60870-5-104.}
+\begin{figure}[h]
+	\caption{Ejemplo de interacción temporal de T1, T2 y T3 en IEC 60870-5-104.}
+	\centering
+	\begin{tikzpicture}[x=1cm,y=1cm]
+		
+		% Líneas de tiempo
+		\draw[thick] (0,0) -- (7,0) node[right]{Tiempo};
+		\draw[thick] (0,-2) -- (7,-2) node[right]{RTU};
+		
+		% Marcas de actividad
+		\draw[->, thick] (1,0) -- (3,-2) node[midway, above, sloped]{Trama I enviada};
+		
+		\draw[->, thick] (5,-2) -- (7,0) node[midway, above, sloped]{Trama S (Confirmación)};
+		
+		% Temporizador T1
+		\draw[<->] (1,-0.5) -- node[fill=white]{\textbf{T1}} (6,-0.5);
+		
+		% Evento T2
+		\draw[dashed, thick] (2,-2) -- (2,0);
+		\node at (2.3,-1) {\textbf{T2 expira}};
+		\draw[ thick] (9,-2) -- (11,0)
+		node[midway, above, sloped]{Trama S enviada por T2};
+		
+		% Evento T3
+		\draw[dashed, thick] (12,0) -- (12,-2);
+		\node at (12.5,-1) {\textbf{T3 expira}};
+		draw[ thick] (12,0) -- (13.5,-2)
+		node[midway, above, sloped]{TESTFR ACT};
+		
+	\end{tikzpicture}
+	
 \end{figure}
 
-\tiny
-\begin{table}[h!]
-    \centering
-    \caption{Temporizadores del Protocolo IEC 60870-5-104}
-    \label{tab:iec104_timers}
-    \begin{tabular}{|c|c|p{2cm}|p{2cm}|}
-        \hline
-        \textbf{Temporizador} & \textbf{Valor Típico} & \textbf{Función} & \textbf{Trama Asociada} \\\hline
-        $t0$ & 30 segundos & \begin{tabular}[c]{@{}l@{}}\textbf{Establecimiento de Conexión.} Mide el tiempo de espera\\ para la aceptación de la conexión TCP.\end{tabular} & Conexión TCP \\\hline
-        $t1$ & 15 segundos & \begin{tabular}[c]{@{}l@{}}\textbf{Confirmación de Tramas I.} Mide el tiempo de espera\\ por un \textbf{ACK} (Trama S o Trama I con $N(R)$)\\ después de enviar una Trama I. (Retransmisión)\end{tabular} & Tramas \textbf{I} y \textbf{S} \\\hline
-        $t2$ & 10 segundos & \begin{tabular}[c]{@{}l@{}}\textbf{Envío de Trama S (ACK).} Mide el tiempo máximo\\ que una estación puede esperar antes de enviar\\ una Trama S explícita. ($t2 < t1$)\end{tabular} & Trama \textbf{S} \\\hline
-        $t3$ & 20 segundos & \begin{tabular}[c]{@{}l@{}}\textbf{Supervisión/Keep-Alive.} Mide el tiempo máximo\\ de inactividad antes de enviar una Trama U \\ (TESTFR\_ACT) para verificar la conexión.\end{tabular} & Trama \textbf{U} (TESTFR) \\\hline
-    \end{tabular}
-\end{table}
-\normalsize
+
+\subsection{Intercambio de Estados Digitales IEC 60870-5-104}
+
+En IEC 60870-5-104, una conexión corresponde a un enlace TCP establecido entre la estación controladora (maestro) y la estación controlada (servidor o RTU). Un mismo servidor puede admitir varias conexiones TCP simultáneas, dependiendo de su diseño y del esquema de redundancia implementado. Cada conexión puede encontrarse en tres estados: desconectada, conectada y activa.\\\\
+Una conexión pasa a estar activa cuando, después de haberse establecido el enlace TCP, la estación controladora habilita la transferencia de datos mediante el intercambio de los U-Frames STARTDT ACT y STARTDT CON. Solo en este estado se permite el envío y recepción de ASDUs.\\\
+
+Aunque todas las conexiones del protocolo IEC 104 utilizan el puerto TCP 2404 definido por la norma, la identificación funcional de las estaciones no depende únicamente de la dirección IP, sino también de los campos de direccionamiento presentes en las ASDUs —como la dirección común de ASDU (COA) y la dirección de objeto (IOA)— que permiten distinguir dispositivos o áreas lógicas dentro de un mismo servidor.\\\\
+
+La existencia de múltiples conexiones hacia un mismo servidor puede deberse a configuraciones de redundancia, a múltiples interfaces de red o a la necesidad de atender a varios sistemas de control o supervisión en paralelo.
 
 \subsubsection{Tipos de Datos}
 
