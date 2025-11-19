@@ -29,9 +29,8 @@
 \usepackage{amsmath} % Para usar t_1, t_3, etc. en formato matemático
 \usepackage{amsfonts}
 \usepackage{tikz}
-\usetikzlibrary{arrows,shadows,positioning}
-\usepackage{tikz}
-\usetikzlibrary{arrows.meta, positioning}
+\usetikzlibrary{arrows,arrows.meta, shadows,positioning,calc}
+\usepackage{adjustbox} % Necesario para \resizebox
 
 \addbibresource{bibliografia.bib}
 
@@ -1472,7 +1471,88 @@ Las Resoluciones \textbf{CREG 093} ( para el \ac{STN}) y \textbf{094 de 2012} ( 
 	\includegraphics[width=\linewidth]{calculo_ens.png}
 \end{figure}
 
-\section{REPORTE DE EVENTOS Y ENERGÍA NO SUMINISTRADA}
+\section{REPORTE DE EVENTOS}
+
+\begin{figure}[H]
+	
+	\caption{Rol del CND en administrar la información}
+	\begin{tikzpicture}[
+		>={Stealth[length=2mm, width=2mm]},
+		cnd_box/.style={
+			draw, 
+			fill=blue!20, % Cambiado a azul claro para un mejor contraste visual
+			rectangle, 
+			minimum width=3cm, 
+			minimum height=1.5cm, 
+			text width=3cm, 
+			align=center, 
+			font=\bfseries\normalsize, 
+			drop shadow
+		},
+		process/.style={
+			draw, 
+			fill=green!40, 
+			rounded corners, 
+			minimum height=0.8cm, 
+			text width=4cm, 
+			align=center, 
+			font=\footnotesize,
+			drop shadow
+		},
+		or/.style={text width=4cm},
+		arrow_style/.style={
+			->, 
+			very thick, % Hago las flechas más gruesas
+			draw=blue!70!black, % Les doy un color azul oscuro
+			>=Stealth
+		}]
+		
+		% CND Central
+		\node[cnd_box] (CND) at (0, 0) {
+			\textbf{CND}\\ 
+			(Centraliza Información de eventos)
+		};
+		
+		\node[or,below=of CND] (OR) {El \textbf{OR} recolecta y reporta la información};
+		
+		% Procesos de destino, posicionados a la derecha del CND
+		\node[process, right=2cm of CND, yshift=2cm] (P2) {
+			\textbf{Compensaciones}
+		};
+		
+		\node[process, below=1cm of P2] (P1) {
+			\textbf{Calidad del servicio}
+		};
+		
+		\node[process, below=1cm of P1] (P3) {
+			remuneración de activos
+		};
+		
+		\node[process, below=1cm of P3] (P4) {
+			Cálculo de la \textbf{ENS}
+		};
+		
+		% --- Flechas Curvas ---
+		% Las flechas salen del lado este (east) de la caja CND
+		
+		% CND -> Compensaciones (P2)
+		\draw[arrow_style, bend left=30] (CND.east) to (P2.west);
+		
+		% CND -> Calidad del servicio (P1)
+		% Esta es más recta, pero sigue saliendo de CND.east
+		\draw[arrow_style] (CND.east) -- (P1.west);
+		
+		% CND -> Remuneración de activos (P3)
+		\draw[arrow_style, bend right=20] (CND.east) to (P3.west);
+		
+		% CND -> Cálculo de la ENS (P4)
+		\draw[arrow_style, bend right=20] (CND.east) to (P4.west);
+		
+		\draw[arrow_style] (OR) to (CND.south);
+	\end{tikzpicture}
+\end{figure}
+
+
 
 Cuando ocurre un evento no programado (falla), puede generarse la indisponibilidad total o parcial de uno o varios activos del sistema \cite{CREG0942012}.  
 Si dicha indisponibilidad ocasiona una ausencia de tensión en alguna parte de la red y el \ac{PENS} supera el 2\%, el \ac{CND} debe remitir a la Superintendencia de Servicios Públicos Domiciliarios (SSPD) un informe con el análisis detallado del evento ocurrido. De acuerdo con la Resolución \textbf{CREG 015 de 2018}, dicho informe debe contener, como mínimo, la siguiente información \cite{CREG0152018}:
@@ -1492,14 +1572,59 @@ El artículo 24 de la Resolución CREG 015 de 2018 adiciona el siguiente párraf
 	“Cuando el valor del \ac{PENS} supere el 2\%, los \ac{OR} tendrán un plazo de dos (2) días, contados a partir de la publicación por parte del \ac{CND} del informe de \ac{ENS}, para reportar el valor de la \ac{ENS} al \ac{LAC}.”
 \end{quote}
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=\linewidth]{estructura_informe_eventos1617}
-	\caption{Estructura del informe de eventos, acuerdo CNO 1617}
-	\label{fig:estructurainforme}
-\end{figure}
-
 La energía empleada para el cálculo de la \ac{ENS} corresponde a la información reportada por los distintos comercializadores del mercado de comercialización, conforme a los procedimientos establecidos por el \ac{CND}.
+
+\begin{figure}
+	\centering
+	\resizebox{8cm}{!}{% Esto limita el ancho a 8 cm
+		\begin{tikzpicture}[
+			>={Stealth[length=2mm, width=2mm]},
+			box/.style={draw, fill=blue!10, rounded corners, minimum height=0.8cm, text width=4cm, align=center, font=\footnotesize},
+			month/.style={draw, rectangle, fill=green!20, minimum width=1.5cm, minimum height=0.5cm, align=center, font=\scriptsize},
+			annotation/.style={text width=15cm, font=\footnotesize}
+			]
+			
+			% Definición de la línea de tiempo (Horizontal span 0 to 12.5)
+			\draw[thick, ->] (0, 0) -- (12.5, 0) node[right, font=\footnotesize] {Tiempo (Meses)};
+			
+			% Etiquetado de los meses
+			\foreach \i in {1,...,12}
+			{
+				\pgfmathsetmacro{\m}{int(12-\i+1)}
+				\node[month] (M\m) at (\i-0.5, 0) {Mes $m-\m+1$};
+				\draw (\i-0.5, 0) -- (\i-0.5, -0.2);
+			}
+			
+			% Re-etiquetado de inicio y fin del periodo
+			\node[below, font=\footnotesize] at (0.5, -0.2) {Mes $m-11$};
+			\node[below, font=\footnotesize] at (11.5, -0.2) {Mes $m$};
+			
+			% Caja de Compensación (CNEm,u) - Ocurre en el Mes m
+			\node[box] (CNE) at (10, -2.5) {\textbf{Cálculo de $CNE_{m,u}$} (Compensación mes $m$) [3, 4]};
+			
+			% Periodo de acumulación HIDA
+			\draw[ultra thick, red, {Bar[width=4mm]}-{Bar[width=4mm]}] (0.5, 1) -- (11.5, 1) node[midway, above=2pt, font=\footnotesize] {Período de 12 meses};
+			
+			% Anotación HIDA
+			\node[box, fill=red!20, text width=10cm, minimum height=1.2cm, align=left] (HIDA) at (6, 3) {
+				\textbf{$HIDA_{m,gu}$}: Horas de indisponibilidad acumulada [1, 2]
+				\\
+				Período: 12 meses que termina en el mes $m$ [1, 2].
+			};
+			
+			% Flechas de relación
+			\draw[->, dashed] (HIDA.south) -- (6, 1.2);
+			\draw[->, very thick, blue] (11.5, 1.2) -- (CNE.north);
+			
+			\node[annotation, below=1cm of CNE.south, text width=12cm] (Note) {
+				\textbf{Cálculo Clave 5.1.14.2:} La compensación $CNE_{m,u}$ se calcula para el mes $m$ [3, 4] y depende de la condición $HIDA_{m,gu} > MHAIA_{m,gu}$ [3, 4], donde $HIDA_{m,gu}$ acumula las horas de indisponibilidad durante los 12 meses previos a $m$.
+			};
+			
+			
+		\end{tikzpicture}
+	} % Fin del resizebox
+	\caption{Plazo temporal (Período de 12 meses) fundamental para el cálculo de compensaciones $CNE_{m,u}$ bajo el numeral 5.1.14.2.}
+\end{figure}
 
 \subsection*{Ejemplo Numérico Hipotético del Pronóstico Nuevo de Demanda ($PRN_{j,h}$)}
 
@@ -1977,7 +2102,7 @@ La generación distribuida  y la auto generación es tratada en la resolución C
 
 \section{CONFIGURACIÓN DE BARRAJES}
 
-Los arreglos de barras e interruptores en subestaciones son esenciales para asegurar la continuidad del servicio y facilitar el mantenimiento. La elección del arreglo depende de la tensión de operación (media, alta o extra alta) y de los requisitos de confiabilidad, seguridad y costo.
+Los arreglos de barras e interruptores en subestaciones son esenciales para asegurar la continuidad del servicio y facilitar el mantenimiento. La elección de la configuración depende de la tensión de operación (media, alta o extra alta) y de los requisitos de confiabilidad, seguridad y costo.
 
 \section{Tipos de Arreglos Comunes}
 
