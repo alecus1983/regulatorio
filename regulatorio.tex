@@ -1475,8 +1475,8 @@ Las Resoluciones \textbf{CREG 093} ( para el \ac{STN}) y \textbf{094 de 2012} ( 
 
 \begin{figure}[H]
 	
-	\caption{Rol del CND en administrar la información}
-	\begin{tikzpicture}[
+	\caption{Rol del CND en administrar la información relativa a los eventos de tensión}
+	\begin{tikzpicture} [
 		>={Stealth[length=2mm, width=2mm]},
 		cnd_box/.style={
 			draw, 
@@ -1493,11 +1493,10 @@ Las Resoluciones \textbf{CREG 093} ( para el \ac{STN}) y \textbf{094 de 2012} ( 
 			draw, 
 			fill=green!40, 
 			rounded corners, 
-			minimum height=0.8cm, 
-			text width=4cm, 
+			minimum height=0.5cm, 
+			text width=3cm, 
 			align=center, 
-			font=\footnotesize,
-			drop shadow
+			font=\footnotesize
 		},
 		or/.style={text width=4cm},
 		arrow_style/.style={
@@ -1508,54 +1507,40 @@ Las Resoluciones \textbf{CREG 093} ( para el \ac{STN}) y \textbf{094 de 2012} ( 
 		}]
 		
 		% CND Central
-		\node[cnd_box] (CND) at (0, 0) {
-			\textbf{CND}\\ 
-			(Centraliza Información de eventos)
-		};
+		\node[cnd_box] (CND) at (0, 0) {\textbf{CND}\\ (Centraliza Información de eventos) };
+
+                \node[right=0.5 cm of CND ](USO){\textit{se usa para}}; 
 		
 		\node[or,below=of CND] (OR) {El \textbf{OR} recolecta y reporta la información};
 		
 		% Procesos de destino, posicionados a la derecha del CND
-		\node[process, right=2cm of CND, yshift=2cm] (P2) {
-			\textbf{Compensaciones}
-		};
+		\node[process, right=1cm of USO, yshift=2cm] (P2) {\textbf{Compensaciones}};
 		
-		\node[process, below=1cm of P2] (P1) {
-			\textbf{Calidad del servicio}
-		};
+		\node[process, below=1cm of P2] (P1) {\textbf{Calidad del servicio}};
 		
-		\node[process, below=1cm of P1] (P3) {
-			remuneración de activos
-		};
+		\node[process, below=1cm of P1] (P3) {remuneración de activos};
 		
-		\node[process, below=1cm of P3] (P4) {
-			Cálculo de la \textbf{ENS}
-		};
-		
-		% --- Flechas Curvas ---
-		% Las flechas salen del lado este (east) de la caja CND
-		
+		\node[process, below=1cm of P3] (P4) {Cálculo de la \textbf{ENS}};
+
 		% CND -> Compensaciones (P2)
-		\draw[arrow_style, bend left=30] (CND.east) to (P2.west);
+		\draw[arrow_style] (USO.east) -- ++(0.5cm,0) |- (P2.west);
 		
 		% CND -> Calidad del servicio (P1)
 		% Esta es más recta, pero sigue saliendo de CND.east
-		\draw[arrow_style] (CND.east) -- (P1.west);
+		\draw[arrow_style] (USO.east) -- ++(0.5cm,0) |- (P1.west);
 		
 		% CND -> Remuneración de activos (P3)
-		\draw[arrow_style, bend right=20] (CND.east) to (P3.west);
+		\draw[arrow_style] (USO.east) -- ++(0.5cm,0)  |- (P3.west);
 		
 		% CND -> Cálculo de la ENS (P4)
-		\draw[arrow_style, bend right=20] (CND.east) to (P4.west);
+		\draw[arrow_style] (USO.east) -- ++(0.5cm,0) |- (P4.west);
 		
 		\draw[arrow_style] (OR) to (CND.south);
 	\end{tikzpicture}
 \end{figure}
 
-
-
 Cuando ocurre un evento no programado (falla), puede generarse la indisponibilidad total o parcial de uno o varios activos del sistema \cite{CREG0942012}.  
-Si dicha indisponibilidad ocasiona una ausencia de tensión en alguna parte de la red y el \ac{PENS} supera el 2\%, el \ac{CND} debe remitir a la Superintendencia de Servicios Públicos Domiciliarios (SSPD) un informe con el análisis detallado del evento ocurrido. De acuerdo con la Resolución \textbf{CREG 015 de 2018}, dicho informe debe contener, como mínimo, la siguiente información \cite{CREG0152018}:
+Si dicha indisponibilidad ocasiona una ausencia de tensión en alguna parte de la red y el \ac{PENS} supera el 2\%, el \ac{CND} publicar en su pagina web un informe, el cual puede ser consultado por la superintendencia de servicios públicos (SSPD)  y el OR. De acuerdo con la Resolución \textbf{CREG 015 de 2018}, dicho informe debe contener, como mínimo, la siguiente información \cite{CREG0152018}:
 
 \begin{itemize}
 	\item Número y descripción de los eventos.
@@ -1564,9 +1549,64 @@ Si dicha indisponibilidad ocasiona una ausencia de tensión en alguna parte de l
 	\item Para los \ac{MC} afectados, curva de potencia activa correspondiente al período horario del evento.
 	\item Curvas de potencia activa de los doce períodos anteriores y los doce períodos posteriores a la ocurrencia del evento.
 	\item Informe final del evento, conforme a lo establecido en los acuerdos del \ac{CNO}.
-\end{itemize}
+        \end{itemize}
 
-El artículo 24 de la Resolución CREG 015 de 2018 adiciona el siguiente párrafo al final del numeral 5.1.14.2 “\textit{Compensaciones por dejar no operativos otros activos o por energía no suministrada}”:  
+        \begin{figure}[H]
+          \begin{tikzpicture}[
+		>={Stealth[length=2mm, width=2mm]},
+		cnd_box/.style={
+			draw, 
+			fill=blue!20, % Cambiado a azul claro para un mejor contraste visual
+			rectangle, 
+			minimum width=3cm, 
+			minimum height=1.5cm, 
+			text width=3cm, 
+			align=center, 
+			font=\bfseries\normalsize, 
+			drop shadow
+		},
+		process/.style={
+			draw, 
+			fill=green!40, 
+			rounded corners, 
+			minimum height=0.5cm, 
+			text width=3cm, 
+			align=center, 
+			font=\footnotesize
+		},
+		or/.style={text width=4cm, align=center},
+		arrow_style/.style={
+			->, 
+			very thick, % Hago las flechas más gruesas
+			draw=blue!70!black, % Les doy un color azul oscuro
+			>=Stealth
+                      }]
+
+                      % actuacion del CNO
+                      \node[cnd_box](CND){\textbf{CND} envía un informe\\detallado del evento};
+                      % informe CNO segun el acuerdo 1617
+                      \node[process, right=of CND](INFORME){Informe \\\textbf{CNO 1617}};
+                      % limite de energia
+                      \node[or, above=of CND](ENERGIA){$PENS > 2\%$\\\textbf{CREG 094 del 2012}};
+                      % Rol de la superservicios
+                      \node[or, below=of INFORME](SSPD){\textbf{SSPD}};
+                      % reporte del OR
+                      \node[process, right=of INFORME](OR){El \textbf{OR} \\ reporta  al\\ \textbf{LAC}\\la \textbf{ENS}};
+                      
+                      %flechas
+                      
+                      \draw[arrow_style] (CND) to (INFORME);
+                      % flechas
+                      \draw[arrow_style] (ENERGIA) to (CND);
+                      % consulta informe la SSPD
+                      \draw[->, dashed] (INFORME)  to (SSPD);
+
+                      \draw[arrow_style] (INFORME) to (OR);
+
+                      \draw[->, dashed] (SSPD.east) -| (OR.south) node[midway, below, font=\small] {\textit{supervisa}};
+                    \end{tikzpicture}
+                    
+          \end{figure}
 
 \begin{quote}
 	“Cuando el valor del \ac{PENS} supere el 2\%, los \ac{OR} tendrán un plazo de dos (2) días, contados a partir de la publicación por parte del \ac{CND} del informe de \ac{ENS}, para reportar el valor de la \ac{ENS} al \ac{LAC}.”
@@ -4323,6 +4363,7 @@ Los siguientes son la regulación con relación con relación al reporte de even
 %% Local Variables:
 %%% mode: latex
 %%% TeX-master: t
+%% TeX-master: t
 %% TeX-master: t
 %% TeX-master: t
 %% TeX-master: t
